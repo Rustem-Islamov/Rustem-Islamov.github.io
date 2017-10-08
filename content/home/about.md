@@ -1,7 +1,7 @@
 +++
 # About/Biography widget.
 
-date = "2016-04-20T00:00:00"
+date = "2017-10-07T00:00:00"
 draft = false
 
 widget = "about"
@@ -12,31 +12,31 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
-    "Artificial Intelligence",
-    "Computational Linguistics",
-    "Information Retrieval"
+    "Stochastic and Distributed Optimization",
+    "Randomized Methods and Algorithms",
+    "Machine Learning"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
-  year = 2012
+  course = "PhD in Computer Science"
+  institution = "KAUST"
 
 [[education.courses]]
-  course = "MEng in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2009
+  course = "MSc in Data Science"
+  institution = "École normale supérieure Paris-Saclay and Paris-Dauphine"
+  year = 2017
 
 [[education.courses]]
-  course = "BSc in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2008
+  course = "BSc in Computer Science and Physics"
+  institution = "Moscow Institute of Physics and Technology"
+  year = 2016
  
 +++
 
-# Biography
+# Bio
 
-Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I'm a PhD student at KAUST, where I work with Peter Richtarik on Optimization and its applications to Machine Learning. Prior to this, I was a research intern at Université Grenoble Alpes, working on Distributed Optimization with F. Iutzeler and J. Malick. This internship allowed me to obtain my double degree MSc diploma from École normale supérieure Paris-Saclay and Paris-Dauphine.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+My hobbies include bouldering, competetive programming and playing guitar. 
+In 2017, together with my fellow students, M. Mazzolini and P. Dufosse, I won PlubeLabs data challenge. I teamed up with M. Mazzolini and G. Ausset to participate in Google Hash Code, where we were ranked #153. Every now and then I compete in Hackerrank contests.
