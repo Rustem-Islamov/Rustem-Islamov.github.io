@@ -36,7 +36,6 @@ weight = 5
 
 # Bio
 
-I'm a PhD student at KAUST, where I work with Peter Richtarik on Optimization and its applications to Machine Learning. Prior to this, I was a research intern at Université Grenoble Alpes, working on Distributed Optimization with F. Iutzeler and J. Malick. This internship allowed me to obtain my double degree MSc diploma from École normale supérieure Paris-Saclay and Paris-Dauphine.
+I'm a PhD student at KAUST, where I work with Peter Richtarik on Optimization and its applications to Machine Learning. Prior to this, I was a research intern at Université Grenoble Alpes, working on Distributed Optimization with F. Iutzeler and J. Malick. This internship allowed me to obtain my double degree MSc diploma from École normale supérieure Paris-Saclay and Paris-Dauphine. I obtained my BSc from Moscow Institute of Physics and Technology, where I was having a lot of fun with quantum mechanics and various branches of classical physics. My bachelor's thesis, however, was devoted to statistical learning theory.
 
-My hobbies include bouldering, competetive programming and playing guitar. 
-In 2017, together with my fellow students, M. Mazzolini and P. Dufosse, I won PlubeLabs data challenge. I teamed up with M. Mazzolini and G. Ausset to participate in Google Hash Code, where we were ranked #153. Every now and then I compete in Hackerrank contests.
+My hobbies include bouldering, competetive programming and messing around with computers.
