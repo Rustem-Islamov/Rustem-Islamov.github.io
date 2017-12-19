@@ -1,3 +1,9 @@
 [submodule "public"]
 	path = public
 	url = https://github.com/konstmish/konstmish.github.io.git
+[submodule "public/public"]
+	path = public/public
+	url = https://github.com/konstmish/konstmish.github.io.git
+[submodule "konstmish.github.io"]
+	path = konstmish.github.io
+	url = https://github.com/konstmish/konstmish.github.io.git
