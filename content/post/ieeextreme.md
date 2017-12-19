@@ -1,12 +1,12 @@
 +++
-date = 2017-10-21
-lastmod = 2017-09-03
-draft = true
-tags = ["academic", "hugo"]
-title = "Getting started with the Academic framework for Hugo"
+date = 2017-10-22
+lastmod = 2017-10-22
+draft = false
+tags = ["Competitive programming"]
+title = "IEEEXtreme"
 math = true
 summary = """
-Create a beautifully simple personal or academic website in under 10 minutes. 
+Samuel Horvath and me got 123 place out of 3350 teams.
 """
 
 [header]
@@ -15,10 +15,7 @@ caption = ""
 
 +++
 
+I teamed up with Samuel Horvath to participate in a competition called "IEEEXtreme" organized by IEEE for students worldwide. We got ranked 123 worldwide or 43 in our Region (Africa, Europe and Middle East). Unfortunately, we didn't get in top 100, so we are not going to get T-shirts as a prize, but the competition was extremely fun and it was cool to work with Samuel in a team.
 
----
-title: "Ieeextreme"
-date: 2017-10-19T19:47:22+03:00
-draft: true
----
-
+Official results are available here:
+http://ieeextreme.org/files/2017/11/IEEEXtreme-11.0-Rankings-Globally.pdf
