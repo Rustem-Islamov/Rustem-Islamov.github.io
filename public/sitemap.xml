@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>https://konstmish.github.io/post/informs-2018/</loc>
+      <lastmod>2017-12-20T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://konstmish.github.io/post/visiting-cambridge-2017/</loc>
       <lastmod>2017-12-14T00:00:00+00:00</lastmod>
     </url>
@@ -78,8 +87,58 @@
     
     <url>
     
+      <loc>https://konstmish.github.io/tags/conferences/</loc>
+      <lastmod>2017-12-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/tags/distributed-optimization/</loc>
+      <lastmod>2017-12-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/tags/image-analysis/</loc>
+      <lastmod>2017-12-14T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/tags/inverse-problems/</loc>
+      <lastmod>2017-12-14T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://konstmish.github.io/</loc>
       <lastmod>2017-10-07T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/tags/organization/</loc>
+      <lastmod>2017-12-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
