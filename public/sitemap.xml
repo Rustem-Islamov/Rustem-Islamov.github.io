@@ -5,8 +5,17 @@
     
     <url>
     
+      <loc>https://konstmish.github.io/post/vatican-2018jan/</loc>
+      <lastmod>2018-01-19T00:00:00+03:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://konstmish.github.io/post/informs-2018/</loc>
-      <lastmod>2017-12-20T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-20T00:00:00+03:00</lastmod>
     </url>
     
   
@@ -15,7 +24,7 @@
     <url>
     
       <loc>https://konstmish.github.io/post/visiting-cambridge-2017/</loc>
-      <lastmod>2017-12-14T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-14T00:00:00+03:00</lastmod>
     </url>
     
   
@@ -24,7 +33,7 @@
     <url>
     
       <loc>https://konstmish.github.io/post/ieeextreme/</loc>
-      <lastmod>2017-10-22T00:00:00+01:00</lastmod>
+      <lastmod>2017-10-22T00:00:00+03:00</lastmod>
     </url>
     
   
@@ -50,7 +59,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/post/</loc>
+      <loc>https://konstmish.github.io/talk/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -59,8 +68,8 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/talk/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <loc>https://konstmish.github.io/post/</loc>
+      <lastmod>2017-01-01T00:00:00+03:00</lastmod>
     </url>
     
   
@@ -78,7 +87,7 @@
     <url>
     
       <loc>https://konstmish.github.io/tags/competitive-programming/</loc>
-      <lastmod>2017-10-22T00:00:00+01:00</lastmod>
+      <lastmod>2017-10-22T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -88,7 +97,7 @@
     <url>
     
       <loc>https://konstmish.github.io/tags/conferences/</loc>
-      <lastmod>2017-12-20T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-20T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -98,7 +107,17 @@
     <url>
     
       <loc>https://konstmish.github.io/tags/distributed-optimization/</loc>
-      <lastmod>2017-12-20T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-20T00:00:00+03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/tags/hackathon/</loc>
+      <lastmod>2018-01-19T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -108,7 +127,7 @@
     <url>
     
       <loc>https://konstmish.github.io/tags/image-analysis/</loc>
-      <lastmod>2017-12-14T00:00:00+00:00</lastmod>
+      <lastmod>2018-01-19T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -118,7 +137,7 @@
     <url>
     
       <loc>https://konstmish.github.io/tags/inverse-problems/</loc>
-      <lastmod>2017-12-14T00:00:00+00:00</lastmod>
+      <lastmod>2018-01-19T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -138,7 +157,7 @@
     <url>
     
       <loc>https://konstmish.github.io/tags/organization/</loc>
-      <lastmod>2017-12-20T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-20T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -157,7 +176,7 @@
     <url>
     
       <loc>https://konstmish.github.io/tags/research-visits/</loc>
-      <lastmod>2017-12-14T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-14T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
