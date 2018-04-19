@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>https://konstmish.github.io/post/amazon-2018/</loc>
+      <lastmod>2018-04-19T00:00:00+03:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://konstmish.github.io/post/vatican-2018mar/</loc>
       <lastmod>2018-03-20T00:00:00+03:00</lastmod>
     </url>
@@ -86,6 +95,16 @@
     
     <url>
     
+      <loc>https://konstmish.github.io/tags/applications/</loc>
+      <lastmod>2018-04-19T00:00:00+03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://konstmish.github.io/categories/</loc>
       <priority>0</priority>
     </url>
@@ -137,6 +156,26 @@
     
       <loc>https://konstmish.github.io/tags/image-analysis/</loc>
       <lastmod>2018-01-19T00:00:00+03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/tags/industry/</loc>
+      <lastmod>2018-04-19T00:00:00+03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/tags/internship/</loc>
+      <lastmod>2018-04-19T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
