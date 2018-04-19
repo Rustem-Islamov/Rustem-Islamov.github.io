@@ -7,6 +7,6 @@ highlight = false
 # Optional featured image (relative to `static/img/` folder).
 
 [header]
-image = "headers/dk.jpg"
+image = "headers/dk.png"
 caption = "Image credit: Diana Kostina."
 +++
