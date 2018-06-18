@@ -2,7 +2,7 @@
 date = 2018-01-19
 lastmode = 2018-01-19
 title = "VHacks – A hackathon at the Vatican"
-tags = ["Hackathon", "Image analysis", "Inverse problems"]
+tags = []
 draft = false
 summary = """
 This March I'm going to the Vatican to participate in a 3 days hackathon.

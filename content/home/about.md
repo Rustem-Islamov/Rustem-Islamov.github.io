@@ -36,8 +36,8 @@ weight = 5
 
 # Bio
 
-##### Update: From 4 June to 28 September I'm in Seattle interning at Amazon. Drop me a message if you'd like to meet.
+##### I'm currently staying at Rutgers University, working with Mert Gurbuzbalaban.
 
-I'm a PhD student at KAUST, where I work with Peter Richtarik on Optimization and its applications to Machine Learning. Prior to this, I was a research intern at Université Grenoble Alpes, working on Distributed Optimization with F. Iutzeler and J. Malick. This internship allowed me to obtain my double degree MSc diploma from École normale supérieure Paris-Saclay and Paris-Dauphine. I obtained my BSc from Moscow Institute of Physics and Technology, where I was having a lot of fun with quantum mechanics and various branches of classical physics. My bachelor's thesis, however, was devoted to statistical learning theory.
+I'm a PhD student under the supervision of <a href="https://sourcethemes.com/academic/updates">Peter Richtárik</a>, working on Optimization and its applications to Machine Learning. Prior to this, I was a research intern at Université Grenoble Alpes, where I studied an algorithm for Distributed Optimization with F. Iutzeler and J. Malick. This internship allowed me to obtain my double degree MSc diploma from École Normale Supérieure Paris-Saclay and Paris-Dauphine. I obtained my BSc from Moscow Institute of Physics and Technology, where I was having a lot of fun with quantum mechanics and various branches of classical physics. My bachelor's thesis, however, was devoted to statistical learning theory.
 
-My hobbies include bouldering, competitive programming and messing around with computers.
+My hobbies include squash, bouldering and competitive programming.

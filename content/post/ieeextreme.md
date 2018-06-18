@@ -2,7 +2,7 @@
 date = 2017-10-22
 lastmod = 2017-10-22
 draft = false
-tags = ["Competitive programming"]
+tags = []
 title = "IEEEXtreme"
 math = true
 summary = """

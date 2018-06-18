@@ -1,8 +1,8 @@
 +++
 date = 2018-04-19
-lastmode = 2018-04-19
+lastmode = 2018-06-17
 title = "I'm interning at Amazon this summer"
-tags = ["Industry", "Applications", "Internship"]
+tags = []
 draft = false
 summary = """
 From 4 June to 28 September, Seattle.
@@ -13,6 +13,7 @@ image = ""
 caption = ""
 
 +++
+Update: due to a visa delay my internship got postponed.
 
 During my MSc in Paris, we had an amazing course taught by Fabian Pedregosa (http://fa.bianp.net/) and Fajwel Fogel (http://www.di.ens.fr/~fogel/). In this course, we learnt how to use Python for data analysis and to evaluate our knowledge we needed to participate in a challenge with other Paris students. Together with Matthieu Mazzolini and Paul Dufosse (they are very cool guys) I chose PlumeLabs challenge where the data was the air pollution in different cities over time. Long story short, we won it, which is totally due to my teammates, I would never be able to do it alone.
 

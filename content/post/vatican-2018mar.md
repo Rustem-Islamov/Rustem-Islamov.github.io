@@ -2,7 +2,7 @@
 date = 2018-03-20
 lastmode = 2018-03-20
 title = "After the first hackathon at the Vatican"
-tags = ["Hackathon"]
+tags = []
 draft = false
 summary = """
 I came back after the hackathon organized by the Vatican. Inside a few pictures and my impression.

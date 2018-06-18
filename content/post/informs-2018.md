@@ -2,7 +2,7 @@
 date = 2017-12-20
 lastmod = 2017-12-20
 draft = false
-tags = ["Organization", "Conferences", "Distributed optimization"]
+tags = []
 title = "INFORMS Optimization Society Conference"
 math = true
 summary = """

@@ -2,7 +2,7 @@
 date = 2017-12-14
 lastmode = 2017-12-14
 title = "Visiting Cambridge"
-tags = ["Research visits", "Image analysis", "Inverse problems"]
+tags = []
 draft = false
 summary = """
 I'm at Cambridge University until 9 January.
