@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Konstantin Mishchenko</title>
+    <link>https://konstmish.github.io/post/</link>
+    <description>Recent content in Posts on Konstantin Mishchenko</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018 Konstantin Mishchenko</copyright>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0800</lastBuildDate>
+    
+	<atom:link href="https://konstmish.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>I am a program committee member for ICML 2019!</title>
+      <link>https://konstmish.github.io/post/icml-2019/</link>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 -0700</pubDate>
+      
+      <guid>https://konstmish.github.io/post/icml-2019/</guid>
+      <description>This is my first time being a reviewer for such a venue, so I hope I will not be &amp;ldquo;that stupid reviewer&amp;rdquo; :)</description>
+    </item>
+    
+    <item>
+      <title>A NIPS paper got accepted!</title>
+      <link>https://konstmish.github.io/post/nips-2018/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 -0700</pubDate>
+      
+      <guid>https://konstmish.github.io/post/nips-2018/</guid>
+      <description>I&amp;rsquo;m happy to say that our paper &amp;ldquo;SEGA: Variance Reduction via Gradient Sketching&amp;rdquo; about variance reduction for coordinate descent methods was accepted to NIPS. In this work, we discover how coordinate descent methods can be extended to problems with non-separable regularizer. We consider minibatch, importance sampling and acceleration of the produced method. What&amp;rsquo;s more, we additionally introduced a variant with non-trivial sketches of the gradient, under maximal possible stepsizes can be larger by an arbitrary number than in classical coordinate descent methods.</description>
+    </item>
+    
+    <item>
+      <title>I&#39;m interning at Amazon this summer</title>
+      <link>https://konstmish.github.io/post/amazon-2018/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 -0700</pubDate>
+      
+      <guid>https://konstmish.github.io/post/amazon-2018/</guid>
+      <description>Update: due to a visa delay my internship got postponed.
+During my MSc in Paris, we had an amazing course taught by Fabian Pedregosa (http://fa.bianp.net/) and Fajwel Fogel (http://www.di.ens.fr/~fogel/). In this course, we learnt how to use Python for data analysis and to evaluate our knowledge we needed to participate in a challenge with other Paris students. Together with Matthieu Mazzolini and Paul Dufosse (they are very cool guys) I chose PlumeLabs challenge where the data was the air pollution in different cities over time.</description>
+    </item>
+    
+    <item>
+      <title>After the first hackathon at the Vatican</title>
+      <link>https://konstmish.github.io/post/vatican-2018mar/</link>
+      <pubDate>Tue, 20 Mar 2018 00:00:00 -0700</pubDate>
+      
+      <guid>https://konstmish.github.io/post/vatican-2018mar/</guid>
+      <description>To begin with, the pope didn&amp;rsquo;t come to us to say &amp;ldquo;hi&amp;rdquo;. He gave a speech from a balcony instead and it was the first time he said &amp;ldquo;hackathon&amp;rdquo; in public. Moreover, it would be unfair to say that we were not welcome: the Vatican invested deeply in this event.
+The hackathon went well, although our team didn&amp;rsquo;t win anything. It was a nice experience and since I didn&amp;rsquo;t expect to win a hackathon at the first attempt, I&amp;rsquo;m pretty happy about having being there.</description>
+    </item>
+    
+    <item>
+      <title>VHacks – A hackathon at the Vatican</title>
+      <link>https://konstmish.github.io/post/vatican-2018jan/</link>
+      <pubDate>Fri, 19 Jan 2018 00:00:00 -0800</pubDate>
+      
+      <guid>https://konstmish.github.io/post/vatican-2018jan/</guid>
+      <description>I was selected to be one of 120 students invited to the Vatican to participate in a hackathon. Hackathon&amp;rsquo;s theme are (1) social inclusion, (2) interfaith dialogue and (3) migrants &amp;amp; refugees. I am no expert in religions or migrants problems, so I applied and got accepted to participate addressing the first theme.
+The even is organized by OPTIC - &amp;ldquo;an organization founded in 2012 dedicated to research and innovation regarding the ethics of new and disruptive technologies&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>INFORMS Optimization Society Conference</title>
+      <link>https://konstmish.github.io/post/informs-2018/</link>
+      <pubDate>Wed, 20 Dec 2017 00:00:00 -0800</pubDate>
+      
+      <guid>https://konstmish.github.io/post/informs-2018/</guid>
+      <description>In September Peter suggested me to take part in organizing a few sessions at INFORMS Optimization Society Conference. Since I had no idea of what it means back then, I decided to first try with just one. In addition, I could choose to invite either 3 or 4 speakers, and I decided to go for the former option. It allowed me to choose speakers carefully, but unfortunately I didn&amp;rsquo;t foresee that one of the speakers I invited may not be able to come.</description>
+    </item>
+    
+    <item>
+      <title>Visiting Cambridge</title>
+      <link>https://konstmish.github.io/post/visiting-cambridge-2017/</link>
+      <pubDate>Thu, 14 Dec 2017 00:00:00 -0800</pubDate>
+      
+      <guid>https://konstmish.github.io/post/visiting-cambridge-2017/</guid>
+      <description>I&amp;rsquo;m visiting Dr. Carola-Bibiane Schönlieb&amp;rsquo;s group at Cambridge until 9 January. I will also be here for a few more weeks in February.</description>
+    </item>
+    
+    <item>
+      <title>IEEEXtreme</title>
+      <link>https://konstmish.github.io/post/ieeextreme/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 -0700</pubDate>
+      
+      <guid>https://konstmish.github.io/post/ieeextreme/</guid>
+      <description>I teamed up with Samuel Horvath to participate in a competition called &amp;ldquo;IEEEXtreme&amp;rdquo; organized by IEEE for students worldwide. We got ranked 123 worldwide or 43 in our Region (Africa, Europe and Middle East). Unfortunately, we didn&amp;rsquo;t get in top 100, so we are not going to get T-shirts as a prize, but the competition was extremely fun and it was cool to work with Samuel in a team.
+Official results are available here: http://ieeextreme.</description>
+    </item>
+    
+  </channel>
+</rss>
