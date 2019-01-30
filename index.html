@@ -6,11 +6,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 3.0.0">
-  <meta name="generator" content="Hugo 0.50" />
-  <meta name="author" content="Konstantin Mishchenko">
+  <meta name="generator" content="Source Themes Academic 3.3.0">
+  <meta name="generator" content="Hugo 0.53" />
 
   
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Konstantin Mishchenko">
+
   
   
   
@@ -31,6 +44,12 @@
   
 
   
+
+  
+
+  
+
+  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -43,7 +62,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
 
     
@@ -93,6 +112,9 @@
   
 
   
+  <link rel="alternate" href="https://konstmish.github.io/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
+  <link rel="feed" href="https://konstmish.github.io/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
+  
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
@@ -100,19 +122,22 @@
 
   <link rel="canonical" href="https://konstmish.github.io/">
 
-  <meta property="twitter:card" content="summary_large_image">
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
   <meta property="og:url" content="https://konstmish.github.io/">
   <meta property="og:title" content="Konstantin Mishchenko">
-  <meta property="og:description" content="CS PhD student">
-  
-  
-    
-  <meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:description" content="CS PhD student"><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2017-10-07T00:00:00&#43;00:00">
+  <meta property="og:updated_time" content="2017-10-15T00:00:00&#43;03:00">
   
 
   
@@ -123,6 +148,37 @@
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
 
 <nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
   <div class="container">
@@ -141,7 +197,7 @@
 
       
       
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav mr-auto">
         
 
         
@@ -156,6 +212,25 @@
           <a class="nav-link" href="/#about" data-target="#about">
             
             <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#publications" data-target="#publications">
+            
+            <span>Publications</span>
             
           </a>
         </li>
@@ -202,10 +277,26 @@
         
 
       
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
 
         
 
         
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
       </ul>
 
     </div>
@@ -232,20 +323,29 @@
 
 
 
+
+  
+
+
+
+
+
+
+
+
+
 <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref="person-email person-address">
   <div class="col-12 col-lg-4">
     <div id="profile">
 
       
-      <img class="portrait" src="/img/photo.jpg" itemprop="image" alt="Avatar">
+      
+      <img class="portrait" src="/author/admin/avatar_hufba2f317f870ed87099ef0632e269810_238863_250x250_fill_q75_box_center.jpg" itemprop="image" alt="Avatar">
       
 
       <div class="portrait-title">
         <h2 itemprop="name">Konstantin Mishchenko</h2>
         <h3 itemprop="jobTitle">CS PhD student</h3>
-
-        
-        
 
         
         <h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
@@ -256,12 +356,14 @@
         
       </div>
 
-      <link itemprop="url" href="https://konstmish.github.io/">
+      <link itemprop="url" href="">
 
       <ul class="network-icon" aria-hidden="true">
         
         
         
+        
+          
         
         
         
@@ -269,7 +371,7 @@
         
         <li>
           <a itemprop="sameAs" href="mailto:konstantin.mishchenko@kaust.edu.sa" >
-            <i class="fa fa-envelope big-icon"></i>
+            <i class="fas fa-envelope big-icon"></i>
           </a>
         </li>
         
@@ -283,8 +385,8 @@
           
         
         <li>
-          <a itemprop="sameAs" href="//github.com/konstmish" >
-            <i class="fa fa-github big-icon"></i>
+          <a itemprop="sameAs" href="https://scholar.google.com/citations?user=Z8Y8nhQAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+            <i class="ai ai-google-scholar big-icon"></i>
           </a>
         </li>
         
@@ -295,12 +397,9 @@
   <div class="col-12 col-lg-8" itemprop="description">
 
     
+    <h1>Bio</h1>
 
-<h1 id="bio">Bio</h1>
-
-<h5 id="i-m-currently-interning-at-amazon-in-seattle">I&rsquo;m currently interning at Amazon in Seattle.</h5>
-
-<p>I&rsquo;m a PhD student under the supervision of <a href="https://www.maths.ed.ac.uk/~prichtar/">Peter Richtárik</a>, working on Optimization and its applications to Machine Learning. Prior to this, I was a research intern at Université Grenoble Alpes, where I studied an algorithm for Distributed Optimization with F. Iutzeler and J. Malick. This internship allowed me to obtain my double degree MSc diploma from École Normale Supérieure Paris-Saclay and Paris-Dauphine. I obtained my BSc from Moscow Institute of Physics and Technology, where I was having a lot of fun with quantum mechanics and various branches of classical physics. My bachelor&rsquo;s thesis, however, was devoted to statistical learning theory.</p>
+    <p>I&rsquo;m a PhD student under the supervision of <a href="https://www.maths.ed.ac.uk/~prichtar/">Peter Richtárik</a>, working on Optimization and its applications to Machine Learning. Prior to this, I was a research intern at Université Grenoble Alpes, where I studied an algorithm for Distributed Optimization with F. Iutzeler and J. Malick. This internship allowed me to obtain my double degree MSc diploma from École Normale Supérieure Paris-Saclay and Paris-Dauphine. I obtained my BSc from Moscow Institute of Physics and Technology, where I was having a lot of fun with quantum mechanics and various branches of classical physics. My bachelor&rsquo;s thesis, however, was devoted to statistical learning theory.</p>
 
 <p>My hobbies include squash, bouldering and competitive programming.</p>
 
@@ -312,9 +411,9 @@
         <h3>Interests</h3>
         <ul class="ul-interests">
           
-          <li>Stochastic and Distributed Optimization</li>
+          <li>Stochastic and Distributed Algorithms</li>
           
-          <li>Randomized Methods and Algorithms</li>
+          <li>Nonconvex Optimization</li>
           
           <li>Machine Learning</li>
           
@@ -366,9 +465,187 @@
   
   
   
+  <section id="publications" class="home-section">
+    <div class="container">
+      
+
+
+
+
+<div class="row">
+  <div class="col-12 col-lg-4 section-heading">
+    <h1>Recent Publications</h1>
+    
+    
+  </div>
+  <div class="col-12 col-lg-8">
+    
+
+    
+      
+    
+
+    
+
+    
+    
+      
+        <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0" itemprop="name">
+      <a href="/publication/99/" itemprop="url">99% of Parallel Optimization is Inevitably a Waste of Time</a>
+    </h3>
+
+    
+    
+      
+    
+    
+    <div class="article-style" itemprop="articleBody">
+      It is well known that many optimization methods, including SGD, SAGA, and Accelerated SGD for over-parameterized models, do not scale …
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+      <div itemprop="author">
+        Konstantin Mishchenko, Filip Hanzely, Peter Richtárik</div>
+    </div>
+
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+  
+    
+  
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/1901.09437.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+      
+    
+      
+        <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0" itemprop="name">
+      <a href="/publication/diana/" itemprop="url">Distributed Learning with Compressed Gradient Differences</a>
+    </h3>
+
+    
+    
+      
+    
+    
+    <div class="article-style" itemprop="articleBody">
+      Training very large machine learning models requires a distributed computing approach, with communication of the model updates often …
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+      <div itemprop="author">
+        Konstantin Mishchenko, Filip Hanzely, Peter Richtárik</div>
+    </div>
+
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+  
+    
+  
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/1901.09269.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+      
+    
+
+  </div>
+</div>
+
+    </div>
+  </section>
+  
+
+  
+  
+  
   <section id="posts" class="home-section">
     <div class="container">
       
+
+
+
+
+
+
+
 
 
 
@@ -394,25 +671,7 @@
 
     
       
-
-      
-      
-
         
-
-        
-        
-          
-        
-
-        
-        
-
-      
-      
-        
-        
-          
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
   <div class="media-body">
@@ -434,26 +693,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2018-10-26 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2018-10-26 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Oct 26, 2018</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2018-10-26 00:00:00 -0700 PDT" itemprop="datePublished">
-    <time datetime="2018-10-26 00:00:00 -0700 PDT" itemprop="dateModified">
-      Oct 26, 2018
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -477,26 +740,10 @@
   </div>
 </div>
 
-        
       
-
-      
-
-        
-
-        
-        
-          
-        
-
-        
-        
-
-      
+    
       
         
-        
-          
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
   <div class="media-body">
@@ -518,26 +765,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2018-10-21 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2018-10-21 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Oct 21, 2018</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2018-10-21 00:00:00 -0700 PDT" itemprop="datePublished">
-    <time datetime="2018-10-21 00:00:00 -0700 PDT" itemprop="dateModified">
-      Oct 21, 2018
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -561,26 +812,10 @@
   </div>
 </div>
 
-        
       
-
-      
-
-        
-
-        
-        
-          
-        
-
-        
-        
-
-      
+    
       
         
-        
-          
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
   <div class="media-body">
@@ -602,26 +837,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2018-08-30 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2018-08-30 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Aug 30, 2018</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2018-08-30 00:00:00 -0700 PDT" itemprop="datePublished">
-    <time datetime="2018-08-30 00:00:00 -0700 PDT" itemprop="dateModified">
-      Aug 30, 2018
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -645,26 +884,10 @@
   </div>
 </div>
 
-        
       
-
-      
-
-        
-
-        
-        
-          
-        
-
-        
-        
-
-      
+    
       
         
-        
-          
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
   <div class="media-body">
@@ -686,26 +909,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2018-04-19 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2018-04-19 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Apr 19, 2018</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2018-04-19 00:00:00 -0700 PDT" itemprop="datePublished">
-    <time datetime="2018-04-19 00:00:00 -0700 PDT" itemprop="dateModified">
-      Apr 19, 2018
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -729,26 +956,10 @@
   </div>
 </div>
 
-        
       
-
-      
-
-        
-
-        
-        
-          
-        
-
-        
-        
-
-      
+    
       
         
-        
-          
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
   <div class="media-body">
@@ -770,26 +981,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2018-03-20 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2018-03-20 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Mar 20, 2018</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2018-03-20 00:00:00 -0700 PDT" itemprop="datePublished">
-    <time datetime="2018-03-20 00:00:00 -0700 PDT" itemprop="dateModified">
-      Mar 20, 2018
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -812,9 +1027,6 @@
     
   </div>
 </div>
-
-        
-      
 
       
     
@@ -858,25 +1070,17 @@
       
 
       
-
-      
-
-      
-
-      
-      <li>
-        <i class="fa-li fab fa-telegram fa-2x" aria-hidden="true"></i>
-        <span><a href="https://telegram.me/konstmish" target="_blank" rel="noopener">@konstmish</a></span>
-      </li>
-      
-
-      
       <li>
         <i class="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
-        <span id="person-address" itemprop="address">Visual Computing Center, KAUST, Thuwal, 23955, Saudi Arabia</span>
+        <span id="person-address" itemprop="address">2225-WS11, Building, KAUST, 23955</span>
       </li>
       
 
+      
+
+      
+
+      
       
 
     </ul>
@@ -897,7 +1101,7 @@
   
 
   <p class="powered-by">
-    &copy; 2018 Konstantin Mishchenko &middot; 
+    &copy; 2019 Konstantin Mishchenko &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -947,10 +1151,6 @@
 
     
     
-    
-    
-    <script src="/js/mathjax-config.500a6cbb2c0f345fcecc21b3116d6637aa78f1f11db8081ea581abe05390c2e8f3bbffe61be3cf0217baf785c40efceabe51050a4f007e69af94efd3643260e8.js" integrity="sha512-UApsuywPNF/OzCGzEW1mN6p48fEduAgepYGr4FOQwujzu//mG&#43;PPAhe694XEDvzqvlEFCk8AfmmvlO/TZDJg6A=="></script>
-    
 
     
     
@@ -969,11 +1169,6 @@
 
       
       
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
-      
-    
-
-    <script src="/js/hugo-academic.js"></script>
     
 
     
@@ -996,7 +1191,7 @@
       const search_index_filename = "/index.json";
       const i18n = {
         'placeholder': "Search...",
-        'results': "Search Results",
+        'results': "results found",
         'no_results': "No results found"
       };
       const content_type = {
@@ -1012,12 +1207,42 @@
     
 
     
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
 
     
     
 
     
     
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.07fbebbbf71b021c8836e1d7ecffa489.js"></script>
 
   </body>
 </html>

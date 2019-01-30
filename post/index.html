@@ -5,11 +5,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 3.0.0">
-  <meta name="generator" content="Hugo 0.50" />
-  <meta name="author" content="Konstantin Mishchenko">
+  <meta name="generator" content="Source Themes Academic 3.3.0">
+  <meta name="generator" content="Hugo 0.53" />
 
   
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Konstantin Mishchenko">
+
   
   
   
@@ -30,6 +43,12 @@
   
 
   
+
+  
+
+  
+
+  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -42,7 +61,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
 
     
@@ -50,6 +69,13 @@
     
       
     
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
     
 
     
@@ -95,19 +121,22 @@
 
   <link rel="canonical" href="https://konstmish.github.io/post/">
 
-  <meta property="twitter:card" content="summary_large_image">
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
   <meta property="og:url" content="https://konstmish.github.io/post/">
   <meta property="og:title" content="Posts | Konstantin Mishchenko">
-  <meta property="og:description" content="CS PhD student">
-  
-  
-    
-  <meta property="og:image" content="https://konstmish.github.io/img/headers/dk.png">
+  <meta property="og:description" content="CS PhD student"><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2017-01-01T00:00:00-08:00">
+  <meta property="og:updated_time" content="2017-01-01T00:00:00&#43;03:00">
   
 
   
@@ -118,6 +147,37 @@
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
 
 <nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
   <div class="container">
@@ -136,7 +196,7 @@
 
       
       
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav mr-auto">
         
 
         
@@ -151,6 +211,25 @@
           <a class="nav-link" href="/#about">
             
             <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#publications">
+            
+            <span>Publications</span>
             
           </a>
         </li>
@@ -197,10 +276,26 @@
         
 
       
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
 
         
 
         
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
       </ul>
 
     </div>
@@ -217,15 +312,6 @@
 
 
 
-
-<div class="article-header">
-  
-  
-  <img src="/img/headers/dk.png" class="article-banner" itemprop="image" alt="">
-  
-
-  <span class="article-header-caption">Image credit: Diana Kostina.</span>
-</div>
 
 
 
@@ -254,7 +340,6 @@
   
   
     
-    
       
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
@@ -277,26 +362,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2018-10-26 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2018-10-26 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Oct 26, 2018</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2018-10-26 00:00:00 -0700 PDT" itemprop="datePublished">
-    <time datetime="2018-10-26 00:00:00 -0700 PDT" itemprop="dateModified">
-      Oct 26, 2018
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -323,7 +412,6 @@
     
   
     
-    
       
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
@@ -346,26 +434,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2018-10-21 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2018-10-21 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Oct 21, 2018</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2018-10-21 00:00:00 -0700 PDT" itemprop="datePublished">
-    <time datetime="2018-10-21 00:00:00 -0700 PDT" itemprop="dateModified">
-      Oct 21, 2018
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -392,7 +484,6 @@
     
   
     
-    
       
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
@@ -415,26 +506,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2018-08-30 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2018-08-30 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Aug 30, 2018</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2018-08-30 00:00:00 -0700 PDT" itemprop="datePublished">
-    <time datetime="2018-08-30 00:00:00 -0700 PDT" itemprop="dateModified">
-      Aug 30, 2018
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -461,7 +556,6 @@
     
   
     
-    
       
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
@@ -484,26 +578,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2018-04-19 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2018-04-19 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Apr 19, 2018</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2018-04-19 00:00:00 -0700 PDT" itemprop="datePublished">
-    <time datetime="2018-04-19 00:00:00 -0700 PDT" itemprop="dateModified">
-      Apr 19, 2018
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -530,7 +628,6 @@
     
   
     
-    
       
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
@@ -553,26 +650,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2018-03-20 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2018-03-20 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Mar 20, 2018</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2018-03-20 00:00:00 -0700 PDT" itemprop="datePublished">
-    <time datetime="2018-03-20 00:00:00 -0700 PDT" itemprop="dateModified">
-      Mar 20, 2018
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -599,7 +700,6 @@
     
   
     
-    
       
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
@@ -622,26 +722,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2018-01-19 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2018-01-19 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Jan 19, 2018</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2018-01-19 00:00:00 -0800 PST" itemprop="datePublished">
-    <time datetime="2018-01-19 00:00:00 -0800 PST" itemprop="dateModified">
-      Jan 19, 2018
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -668,7 +772,6 @@
     
   
     
-    
       
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
@@ -691,26 +794,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2017-12-20 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2017-12-20 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Dec 20, 2017</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2017-12-20 00:00:00 -0800 PST" itemprop="datePublished">
-    <time datetime="2017-12-20 00:00:00 -0800 PST" itemprop="dateModified">
-      Dec 20, 2017
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -737,7 +844,6 @@
     
   
     
-    
       
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
@@ -760,26 +866,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2017-12-14 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2017-12-14 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Dec 14, 2017</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2017-12-14 00:00:00 -0800 PST" itemprop="datePublished">
-    <time datetime="2017-12-14 00:00:00 -0800 PST" itemprop="dateModified">
-      Dec 14, 2017
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -806,7 +916,6 @@
     
   
     
-    
       
 
 <div class="media stream-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
@@ -829,26 +938,30 @@
     <div class="stream-meta">
     
 
+
+<meta content="2017-10-22 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2017-10-22 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
 <div class="article-metadata">
 
   
   
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Oct 22, 2017</time>
   </span>
   
 
-  <span class="article-date">
-    
-    <meta content="2017-10-22 00:00:00 -0700 PDT" itemprop="datePublished">
-    <time datetime="2017-10-22 00:00:00 -0700 PDT" itemprop="dateModified">
-      Oct 22, 2017
-    </time>
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
   </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Konstantin Mishchenko">
-  </span>
-
   
 
   
@@ -884,7 +997,7 @@
   
 
   <p class="powered-by">
-    &copy; 2018 Konstantin Mishchenko &middot; 
+    &copy; 2019 Konstantin Mishchenko &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -934,10 +1047,6 @@
 
     
     
-    
-    
-    <script src="/js/mathjax-config.500a6cbb2c0f345fcecc21b3116d6637aa78f1f11db8081ea581abe05390c2e8f3bbffe61be3cf0217baf785c40efceabe51050a4f007e69af94efd3643260e8.js" integrity="sha512-UApsuywPNF/OzCGzEW1mN6p48fEduAgepYGr4FOQwujzu//mG&#43;PPAhe694XEDvzqvlEFCk8AfmmvlO/TZDJg6A=="></script>
-    
 
     
     
@@ -949,14 +1058,13 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
       
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
 
       
       
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
-      
-    
-
-    <script src="/js/hugo-academic.js"></script>
     
 
     
@@ -970,6 +1078,8 @@
 
     
     
+    <script>hljs.initHighlightingOnLoad();</script>
+    
 
     
     
@@ -977,7 +1087,7 @@
       const search_index_filename = "/index.json";
       const i18n = {
         'placeholder': "Search...",
-        'results': "Search Results",
+        'results': "results found",
         'no_results': "No results found"
       };
       const content_type = {
@@ -993,12 +1103,42 @@
     
 
     
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
 
     
     
 
     
     
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.07fbebbbf71b021c8836e1d7ecffa489.js"></script>
 
   </body>
 </html>

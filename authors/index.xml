@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on Konstantin Mishchenko</title>
+    <link>https://konstmish.github.io/authors/</link>
+    <description>Recent content in Authors on Konstantin Mishchenko</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
+    
+	<atom:link href="https://konstmish.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Filip Hanzely</title>
+      <link>https://konstmish.github.io/authors/filip-hanzely/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/authors/filip-hanzely/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Konstantin Mishchenko</title>
+      <link>https://konstmish.github.io/authors/konstantin-mishchenko/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/authors/konstantin-mishchenko/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Peter Richtárik</title>
+      <link>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

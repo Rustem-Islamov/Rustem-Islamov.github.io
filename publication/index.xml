@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on Konstantin Mishchenko</title>
+    <link>https://konstmish.github.io/publication/</link>
+    <description>Recent content in Publications on Konstantin Mishchenko</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://konstmish.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>99% of Parallel Optimization is Inevitably a Waste of Time</title>
+      <link>https://konstmish.github.io/publication/99/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/99/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distributed Learning with Compressed Gradient Differences</title>
+      <link>https://konstmish.github.io/publication/diana/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/diana/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
