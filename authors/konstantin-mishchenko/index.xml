@@ -30,5 +30,32 @@
       <description></description>
     </item>
     
+    <item>
+      <title>SEGA: Variance Reduction via Gradient Sketching</title>
+      <link>https://konstmish.github.io/publication/sega/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/sega/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Distributed Flexible Delay-tolerant Proximal Gradient Algorithm</title>
+      <link>https://konstmish.github.io/publication/dave_siopt/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/dave_siopt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Delay-tolerant Proximal-Gradient Algorithm for Distributed Learning</title>
+      <link>https://konstmish.github.io/publication/dave_icml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/dave_icml/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

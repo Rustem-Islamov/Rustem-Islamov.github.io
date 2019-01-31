@@ -47,7 +47,18 @@
       <description>&lt;p&gt;In a 24 hours programming competition Alibek and I were solving tough mathematical and programming problems for the sake of fun and, &lt;em&gt;maybe&lt;/em&gt;, some prizes. Fortunately, we managed to make it to top 100, which means that we are eligible for prizes from IEEE!&lt;/p&gt;
 
 &lt;p&gt;Last year I participated in the same competition with Samuel Horvath, but back then we were only 123rd.&lt;/p&gt;
+
+&lt;p&gt;Link to the results: &lt;a href=&#34;https://ieeextreme.org/wp-content/uploads/2018/11/IEEEXtreme-12.0-Global-Ranking.pdf&#34; target=&#34;_blank&#34;&gt;https://ieeextreme.org/wp-content/uploads/2018/11/IEEEXtreme-12.0-Global-Ranking.pdf&lt;/a&gt;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>SEGA: Variance Reduction via Gradient Sketching</title>
+      <link>https://konstmish.github.io/publication/sega/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/sega/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -61,19 +72,26 @@
     </item>
     
     <item>
-      <title>I&#39;m interning at Amazon this summer</title>
+      <title>A Distributed Flexible Delay-tolerant Proximal Gradient Algorithm</title>
+      <link>https://konstmish.github.io/publication/dave_siopt/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/dave_siopt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>I&#39;m interning at Amazon August-November</title>
       <link>https://konstmish.github.io/post/amazon-2018/</link>
       <pubDate>Thu, 19 Apr 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/amazon-2018/</guid>
-      <description>&lt;p&gt;Update: due to a visa delay my internship got postponed.&lt;/p&gt;
+      <description>&lt;p&gt;During my MSc in Paris, we had an amazing course taught by Fabian Pedregosa (&lt;a href=&#34;http://fa.bianp.net/&#34; target=&#34;_blank&#34;&gt;http://fa.bianp.net/&lt;/a&gt;) and Fajwel Fogel (&lt;a href=&#34;http://www.di.ens.fr/~fogel/&#34; target=&#34;_blank&#34;&gt;http://www.di.ens.fr/~fogel/&lt;/a&gt;). In this course, we learnt how to use Python for data analysis and to evaluate our knowledge we needed to participate in a challenge with other Paris students. Together with Matthieu Mazzolini and Paul Dufosse (they are very cool guys) I chose PlumeLabs challenge where the data was the air pollution in different cities over time. Long story short, we won it, which is totally due to my teammates, I would never be able to do it alone.&lt;/p&gt;
 
-&lt;p&gt;During my MSc in Paris, we had an amazing course taught by Fabian Pedregosa (&lt;a href=&#34;http://fa.bianp.net/&#34; target=&#34;_blank&#34;&gt;http://fa.bianp.net/&lt;/a&gt;) and Fajwel Fogel (&lt;a href=&#34;http://www.di.ens.fr/~fogel/&#34; target=&#34;_blank&#34;&gt;http://www.di.ens.fr/~fogel/&lt;/a&gt;). In this course, we learnt how to use Python for data analysis and to evaluate our knowledge we needed to participate in a challenge with other Paris students. Together with Matthieu Mazzolini and Paul Dufosse (they are very cool guys) I chose PlumeLabs challenge where the data was the air pollution in different cities over time. Long story short, we won it, which is totally due to my teammates, I would never be able to do it alone.&lt;/p&gt;
+&lt;p&gt;Back then, both Fabian and Fajwel were supervised by Alexandre d&amp;rsquo;Aspremont (postdoc and PhD student respectively). And they invited another postdoc of Alexandre, Federico Vaggi, to help them with grading our final presentations. Based on our grade, I guess that we made good impression on them, and I was pretty happy about it.&lt;/p&gt;
 
-&lt;p&gt;However, that&amp;rsquo;s not the point of the story. Both Fabian and Fajwel were supervised by Alexandre d&amp;rsquo;Aspremont (postdoc and PhD student respectively). And they invited another postdoc of Alexandre, Federico Vaggi, to help them with grading our final presentations. Based on our grade, I guess that we made good impression on them, and I was pretty happy about it.&lt;/p&gt;
-
-&lt;p&gt;What is interesting is that Federico just a few weeks later was already working at Amazon. So, you may already guess the end of the story. Last Fall I wrote Federico an email and after a few interview a got accepted to intern in the same research team.
-The topic of my internship is not specified yet, but it will involve research in machine learning for problems motivated by Amazon&amp;rsquo;s needs. The coolest thing is that while the team&amp;rsquo;s work is very applied, for my internship they agree to work on quite theoretical topics, so that I would be able to use it for my PhD. Let us see what results I will have by the end of September.&lt;/p&gt;
+&lt;p&gt;What is interesting is that Federico just a few weeks later was already working at Amazon. Last Fall I wrote Federico an email and after a few interviews a got accepted to intern in the same research team.
+The topic of my internship is not specified yet, but it will involve research in machine learning for problems motivated by Amazon&amp;rsquo;s needs. The coolest thing is that while the team&amp;rsquo;s work is very applied, for my internship they agree to work on quite theoretical topics, so that I would be able to use it for my PhD. Let us see what results I will have by the end of my internship.&lt;/p&gt;
 </description>
     </item>
     
@@ -144,6 +162,15 @@ The topic of my internship is not specified yet, but it will involve research in
 &lt;p&gt;Official results are available here:
 &lt;a href=&#34;http://ieeextreme.org/files/2017/11/IEEEXtreme-11.0-Rankings-Globally.pdf&#34; target=&#34;_blank&#34;&gt;http://ieeextreme.org/files/2017/11/IEEEXtreme-11.0-Rankings-Globally.pdf&lt;/a&gt;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>A Delay-tolerant Proximal-Gradient Algorithm for Distributed Learning</title>
+      <link>https://konstmish.github.io/publication/dave_icml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/dave_icml/</guid>
+      <description></description>
     </item>
     
   </channel>
