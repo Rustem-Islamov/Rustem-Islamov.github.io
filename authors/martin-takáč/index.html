@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Training very large machine learning models requires a distributed computing approach, with communication of the model updates often being the bottleneck. For this reason, several methods based on the compression (e.g., sparsification and/or quantization) of the updates were recently proposed, including QSGD (Alistarh et al., 2017), TernGrad (Wen et al., 2017), SignSGD (Bernstein et al., 2018), and DQGD (Khirirat et al., 2018). However, none of these methods are able to learn the gradients, which means that they necessarily suffer from several issues, such as the inability to converge to the true optimum in the batch mode, inability to work with a nonsmooth regularizer, and slow convergence rates. In this work we propose a new distributed learning method---DIANA---which resolves these issues via compression of gradient differences. We perform a theoretical analysis in the strongly convex and nonconvex settings and show that our rates are vastly superior to existing rates. Our analysis of block-quantization and differences between ℓ2 and ℓ∞ quantization closes the gaps in theory and practice. Finally, by applying our analysis technique to TernGrad, we establish the first convergence rate for this method.">
+  <meta name="description" content="CS PhD student">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/diana/">
+  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/authors/martin-tak%C3%A1%C4%8D/">
 
   
 
@@ -111,15 +111,15 @@
   
 
   
-  <link rel="alternate" href="https://konstmish.github.io/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
-  <link rel="feed" href="https://konstmish.github.io/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
+  <link rel="alternate" href="https://konstmish.github.io/authors/martin-tak%C3%A1%C4%8D/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
+  <link rel="feed" href="https://konstmish.github.io/authors/martin-tak%C3%A1%C4%8D/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
   
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://konstmish.github.io/publication/diana/">
+  <link rel="canonical" href="https://konstmish.github.io/authors/martin-tak%C3%A1%C4%8D/">
 
   
   
@@ -131,21 +131,19 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
-  <meta property="og:url" content="https://konstmish.github.io/publication/diana/">
-  <meta property="og:title" content="Distributed Learning with Compressed Gradient Differences | Konstantin Mishchenko">
-  <meta property="og:description" content="Training very large machine learning models requires a distributed computing approach, with communication of the model updates often being the bottleneck. For this reason, several methods based on the compression (e.g., sparsification and/or quantization) of the updates were recently proposed, including QSGD (Alistarh et al., 2017), TernGrad (Wen et al., 2017), SignSGD (Bernstein et al., 2018), and DQGD (Khirirat et al., 2018). However, none of these methods are able to learn the gradients, which means that they necessarily suffer from several issues, such as the inability to converge to the true optimum in the batch mode, inability to work with a nonsmooth regularizer, and slow convergence rates. In this work we propose a new distributed learning method---DIANA---which resolves these issues via compression of gradient differences. We perform a theoretical analysis in the strongly convex and nonconvex settings and show that our rates are vastly superior to existing rates. Our analysis of block-quantization and differences between ℓ2 and ℓ∞ quantization closes the gaps in theory and practice. Finally, by applying our analysis technique to TernGrad, we establish the first convergence rate for this method."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://konstmish.github.io/authors/martin-tak%C3%A1%C4%8D/">
+  <meta property="og:title" content="Martin Takáč | Konstantin Mishchenko">
+  <meta property="og:description" content="CS PhD student"><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-01-29T00:00:00&#43;03:00">
-  
-  <meta property="article:modified_time" content="2019-01-29T00:00:00&#43;03:00">
+  <meta property="og:updated_time" content="2019-01-29T00:00:00&#43;03:00">
   
 
   
 
   
 
-  <title>Distributed Learning with Compressed Gradient Differences | Konstantin Mishchenko</title>
+  <title>Martin Takáč | Konstantin Mishchenko</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -300,9 +298,7 @@
   </div>
 </nav>
 
-<div class="pub" itemscope itemtype="http://schema.org/CreativeWork">
 
-  
 
 
 
@@ -319,243 +315,38 @@
 
   
   
-  
-<div class="article-container pt-3">
-  <h1 itemprop="name">Distributed Learning with Compressed Gradient Differences</h1>
-
-  
-
   
     
-
-
-<meta content="2019-01-29 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
-<meta content="2019-01-29 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
-
-<div class="article-metadata">
+  
+<div class="universal-wrapper pt-3">
+  <h1 itemprop="name">Martin Takáč</h1>
 
   
+
   
-  
-  
-  <div>
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">
-        <a href="/authors/konstantin-mishchenko/">Konstantin Mishchenko</a>
-      </span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">
-        <a href="/authors/eduard-gorbunov/">Eduard Gorbunov</a>
-      </span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">
-        <a href="/authors/martin-tak%C3%A1%C4%8D/">Martin Takáč</a>
-      </span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">
-        <a href="/authors/peter-richt%C3%A1rik/">Peter Richtárik</a>
-      </span>
-    </span>
+</div>
+
+
+
+<section id="about" class="home-section">
+  <div class="container">
     
+    
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li>
+          <a href="https://konstmish.github.io/publication/diana/">Distributed Learning with Compressed Gradient Differences</a>
+        </li>
+        
+      </ul>
+    </div>
   </div>
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>January 2019</time>
-  </span>
-  
-
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/publication/diana/#disqus_thread"></a>
-  
-
-  
-
-  
-  
-<div class="share-box" aria-hidden="true">
-  <ul class="share">
-    <li>
-      <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Distributed%20Learning%20with%20Compressed%20Gradient%20Differences&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdiana%2f"
-         target="_blank" rel="noopener">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-    <li>
-      <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdiana%2f"
-         target="_blank" rel="noopener">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-    </li>
-    <li>
-      <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdiana%2f&amp;title=Distributed%20Learning%20with%20Compressed%20Gradient%20Differences"
-         target="_blank" rel="noopener">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </li>
-    <li>
-      <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdiana%2f&amp;title=Distributed%20Learning%20with%20Compressed%20Gradient%20Differences"
-         target="_blank" rel="noopener">
-        <i class="fab fa-weibo"></i>
-      </a>
-    </li>
-    <li>
-      <a class="email"
-         href="mailto:?subject=Distributed%20Learning%20with%20Compressed%20Gradient%20Differences&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdiana%2f">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-  </ul>
-</div>
-
-
-  
-
-</div>
-
-    
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-<div class="btn-links mb-3">
-  
-  
-
-
-
-
-
-
-
-  
-    
-  
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1901.09269.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/diana/cite.bib">
-  Cite
-</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-    
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1901.09269" target="_blank" rel="noopener">
-    
-    arXiv
-  </a>
-
-
-</div>
-
-
-  
-</div>
-
-
-
-  <div class="article-container">
-
-    
-    <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">Training very large machine learning models requires a distributed computing approach, with communication of the model updates often being the bottleneck. For this reason, several methods based on the compression (e.g., sparsification and/or quantization) of the updates were recently proposed, including QSGD (Alistarh et al., 2017), TernGrad (Wen et al., 2017), SignSGD (Bernstein et al., 2018), and DQGD (Khirirat et al., 2018). However, none of these methods are able to learn the gradients, which means that they necessarily suffer from several issues, such as the inability to converge to the true optimum in the batch mode, inability to work with a nonsmooth regularizer, and slow convergence rates. In this work we propose a new distributed learning method&mdash;DIANA&mdash;which resolves these issues via compression of gradient differences. We perform a theoretical analysis in the strongly convex and nonconvex settings and show that our rates are vastly superior to existing rates. Our analysis of block-quantization and differences between ℓ2 and ℓ∞ quantization closes the gaps in theory and practice. Finally, by applying our analysis technique to TernGrad, we establish the first convergence rate for this method.</p>
-    
-
-    
-
-    
-
-    <div class="space-below"></div>
-
-    <div class="article-style"></div>
-
-    
-
-
-
-
-    
-
-
-
-
-
-
-  
-  
-    
-  
-  
-
-
-
-
-
-
-
-
-  </div>
-</div>
-
+</section>
 
 
 <div class="container">
