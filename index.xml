@@ -11,6 +11,24 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Our group photo</title>
+      <link>https://konstmish.github.io/post/2018_group/</link>
+      <pubDate>Thu, 07 Feb 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/2018_group/</guid>
+      <description>
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;featured.jpg&#34; /&gt;
+
+
+&lt;/figure&gt;
+</description>
+    </item>
+    
+    <item>
       <title>99% of Parallel Optimization is Inevitably a Waste of Time</title>
       <link>https://konstmish.github.io/publication/99/</link>
       <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
