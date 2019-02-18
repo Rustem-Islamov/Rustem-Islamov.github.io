@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://konstmish.github.io/home/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title></title>
       <link>https://konstmish.github.io/home/hero_carousel/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 +0300</pubDate>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
       
       <guid>https://konstmish.github.io/home/hero_carousel/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Academic</title>
       <link>https://konstmish.github.io/home/hero/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 +0300</pubDate>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
       
       <guid>https://konstmish.github.io/home/hero/</guid>
       <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀 Latest release   Star</description>
@@ -33,7 +33,7 @@
     <item>
       <title>Bio</title>
       <link>https://konstmish.github.io/home/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0300</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>https://konstmish.github.io/home/about/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>Recent Publications</title>
       <link>https://konstmish.github.io/home/publications/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0300</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>https://konstmish.github.io/home/publications/</guid>
       <description></description>
@@ -51,7 +51,7 @@
     <item>
       <title>Featured Talks</title>
       <link>https://konstmish.github.io/home/talks_featured/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0300</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>https://konstmish.github.io/home/talks_featured/</guid>
       <description></description>
@@ -60,7 +60,7 @@
     <item>
       <title>Recent Posts</title>
       <link>https://konstmish.github.io/home/posts/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0300</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>https://konstmish.github.io/home/posts/</guid>
       <description></description>
@@ -69,7 +69,7 @@
     <item>
       <title>Contact</title>
       <link>https://konstmish.github.io/home/contact/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0300</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>https://konstmish.github.io/home/contact/</guid>
       <description></description>
