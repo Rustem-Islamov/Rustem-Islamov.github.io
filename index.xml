@@ -11,6 +11,16 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>I am a member of the program committee for NeurIPS and UAI 2019</title>
+      <link>https://konstmish.github.io/post/19_neurips_uai/</link>
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0100</pubDate>
+      
+      <guid>https://konstmish.github.io/post/19_neurips_uai/</guid>
+      <description>&lt;p&gt;After a successful round of reviews for International Conference on Machine Learning (ICML) I was invited to serve on committee for two more important ML conferences: Conference on Neural Information Processing Systems (NeurIPS) and Uncertainty in Artificial Intelligence (UAI). The review period for UAI is from 21 March to 21 April 2019 and all paper submissions have already been done, while for NeurIPS the deadline to submit a paper is on 23 May 2019 and the review period is from 18 June to 15 July 2019.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>I&#39;m visiting Martin Jaggi from 18 February to 15 March</title>
       <link>https://konstmish.github.io/post/18_epfl/</link>
       <pubDate>Sun, 17 Feb 2019 00:00:00 +0100</pubDate>
@@ -177,16 +187,6 @@ The topic of my internship is not specified yet, but it will involve research in
       
       <guid>https://konstmish.github.io/post/informs-2018/</guid>
       <description>&lt;p&gt;In September Peter suggested me to take part in organizing a few sessions at INFORMS Optimization Society Conference. Since I had no idea of what it means back then, I decided to first try with just one. In addition, I could choose to invite either 3 or 4 speakers, and I decided to go for the former option. It allowed me to choose speakers carefully, but unfortunately I didn&amp;rsquo;t foresee that one of the speakers I invited may not be able to come. So now I am going to be a speaker there as well, which is a common phenomenon, though I rather wanted to listen than to present.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Visiting Cambridge</title>
-      <link>https://konstmish.github.io/post/visiting-cambridge-2017/</link>
-      <pubDate>Thu, 14 Dec 2017 00:00:00 +0100</pubDate>
-      
-      <guid>https://konstmish.github.io/post/visiting-cambridge-2017/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m visiting Dr. Carola-Bibiane Schönlieb&amp;rsquo;s group at Cambridge until 9 January. I will also be here for a few more weeks in February.&lt;/p&gt;
 </description>
     </item>
     
