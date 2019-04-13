@@ -7,13 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0300</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</title>
+      <link>https://konstmish.github.io/publication/quant_vr/</link>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/quant_vr/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>I am a member of the program committee for NeurIPS and UAI 2019</title>
       <link>https://konstmish.github.io/post/19_neurips_uai/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0100</pubDate>
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/19_neurips_uai/</guid>
       <description>&lt;p&gt;After a successful round of reviews for International Conference on Machine Learning (ICML) I was invited to serve on committee for two more important ML conferences: Conference on Neural Information Processing Systems (NeurIPS) and Uncertainty in Artificial Intelligence (UAI). The review period for UAI is from 21 March to 21 April 2019 and all paper submissions have already been done, while for NeurIPS the deadline to submit a paper is on 23 May 2019 and the review period is from 18 June to 15 July 2019.&lt;/p&gt;
@@ -23,7 +32,7 @@
     <item>
       <title>I&#39;m visiting Martin Jaggi from 18 February to 15 March</title>
       <link>https://konstmish.github.io/post/18_epfl/</link>
-      <pubDate>Sun, 17 Feb 2019 00:00:00 +0100</pubDate>
+      <pubDate>Sun, 17 Feb 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/18_epfl/</guid>
       <description>&lt;p&gt;There is no specific project to work on yet, but my research interests are almost a subset of what Martin and his group have worked on. I would not be surprised if it leads to more than one project and hope that this visit will not be the last one :).&lt;/p&gt;
@@ -35,7 +44,7 @@
     <item>
       <title>Our group photo</title>
       <link>https://konstmish.github.io/post/18_group/</link>
-      <pubDate>Thu, 07 Feb 2019 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 07 Feb 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/18_group/</guid>
       <description>
@@ -53,7 +62,7 @@
     <item>
       <title>99% of Parallel Optimization is Inevitably a Waste of Time</title>
       <link>https://konstmish.github.io/publication/99/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0100</pubDate>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/99/</guid>
       <description></description>
@@ -62,7 +71,7 @@
     <item>
       <title>Distributed Learning with Compressed Gradient Differences</title>
       <link>https://konstmish.github.io/publication/diana/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0100</pubDate>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/diana/</guid>
       <description></description>
@@ -71,7 +80,7 @@
     <item>
       <title>A Stochastic Penalty Model for Convex and Nonconvex Optimization with Big Constraints</title>
       <link>https://konstmish.github.io/publication/penalty/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/penalty/</guid>
       <description></description>
@@ -80,7 +89,7 @@
     <item>
       <title>I am a program committee member for ICML 2019!</title>
       <link>https://konstmish.github.io/post/icml-2019/</link>
-      <pubDate>Fri, 26 Oct 2018 00:00:00 +0200</pubDate>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/icml-2019/</guid>
       <description>&lt;p&gt;This is my first time being a reviewer for such a venue, so I hope I will not be &amp;ldquo;that stupid reviewer&amp;rdquo; :)&lt;/p&gt;
@@ -90,7 +99,7 @@
     <item>
       <title>Prize winner at IEEEXtreme</title>
       <link>https://konstmish.github.io/post/ieeextreme-2018/</link>
-      <pubDate>Sun, 21 Oct 2018 00:00:00 +0200</pubDate>
+      <pubDate>Sun, 21 Oct 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/ieeextreme-2018/</guid>
       <description>&lt;p&gt;In a 24 hours programming competition Alibek and I were solving tough mathematical and programming problems for the sake of fun and, &lt;em&gt;maybe&lt;/em&gt;, some prizes. Fortunately, we managed to make it to top 100, which means that we are eligible for prizes from IEEE!&lt;/p&gt;
@@ -113,7 +122,7 @@
     <item>
       <title>A NIPS paper got accepted!</title>
       <link>https://konstmish.github.io/post/nips-2018/</link>
-      <pubDate>Thu, 30 Aug 2018 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/nips-2018/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m happy to say that our paper &amp;ldquo;SEGA: Variance Reduction via Gradient Sketching&amp;rdquo; about variance reduction for coordinate descent methods was accepted to NIPS. In this work, we discover how coordinate descent methods can be extended to problems with non-separable regularizer. We consider minibatch, importance sampling and acceleration of the produced method. What&amp;rsquo;s more, we additionally introduced a variant with non-trivial sketches of the gradient, under maximal possible stepsizes can be larger by an arbitrary number than in classical coordinate descent methods.&lt;/p&gt;
@@ -132,7 +141,7 @@
     <item>
       <title>I&#39;m interning at Amazon August-November</title>
       <link>https://konstmish.github.io/post/amazon-2018/</link>
-      <pubDate>Thu, 19 Apr 2018 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/amazon-2018/</guid>
       <description>&lt;p&gt;During my MSc in Paris, we had an amazing course taught by Fabian Pedregosa (&lt;a href=&#34;http://fa.bianp.net/&#34; target=&#34;_blank&#34;&gt;http://fa.bianp.net/&lt;/a&gt;) and Fajwel Fogel (&lt;a href=&#34;http://www.di.ens.fr/~fogel/&#34; target=&#34;_blank&#34;&gt;http://www.di.ens.fr/~fogel/&lt;/a&gt;). In this course, we learnt how to use Python for data analysis and to evaluate our knowledge we needed to participate in a challenge with other Paris students. Together with Matthieu Mazzolini and Paul Dufosse (they are very cool guys) I chose PlumeLabs challenge where the data was the air pollution in different cities over time. Long story short, we won it, which is totally due to my teammates, I would never be able to do it alone.&lt;/p&gt;
@@ -147,7 +156,7 @@ The topic of my internship is not specified yet, but it will involve research in
     <item>
       <title>After the first hackathon at the Vatican</title>
       <link>https://konstmish.github.io/post/vatican-2018mar/</link>
-      <pubDate>Tue, 20 Mar 2018 00:00:00 +0100</pubDate>
+      <pubDate>Tue, 20 Mar 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/vatican-2018mar/</guid>
       <description>&lt;p&gt;To begin with, the pope didn&amp;rsquo;t come to us to say &amp;ldquo;hi&amp;rdquo;. He gave a speech from a balcony instead and it was the first time he said &amp;ldquo;hackathon&amp;rdquo; in public. Moreover, it would be unfair to say that we were not welcome: the Vatican invested deeply in this event.&lt;/p&gt;
@@ -168,7 +177,7 @@ The topic of my internship is not specified yet, but it will involve research in
     <item>
       <title>VHacks – A hackathon at the Vatican</title>
       <link>https://konstmish.github.io/post/vatican-2018jan/</link>
-      <pubDate>Fri, 19 Jan 2018 00:00:00 +0100</pubDate>
+      <pubDate>Fri, 19 Jan 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/vatican-2018jan/</guid>
       <description>&lt;p&gt;I was selected to be one of 120 students invited to the Vatican to participate in a hackathon. Hackathon&amp;rsquo;s theme are (1) social inclusion, (2) interfaith dialogue and (3) migrants &amp;amp; refugees. I am no expert in religions or migrants problems, so I applied and got accepted to participate addressing the first theme.&lt;/p&gt;
@@ -177,16 +186,6 @@ The topic of my internship is not specified yet, but it will involve research in
 &lt;a href=&#34;https://vhacks.org/faq/&#34; target=&#34;_blank&#34;&gt;https://vhacks.org/faq/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I don&amp;rsquo;t have a good hackathon participations record, but I believe it will be amazing :) It is especially nice to represent KAUST in such an event.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>INFORMS Optimization Society Conference</title>
-      <link>https://konstmish.github.io/post/informs-2018/</link>
-      <pubDate>Wed, 20 Dec 2017 00:00:00 +0100</pubDate>
-      
-      <guid>https://konstmish.github.io/post/informs-2018/</guid>
-      <description>&lt;p&gt;In September Peter suggested me to take part in organizing a few sessions at INFORMS Optimization Society Conference. Since I had no idea of what it means back then, I decided to first try with just one. In addition, I could choose to invite either 3 or 4 speakers, and I decided to go for the former option. It allowed me to choose speakers carefully, but unfortunately I didn&amp;rsquo;t foresee that one of the speakers I invited may not be able to come. So now I am going to be a speaker there as well, which is a common phenomenon, though I rather wanted to listen than to present.&lt;/p&gt;
 </description>
     </item>
     

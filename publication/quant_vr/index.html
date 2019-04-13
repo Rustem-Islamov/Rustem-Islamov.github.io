@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="CS PhD student">
+  <meta name="description" content="We consider distributed optimization where the objective function is spread among different devices, each sending incremental model updates to a central server. To alleviate the communication bottleneck, recent work proposed various schemes to compress (e.g. quantize or sparsify) the gradients, thereby introducing additional variance $ \omega\ge $ 1 that might slow down convergence. For strongly convex functions with condition number kappa distributed among $n$ machines, we (i) give a scheme that converges in $O((\kappa&#43;\kappa \omega / n&#43;\omega) \log(1/\epsilon))$ steps to a neighborhood of the optimal solution. For objective functions with a finite-sum structure, each worker having less than m components, we (ii) present novel variance reduced schemes that converge in $O((\kappa&#43;\kappa \omega / n&#43;\omega&#43;m)log(1/\epsilon))$ steps to arbitrary accuracy $\epsilon&gt;0$.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/authors/peter-richt%C3%A1rik/">
+  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/quant_vr/">
 
   
 
@@ -111,15 +111,15 @@
   
 
   
-  <link rel="alternate" href="https://konstmish.github.io/authors/peter-richt%C3%A1rik/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
-  <link rel="feed" href="https://konstmish.github.io/authors/peter-richt%C3%A1rik/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
+  <link rel="alternate" href="https://konstmish.github.io/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
+  <link rel="feed" href="https://konstmish.github.io/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
   
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://konstmish.github.io/authors/peter-richt%C3%A1rik/">
+  <link rel="canonical" href="https://konstmish.github.io/publication/quant_vr/">
 
   
   
@@ -131,19 +131,21 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
-  <meta property="og:url" content="https://konstmish.github.io/authors/peter-richt%C3%A1rik/">
-  <meta property="og:title" content="Peter Richtárik | Konstantin Mishchenko">
-  <meta property="og:description" content="CS PhD student"><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://konstmish.github.io/publication/quant_vr/">
+  <meta property="og:title" content="Stochastic Distributed Learning with Gradient Quantization and Variance Reduction | Konstantin Mishchenko">
+  <meta property="og:description" content="We consider distributed optimization where the objective function is spread among different devices, each sending incremental model updates to a central server. To alleviate the communication bottleneck, recent work proposed various schemes to compress (e.g. quantize or sparsify) the gradients, thereby introducing additional variance $ \omega\ge $ 1 that might slow down convergence. For strongly convex functions with condition number kappa distributed among $n$ machines, we (i) give a scheme that converges in $O((\kappa&#43;\kappa \omega / n&#43;\omega) \log(1/\epsilon))$ steps to a neighborhood of the optimal solution. For objective functions with a finite-sum structure, each worker having less than m components, we (ii) present novel variance reduced schemes that converge in $O((\kappa&#43;\kappa \omega / n&#43;\omega&#43;m)log(1/\epsilon))$ steps to arbitrary accuracy $\epsilon&gt;0$."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2019-04-11T00:00:00&#43;03:00">
+  <meta property="article:published_time" content="2019-04-11T00:00:00&#43;03:00">
+  
+  <meta property="article:modified_time" content="2019-04-11T00:00:00&#43;03:00">
   
 
   
 
   
 
-  <title>Peter Richtárik | Konstantin Mishchenko</title>
+  <title>Stochastic Distributed Learning with Gradient Quantization and Variance Reduction | Konstantin Mishchenko</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -317,7 +319,9 @@
   </div>
 </nav>
 
+<div class="pub" itemscope itemtype="http://schema.org/CreativeWork">
 
+  
 
 
 
@@ -331,53 +335,251 @@
 
 
   
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</h1>
+
+  
+
+  
+    
+
+
+<meta content="2019-04-11 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2019-04-11 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/samuel-horv%C3%A1th/">Samuel Horváth</a>
+      </span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/dmitry-kovalev/">Dmitry Kovalev</a>
+      </span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/konstantin-mishchenko/">Konstantin Mishchenko</a>
+      </span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/sebastian-stich/">Sebastian Stich</a>
+      </span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/peter-richt%C3%A1rik/">Peter Richtárik</a>
+      </span>
+    </span>
+    
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>April 2019</time>
+  </span>
+  
+
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/publication/quant_vr/#disqus_thread"></a>
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Stochastic%20Distributed%20Learning%20with%20Gradient%20Quantization%20and%20Variance%20Reduction&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fquant_vr%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2fquant_vr%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fquant_vr%2f&amp;title=Stochastic%20Distributed%20Learning%20with%20Gradient%20Quantization%20and%20Variance%20Reduction"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fquant_vr%2f&amp;title=Stochastic%20Distributed%20Learning%20with%20Gradient%20Quantization%20and%20Variance%20Reduction"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Stochastic%20Distributed%20Learning%20with%20Gradient%20Quantization%20and%20Variance%20Reduction&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2fquant_vr%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1904.05115.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
+        data-filename="/publication/quant_vr/cite.bib">
+  Cite
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
   
   
     
   
-<div class="universal-wrapper pt-3">
-  <h1 itemprop="name">Peter Richtárik</h1>
-
   
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1904.05115" target="_blank" rel="noopener">
+    
+    arXiv
+  </a>
+
+
+</div>
+
 
   
 </div>
 
 
 
-<section id="about" class="home-section">
-  <div class="container">
+  <div class="article-container">
+
     
+    <h3>Abstract</h3>
+    <p class="pub-abstract" itemprop="text">We consider distributed optimization where the objective function is spread among different devices, each sending incremental model updates to a central server. To alleviate the communication bottleneck, recent work proposed various schemes to compress (e.g. quantize or sparsify) the gradients, thereby introducing additional variance $ \omega\ge $ 1 that might slow down convergence. For strongly convex functions with condition number kappa distributed among $n$ machines, we (i) give a scheme that converges in $O((\kappa+\kappa \omega / n+\omega) \log(1/\epsilon))$ steps to a neighborhood of the optimal solution. For objective functions with a finite-sum structure, each worker having less than m components, we (ii) present novel variance reduced schemes that converge in $O((\kappa+\kappa \omega / n+\omega+m)log(1/\epsilon))$ steps to arbitrary accuracy $\epsilon&gt;0$.</p>
     
+
     
+
     
-    <div class="article-widget">
-      <div class="hr-light"></div>
-      <h3>Related</h3>
-      <ul>
-        
-        <li>
-          <a href="https://konstmish.github.io/publication/quant_vr/">Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</a>
-        </li>
-        
-        <li>
-          <a href="https://konstmish.github.io/publication/99/">99% of Parallel Optimization is Inevitably a Waste of Time</a>
-        </li>
-        
-        <li>
-          <a href="https://konstmish.github.io/publication/diana/">Distributed Learning with Compressed Gradient Differences</a>
-        </li>
-        
-        <li>
-          <a href="https://konstmish.github.io/publication/penalty/">A Stochastic Penalty Model for Convex and Nonconvex Optimization with Big Constraints</a>
-        </li>
-        
-      </ul>
-    </div>
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
   </div>
-</section>
+</div>
+
 
 
 <div class="container">
