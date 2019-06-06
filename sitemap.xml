@@ -4,6 +4,38 @@
     
     <url>
     
+      <loc>https://konstmish.github.io/publication/miso/</loc>
+      <lastmod>2019-06-04T00:00:00+03:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/publication/dave_qn/</loc>
+      <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/publication/stoch_decoupling/</loc>
+      <lastmod>2019-05-27T00:00:00+03:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/publication/extra_vi/</loc>
+      <lastmod>2019-05-27T00:00:00+03:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://konstmish.github.io/publication/quant_vr/</loc>
       <lastmod>2019-04-11T00:00:00+03:00</lastmod>
     </url>
@@ -195,6 +227,24 @@
     
     <url>
     
+      <loc>https://konstmish.github.io/authors/alibek-sailanbayev/</loc>
+      <lastmod>2019-06-04T00:00:00+03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/authors/aryan-mokhtari/</loc>
+      <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://konstmish.github.io/author/</loc>
       <priority>0</priority>
     </url>
@@ -204,6 +254,7 @@
     <url>
     
       <loc>https://konstmish.github.io/authors/</loc>
+      <lastmod>2019-06-04T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -220,7 +271,7 @@
     <url>
     
       <loc>https://konstmish.github.io/authors/dmitry-kovalev/</loc>
-      <lastmod>2019-04-11T00:00:00+03:00</lastmod>
+      <lastmod>2019-05-27T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -230,6 +281,15 @@
     
       <loc>https://konstmish.github.io/authors/eduard-gorbunov/</loc>
       <lastmod>2019-01-29T00:00:00+03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/authors/egor-shulgin/</loc>
+      <lastmod>2019-05-27T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -274,7 +334,7 @@
     <url>
     
       <loc>https://konstmish.github.io/authors/konstantin-mishchenko/</loc>
-      <lastmod>2019-04-11T00:00:00+03:00</lastmod>
+      <lastmod>2019-06-04T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -291,7 +351,25 @@
     
     <url>
     
+      <loc>https://konstmish.github.io/authors/maryam-mehri-dehnavi/</loc>
+      <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://konstmish.github.io/authors/massih-reza-amini/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/authors/mert-gurbuzbalaban/</loc>
+      <lastmod>2019-06-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -309,7 +387,7 @@
     <url>
     
       <loc>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</loc>
-      <lastmod>2019-04-11T00:00:00+03:00</lastmod>
+      <lastmod>2019-06-04T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -319,6 +397,15 @@
     
       <loc>https://konstmish.github.io/publication_types/</loc>
       <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/authors/saeed-soori/</loc>
+      <lastmod>2019-06-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -345,6 +432,24 @@
     <url>
     
       <loc>https://konstmish.github.io/tags/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/authors/xun-qian/</loc>
+      <lastmod>2019-06-04T00:00:00+03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/authors/yura-malitsky/</loc>
+      <lastmod>2019-05-27T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     

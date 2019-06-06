@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 04 Jun 2019 00:00:00 +0300</lastBuildDate>
     
 	<atom:link href="https://konstmish.github.io/authors/peter-richt%C3%A1rik/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MISO is Making a Comeback With Better Proofs and Rates</title>
+      <link>https://konstmish.github.io/publication/miso/</link>
+      <pubDate>Tue, 04 Jun 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/miso/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Stochastic Decoupling Method for Minimizing the Sum of Smooth and Non-Smooth Functions</title>
+      <link>https://konstmish.github.io/publication/stoch_decoupling/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/stoch_decoupling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Revisiting Stochastic Extragradient</title>
+      <link>https://konstmish.github.io/publication/extra_vi/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/extra_vi/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</title>
@@ -22,7 +49,7 @@
     </item>
     
     <item>
-      <title>99% of Parallel Optimization is Inevitably a Waste of Time</title>
+      <title>99% of Distributed Optimization is a Waste of Time: The Issue and How to Fix it</title>
       <link>https://konstmish.github.io/publication/99/</link>
       <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
       

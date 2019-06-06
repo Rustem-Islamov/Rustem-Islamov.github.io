@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Many popular distributed optimization methods for training machine learning models fit the following template: a local gradient estimate is computed independently by each worker, then communicated to a master, which subsequently performs averaging. The average is broadcast back to the workers, which use it to perform a gradient-type step to update the local version of the model. It is also well known that many such methods, including SGD, SAGA, and accelerated SGD for over-parameterized models, do not scale well with the number of parallel workers. In this paper we observe that the above template is fundamentally inefficient in that too much data is unnecessarily communicated by the workers, which slows down the overall system. We propose a fix based on a new update-sparsification method we develop in this work, which we suggest be used on top of existing methods. Namely, we develop a new variant of parallel block coordinate descent based on independent sparsification of the local gradient estimates before communication. We demonstrate that with only m/n blocks sent by each of n workers, where m is the total number of parameter blocks, the theoretical iteration complexity of the underlying distributed methods is essentially unaffected. As an illustration, this means that when n=100 parallel workers are used, the communication of 99% blocks is redundant, and hence a waste of time. Our theoretical claims are supported through extensive numerical experiments which demonstrate an almost perfect match with our theory on a number of synthetic and real datasets.">
+  <meta name="description" content="CS PhD candidate">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/99/">
+  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/authors/mert-gurbuzbalaban/">
 
   
 
@@ -111,15 +111,15 @@
   
 
   
-  <link rel="alternate" href="https://konstmish.github.io/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
-  <link rel="feed" href="https://konstmish.github.io/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
+  <link rel="alternate" href="https://konstmish.github.io/authors/mert-gurbuzbalaban/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
+  <link rel="feed" href="https://konstmish.github.io/authors/mert-gurbuzbalaban/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
   
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://konstmish.github.io/publication/99/">
+  <link rel="canonical" href="https://konstmish.github.io/authors/mert-gurbuzbalaban/">
 
   
   
@@ -131,21 +131,19 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
-  <meta property="og:url" content="https://konstmish.github.io/publication/99/">
-  <meta property="og:title" content="99% of Distributed Optimization is a Waste of Time: The Issue and How to Fix it | Konstantin Mishchenko">
-  <meta property="og:description" content="Many popular distributed optimization methods for training machine learning models fit the following template: a local gradient estimate is computed independently by each worker, then communicated to a master, which subsequently performs averaging. The average is broadcast back to the workers, which use it to perform a gradient-type step to update the local version of the model. It is also well known that many such methods, including SGD, SAGA, and accelerated SGD for over-parameterized models, do not scale well with the number of parallel workers. In this paper we observe that the above template is fundamentally inefficient in that too much data is unnecessarily communicated by the workers, which slows down the overall system. We propose a fix based on a new update-sparsification method we develop in this work, which we suggest be used on top of existing methods. Namely, we develop a new variant of parallel block coordinate descent based on independent sparsification of the local gradient estimates before communication. We demonstrate that with only m/n blocks sent by each of n workers, where m is the total number of parameter blocks, the theoretical iteration complexity of the underlying distributed methods is essentially unaffected. As an illustration, this means that when n=100 parallel workers are used, the communication of 99% blocks is redundant, and hence a waste of time. Our theoretical claims are supported through extensive numerical experiments which demonstrate an almost perfect match with our theory on a number of synthetic and real datasets."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://konstmish.github.io/authors/mert-gurbuzbalaban/">
+  <meta property="og:title" content="Mert Gurbuzbalaban | Konstantin Mishchenko">
+  <meta property="og:description" content="CS PhD candidate"><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-01-29T00:00:00&#43;03:00">
-  
-  <meta property="article:modified_time" content="2019-01-29T00:00:00&#43;03:00">
+  <meta property="og:updated_time" content="2019-06-03T00:00:00&#43;00:00">
   
 
   
 
   
 
-  <title>99% of Distributed Optimization is a Waste of Time: The Issue and How to Fix it | Konstantin Mishchenko</title>
+  <title>Mert Gurbuzbalaban | Konstantin Mishchenko</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -319,9 +317,7 @@
   </div>
 </nav>
 
-<div class="pub" itemscope itemtype="http://schema.org/CreativeWork">
 
-  
 
 
 
@@ -338,238 +334,38 @@
 
   
   
-  
-<div class="article-container pt-3">
-  <h1 itemprop="name">99% of Distributed Optimization is a Waste of Time: The Issue and How to Fix it</h1>
-
-  
-
   
     
-
-
-<meta content="2019-01-29 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
-<meta content="2019-01-29 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
-
-<div class="article-metadata">
+  
+<div class="universal-wrapper pt-3">
+  <h1 itemprop="name">Mert Gurbuzbalaban</h1>
 
   
+
   
-  
-  
-  <div>
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">
-        <a href="/authors/konstantin-mishchenko/">Konstantin Mishchenko</a>
-      </span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">
-        <a href="/authors/filip-hanzely/">Filip Hanzely</a>
-      </span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">
-        <a href="/authors/peter-richt%C3%A1rik/">Peter Richtárik</a>
-      </span>
-    </span>
+</div>
+
+
+
+<section id="about" class="home-section">
+  <div class="container">
     
+    
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li>
+          <a href="https://konstmish.github.io/publication/dave_qn/">DAve-QN: A Distributed Averaged Quasi-Newton Method with Local Superlinear Convergence Rate</a>
+        </li>
+        
+      </ul>
+    </div>
   </div>
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>January 2019</time>
-  </span>
-  
-
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/publication/99/#disqus_thread"></a>
-  
-
-  
-
-  
-  
-<div class="share-box" aria-hidden="true">
-  <ul class="share">
-    <li>
-      <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=99%25%20of%20Distributed%20Optimization%20is%20a%20Waste%20of%20Time%3a%20The%20Issue%20and%20How%20to%20Fix%20it&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f99%2f"
-         target="_blank" rel="noopener">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-    <li>
-      <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2f99%2f"
-         target="_blank" rel="noopener">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-    </li>
-    <li>
-      <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f99%2f&amp;title=99%25%20of%20Distributed%20Optimization%20is%20a%20Waste%20of%20Time%3a%20The%20Issue%20and%20How%20to%20Fix%20it"
-         target="_blank" rel="noopener">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </li>
-    <li>
-      <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f99%2f&amp;title=99%25%20of%20Distributed%20Optimization%20is%20a%20Waste%20of%20Time%3a%20The%20Issue%20and%20How%20to%20Fix%20it"
-         target="_blank" rel="noopener">
-        <i class="fab fa-weibo"></i>
-      </a>
-    </li>
-    <li>
-      <a class="email"
-         href="mailto:?subject=99%25%20of%20Distributed%20Optimization%20is%20a%20Waste%20of%20Time%3a%20The%20Issue%20and%20How%20to%20Fix%20it&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2f99%2f">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-  </ul>
-</div>
-
-
-  
-
-</div>
-
-    
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-<div class="btn-links mb-3">
-  
-  
-
-
-
-
-
-
-
-  
-    
-  
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1901.09437.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/99/cite.bib">
-  Cite
-</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-    
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1901.09437" target="_blank" rel="noopener">
-    
-    arXiv
-  </a>
-
-
-</div>
-
-
-  
-</div>
-
-
-
-  <div class="article-container">
-
-    
-    <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">Many popular distributed optimization methods for training machine learning models fit the following template: a local gradient estimate is computed independently by each worker, then communicated to a master, which subsequently performs averaging. The average is broadcast back to the workers, which use it to perform a gradient-type step to update the local version of the model. It is also well known that many such methods, including SGD, SAGA, and accelerated SGD for over-parameterized models, do not scale well with the number of parallel workers. In this paper we observe that the above template is fundamentally inefficient in that too much data is unnecessarily communicated by the workers, which slows down the overall system. We propose a fix based on a new update-sparsification method we develop in this work, which we suggest be used on top of existing methods. Namely, we develop a new variant of parallel block coordinate descent based on independent sparsification of the local gradient estimates before communication. We demonstrate that with only m/n blocks sent by each of n workers, where m is the total number of parameter blocks, the theoretical iteration complexity of the underlying distributed methods is essentially unaffected. As an illustration, this means that when n=100 parallel workers are used, the communication of 99% blocks is redundant, and hence a waste of time. Our theoretical claims are supported through extensive numerical experiments which demonstrate an almost perfect match with our theory on a number of synthetic and real datasets.</p>
-    
-
-    
-
-    
-
-    <div class="space-below"></div>
-
-    <div class="article-style"></div>
-
-    
-
-
-
-
-    
-
-
-
-
-
-
-  
-  
-    
-  
-  
-
-
-
-
-
-
-
-
-  </div>
-</div>
-
+</section>
 
 
 <div class="container">

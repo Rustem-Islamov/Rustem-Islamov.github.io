@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Many popular distributed optimization methods for training machine learning models fit the following template: a local gradient estimate is computed independently by each worker, then communicated to a master, which subsequently performs averaging. The average is broadcast back to the workers, which use it to perform a gradient-type step to update the local version of the model. It is also well known that many such methods, including SGD, SAGA, and accelerated SGD for over-parameterized models, do not scale well with the number of parallel workers. In this paper we observe that the above template is fundamentally inefficient in that too much data is unnecessarily communicated by the workers, which slows down the overall system. We propose a fix based on a new update-sparsification method we develop in this work, which we suggest be used on top of existing methods. Namely, we develop a new variant of parallel block coordinate descent based on independent sparsification of the local gradient estimates before communication. We demonstrate that with only m/n blocks sent by each of n workers, where m is the total number of parameter blocks, the theoretical iteration complexity of the underlying distributed methods is essentially unaffected. As an illustration, this means that when n=100 parallel workers are used, the communication of 99% blocks is redundant, and hence a waste of time. Our theoretical claims are supported through extensive numerical experiments which demonstrate an almost perfect match with our theory on a number of synthetic and real datasets.">
+  <meta name="description" content="We consider the problem of minimizing the sum of three convex functions: i) a smooth function $f$ in the form of an expectation or a finite average, ii) a non-smooth function $g$ in the form of a finite average of proximable functions $g_j$, and iii) a proximable regularizer $R$. We design a variance reduced method which is able progressively  learn the proximal operator of $g$ via the computation of the proximal operator of a single randomly selected function $g_j$ in each iteration only. Our method can provably and efficiently accommodate many strategies for the estimation of the gradient of $f$, including via standard and variance-reduced stochastic estimation, effectively decoupling the smooth part of the problem from the non-smooth part. We prove a number of iteration complexity results, including a general $O(rac{1}{t})$ rate, $O(rac{1}{t^2})$ rate in the case of strongly convex $f$, and several linear rates in special cases, including accelerated linear rate. For example, our method achieves a linear rate for the problem of minimizing a strongly convex function $f$ under linear constraints under no assumption on the constraints beyond consistency. When combined with SGD or SAGA estimators for the gradient of $f$, this  leads to  a very efficient method for empirical risk minimization with large linear constraints.  Our method generalizes several existing algorithms, including forward-backward splitting, Douglas-Rachford splitting, proximal SGD, proximal SAGA, SDCA, randomized Kaczmarz and Point-SAGA. However, our method leads to many new specific methods in special cases; for instance,  we obtain the first randomized variant of the Dykstra&#39;s method for projection onto the intersection of closed convex sets. ">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/99/">
+  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/stoch_decoupling/">
 
   
 
@@ -119,7 +119,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://konstmish.github.io/publication/99/">
+  <link rel="canonical" href="https://konstmish.github.io/publication/stoch_decoupling/">
 
   
   
@@ -131,21 +131,21 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
-  <meta property="og:url" content="https://konstmish.github.io/publication/99/">
-  <meta property="og:title" content="99% of Distributed Optimization is a Waste of Time: The Issue and How to Fix it | Konstantin Mishchenko">
-  <meta property="og:description" content="Many popular distributed optimization methods for training machine learning models fit the following template: a local gradient estimate is computed independently by each worker, then communicated to a master, which subsequently performs averaging. The average is broadcast back to the workers, which use it to perform a gradient-type step to update the local version of the model. It is also well known that many such methods, including SGD, SAGA, and accelerated SGD for over-parameterized models, do not scale well with the number of parallel workers. In this paper we observe that the above template is fundamentally inefficient in that too much data is unnecessarily communicated by the workers, which slows down the overall system. We propose a fix based on a new update-sparsification method we develop in this work, which we suggest be used on top of existing methods. Namely, we develop a new variant of parallel block coordinate descent based on independent sparsification of the local gradient estimates before communication. We demonstrate that with only m/n blocks sent by each of n workers, where m is the total number of parameter blocks, the theoretical iteration complexity of the underlying distributed methods is essentially unaffected. As an illustration, this means that when n=100 parallel workers are used, the communication of 99% blocks is redundant, and hence a waste of time. Our theoretical claims are supported through extensive numerical experiments which demonstrate an almost perfect match with our theory on a number of synthetic and real datasets."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://konstmish.github.io/publication/stoch_decoupling/">
+  <meta property="og:title" content="A Stochastic Decoupling Method for Minimizing the Sum of Smooth and Non-Smooth Functions | Konstantin Mishchenko">
+  <meta property="og:description" content="We consider the problem of minimizing the sum of three convex functions: i) a smooth function $f$ in the form of an expectation or a finite average, ii) a non-smooth function $g$ in the form of a finite average of proximable functions $g_j$, and iii) a proximable regularizer $R$. We design a variance reduced method which is able progressively  learn the proximal operator of $g$ via the computation of the proximal operator of a single randomly selected function $g_j$ in each iteration only. Our method can provably and efficiently accommodate many strategies for the estimation of the gradient of $f$, including via standard and variance-reduced stochastic estimation, effectively decoupling the smooth part of the problem from the non-smooth part. We prove a number of iteration complexity results, including a general $O(rac{1}{t})$ rate, $O(rac{1}{t^2})$ rate in the case of strongly convex $f$, and several linear rates in special cases, including accelerated linear rate. For example, our method achieves a linear rate for the problem of minimizing a strongly convex function $f$ under linear constraints under no assumption on the constraints beyond consistency. When combined with SGD or SAGA estimators for the gradient of $f$, this  leads to  a very efficient method for empirical risk minimization with large linear constraints.  Our method generalizes several existing algorithms, including forward-backward splitting, Douglas-Rachford splitting, proximal SGD, proximal SAGA, SDCA, randomized Kaczmarz and Point-SAGA. However, our method leads to many new specific methods in special cases; for instance,  we obtain the first randomized variant of the Dykstra&#39;s method for projection onto the intersection of closed convex sets. "><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-01-29T00:00:00&#43;03:00">
+  <meta property="article:published_time" content="2019-05-27T00:00:00&#43;03:00">
   
-  <meta property="article:modified_time" content="2019-01-29T00:00:00&#43;03:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-27T00:00:00&#43;03:00">
   
 
   
 
-  <title>99% of Distributed Optimization is a Waste of Time: The Issue and How to Fix it | Konstantin Mishchenko</title>
+  
+
+  <title>A Stochastic Decoupling Method for Minimizing the Sum of Smooth and Non-Smooth Functions | Konstantin Mishchenko</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -340,7 +340,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">99% of Distributed Optimization is a Waste of Time: The Issue and How to Fix it</h1>
+  <h1 itemprop="name">A Stochastic Decoupling Method for Minimizing the Sum of Smooth and Non-Smooth Functions</h1>
 
   
 
@@ -348,8 +348,8 @@
     
 
 
-<meta content="2019-01-29 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
-<meta content="2019-01-29 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+<meta content="2019-05-27 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2019-05-27 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -361,11 +361,6 @@
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
         <a href="/authors/konstantin-mishchenko/">Konstantin Mishchenko</a>
-      </span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">
-        <a href="/authors/filip-hanzely/">Filip Hanzely</a>
       </span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
@@ -384,7 +379,7 @@
     
       
     
-    <time>January 2019</time>
+    <time>May 2019</time>
   </span>
   
 
@@ -393,7 +388,7 @@
   
   
   <span class="middot-divider"></span>
-  <a href="/publication/99/#disqus_thread"></a>
+  <a href="/publication/stoch_decoupling/#disqus_thread"></a>
   
 
   
@@ -404,35 +399,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=99%25%20of%20Distributed%20Optimization%20is%20a%20Waste%20of%20Time%3a%20The%20Issue%20and%20How%20to%20Fix%20it&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f99%2f"
+         href="https://twitter.com/intent/tweet?text=A%20Stochastic%20Decoupling%20Method%20for%20Minimizing%20the%20Sum%20of%20Smooth%20and%20Non-Smooth%20Functions&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fstoch_decoupling%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2f99%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2fstoch_decoupling%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f99%2f&amp;title=99%25%20of%20Distributed%20Optimization%20is%20a%20Waste%20of%20Time%3a%20The%20Issue%20and%20How%20to%20Fix%20it"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fstoch_decoupling%2f&amp;title=A%20Stochastic%20Decoupling%20Method%20for%20Minimizing%20the%20Sum%20of%20Smooth%20and%20Non-Smooth%20Functions"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f99%2f&amp;title=99%25%20of%20Distributed%20Optimization%20is%20a%20Waste%20of%20Time%3a%20The%20Issue%20and%20How%20to%20Fix%20it"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fstoch_decoupling%2f&amp;title=A%20Stochastic%20Decoupling%20Method%20for%20Minimizing%20the%20Sum%20of%20Smooth%20and%20Non-Smooth%20Functions"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=99%25%20of%20Distributed%20Optimization%20is%20a%20Waste%20of%20Time%3a%20The%20Issue%20and%20How%20to%20Fix%20it&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2f99%2f">
+         href="mailto:?subject=A%20Stochastic%20Decoupling%20Method%20for%20Minimizing%20the%20Sum%20of%20Smooth%20and%20Non-Smooth%20Functions&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2fstoch_decoupling%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -478,14 +473,14 @@
   
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1901.09437.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1905.11535.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/99/cite.bib">
+        data-filename="/publication/stoch_decoupling/cite.bib">
   Cite
 </button>
 
@@ -513,7 +508,7 @@
   
     
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1901.09437" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1905.11535" target="_blank" rel="noopener">
     
     arXiv
   </a>
@@ -531,7 +526,7 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">Many popular distributed optimization methods for training machine learning models fit the following template: a local gradient estimate is computed independently by each worker, then communicated to a master, which subsequently performs averaging. The average is broadcast back to the workers, which use it to perform a gradient-type step to update the local version of the model. It is also well known that many such methods, including SGD, SAGA, and accelerated SGD for over-parameterized models, do not scale well with the number of parallel workers. In this paper we observe that the above template is fundamentally inefficient in that too much data is unnecessarily communicated by the workers, which slows down the overall system. We propose a fix based on a new update-sparsification method we develop in this work, which we suggest be used on top of existing methods. Namely, we develop a new variant of parallel block coordinate descent based on independent sparsification of the local gradient estimates before communication. We demonstrate that with only m/n blocks sent by each of n workers, where m is the total number of parameter blocks, the theoretical iteration complexity of the underlying distributed methods is essentially unaffected. As an illustration, this means that when n=100 parallel workers are used, the communication of 99% blocks is redundant, and hence a waste of time. Our theoretical claims are supported through extensive numerical experiments which demonstrate an almost perfect match with our theory on a number of synthetic and real datasets.</p>
+    <p class="pub-abstract" itemprop="text">We consider the problem of minimizing the sum of three convex functions: i) a smooth function $f$ in the form of an expectation or a finite average, ii) a non-smooth function $g$ in the form of a finite average of proximable functions $g_j$, and iii) a proximable regularizer $R$. We design a variance reduced method which is able progressively  learn the proximal operator of $g$ via the computation of the proximal operator of a single randomly selected function $g_j$ in each iteration only. Our method can provably and efficiently accommodate many strategies for the estimation of the gradient of $f$, including via standard and variance-reduced stochastic estimation, effectively decoupling the smooth part of the problem from the non-smooth part. We prove a number of iteration complexity results, including a general $O(rac{1}{t})$ rate, $O(rac{1}{t^2})$ rate in the case of strongly convex $f$, and several linear rates in special cases, including accelerated linear rate. For example, our method achieves a linear rate for the problem of minimizing a strongly convex function $f$ under linear constraints under no assumption on the constraints beyond consistency. When combined with SGD or SAGA estimators for the gradient of $f$, this  leads to  a very efficient method for empirical risk minimization with large linear constraints.  Our method generalizes several existing algorithms, including forward-backward splitting, Douglas-Rachford splitting, proximal SGD, proximal SAGA, SDCA, randomized Kaczmarz and Point-SAGA. However, our method leads to many new specific methods in special cases; for instance,  we obtain the first randomized variant of the Dykstra&rsquo;s method for projection onto the intersection of closed convex sets.</p>
     
 
     
