@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="CS PhD candidate">
+  <meta name="description" content="When forecasting time series with a hierarchical structure, the existing state of the art is to forecast each time series independently, and, in a post-treatment step, to reconcile the time series in a way that respects the hierarchy (Hyndman et al., 2011; Wickramasuriya et al., 2018). We propose a new loss function that can be incorporated into any maximum likelihood objective with hierarchical data, resulting in reconciled estimates with confidence intervals that correctly account for additional uncertainty due to imperfect reconciliation. We evaluate our method using a non-linear model and synthetic data on a counterfactual forecasting problem, where we have access to the ground truth and contemporaneous covariates, and show that we largely improve over the existing state-of-the-art method.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/authors/sebastian-stich/">
+  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/time_series/">
 
   
 
@@ -111,15 +111,15 @@
   
 
   
-  <link rel="alternate" href="https://konstmish.github.io/authors/sebastian-stich/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
-  <link rel="feed" href="https://konstmish.github.io/authors/sebastian-stich/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
+  <link rel="alternate" href="https://konstmish.github.io/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
+  <link rel="feed" href="https://konstmish.github.io/index.xml" type="application/rss+xml" title="Konstantin Mishchenko">
   
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://konstmish.github.io/authors/sebastian-stich/">
+  <link rel="canonical" href="https://konstmish.github.io/publication/time_series/">
 
   
   
@@ -131,19 +131,21 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
-  <meta property="og:url" content="https://konstmish.github.io/authors/sebastian-stich/">
-  <meta property="og:title" content="Sebastian Stich | Konstantin Mishchenko">
-  <meta property="og:description" content="CS PhD candidate"><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://konstmish.github.io/publication/time_series/">
+  <meta property="og:title" content="A Self-supervised Approach to Hierarchical Forecasting with Applications to Groupwise Synthetic Controls | Konstantin Mishchenko">
+  <meta property="og:description" content="When forecasting time series with a hierarchical structure, the existing state of the art is to forecast each time series independently, and, in a post-treatment step, to reconcile the time series in a way that respects the hierarchy (Hyndman et al., 2011; Wickramasuriya et al., 2018). We propose a new loss function that can be incorporated into any maximum likelihood objective with hierarchical data, resulting in reconciled estimates with confidence intervals that correctly account for additional uncertainty due to imperfect reconciliation. We evaluate our method using a non-linear model and synthetic data on a counterfactual forecasting problem, where we have access to the ground truth and contemporaneous covariates, and show that we largely improve over the existing state-of-the-art method."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2019-04-11T00:00:00&#43;01:00">
+  <meta property="article:published_time" content="2019-06-25T00:00:00&#43;01:00">
+  
+  <meta property="article:modified_time" content="2019-06-25T00:00:00&#43;01:00">
   
 
   
 
   
 
-  <title>Sebastian Stich | Konstantin Mishchenko</title>
+  <title>A Self-supervised Approach to Hierarchical Forecasting with Applications to Groupwise Synthetic Controls | Konstantin Mishchenko</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -317,7 +319,9 @@
   </div>
 </nav>
 
+<div class="pub" itemscope itemtype="http://schema.org/CreativeWork">
 
+  
 
 
 
@@ -331,41 +335,257 @@
 
 
   
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">A Self-supervised Approach to Hierarchical Forecasting with Applications to Groupwise Synthetic Controls</h1>
+
+  
+
+  
+    
+
+
+<meta content="2019-06-25 00:00:00 &#43;0100 BST" itemprop="datePublished">
+<meta content="2019-06-25 00:00:00 &#43;0100 BST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/konstantin-mishchenko/">Konstantin Mishchenko</a>
+      </span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/mallory-montgomery/">Mallory Montgomery</a>
+      </span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/federico-vaggi/">Federico Vaggi</a>
+      </span>
+    </span>
+    
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>June 2019</time>
+  </span>
+  
+
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/publication/time_series/#disqus_thread"></a>
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=A%20Self-supervised%20Approach%20to%20Hierarchical%20Forecasting%20with%20Applications%20to%20Groupwise%20Synthetic%20Controls&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2ftime_series%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2ftime_series%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2ftime_series%2f&amp;title=A%20Self-supervised%20Approach%20to%20Hierarchical%20Forecasting%20with%20Applications%20to%20Groupwise%20Synthetic%20Controls"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2ftime_series%2f&amp;title=A%20Self-supervised%20Approach%20to%20Hierarchical%20Forecasting%20with%20Applications%20to%20Groupwise%20Synthetic%20Controls"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=A%20Self-supervised%20Approach%20to%20Hierarchical%20Forecasting%20with%20Applications%20to%20Groupwise%20Synthetic%20Controls&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2ftime_series%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+<a class="btn btn-outline-primary my-1 mr-1" href="http://roseyu.com/time-series-workshop/submissions/2019/timeseries-ICML19_paper_3.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
+        data-filename="/publication/time_series/cite.bib">
+  Cite
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
   
   
     
   
-<div class="universal-wrapper pt-3">
-  <h1 itemprop="name">Sebastian Stich</h1>
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1906.10586" target="_blank" rel="noopener">
+    
+    arXiv
+  </a>
 
   
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="http://roseyu.com/time-series-workshop/" target="_blank" rel="noopener">
+    
+    ICML
+  </a>
+
+
+</div>
+
 
   
 </div>
 
 
 
-<section id="about" class="home-section">
-  <div class="container">
+  <div class="article-container">
+
     
+    <h3>Abstract</h3>
+    <p class="pub-abstract" itemprop="text">When forecasting time series with a hierarchical structure, the existing state of the art is to forecast each time series independently, and, in a post-treatment step, to reconcile the time series in a way that respects the hierarchy (Hyndman et al., 2011; Wickramasuriya et al., 2018). We propose a new loss function that can be incorporated into any maximum likelihood objective with hierarchical data, resulting in reconciled estimates with confidence intervals that correctly account for additional uncertainty due to imperfect reconciliation. We evaluate our method using a non-linear model and synthetic data on a counterfactual forecasting problem, where we have access to the ground truth and contemporaneous covariates, and show that we largely improve over the existing state-of-the-art method.</p>
     
+
     
+
     
-    <div class="article-widget">
-      <div class="hr-light"></div>
-      <h3>Related</h3>
-      <ul>
-        
-        <li>
-          <a href="https://konstmish.github.io/publication/quant_vr/">Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</a>
-        </li>
-        
-      </ul>
-    </div>
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
   </div>
-</section>
+</div>
+
 
 
 <div class="container">

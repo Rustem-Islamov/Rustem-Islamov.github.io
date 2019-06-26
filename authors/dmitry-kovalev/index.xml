@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://konstmish.github.io/authors/dmitry-kovalev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Revisiting Stochastic Extragradient</title>
       <link>https://konstmish.github.io/publication/extra_vi/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0300</pubDate>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0100</pubDate>
       
       <guid>https://konstmish.github.io/publication/extra_vi/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</title>
       <link>https://konstmish.github.io/publication/quant_vr/</link>
-      <pubDate>Thu, 11 Apr 2019 00:00:00 +0300</pubDate>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0100</pubDate>
       
       <guid>https://konstmish.github.io/publication/quant_vr/</guid>
       <description></description>

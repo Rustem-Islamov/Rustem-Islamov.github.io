@@ -7,15 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://konstmish.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>A Self-supervised Approach to Hierarchical Forecasting with Applications to Groupwise Synthetic Controls</title>
+      <link>https://konstmish.github.io/publication/time_series/</link>
+      <pubDate>Tue, 25 Jun 2019 00:00:00 +0100</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/time_series/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>MISO is Making a Comeback With Better Proofs and Rates</title>
       <link>https://konstmish.github.io/publication/miso/</link>
-      <pubDate>Tue, 04 Jun 2019 00:00:00 +0300</pubDate>
+      <pubDate>Tue, 04 Jun 2019 00:00:00 +0100</pubDate>
       
       <guid>https://konstmish.github.io/publication/miso/</guid>
       <description></description>
@@ -33,7 +42,7 @@
     <item>
       <title>A Stochastic Decoupling Method for Minimizing the Sum of Smooth and Non-Smooth Functions</title>
       <link>https://konstmish.github.io/publication/stoch_decoupling/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0300</pubDate>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0100</pubDate>
       
       <guid>https://konstmish.github.io/publication/stoch_decoupling/</guid>
       <description></description>
@@ -42,7 +51,7 @@
     <item>
       <title>Revisiting Stochastic Extragradient</title>
       <link>https://konstmish.github.io/publication/extra_vi/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0300</pubDate>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0100</pubDate>
       
       <guid>https://konstmish.github.io/publication/extra_vi/</guid>
       <description></description>
@@ -51,7 +60,7 @@
     <item>
       <title>Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</title>
       <link>https://konstmish.github.io/publication/quant_vr/</link>
-      <pubDate>Thu, 11 Apr 2019 00:00:00 +0300</pubDate>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0100</pubDate>
       
       <guid>https://konstmish.github.io/publication/quant_vr/</guid>
       <description></description>
@@ -60,7 +69,7 @@
     <item>
       <title>99% of Distributed Optimization is a Waste of Time: The Issue and How to Fix it</title>
       <link>https://konstmish.github.io/publication/99/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://konstmish.github.io/publication/99/</guid>
       <description></description>
@@ -69,7 +78,7 @@
     <item>
       <title>Distributed Learning with Compressed Gradient Differences</title>
       <link>https://konstmish.github.io/publication/diana/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://konstmish.github.io/publication/diana/</guid>
       <description></description>
@@ -78,7 +87,7 @@
     <item>
       <title>A Stochastic Penalty Model for Convex and Nonconvex Optimization with Big Constraints</title>
       <link>https://konstmish.github.io/publication/penalty/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 +0300</pubDate>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://konstmish.github.io/publication/penalty/</guid>
       <description></description>
