@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dmitry Kovalev on Konstantin Mishchenko</title>
+    <link>https://konstmish.github.io/authors/dmitry-kovalev/</link>
+    <description>Recent content in Dmitry Kovalev on Konstantin Mishchenko</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
+    <lastBuildDate>Mon, 27 May 2019 00:00:00 -0700</lastBuildDate>
+    
+	<atom:link href="https://konstmish.github.io/authors/dmitry-kovalev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Revisiting Stochastic Extragradient</title>
+      <link>https://konstmish.github.io/publication/extra_vi/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/extra_vi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</title>
+      <link>https://konstmish.github.io/publication/quant_vr/</link>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/quant_vr/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
