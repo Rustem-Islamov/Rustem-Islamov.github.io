@@ -13,41 +13,50 @@
     
     
     <item>
+      <title>AAAI-20: Program Committee member</title>
+      <link>https://konstmish.github.io/post/19_aaai/</link>
+      <pubDate>Fri, 16 Aug 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://konstmish.github.io/post/19_aaai/</guid>
+      <description>This year I am also serving as a reviewer for the AAAI conference, which will take place in February in New-York. See the official website for more details https://aaai.org/Conferences/AAAI-20/#.</description>
+    </item>
+    
+    <item>
       <title>My sessions at ICCCOPT</title>
-      <link>https://konstmish.github.io/post/2019_iccopt/</link>
+      <link>https://konstmish.github.io/post/19_iccopt/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/2019_iccopt/</guid>
+      <guid>https://konstmish.github.io/post/19_iccopt/</guid>
       <description>I was at the ICCOPT conference in Berlin from 5 to 8 August as the chair of 3 sessions: 2 on variational inequality/minimax/GANs and 1 on non-smooth optimization.
 ICCOPT is my favorite conference so far. It was completely devoted to optimization and the density of interesting talks was overwhelming, very often I could not decide to which parallel session I should go. I was lucky to meet with many brilliant people, whose work inspired some of my papers.</description>
     </item>
     
     <item>
       <title>I am at Simons Institute until 18 July</title>
-      <link>https://konstmish.github.io/post/2019_simons/</link>
+      <link>https://konstmish.github.io/post/19_simons/</link>
       <pubDate>Tue, 16 Jul 2019 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/2019_simons/</guid>
+      <guid>https://konstmish.github.io/post/19_simons/</guid>
       <description>I am an attendee of the Frontiers of Deep Learning workshop at Simons Insitute for the Theory of Computing. There many well-known researchers here and just yesterday Yuanzhi Li gave a fantastic talk titled &amp;ldquo;Learning and Generalization in Over-parametrized Neural Networks, Going Beyond Kernels&amp;rdquo;. He presented a very simple explanation of what I believed to be very complicated and I encourage everyone interested in the topic to watch his presentation (should appear on youtube shortly).</description>
     </item>
     
     <item>
       <title>I visited Matthias Ehrhardt at Bath University</title>
-      <link>https://konstmish.github.io/post/2019_bath/</link>
+      <link>https://konstmish.github.io/post/19_bath/</link>
       <pubDate>Tue, 16 Jul 2019 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/2019_bath/</guid>
+      <guid>https://konstmish.github.io/post/19_bath/</guid>
       <description>Matthias Ehrhardt is a prize fellow at Bath university and I first met him when I visited Cambridge in 2017-2018. Back then I was just a first-year PhD student and it was hard for me to fully understand his work on stochastic primal-dual hybrid gradient (https://arxiv.org/abs/1706.04957). However, I have more experience now and just in two weeks I managed to do a nice extension of my recent work (https://arxiv.org/abs/1905.11535) to the same setting as in the work by Matthias.</description>
     </item>
     
     <item>
       <title>I was at ICML 2019 presenting the work I did at Amazon</title>
-      <link>https://konstmish.github.io/post/icml-2019_ts/</link>
+      <link>https://konstmish.github.io/post/19_icml_ts/</link>
       <pubDate>Tue, 16 Jul 2019 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/icml-2019_ts/</guid>
+      <guid>https://konstmish.github.io/post/19_icml_ts/</guid>
       <description>Our work on time series was accepted as a poster to the Time Series Workshop at ICML and I presented it together with Federico Vaggi. The conference was in Los Angeles from 9 to 15 June. I attended it with many other members of our group: Aritra Dutta, Samuel Horvath, Nicolas Loizou, Alibek Sailanbayev, Adil Selim and of course Peter Richtárik.
-You can find the website of the workshop and my work here: http://roseyu.</description>
+You can find the website of the workshop and my paper here: http://roseyu.</description>
     </item>
     
     <item>
@@ -80,19 +89,19 @@ As of today, the group&amp;rsquo;s website is available at https://mlo.epfl.ch/<
     
     <item>
       <title>I am a program committee member for ICML 2019!</title>
-      <link>https://konstmish.github.io/post/icml-2019/</link>
+      <link>https://konstmish.github.io/post/19_icml/</link>
       <pubDate>Fri, 26 Oct 2018 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/icml-2019/</guid>
+      <guid>https://konstmish.github.io/post/19_icml/</guid>
       <description>This is my first time being a reviewer for such a venue, so I hope I will not be &amp;ldquo;that stupid reviewer&amp;rdquo; :)</description>
     </item>
     
     <item>
       <title>Prize winner at IEEEXtreme</title>
-      <link>https://konstmish.github.io/post/ieeextreme-2018/</link>
+      <link>https://konstmish.github.io/post/18_ieeextreme/</link>
       <pubDate>Sun, 21 Oct 2018 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/ieeextreme-2018/</guid>
+      <guid>https://konstmish.github.io/post/18_ieeextreme/</guid>
       <description>In a 24 hours programming competition Alibek and I were solving tough mathematical and programming problems for the sake of fun and, maybe, some prizes. Fortunately, we managed to make it to top 100, which means that we are eligible for prizes from IEEE!
 Last year I participated in the same competition with Samuel Horvath, but back then we were only 123rd.
 Link to the results: https://ieeextreme.org/wp-content/uploads/2018/11/IEEEXtreme-12.0-Global-Ranking.pdf</description>
@@ -100,66 +109,66 @@ Link to the results: https://ieeextreme.org/wp-content/uploads/2018/11/IEEEXtrem
     
     <item>
       <title>A NIPS paper got accepted!</title>
-      <link>https://konstmish.github.io/post/nips-2018/</link>
+      <link>https://konstmish.github.io/post/18_nips/</link>
       <pubDate>Thu, 30 Aug 2018 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/nips-2018/</guid>
+      <guid>https://konstmish.github.io/post/18_nips/</guid>
       <description>I&amp;rsquo;m happy to say that our paper &amp;ldquo;SEGA: Variance Reduction via Gradient Sketching&amp;rdquo; about variance reduction for coordinate descent methods was accepted to NIPS. In this work, we discover how coordinate descent methods can be extended to problems with non-separable regularizer. We consider minibatch, importance sampling and acceleration of the produced method. What&amp;rsquo;s more, we additionally introduced a variant with non-trivial sketches of the gradient, under maximal possible stepsizes can be larger by an arbitrary number than in classical coordinate descent methods.</description>
     </item>
     
     <item>
       <title>I&#39;m interning at Amazon August-November</title>
-      <link>https://konstmish.github.io/post/amazon-2018/</link>
+      <link>https://konstmish.github.io/post/18_amazon/</link>
       <pubDate>Thu, 19 Apr 2018 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/amazon-2018/</guid>
+      <guid>https://konstmish.github.io/post/18_amazon/</guid>
       <description>During my MSc in Paris, we had an amazing course taught by Fabian Pedregosa (http://fa.bianp.net/) and Fajwel Fogel (http://www.di.ens.fr/~fogel/). In this course, we learnt how to use Python for data analysis and to evaluate our knowledge we needed to participate in a challenge with other Paris students. Together with Matthieu Mazzolini and Paul Dufosse (they are very cool guys) I chose PlumeLabs challenge where the data was the air pollution in different cities over time.</description>
     </item>
     
     <item>
       <title>After the first hackathon at the Vatican</title>
-      <link>https://konstmish.github.io/post/vatican-2018mar/</link>
+      <link>https://konstmish.github.io/post/18mar_vatican/</link>
       <pubDate>Tue, 20 Mar 2018 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/vatican-2018mar/</guid>
+      <guid>https://konstmish.github.io/post/18mar_vatican/</guid>
       <description>To begin with, the pope didn&amp;rsquo;t come to us to say &amp;ldquo;hi&amp;rdquo;. He gave a speech from a balcony instead and it was the first time he said &amp;ldquo;hackathon&amp;rdquo; in public. Moreover, it would be unfair to say that we were not welcome: the Vatican invested deeply in this event.
 The hackathon went well, although our team didn&amp;rsquo;t win anything. It was a nice experience and since I didn&amp;rsquo;t expect to win a hackathon at the first attempt, I&amp;rsquo;m pretty happy about having being there.</description>
     </item>
     
     <item>
       <title>VHacks – A hackathon at the Vatican</title>
-      <link>https://konstmish.github.io/post/vatican-2018jan/</link>
+      <link>https://konstmish.github.io/post/18jan_vatican/</link>
       <pubDate>Fri, 19 Jan 2018 00:00:00 -0800</pubDate>
       
-      <guid>https://konstmish.github.io/post/vatican-2018jan/</guid>
+      <guid>https://konstmish.github.io/post/18jan_vatican/</guid>
       <description>I was selected to be one of 120 students invited to the Vatican to participate in a hackathon. Hackathon&amp;rsquo;s theme are (1) social inclusion, (2) interfaith dialogue and (3) migrants &amp;amp; refugees. I am no expert in religions or migrants problems, so I applied and got accepted to participate addressing the first theme.
 The even is organized by OPTIC - &amp;ldquo;an organization founded in 2012 dedicated to research and innovation regarding the ethics of new and disruptive technologies&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>INFORMS Optimization Society Conference</title>
-      <link>https://konstmish.github.io/post/informs-2018/</link>
+      <link>https://konstmish.github.io/post/18_informs/</link>
       <pubDate>Wed, 20 Dec 2017 00:00:00 -0800</pubDate>
       
-      <guid>https://konstmish.github.io/post/informs-2018/</guid>
+      <guid>https://konstmish.github.io/post/18_informs/</guid>
       <description>In September Peter suggested me to take part in organizing a few sessions at INFORMS Optimization Society Conference. Since I had no idea of what it means back then, I decided to first try with just one. In addition, I could choose to invite either 3 or 4 speakers, and I decided to go for the former option. It allowed me to choose speakers carefully, but unfortunately I didn&amp;rsquo;t foresee that one of the speakers I invited may not be able to come.</description>
     </item>
     
     <item>
       <title>Visiting Cambridge</title>
-      <link>https://konstmish.github.io/post/visiting-cambridge-2017/</link>
+      <link>https://konstmish.github.io/post/17_visiting_cambridge/</link>
       <pubDate>Thu, 14 Dec 2017 00:00:00 -0800</pubDate>
       
-      <guid>https://konstmish.github.io/post/visiting-cambridge-2017/</guid>
+      <guid>https://konstmish.github.io/post/17_visiting_cambridge/</guid>
       <description>I&amp;rsquo;m visiting Dr. Carola-Bibiane Schönlieb&amp;rsquo;s group at Cambridge until 9 January. I will also be here for a few more weeks in February.</description>
     </item>
     
     <item>
       <title>IEEEXtreme</title>
-      <link>https://konstmish.github.io/post/ieeextreme/</link>
+      <link>https://konstmish.github.io/post/17_ieeextreme/</link>
       <pubDate>Sun, 22 Oct 2017 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/ieeextreme/</guid>
+      <guid>https://konstmish.github.io/post/17_ieeextreme/</guid>
       <description>I teamed up with Samuel Horvath to participate in a competition called &amp;ldquo;IEEEXtreme&amp;rdquo; organized by IEEE for students worldwide. We got ranked 123 worldwide or 43 in our Region (Africa, Europe and Middle East). Unfortunately, we didn&amp;rsquo;t get in top 100, so we are not going to get T-shirts as a prize, but the competition was extremely fun and it was cool to work with Samuel in a team.
 Official results are available here: http://ieeextreme.</description>
     </item>

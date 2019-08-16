@@ -11,11 +11,21 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>AAAI-20: Program Committee member</title>
+      <link>https://konstmish.github.io/post/19_aaai/</link>
+      <pubDate>Fri, 16 Aug 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://konstmish.github.io/post/19_aaai/</guid>
+      <description>&lt;p&gt;This year I am also serving as a reviewer for the AAAI conference, which will take place in February in New-York. See the official website for more details &lt;a href=&#34;https://aaai.org/Conferences/AAAI-20/#&#34; target=&#34;_blank&#34;&gt;https://aaai.org/Conferences/AAAI-20/#&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>My sessions at ICCCOPT</title>
-      <link>https://konstmish.github.io/post/2019_iccopt/</link>
+      <link>https://konstmish.github.io/post/19_iccopt/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/2019_iccopt/</guid>
+      <guid>https://konstmish.github.io/post/19_iccopt/</guid>
       <description>&lt;p&gt;I was at the ICCOPT conference in Berlin from 5 to 8 August as the chair of 3 sessions: 2 on variational inequality/minimax/GANs and 1 on non-smooth optimization.&lt;/p&gt;
 
 &lt;p&gt;ICCOPT is my favorite conference so far. It was completely devoted to optimization and the density of interesting talks was overwhelming, very often I could not decide to which parallel session I should go. I was lucky to meet with many brilliant people, whose work inspired some of my papers. I find the diversity of the presented topics quite high, and it is surprising how many different ideas and applications are covered by mathematical optimization.&lt;/p&gt;
@@ -64,10 +74,10 @@
     
     <item>
       <title>I am at Simons Institute until 18 July</title>
-      <link>https://konstmish.github.io/post/2019_simons/</link>
+      <link>https://konstmish.github.io/post/19_simons/</link>
       <pubDate>Tue, 16 Jul 2019 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/2019_simons/</guid>
+      <guid>https://konstmish.github.io/post/19_simons/</guid>
       <description>&lt;p&gt;I am an attendee of the Frontiers of Deep Learning workshop at Simons Insitute for the Theory of Computing. There many well-known researchers here and just yesterday Yuanzhi Li gave a fantastic talk titled &amp;ldquo;Learning and Generalization in Over-parametrized Neural Networks, Going Beyond Kernels&amp;rdquo;. He presented a very simple explanation of what I believed to be very complicated and I encourage everyone interested in the topic to watch his presentation (should appear on youtube shortly).&lt;/p&gt;
 
 &lt;p&gt;The workshop website is here: &lt;a href=&#34;https://simons.berkeley.edu/programs/dl2019&#34; target=&#34;_blank&#34;&gt;https://simons.berkeley.edu/programs/dl2019&lt;/a&gt;&lt;/p&gt;
@@ -76,23 +86,23 @@
     
     <item>
       <title>I visited Matthias Ehrhardt at Bath University</title>
-      <link>https://konstmish.github.io/post/2019_bath/</link>
+      <link>https://konstmish.github.io/post/19_bath/</link>
       <pubDate>Tue, 16 Jul 2019 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/2019_bath/</guid>
+      <guid>https://konstmish.github.io/post/19_bath/</guid>
       <description>&lt;p&gt;Matthias Ehrhardt is a prize fellow at Bath university and I first met him when I visited Cambridge in 2017-2018. Back then I was just a first-year PhD student and it was hard for me to fully understand his work on stochastic primal-dual hybrid gradient (&lt;a href=&#34;https://arxiv.org/abs/1706.04957&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/abs/1706.04957&lt;/a&gt;). However, I have more experience now and just in two weeks I managed to do a nice extension of my recent work (&lt;a href=&#34;https://arxiv.org/abs/1905.11535&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/abs/1905.11535&lt;/a&gt;) to the same setting as in the work by Matthias. The work is motivated by imaging application and I hope it will find important applications in practice.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>I was at ICML 2019 presenting the work I did at Amazon</title>
-      <link>https://konstmish.github.io/post/icml-2019_ts/</link>
+      <link>https://konstmish.github.io/post/19_icml_ts/</link>
       <pubDate>Tue, 16 Jul 2019 00:00:00 -0700</pubDate>
       
-      <guid>https://konstmish.github.io/post/icml-2019_ts/</guid>
+      <guid>https://konstmish.github.io/post/19_icml_ts/</guid>
       <description>&lt;p&gt;Our work on time series was accepted as a poster to the Time Series Workshop at ICML and I presented it together with Federico Vaggi. The conference was in Los Angeles from 9 to 15 June. I attended it with many other members of our group: Aritra Dutta, Samuel Horvath, Nicolas Loizou, Alibek Sailanbayev, Adil Selim and of course Peter Richtárik.&lt;/p&gt;
 
-&lt;p&gt;You can find the website of the workshop and my work here: &lt;a href=&#34;http://roseyu.com/time-series-workshop/&#34; target=&#34;_blank&#34;&gt;http://roseyu.com/time-series-workshop/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the website of the workshop and my paper here: &lt;a href=&#34;http://roseyu.com/time-series-workshop/&#34; target=&#34;_blank&#34;&gt;http://roseyu.com/time-series-workshop/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -196,15 +206,6 @@
       <pubDate>Tue, 29 Jan 2019 00:00:00 -0800</pubDate>
       
       <guid>https://konstmish.github.io/publication/99/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Distributed Learning with Compressed Gradient Differences</title>
-      <link>https://konstmish.github.io/publication/diana/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 -0800</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/diana/</guid>
       <description></description>
     </item>
     
