@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0300</lastBuildDate>
     
 	<atom:link href="https://konstmish.github.io/authors/eduard-gorbunov/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Distributed Learning with Compressed Gradient Differences</title>
       <link>https://konstmish.github.io/publication/diana/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 -0800</pubDate>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/diana/</guid>
       <description></description>
