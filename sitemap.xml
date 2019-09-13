@@ -4,6 +4,22 @@
     
     <url>
     
+      <loc>https://konstmish.github.io/publication/local_sgd/</loc>
+      <lastmod>2019-09-12T00:00:00+03:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://konstmish.github.io/publication/local_gd/</loc>
+      <lastmod>2019-09-12T00:00:00+03:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://konstmish.github.io/post/19_neurips_award/</loc>
       <lastmod>2019-09-05T00:00:00+03:00</lastmod>
     </url>
@@ -283,6 +299,15 @@
     
     <url>
     
+      <loc>https://konstmish.github.io/authors/ahmed-khaled/</loc>
+      <lastmod>2019-09-12T00:00:00+03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://konstmish.github.io/authors/alibek-sailanbayev/</loc>
       <lastmod>2019-06-04T00:00:00+03:00</lastmod>
       <priority>0</priority>
@@ -310,7 +335,7 @@
     <url>
     
       <loc>https://konstmish.github.io/authors/</loc>
-      <lastmod>2019-06-04T00:00:00+03:00</lastmod>
+      <lastmod>2019-09-12T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -399,7 +424,7 @@
     <url>
     
       <loc>https://konstmish.github.io/authors/konstantin-mishchenko/</loc>
-      <lastmod>2019-06-25T00:00:00+03:00</lastmod>
+      <lastmod>2019-09-12T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -461,7 +486,7 @@
     <url>
     
       <loc>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</loc>
-      <lastmod>2019-06-04T00:00:00+03:00</lastmod>
+      <lastmod>2019-09-12T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -13,6 +13,24 @@
     
     
     <item>
+      <title>Better Communication Complexity for Local SGD</title>
+      <link>https://konstmish.github.io/publication/local_sgd/</link>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/local_sgd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>First Analysis of Local GD on Heterogeneous Data</title>
+      <link>https://konstmish.github.io/publication/local_gd/</link>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/local_gd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>A Self-supervised Approach to Hierarchical Forecasting with Applications to Groupwise Synthetic Controls</title>
       <link>https://konstmish.github.io/publication/time_series/</link>
       <pubDate>Tue, 25 Jun 2019 00:00:00 +0300</pubDate>

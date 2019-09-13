@@ -11,6 +11,24 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Better Communication Complexity for Local SGD</title>
+      <link>https://konstmish.github.io/publication/local_sgd/</link>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/local_sgd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>First Analysis of Local GD on Heterogeneous Data</title>
+      <link>https://konstmish.github.io/publication/local_gd/</link>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/local_gd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>NeurIPS 2019 Best Reviewer Award</title>
       <link>https://konstmish.github.io/post/19_neurips_award/</link>
       <pubDate>Thu, 05 Sep 2019 00:00:00 +0300</pubDate>
@@ -177,36 +195,6 @@
       
       <guid>https://konstmish.github.io/post/19_neurips_uai/</guid>
       <description>&lt;p&gt;After a successful round of reviews for International Conference on Machine Learning (ICML) I was invited to serve on committee for two more important ML conferences: Conference on Neural Information Processing Systems (NeurIPS) and Uncertainty in Artificial Intelligence (UAI). The review period for UAI is from 21 March to 21 April 2019 and all paper submissions have already been done, while for NeurIPS the deadline to submit a paper is on 23 May 2019 and the review period is from 18 June to 15 July 2019.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>I&#39;m visiting Martin Jaggi from 18 February to 15 March</title>
-      <link>https://konstmish.github.io/post/18_epfl/</link>
-      <pubDate>Sun, 17 Feb 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/post/18_epfl/</guid>
-      <description>&lt;p&gt;There is no specific project to work on yet, but my research interests are almost a subset of what Martin and his group have worked on. I would not be surprised if it leads to more than one project and hope that this visit will not be the last one :).&lt;/p&gt;
-
-&lt;p&gt;As of today, the group&amp;rsquo;s website is available at &lt;a href=&#34;https://mlo.epfl.ch/&#34; target=&#34;_blank&#34;&gt;https://mlo.epfl.ch/&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Our group photo</title>
-      <link>https://konstmish.github.io/post/18_group/</link>
-      <pubDate>Thu, 07 Feb 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/post/18_group/</guid>
-      <description>
-
-
-&lt;figure&gt;
-
-&lt;img src=&#34;featured.jpg&#34; /&gt;
-
-
-&lt;/figure&gt;
 </description>
     </item>
     

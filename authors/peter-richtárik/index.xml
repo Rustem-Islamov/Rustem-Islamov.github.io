@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Tue, 04 Jun 2019 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 12 Sep 2019 00:00:00 +0300</lastBuildDate>
     
 	<atom:link href="https://konstmish.github.io/authors/peter-richt%C3%A1rik/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Better Communication Complexity for Local SGD</title>
+      <link>https://konstmish.github.io/publication/local_sgd/</link>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/local_sgd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>First Analysis of Local GD on Heterogeneous Data</title>
+      <link>https://konstmish.github.io/publication/local_gd/</link>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/local_gd/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>MISO is Making a Comeback With Better Proofs and Rates</title>
