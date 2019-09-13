@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Two new papers on federated learning (and more are coming!)</title>
+      <link>https://konstmish.github.io/post/19_fed_learning/</link>
+      <pubDate>Fri, 13 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/19_fed_learning/</guid>
+      <description>This summer I collaborated with an intern at our group, Ahmed Khaled (these are just 2 of his 4 first names and he actually doesn&amp;rsquo;t have a last name as any othey Egyptian). The topic of these works is federated learning, which is de facto the standard way of training large models with data from mobile users. Despite its numerical success in certain applications, there are significant difficulties in applying it to setting with heterogeneous data, and in most cases data are not homogeneous.</description>
+    </item>
+    
+    <item>
       <title>NeurIPS 2019 Best Reviewer Award</title>
       <link>https://konstmish.github.io/post/19_neurips_award/</link>
       <pubDate>Thu, 05 Sep 2019 00:00:00 +0300</pubDate>

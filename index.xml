@@ -11,6 +11,16 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Two new papers on federated learning (and more are coming!)</title>
+      <link>https://konstmish.github.io/post/19_fed_learning/</link>
+      <pubDate>Fri, 13 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/19_fed_learning/</guid>
+      <description>&lt;p&gt;This summer I collaborated with an intern at our group, Ahmed Khaled (these are just 2 of his 4 first names and he actually doesn&amp;rsquo;t have a last name as any othey Egyptian). The topic of these works is federated learning, which is de facto the standard way of training large models with data from mobile users. Despite its numerical success in certain applications, there are significant difficulties in applying it to setting with heterogeneous data, and in most cases data are not homogeneous. To address why this happens, we tried to tighten the existing theory and found out that our theoretical discoveries have a tight match with numerical experiments. We are still working on this, so more papers are to come!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Better Communication Complexity for Local SGD</title>
       <link>https://konstmish.github.io/publication/local_sgd/</link>
       <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
@@ -186,16 +196,6 @@
       
       <guid>https://konstmish.github.io/publication/quant_vr/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>I am a member of the program committee for NeurIPS and UAI 2019</title>
-      <link>https://konstmish.github.io/post/19_neurips_uai/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/post/19_neurips_uai/</guid>
-      <description>&lt;p&gt;After a successful round of reviews for International Conference on Machine Learning (ICML) I was invited to serve on committee for two more important ML conferences: Conference on Neural Information Processing Systems (NeurIPS) and Uncertainty in Artificial Intelligence (UAI). The review period for UAI is from 21 March to 21 April 2019 and all paper submissions have already been done, while for NeurIPS the deadline to submit a paper is on 23 May 2019 and the review period is from 18 June to 15 July 2019.&lt;/p&gt;
-</description>
     </item>
     
   </channel>
