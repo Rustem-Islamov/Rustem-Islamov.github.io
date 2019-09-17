@@ -13,128 +13,137 @@
     
     
     <item>
+      <title>Sinkhorn Algorithm as a Special Case of Stochastic Mirror Descent</title>
+      <link>https://konstmish.github.io/publication/19_sinkhorn/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/19_sinkhorn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Better Communication Complexity for Local SGD</title>
-      <link>https://konstmish.github.io/publication/local_sgd/</link>
+      <link>https://konstmish.github.io/publication/19_local_sgd/</link>
       <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/publication/local_sgd/</guid>
+      <guid>https://konstmish.github.io/publication/19_local_sgd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>First Analysis of Local GD on Heterogeneous Data</title>
-      <link>https://konstmish.github.io/publication/local_gd/</link>
+      <link>https://konstmish.github.io/publication/19_local_gd/</link>
       <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/publication/local_gd/</guid>
+      <guid>https://konstmish.github.io/publication/19_local_gd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Self-supervised Approach to Hierarchical Forecasting with Applications to Groupwise Synthetic Controls</title>
-      <link>https://konstmish.github.io/publication/time_series/</link>
+      <link>https://konstmish.github.io/publication/19_time_series/</link>
       <pubDate>Tue, 25 Jun 2019 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/publication/time_series/</guid>
+      <guid>https://konstmish.github.io/publication/19_time_series/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MISO is Making a Comeback With Better Proofs and Rates</title>
-      <link>https://konstmish.github.io/publication/miso/</link>
+      <link>https://konstmish.github.io/publication/19_miso/</link>
       <pubDate>Tue, 04 Jun 2019 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/publication/miso/</guid>
+      <guid>https://konstmish.github.io/publication/19_miso/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DAve-QN: A Distributed Averaged Quasi-Newton Method with Local Superlinear Convergence Rate</title>
-      <link>https://konstmish.github.io/publication/dave_qn/</link>
+      <link>https://konstmish.github.io/publication/19_dave_qn/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://konstmish.github.io/publication/dave_qn/</guid>
+      <guid>https://konstmish.github.io/publication/19_dave_qn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Stochastic Decoupling Method for Minimizing the Sum of Smooth and Non-Smooth Functions</title>
-      <link>https://konstmish.github.io/publication/stoch_decoupling/</link>
+      <link>https://konstmish.github.io/publication/19_stoch_decoupling/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/publication/stoch_decoupling/</guid>
+      <guid>https://konstmish.github.io/publication/19_stoch_decoupling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Revisiting Stochastic Extragradient</title>
-      <link>https://konstmish.github.io/publication/extra_vi/</link>
+      <link>https://konstmish.github.io/publication/19_extra_vi/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/publication/extra_vi/</guid>
+      <guid>https://konstmish.github.io/publication/19_extra_vi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</title>
-      <link>https://konstmish.github.io/publication/quant_vr/</link>
+      <link>https://konstmish.github.io/publication/19_quant_vr/</link>
       <pubDate>Thu, 11 Apr 2019 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/publication/quant_vr/</guid>
+      <guid>https://konstmish.github.io/publication/19_quant_vr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>99% of Distributed Optimization is a Waste of Time: The Issue and How to Fix it</title>
-      <link>https://konstmish.github.io/publication/99/</link>
+      <link>https://konstmish.github.io/publication/19_99/</link>
       <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/publication/99/</guid>
+      <guid>https://konstmish.github.io/publication/19_99/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Distributed Learning with Compressed Gradient Differences</title>
-      <link>https://konstmish.github.io/publication/diana/</link>
+      <link>https://konstmish.github.io/publication/19_diana/</link>
       <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/publication/diana/</guid>
+      <guid>https://konstmish.github.io/publication/19_diana/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Stochastic Penalty Model for Convex and Nonconvex Optimization with Big Constraints</title>
-      <link>https://konstmish.github.io/publication/penalty/</link>
+      <link>https://konstmish.github.io/publication/18_penalty/</link>
       <pubDate>Wed, 31 Oct 2018 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/publication/penalty/</guid>
+      <guid>https://konstmish.github.io/publication/18_penalty/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SEGA: Variance Reduction via Gradient Sketching</title>
-      <link>https://konstmish.github.io/publication/sega/</link>
+      <link>https://konstmish.github.io/publication/18_sega/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://konstmish.github.io/publication/sega/</guid>
+      <guid>https://konstmish.github.io/publication/18_sega/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Distributed Flexible Delay-tolerant Proximal Gradient Algorithm</title>
-      <link>https://konstmish.github.io/publication/dave_siopt/</link>
+      <link>https://konstmish.github.io/publication/18_dave_siopt/</link>
       <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://konstmish.github.io/publication/dave_siopt/</guid>
+      <guid>https://konstmish.github.io/publication/18_dave_siopt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Delay-tolerant Proximal-Gradient Algorithm for Distributed Learning</title>
-      <link>https://konstmish.github.io/publication/dave_icml/</link>
+      <link>https://konstmish.github.io/publication/18_dave_icml/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://konstmish.github.io/publication/dave_icml/</guid>
+      <guid>https://konstmish.github.io/publication/18_dave_icml/</guid>
       <description></description>
     </item>
     

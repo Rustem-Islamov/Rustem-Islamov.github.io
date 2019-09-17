@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Distributed learning aims at computing high-quality models by training over scattered data. This covers a diversity of scenarios, including computer clusters or mobile agents. One of the main challenges is then to deal with heterogeneous machines and unreliable communications. In this setting, we propose and analyze a flexible asynchronous optimization algorithm for solving nonsmooth learning problems. Unlike most existing methods, our algorithm is adjustable to various levels of communication costs, machines computational powers, and data distribution evenness. We prove that the algorithm converges linearly with a fixed learning rate that does not depend on communication delays nor on the number of machines. Although long delays in communication may slow down performance, no delay can break convergence.">
+  <meta name="description" content="Training very large machine learning models requires a distributed computing approach, with communication of the model updates often being the bottleneck. For this reason, several methods based on the compression (e.g., sparsification and/or quantization) of the updates were recently proposed, including QSGD (Alistarh et al., 2017), TernGrad (Wen et al., 2017), SignSGD (Bernstein et al., 2018), and DQGD (Khirirat et al., 2018). However, none of these methods are able to learn the gradients, which means that they necessarily suffer from several issues, such as the inability to converge to the true optimum in the batch mode, inability to work with a nonsmooth regularizer, and slow convergence rates. In this work we propose a new distributed learning method---DIANA---which resolves these issues via compression of gradient differences. We perform a theoretical analysis in the strongly convex and nonconvex settings and show that our rates are vastly superior to existing rates. Our analysis of block-quantization and differences between ℓ2 and ℓ∞ quantization closes the gaps in theory and practice. Finally, by applying our analysis technique to TernGrad, we establish the first convergence rate for this method.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/dave_icml/">
+  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/19_diana/">
 
   
 
@@ -119,7 +119,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://konstmish.github.io/publication/dave_icml/">
+  <link rel="canonical" href="https://konstmish.github.io/publication/19_diana/">
 
   
   
@@ -131,20 +131,21 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
-  <meta property="og:url" content="https://konstmish.github.io/publication/dave_icml/">
-  <meta property="og:title" content="A Delay-tolerant Proximal-Gradient Algorithm for Distributed Learning | Konstantin Mishchenko">
-  <meta property="og:description" content="Distributed learning aims at computing high-quality models by training over scattered data. This covers a diversity of scenarios, including computer clusters or mobile agents. One of the main challenges is then to deal with heterogeneous machines and unreliable communications. In this setting, we propose and analyze a flexible asynchronous optimization algorithm for solving nonsmooth learning problems. Unlike most existing methods, our algorithm is adjustable to various levels of communication costs, machines computational powers, and data distribution evenness. We prove that the algorithm converges linearly with a fixed learning rate that does not depend on communication delays nor on the number of machines. Although long delays in communication may slow down performance, no delay can break convergence."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://konstmish.github.io/publication/19_diana/">
+  <meta property="og:title" content="Distributed Learning with Compressed Gradient Differences | Konstantin Mishchenko">
+  <meta property="og:description" content="Training very large machine learning models requires a distributed computing approach, with communication of the model updates often being the bottleneck. For this reason, several methods based on the compression (e.g., sparsification and/or quantization) of the updates were recently proposed, including QSGD (Alistarh et al., 2017), TernGrad (Wen et al., 2017), SignSGD (Bernstein et al., 2018), and DQGD (Khirirat et al., 2018). However, none of these methods are able to learn the gradients, which means that they necessarily suffer from several issues, such as the inability to converge to the true optimum in the batch mode, inability to work with a nonsmooth regularizer, and slow convergence rates. In this work we propose a new distributed learning method---DIANA---which resolves these issues via compression of gradient differences. We perform a theoretical analysis in the strongly convex and nonconvex settings and show that our rates are vastly superior to existing rates. Our analysis of block-quantization and differences between ℓ2 and ℓ∞ quantization closes the gaps in theory and practice. Finally, by applying our analysis technique to TernGrad, we establish the first convergence rate for this method."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
+  <meta property="article:published_time" content="2019-01-29T00:00:00&#43;03:00">
   
+  <meta property="article:modified_time" content="2019-01-29T00:00:00&#43;03:00">
   
+
   
 
   
 
-  
-
-  <title>A Delay-tolerant Proximal-Gradient Algorithm for Distributed Learning | Konstantin Mishchenko</title>
+  <title>Distributed Learning with Compressed Gradient Differences | Konstantin Mishchenko</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -339,7 +340,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">A Delay-tolerant Proximal-Gradient Algorithm for Distributed Learning</h1>
+  <h1 itemprop="name">Distributed Learning with Compressed Gradient Differences</h1>
 
   
 
@@ -347,8 +348,8 @@
     
 
 
-<meta content="" itemprop="datePublished">
-<meta content="" itemprop="dateModified">
+<meta content="2019-01-29 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2019-01-29 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -364,17 +365,17 @@
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
-        <a href="/authors/franck-iutzeler/">Franck Iutzeler</a>
+        <a href="/authors/eduard-gorbunov/">Eduard Gorbunov</a>
       </span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
-        <a href="/authors/j%C3%A9r%C3%B4me-malick/">Jérôme Malick</a>
+        <a href="/authors/martin-tak%C3%A1%C4%8D/">Martin Takáč</a>
       </span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
-        <a href="/authors/massih-reza-amini/">Massih-Reza Amini</a>
+        <a href="/authors/peter-richt%C3%A1rik/">Peter Richtárik</a>
       </span>
     </span>
     
@@ -388,7 +389,7 @@
     
       
     
-    <time>January 0001</time>
+    <time>January 2019</time>
   </span>
   
 
@@ -397,7 +398,7 @@
   
   
   <span class="middot-divider"></span>
-  <a href="/publication/dave_icml/#disqus_thread"></a>
+  <a href="/publication/19_diana/#disqus_thread"></a>
   
 
   
@@ -408,35 +409,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=A%20Delay-tolerant%20Proximal-Gradient%20Algorithm%20for%20Distributed%20Learning&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdave_icml%2f"
+         href="https://twitter.com/intent/tweet?text=Distributed%20Learning%20with%20Compressed%20Gradient%20Differences&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_diana%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdave_icml%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_diana%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdave_icml%2f&amp;title=A%20Delay-tolerant%20Proximal-Gradient%20Algorithm%20for%20Distributed%20Learning"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_diana%2f&amp;title=Distributed%20Learning%20with%20Compressed%20Gradient%20Differences"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdave_icml%2f&amp;title=A%20Delay-tolerant%20Proximal-Gradient%20Algorithm%20for%20Distributed%20Learning"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_diana%2f&amp;title=Distributed%20Learning%20with%20Compressed%20Gradient%20Differences"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=A%20Delay-tolerant%20Proximal-Gradient%20Algorithm%20for%20Distributed%20Learning&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdave_icml%2f">
+         href="mailto:?subject=Distributed%20Learning%20with%20Compressed%20Gradient%20Differences&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_diana%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -482,14 +483,14 @@
   
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="http://proceedings.mlr.press/v80/mishchenko18a/mishchenko18a.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1901.09269.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/dave_icml/cite.bib">
+        data-filename="/publication/19_diana/cite.bib">
   Cite
 </button>
 
@@ -517,9 +518,9 @@
   
     
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="http://proceedings.mlr.press/v80/mishchenko18a.html" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1901.09269" target="_blank" rel="noopener">
     
-    pmlr
+    arXiv
   </a>
 
 
@@ -535,44 +536,11 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">Distributed learning aims at computing high-quality models by training over scattered data. This covers a diversity of scenarios, including computer clusters or mobile agents. One of the main challenges is then to deal with heterogeneous machines and unreliable communications. In this setting, we propose and analyze a flexible asynchronous optimization algorithm for solving nonsmooth learning problems. Unlike most existing methods, our algorithm is adjustable to various levels of communication costs, machines computational powers, and data distribution evenness. We prove that the algorithm converges linearly with a fixed learning rate that does not depend on communication delays nor on the number of machines. Although long delays in communication may slow down performance, no delay can break convergence.</p>
+    <p class="pub-abstract" itemprop="text">Training very large machine learning models requires a distributed computing approach, with communication of the model updates often being the bottleneck. For this reason, several methods based on the compression (e.g., sparsification and/or quantization) of the updates were recently proposed, including QSGD (Alistarh et al., 2017), TernGrad (Wen et al., 2017), SignSGD (Bernstein et al., 2018), and DQGD (Khirirat et al., 2018). However, none of these methods are able to learn the gradients, which means that they necessarily suffer from several issues, such as the inability to converge to the true optimum in the batch mode, inability to work with a nonsmooth regularizer, and slow convergence rates. In this work we propose a new distributed learning method&mdash;DIANA&mdash;which resolves these issues via compression of gradient differences. We perform a theoretical analysis in the strongly convex and nonconvex settings and show that our rates are vastly superior to existing rates. Our analysis of block-quantization and differences between ℓ2 and ℓ∞ quantization closes the gaps in theory and practice. Finally, by applying our analysis technique to TernGrad, we establish the first convergence rate for this method.</p>
     
 
     
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Type</div>
-          <div class="col-12 col-md-9">
-            
 
-            
-            
-            <a href="/publication/#2">
-              Journal article
-            </a>
-            
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
-          <div class="col-12 col-md-9">International Conference on Machine Learning</div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
     
 
     <div class="space-below"></div>
@@ -580,6 +548,9 @@
     <div class="article-style"></div>
 
     
+
+
+
 
     
 

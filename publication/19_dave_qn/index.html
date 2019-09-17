@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Training very large machine learning models requires a distributed computing approach, with communication of the model updates often being the bottleneck. For this reason, several methods based on the compression (e.g., sparsification and/or quantization) of the updates were recently proposed, including QSGD (Alistarh et al., 2017), TernGrad (Wen et al., 2017), SignSGD (Bernstein et al., 2018), and DQGD (Khirirat et al., 2018). However, none of these methods are able to learn the gradients, which means that they necessarily suffer from several issues, such as the inability to converge to the true optimum in the batch mode, inability to work with a nonsmooth regularizer, and slow convergence rates. In this work we propose a new distributed learning method---DIANA---which resolves these issues via compression of gradient differences. We perform a theoretical analysis in the strongly convex and nonconvex settings and show that our rates are vastly superior to existing rates. Our analysis of block-quantization and differences between ℓ2 and ℓ∞ quantization closes the gaps in theory and practice. Finally, by applying our analysis technique to TernGrad, we establish the first convergence rate for this method.">
+  <meta name="description" content="In this paper, we consider distributed algorithms for solving the empirical risk minimization problem under the master/worker communication model. We develop a distributed asynchronous quasi-Newton algorithm that can achieve superlinear convergence. To our knowledge, this is the first distributed asynchronous algorithm with superlinear convergence guarantees. Our algorithm is communicationefficient in the sense that at every iteration the master node and workers communicate vectors of size O(p), where p is the dimension of the decision variable. The proposed method is based on a distributed asynchronous averaging scheme of decision vectors and gradients in a way to effectively capture the local Hessian information of the objective function. Our convergence theory supports asynchronous computations subject to both bounded delays and unbounded delays with a bounded time-average. Unlike in the majority of asynchronous optimization literature, we do not require choosing smaller stepsize when delays are huge. We provide numerical experiments that match our theoretical results and showcase significant improvement comparing to state-of-the-art distributed algorithms.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/diana/">
+  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/19_dave_qn/">
 
   
 
@@ -119,7 +119,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://konstmish.github.io/publication/diana/">
+  <link rel="canonical" href="https://konstmish.github.io/publication/19_dave_qn/">
 
   
   
@@ -131,21 +131,21 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
-  <meta property="og:url" content="https://konstmish.github.io/publication/diana/">
-  <meta property="og:title" content="Distributed Learning with Compressed Gradient Differences | Konstantin Mishchenko">
-  <meta property="og:description" content="Training very large machine learning models requires a distributed computing approach, with communication of the model updates often being the bottleneck. For this reason, several methods based on the compression (e.g., sparsification and/or quantization) of the updates were recently proposed, including QSGD (Alistarh et al., 2017), TernGrad (Wen et al., 2017), SignSGD (Bernstein et al., 2018), and DQGD (Khirirat et al., 2018). However, none of these methods are able to learn the gradients, which means that they necessarily suffer from several issues, such as the inability to converge to the true optimum in the batch mode, inability to work with a nonsmooth regularizer, and slow convergence rates. In this work we propose a new distributed learning method---DIANA---which resolves these issues via compression of gradient differences. We perform a theoretical analysis in the strongly convex and nonconvex settings and show that our rates are vastly superior to existing rates. Our analysis of block-quantization and differences between ℓ2 and ℓ∞ quantization closes the gaps in theory and practice. Finally, by applying our analysis technique to TernGrad, we establish the first convergence rate for this method."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://konstmish.github.io/publication/19_dave_qn/">
+  <meta property="og:title" content="DAve-QN: A Distributed Averaged Quasi-Newton Method with Local Superlinear Convergence Rate | Konstantin Mishchenko">
+  <meta property="og:description" content="In this paper, we consider distributed algorithms for solving the empirical risk minimization problem under the master/worker communication model. We develop a distributed asynchronous quasi-Newton algorithm that can achieve superlinear convergence. To our knowledge, this is the first distributed asynchronous algorithm with superlinear convergence guarantees. Our algorithm is communicationefficient in the sense that at every iteration the master node and workers communicate vectors of size O(p), where p is the dimension of the decision variable. The proposed method is based on a distributed asynchronous averaging scheme of decision vectors and gradients in a way to effectively capture the local Hessian information of the objective function. Our convergence theory supports asynchronous computations subject to both bounded delays and unbounded delays with a bounded time-average. Unlike in the majority of asynchronous optimization literature, we do not require choosing smaller stepsize when delays are huge. We provide numerical experiments that match our theoretical results and showcase significant improvement comparing to state-of-the-art distributed algorithms."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-01-29T00:00:00&#43;03:00">
+  <meta property="article:published_time" content="2019-06-03T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2019-01-29T00:00:00&#43;03:00">
-  
-
+  <meta property="article:modified_time" content="2019-06-03T00:00:00&#43;00:00">
   
 
   
 
-  <title>Distributed Learning with Compressed Gradient Differences | Konstantin Mishchenko</title>
+  
+
+  <title>DAve-QN: A Distributed Averaged Quasi-Newton Method with Local Superlinear Convergence Rate | Konstantin Mishchenko</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -340,7 +340,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Distributed Learning with Compressed Gradient Differences</h1>
+  <h1 itemprop="name">DAve-QN: A Distributed Averaged Quasi-Newton Method with Local Superlinear Convergence Rate</h1>
 
   
 
@@ -348,8 +348,8 @@
     
 
 
-<meta content="2019-01-29 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
-<meta content="2019-01-29 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+<meta content="2019-06-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2019-06-03 00:00:00 &#43;0000 UTC" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -360,22 +360,27 @@
   <div>
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
+        <a href="/authors/saeed-soori/">Saeed Soori</a>
+      </span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
         <a href="/authors/konstantin-mishchenko/">Konstantin Mishchenko</a>
       </span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
-        <a href="/authors/eduard-gorbunov/">Eduard Gorbunov</a>
+        <a href="/authors/aryan-mokhtari/">Aryan Mokhtari</a>
       </span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
-        <a href="/authors/martin-tak%C3%A1%C4%8D/">Martin Takáč</a>
+        <a href="/authors/maryam-mehri-dehnavi/">Maryam Mehri Dehnavi</a>
       </span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
-        <a href="/authors/peter-richt%C3%A1rik/">Peter Richtárik</a>
+        <a href="/authors/mert-gurbuzbalaban/">Mert Gurbuzbalaban</a>
       </span>
     </span>
     
@@ -389,7 +394,7 @@
     
       
     
-    <time>January 2019</time>
+    <time>June 2019</time>
   </span>
   
 
@@ -398,7 +403,7 @@
   
   
   <span class="middot-divider"></span>
-  <a href="/publication/diana/#disqus_thread"></a>
+  <a href="/publication/19_dave_qn/#disqus_thread"></a>
   
 
   
@@ -409,35 +414,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Distributed%20Learning%20with%20Compressed%20Gradient%20Differences&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdiana%2f"
+         href="https://twitter.com/intent/tweet?text=DAve-QN%3a%20A%20Distributed%20Averaged%20Quasi-Newton%20Method%20with%20Local%20Superlinear%20Convergence%20Rate&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_dave_qn%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdiana%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_dave_qn%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdiana%2f&amp;title=Distributed%20Learning%20with%20Compressed%20Gradient%20Differences"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_dave_qn%2f&amp;title=DAve-QN%3a%20A%20Distributed%20Averaged%20Quasi-Newton%20Method%20with%20Local%20Superlinear%20Convergence%20Rate"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdiana%2f&amp;title=Distributed%20Learning%20with%20Compressed%20Gradient%20Differences"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_dave_qn%2f&amp;title=DAve-QN%3a%20A%20Distributed%20Averaged%20Quasi-Newton%20Method%20with%20Local%20Superlinear%20Convergence%20Rate"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Distributed%20Learning%20with%20Compressed%20Gradient%20Differences&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2fdiana%2f">
+         href="mailto:?subject=DAve-QN%3a%20A%20Distributed%20Averaged%20Quasi-Newton%20Method%20with%20Local%20Superlinear%20Convergence%20Rate&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_dave_qn%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -483,14 +488,14 @@
   
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1901.09269.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1906.00506.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/diana/cite.bib">
+        data-filename="/publication/19_dave_qn/cite.bib">
   Cite
 </button>
 
@@ -518,7 +523,7 @@
   
     
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1901.09269" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1906.00506" target="_blank" rel="noopener">
     
     arXiv
   </a>
@@ -536,7 +541,7 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">Training very large machine learning models requires a distributed computing approach, with communication of the model updates often being the bottleneck. For this reason, several methods based on the compression (e.g., sparsification and/or quantization) of the updates were recently proposed, including QSGD (Alistarh et al., 2017), TernGrad (Wen et al., 2017), SignSGD (Bernstein et al., 2018), and DQGD (Khirirat et al., 2018). However, none of these methods are able to learn the gradients, which means that they necessarily suffer from several issues, such as the inability to converge to the true optimum in the batch mode, inability to work with a nonsmooth regularizer, and slow convergence rates. In this work we propose a new distributed learning method&mdash;DIANA&mdash;which resolves these issues via compression of gradient differences. We perform a theoretical analysis in the strongly convex and nonconvex settings and show that our rates are vastly superior to existing rates. Our analysis of block-quantization and differences between ℓ2 and ℓ∞ quantization closes the gaps in theory and practice. Finally, by applying our analysis technique to TernGrad, we establish the first convergence rate for this method.</p>
+    <p class="pub-abstract" itemprop="text">In this paper, we consider distributed algorithms for solving the empirical risk minimization problem under the master/worker communication model. We develop a distributed asynchronous quasi-Newton algorithm that can achieve superlinear convergence. To our knowledge, this is the first distributed asynchronous algorithm with superlinear convergence guarantees. Our algorithm is communicationefficient in the sense that at every iteration the master node and workers communicate vectors of size O(p), where p is the dimension of the decision variable. The proposed method is based on a distributed asynchronous averaging scheme of decision vectors and gradients in a way to effectively capture the local Hessian information of the objective function. Our convergence theory supports asynchronous computations subject to both bounded delays and unbounded delays with a bounded time-average. Unlike in the majority of asynchronous optimization literature, we do not require choosing smaller stepsize when delays are huge. We provide numerical experiments that match our theoretical results and showcase significant improvement comparing to state-of-the-art distributed algorithms.</p>
     
 
     
@@ -548,9 +553,6 @@
     <div class="article-style"></div>
 
     
-
-
-
 
     
 

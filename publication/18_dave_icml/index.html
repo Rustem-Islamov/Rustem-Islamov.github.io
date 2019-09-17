@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="When forecasting time series with a hierarchical structure, the existing state of the art is to forecast each time series independently, and, in a post-treatment step, to reconcile the time series in a way that respects the hierarchy (Hyndman et al., 2011; Wickramasuriya et al., 2018). We propose a new loss function that can be incorporated into any maximum likelihood objective with hierarchical data, resulting in reconciled estimates with confidence intervals that correctly account for additional uncertainty due to imperfect reconciliation. We evaluate our method using a non-linear model and synthetic data on a counterfactual forecasting problem, where we have access to the ground truth and contemporaneous covariates, and show that we largely improve over the existing state-of-the-art method.">
+  <meta name="description" content="Distributed learning aims at computing high-quality models by training over scattered data. This covers a diversity of scenarios, including computer clusters or mobile agents. One of the main challenges is then to deal with heterogeneous machines and unreliable communications. In this setting, we propose and analyze a flexible asynchronous optimization algorithm for solving nonsmooth learning problems. Unlike most existing methods, our algorithm is adjustable to various levels of communication costs, machines computational powers, and data distribution evenness. We prove that the algorithm converges linearly with a fixed learning rate that does not depend on communication delays nor on the number of machines. Although long delays in communication may slow down performance, no delay can break convergence.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/time_series/">
+  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/18_dave_icml/">
 
   
 
@@ -119,7 +119,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://konstmish.github.io/publication/time_series/">
+  <link rel="canonical" href="https://konstmish.github.io/publication/18_dave_icml/">
 
   
   
@@ -131,21 +131,20 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
-  <meta property="og:url" content="https://konstmish.github.io/publication/time_series/">
-  <meta property="og:title" content="A Self-supervised Approach to Hierarchical Forecasting with Applications to Groupwise Synthetic Controls | Konstantin Mishchenko">
-  <meta property="og:description" content="When forecasting time series with a hierarchical structure, the existing state of the art is to forecast each time series independently, and, in a post-treatment step, to reconcile the time series in a way that respects the hierarchy (Hyndman et al., 2011; Wickramasuriya et al., 2018). We propose a new loss function that can be incorporated into any maximum likelihood objective with hierarchical data, resulting in reconciled estimates with confidence intervals that correctly account for additional uncertainty due to imperfect reconciliation. We evaluate our method using a non-linear model and synthetic data on a counterfactual forecasting problem, where we have access to the ground truth and contemporaneous covariates, and show that we largely improve over the existing state-of-the-art method."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://konstmish.github.io/publication/18_dave_icml/">
+  <meta property="og:title" content="A Delay-tolerant Proximal-Gradient Algorithm for Distributed Learning | Konstantin Mishchenko">
+  <meta property="og:description" content="Distributed learning aims at computing high-quality models by training over scattered data. This covers a diversity of scenarios, including computer clusters or mobile agents. One of the main challenges is then to deal with heterogeneous machines and unreliable communications. In this setting, we propose and analyze a flexible asynchronous optimization algorithm for solving nonsmooth learning problems. Unlike most existing methods, our algorithm is adjustable to various levels of communication costs, machines computational powers, and data distribution evenness. We prove that the algorithm converges linearly with a fixed learning rate that does not depend on communication delays nor on the number of machines. Although long delays in communication may slow down performance, no delay can break convergence."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-06-25T00:00:00&#43;03:00">
   
-  <meta property="article:modified_time" content="2019-06-25T00:00:00&#43;03:00">
   
-
   
 
   
 
-  <title>A Self-supervised Approach to Hierarchical Forecasting with Applications to Groupwise Synthetic Controls | Konstantin Mishchenko</title>
+  
+
+  <title>A Delay-tolerant Proximal-Gradient Algorithm for Distributed Learning | Konstantin Mishchenko</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -340,7 +339,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">A Self-supervised Approach to Hierarchical Forecasting with Applications to Groupwise Synthetic Controls</h1>
+  <h1 itemprop="name">A Delay-tolerant Proximal-Gradient Algorithm for Distributed Learning</h1>
 
   
 
@@ -348,8 +347,8 @@
     
 
 
-<meta content="2019-06-25 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
-<meta content="2019-06-25 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+<meta content="" itemprop="datePublished">
+<meta content="" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -365,12 +364,17 @@
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
-        <a href="/authors/mallory-montgomery/">Mallory Montgomery</a>
+        <a href="/authors/franck-iutzeler/">Franck Iutzeler</a>
       </span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
-        <a href="/authors/federico-vaggi/">Federico Vaggi</a>
+        <a href="/authors/j%C3%A9r%C3%B4me-malick/">Jérôme Malick</a>
+      </span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/massih-reza-amini/">Massih-Reza Amini</a>
       </span>
     </span>
     
@@ -384,7 +388,7 @@
     
       
     
-    <time>June 2019</time>
+    <time>January 0001</time>
   </span>
   
 
@@ -393,7 +397,7 @@
   
   
   <span class="middot-divider"></span>
-  <a href="/publication/time_series/#disqus_thread"></a>
+  <a href="/publication/18_dave_icml/#disqus_thread"></a>
   
 
   
@@ -404,35 +408,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=A%20Self-supervised%20Approach%20to%20Hierarchical%20Forecasting%20with%20Applications%20to%20Groupwise%20Synthetic%20Controls&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2ftime_series%2f"
+         href="https://twitter.com/intent/tweet?text=A%20Delay-tolerant%20Proximal-Gradient%20Algorithm%20for%20Distributed%20Learning&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f18_dave_icml%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2ftime_series%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2f18_dave_icml%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2ftime_series%2f&amp;title=A%20Self-supervised%20Approach%20to%20Hierarchical%20Forecasting%20with%20Applications%20to%20Groupwise%20Synthetic%20Controls"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f18_dave_icml%2f&amp;title=A%20Delay-tolerant%20Proximal-Gradient%20Algorithm%20for%20Distributed%20Learning"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2ftime_series%2f&amp;title=A%20Self-supervised%20Approach%20to%20Hierarchical%20Forecasting%20with%20Applications%20to%20Groupwise%20Synthetic%20Controls"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f18_dave_icml%2f&amp;title=A%20Delay-tolerant%20Proximal-Gradient%20Algorithm%20for%20Distributed%20Learning"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=A%20Self-supervised%20Approach%20to%20Hierarchical%20Forecasting%20with%20Applications%20to%20Groupwise%20Synthetic%20Controls&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2ftime_series%2f">
+         href="mailto:?subject=A%20Delay-tolerant%20Proximal-Gradient%20Algorithm%20for%20Distributed%20Learning&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2f18_dave_icml%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -478,14 +482,14 @@
   
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="http://roseyu.com/time-series-workshop/submissions/2019/timeseries-ICML19_paper_3.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="http://proceedings.mlr.press/v80/mishchenko18a/mishchenko18a.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/time_series/cite.bib">
+        data-filename="/publication/18_dave_icml/cite.bib">
   Cite
 </button>
 
@@ -513,25 +517,9 @@
   
     
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1906.10586" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1" href="http://proceedings.mlr.press/v80/mishchenko18a.html" target="_blank" rel="noopener">
     
-    arXiv
-  </a>
-
-  
-  
-  
-    
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary my-1 mr-1" href="http://roseyu.com/time-series-workshop/" target="_blank" rel="noopener">
-    
-    ICML
+    pmlr
   </a>
 
 
@@ -547,11 +535,44 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">When forecasting time series with a hierarchical structure, the existing state of the art is to forecast each time series independently, and, in a post-treatment step, to reconcile the time series in a way that respects the hierarchy (Hyndman et al., 2011; Wickramasuriya et al., 2018). We propose a new loss function that can be incorporated into any maximum likelihood objective with hierarchical data, resulting in reconciled estimates with confidence intervals that correctly account for additional uncertainty due to imperfect reconciliation. We evaluate our method using a non-linear model and synthetic data on a counterfactual forecasting problem, where we have access to the ground truth and contemporaneous covariates, and show that we largely improve over the existing state-of-the-art method.</p>
+    <p class="pub-abstract" itemprop="text">Distributed learning aims at computing high-quality models by training over scattered data. This covers a diversity of scenarios, including computer clusters or mobile agents. One of the main challenges is then to deal with heterogeneous machines and unreliable communications. In this setting, we propose and analyze a flexible asynchronous optimization algorithm for solving nonsmooth learning problems. Unlike most existing methods, our algorithm is adjustable to various levels of communication costs, machines computational powers, and data distribution evenness. We prove that the algorithm converges linearly with a fixed learning rate that does not depend on communication delays nor on the number of machines. Although long delays in communication may slow down performance, no delay can break convergence.</p>
     
 
     
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            
 
+            
+            
+            <a href="/publication/#2">
+              Journal article
+            </a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">International Conference on Machine Learning</div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
     
 
     <div class="space-below"></div>
@@ -559,9 +580,6 @@
     <div class="article-style"></div>
 
     
-
-
-
 
     
 

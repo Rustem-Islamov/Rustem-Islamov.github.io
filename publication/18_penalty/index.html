@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="We propose a randomized first order optimization method--SEGA (SkEtched GrAdient method)-- which progressively throughout its iterations builds a variance-reduced estimate of the gradient from random linear measurements (sketches) of the gradient obtained from an oracle. In each iteration, SEGA updates the current estimate of the gradient through a sketch-and-project operation using the information provided by the latest sketch, and this is subsequently used to compute an unbiased estimate of the true gradient through a random relaxation procedure. This unbiased estimate is then used to perform a gradient step. Unlike standard subspace descent methods, such as coordinate descent, SEGA can be used for optimization problems with a non-separable proximal term. We provide a general convergence analysis and prove linear convergence for strongly convex objectives. In the special case of coordinate sketches, SEGA can be enhanced with various techniques such as importance sampling, minibatching and acceleration, and its rate is up to a small constant factor identical to the best-known rate of coordinate descent.">
+  <meta name="description" content="The last decade witnessed a rise in the importance of supervised  learning applications involving big data and big models.  Big data refers to  situations where the amounts of training data  available and needed causes difficulties in the training phase of the pipeline. Big model refers to  situations where large dimensional  and over-parameterized models are  needed for the application at hand. Both of these phenomena lead to a dramatic increase in research activity aimed at taming the issues via the design of new sophisticated optimization algorithms.  In this paper we turn attention to the big constraints scenario and argue that elaborate machine learning systems of the future will necessarily need to account for a large number of  real-world constraints, which will need to be incorporated  in the training process. This line of work is largely unexplored, and provides ample opportunities for future work and applications.  To handle the big constraints regime, we propose a stochastic penalty formulation which reduces the problem to the well understood big data regime. Our formulation has many interesting  properties which relate it  to the original problem in various ways, with  mathematical guarantees. We give a number of results specialized to nonconvex loss functions, smooth convex functions, strongly convex functions and convex constraints. We show through experiments that our approach can beat  competing approaches by several orders of magnitude when a medium accuracy solution is required.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/sega/">
+  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/18_penalty/">
 
   
 
@@ -119,7 +119,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://konstmish.github.io/publication/sega/">
+  <link rel="canonical" href="https://konstmish.github.io/publication/18_penalty/">
 
   
   
@@ -131,21 +131,21 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
-  <meta property="og:url" content="https://konstmish.github.io/publication/sega/">
-  <meta property="og:title" content="SEGA: Variance Reduction via Gradient Sketching | Konstantin Mishchenko">
-  <meta property="og:description" content="We propose a randomized first order optimization method--SEGA (SkEtched GrAdient method)-- which progressively throughout its iterations builds a variance-reduced estimate of the gradient from random linear measurements (sketches) of the gradient obtained from an oracle. In each iteration, SEGA updates the current estimate of the gradient through a sketch-and-project operation using the information provided by the latest sketch, and this is subsequently used to compute an unbiased estimate of the true gradient through a random relaxation procedure. This unbiased estimate is then used to perform a gradient step. Unlike standard subspace descent methods, such as coordinate descent, SEGA can be used for optimization problems with a non-separable proximal term. We provide a general convergence analysis and prove linear convergence for strongly convex objectives. In the special case of coordinate sketches, SEGA can be enhanced with various techniques such as importance sampling, minibatching and acceleration, and its rate is up to a small constant factor identical to the best-known rate of coordinate descent."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://konstmish.github.io/publication/18_penalty/">
+  <meta property="og:title" content="A Stochastic Penalty Model for Convex and Nonconvex Optimization with Big Constraints | Konstantin Mishchenko">
+  <meta property="og:description" content="The last decade witnessed a rise in the importance of supervised  learning applications involving big data and big models.  Big data refers to  situations where the amounts of training data  available and needed causes difficulties in the training phase of the pipeline. Big model refers to  situations where large dimensional  and over-parameterized models are  needed for the application at hand. Both of these phenomena lead to a dramatic increase in research activity aimed at taming the issues via the design of new sophisticated optimization algorithms.  In this paper we turn attention to the big constraints scenario and argue that elaborate machine learning systems of the future will necessarily need to account for a large number of  real-world constraints, which will need to be incorporated  in the training process. This line of work is largely unexplored, and provides ample opportunities for future work and applications.  To handle the big constraints regime, we propose a stochastic penalty formulation which reduces the problem to the well understood big data regime. Our formulation has many interesting  properties which relate it  to the original problem in various ways, with  mathematical guarantees. We give a number of results specialized to nonconvex loss functions, smooth convex functions, strongly convex functions and convex constraints. We show through experiments that our approach can beat  competing approaches by several orders of magnitude when a medium accuracy solution is required."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2018-09-09T00:00:00&#43;00:00">
+  <meta property="article:published_time" content="2018-10-31T00:00:00&#43;03:00">
   
-  <meta property="article:modified_time" content="2018-09-09T00:00:00&#43;00:00">
-  
-
+  <meta property="article:modified_time" content="2018-10-31T00:00:00&#43;03:00">
   
 
   
 
-  <title>SEGA: Variance Reduction via Gradient Sketching | Konstantin Mishchenko</title>
+  
+
+  <title>A Stochastic Penalty Model for Convex and Nonconvex Optimization with Big Constraints | Konstantin Mishchenko</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -340,7 +340,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">SEGA: Variance Reduction via Gradient Sketching</h1>
+  <h1 itemprop="name">A Stochastic Penalty Model for Convex and Nonconvex Optimization with Big Constraints</h1>
 
   
 
@@ -348,8 +348,8 @@
     
 
 
-<meta content="2018-09-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2018-09-09 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+<meta content="2018-10-31 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2018-10-31 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -360,17 +360,12 @@
   <div>
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
-        <a href="/authors/filip-hanzely/">Filip Hanzely</a>
-      </span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">
         <a href="/authors/konstantin-mishchenko/">Konstantin Mishchenko</a>
       </span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
-        <a href="/authors/peter-richtarik/">Peter Richtarik</a>
+        <a href="/authors/peter-richt%C3%A1rik/">Peter Richtárik</a>
       </span>
     </span>
     
@@ -384,7 +379,7 @@
     
       
     
-    <time>September 2018</time>
+    <time>October 2018</time>
   </span>
   
 
@@ -393,7 +388,7 @@
   
   
   <span class="middot-divider"></span>
-  <a href="/publication/sega/#disqus_thread"></a>
+  <a href="/publication/18_penalty/#disqus_thread"></a>
   
 
   
@@ -404,35 +399,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=SEGA%3a%20Variance%20Reduction%20via%20Gradient%20Sketching&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fsega%2f"
+         href="https://twitter.com/intent/tweet?text=A%20Stochastic%20Penalty%20Model%20for%20Convex%20and%20Nonconvex%20Optimization%20with%20Big%20Constraints&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f18_penalty%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2fsega%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2f18_penalty%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fsega%2f&amp;title=SEGA%3a%20Variance%20Reduction%20via%20Gradient%20Sketching"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f18_penalty%2f&amp;title=A%20Stochastic%20Penalty%20Model%20for%20Convex%20and%20Nonconvex%20Optimization%20with%20Big%20Constraints"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fsega%2f&amp;title=SEGA%3a%20Variance%20Reduction%20via%20Gradient%20Sketching"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f18_penalty%2f&amp;title=A%20Stochastic%20Penalty%20Model%20for%20Convex%20and%20Nonconvex%20Optimization%20with%20Big%20Constraints"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=SEGA%3a%20Variance%20Reduction%20via%20Gradient%20Sketching&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2fsega%2f">
+         href="mailto:?subject=A%20Stochastic%20Penalty%20Model%20for%20Convex%20and%20Nonconvex%20Optimization%20with%20Big%20Constraints&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2f18_penalty%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -478,14 +473,14 @@
   
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-sketching.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1810.13387.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/sega/cite.bib">
+        data-filename="/publication/18_penalty/cite.bib">
   Cite
 </button>
 
@@ -513,25 +508,9 @@
   
     
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1809.03054" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1810.13387" target="_blank" rel="noopener">
     
     arXiv
-  </a>
-
-  
-  
-  
-    
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://papers.nips.cc/paper/7478-sega-variance-reduction-via-gradient-sketching" target="_blank" rel="noopener">
-    
-    NIPS
   </a>
 
 
@@ -547,44 +526,11 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">We propose a randomized first order optimization method&ndash;SEGA (SkEtched GrAdient method)&ndash; which progressively throughout its iterations builds a variance-reduced estimate of the gradient from random linear measurements (sketches) of the gradient obtained from an oracle. In each iteration, SEGA updates the current estimate of the gradient through a sketch-and-project operation using the information provided by the latest sketch, and this is subsequently used to compute an unbiased estimate of the true gradient through a random relaxation procedure. This unbiased estimate is then used to perform a gradient step. Unlike standard subspace descent methods, such as coordinate descent, SEGA can be used for optimization problems with a non-separable proximal term. We provide a general convergence analysis and prove linear convergence for strongly convex objectives. In the special case of coordinate sketches, SEGA can be enhanced with various techniques such as importance sampling, minibatching and acceleration, and its rate is up to a small constant factor identical to the best-known rate of coordinate descent.</p>
+    <p class="pub-abstract" itemprop="text">The last decade witnessed a rise in the importance of supervised  learning applications involving big data and big models.  Big data refers to  situations where the amounts of training data  available and needed causes difficulties in the training phase of the pipeline. Big model refers to  situations where large dimensional  and over-parameterized models are  needed for the application at hand. Both of these phenomena lead to a dramatic increase in research activity aimed at taming the issues via the design of new sophisticated optimization algorithms.  In this paper we turn attention to the big constraints scenario and argue that elaborate machine learning systems of the future will necessarily need to account for a large number of  real-world constraints, which will need to be incorporated  in the training process. This line of work is largely unexplored, and provides ample opportunities for future work and applications.  To handle the big constraints regime, we propose a stochastic penalty formulation which reduces the problem to the well understood big data regime. Our formulation has many interesting  properties which relate it  to the original problem in various ways, with  mathematical guarantees. We give a number of results specialized to nonconvex loss functions, smooth convex functions, strongly convex functions and convex constraints. We show through experiments that our approach can beat  competing approaches by several orders of magnitude when a medium accuracy solution is required.</p>
     
 
     
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Type</div>
-          <div class="col-12 col-md-9">
-            
 
-            
-            
-            <a href="/publication/#2">
-              Journal article
-            </a>
-            
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
-          <div class="col-12 col-md-9">In Advances in Neural Information Processing Systems, 2018</div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
     
 
     <div class="space-below"></div>
@@ -592,6 +538,9 @@
     <div class="article-style"></div>
 
     
+
+
+
 
     
 

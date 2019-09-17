@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>https://konstmish.github.io/publication/19_sinkhorn/</loc>
+      <lastmod>2019-09-16T00:00:00+03:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://konstmish.github.io/post/19_fed_learning/</loc>
       <lastmod>2019-09-13T00:00:00+03:00</lastmod>
     </url>
@@ -12,7 +20,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/local_sgd/</loc>
+      <loc>https://konstmish.github.io/publication/19_local_sgd/</loc>
       <lastmod>2019-09-12T00:00:00+03:00</lastmod>
     </url>
     
@@ -20,7 +28,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/local_gd/</loc>
+      <loc>https://konstmish.github.io/publication/19_local_gd/</loc>
       <lastmod>2019-09-12T00:00:00+03:00</lastmod>
     </url>
     
@@ -76,7 +84,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/time_series/</loc>
+      <loc>https://konstmish.github.io/publication/19_time_series/</loc>
       <lastmod>2019-06-25T00:00:00+03:00</lastmod>
     </url>
     
@@ -84,7 +92,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/miso/</loc>
+      <loc>https://konstmish.github.io/publication/19_miso/</loc>
       <lastmod>2019-06-04T00:00:00+03:00</lastmod>
     </url>
     
@@ -92,7 +100,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/dave_qn/</loc>
+      <loc>https://konstmish.github.io/publication/19_dave_qn/</loc>
       <lastmod>2019-06-03T00:00:00+00:00</lastmod>
     </url>
     
@@ -100,7 +108,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/stoch_decoupling/</loc>
+      <loc>https://konstmish.github.io/publication/19_stoch_decoupling/</loc>
       <lastmod>2019-05-27T00:00:00+03:00</lastmod>
     </url>
     
@@ -108,7 +116,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/extra_vi/</loc>
+      <loc>https://konstmish.github.io/publication/19_extra_vi/</loc>
       <lastmod>2019-05-27T00:00:00+03:00</lastmod>
     </url>
     
@@ -116,7 +124,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/quant_vr/</loc>
+      <loc>https://konstmish.github.io/publication/19_quant_vr/</loc>
       <lastmod>2019-04-11T00:00:00+03:00</lastmod>
     </url>
     
@@ -148,7 +156,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/99/</loc>
+      <loc>https://konstmish.github.io/publication/19_99/</loc>
       <lastmod>2019-01-29T00:00:00+03:00</lastmod>
     </url>
     
@@ -156,7 +164,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/diana/</loc>
+      <loc>https://konstmish.github.io/publication/19_diana/</loc>
       <lastmod>2019-01-29T00:00:00+03:00</lastmod>
     </url>
     
@@ -164,7 +172,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/penalty/</loc>
+      <loc>https://konstmish.github.io/publication/18_penalty/</loc>
       <lastmod>2018-10-31T00:00:00+03:00</lastmod>
     </url>
     
@@ -188,7 +196,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/sega/</loc>
+      <loc>https://konstmish.github.io/publication/18_sega/</loc>
       <lastmod>2018-09-09T00:00:00+00:00</lastmod>
     </url>
     
@@ -204,7 +212,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/dave_siopt/</loc>
+      <loc>https://konstmish.github.io/publication/18_dave_siopt/</loc>
       <lastmod>2018-06-25T00:00:00+00:00</lastmod>
     </url>
     
@@ -300,7 +308,7 @@
     
     <url>
     
-      <loc>https://konstmish.github.io/publication/dave_icml/</loc>
+      <loc>https://konstmish.github.io/publication/18_dave_icml/</loc>
     </url>
     
   
@@ -432,7 +440,7 @@
     <url>
     
       <loc>https://konstmish.github.io/authors/konstantin-mishchenko/</loc>
-      <lastmod>2019-09-12T00:00:00+03:00</lastmod>
+      <lastmod>2019-09-16T00:00:00+03:00</lastmod>
       <priority>0</priority>
     </url>
     

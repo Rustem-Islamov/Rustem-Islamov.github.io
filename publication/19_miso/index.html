@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="We revisit the local Stochastic Gradient Descent (local SGD) method and prove new convergence rates. We close the gap in the theory by showing that it works under unbounded gradients and extend its convergence to weakly convex functions. Furthermore, by changing the assumptions, we manage to get new bounds that explain in what regimes local SGD is faster that its non-local version. For instance, if the objective is strongly convex, we show that, up to constants, it is sufficient to synchronize M times in total, where M is the number of nodes. This improves upon the known requirement of Stich (2018) of sqrt(TM) synchronization times in total, where T is the total number of iterations, which helps to explain the empirical success of local SGD.">
+  <meta name="description" content="MISO, also known as Finito, was one of the first stochastic variance reduced methods discovered, yet its popularity is fairly low. Its initial analysis was significantly limited by the so-called Big Data assumption. Although the assumption was lifted in subsequent work using negative momentum, this introduced a new parameter and required knowledge of strong convexity and smoothness constants, which is rarely possible in practice. We rehabilitate the method by introducing a new variant that needs only smoothness constant and does not have any extra parameters. Furthermore, when removing the strong convexity constant from the stepsize, we present a new analysis of the method, which no longer uses the assumption that every component is strongly convex. This allows us to also obtain so far unknown nonconvex convergence of MISO. To make the proposed method efficient in practice, we derive minibatching bounds with arbitrary uniform sampling that lead to linear speedup when the expected minibatch size is in a certain range. Our numerical experiments show that MISO is a serious competitor to SAGA and SVRG and sometimes outperforms them on real datasets.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/local_sgd/">
+  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/19_miso/">
 
   
 
@@ -119,7 +119,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://konstmish.github.io/publication/local_sgd/">
+  <link rel="canonical" href="https://konstmish.github.io/publication/19_miso/">
 
   
   
@@ -131,21 +131,21 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
-  <meta property="og:url" content="https://konstmish.github.io/publication/local_sgd/">
-  <meta property="og:title" content="Better Communication Complexity for Local SGD | Konstantin Mishchenko">
-  <meta property="og:description" content="We revisit the local Stochastic Gradient Descent (local SGD) method and prove new convergence rates. We close the gap in the theory by showing that it works under unbounded gradients and extend its convergence to weakly convex functions. Furthermore, by changing the assumptions, we manage to get new bounds that explain in what regimes local SGD is faster that its non-local version. For instance, if the objective is strongly convex, we show that, up to constants, it is sufficient to synchronize M times in total, where M is the number of nodes. This improves upon the known requirement of Stich (2018) of sqrt(TM) synchronization times in total, where T is the total number of iterations, which helps to explain the empirical success of local SGD."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://konstmish.github.io/publication/19_miso/">
+  <meta property="og:title" content="MISO is Making a Comeback With Better Proofs and Rates | Konstantin Mishchenko">
+  <meta property="og:description" content="MISO, also known as Finito, was one of the first stochastic variance reduced methods discovered, yet its popularity is fairly low. Its initial analysis was significantly limited by the so-called Big Data assumption. Although the assumption was lifted in subsequent work using negative momentum, this introduced a new parameter and required knowledge of strong convexity and smoothness constants, which is rarely possible in practice. We rehabilitate the method by introducing a new variant that needs only smoothness constant and does not have any extra parameters. Furthermore, when removing the strong convexity constant from the stepsize, we present a new analysis of the method, which no longer uses the assumption that every component is strongly convex. This allows us to also obtain so far unknown nonconvex convergence of MISO. To make the proposed method efficient in practice, we derive minibatching bounds with arbitrary uniform sampling that lead to linear speedup when the expected minibatch size is in a certain range. Our numerical experiments show that MISO is a serious competitor to SAGA and SVRG and sometimes outperforms them on real datasets."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-09-12T00:00:00&#43;03:00">
+  <meta property="article:published_time" content="2019-06-04T00:00:00&#43;03:00">
   
-  <meta property="article:modified_time" content="2019-09-12T00:00:00&#43;03:00">
-  
-
+  <meta property="article:modified_time" content="2019-06-04T00:00:00&#43;03:00">
   
 
   
 
-  <title>Better Communication Complexity for Local SGD | Konstantin Mishchenko</title>
+  
+
+  <title>MISO is Making a Comeback With Better Proofs and Rates | Konstantin Mishchenko</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -340,7 +340,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Better Communication Complexity for Local SGD</h1>
+  <h1 itemprop="name">MISO is Making a Comeback With Better Proofs and Rates</h1>
 
   
 
@@ -348,8 +348,8 @@
     
 
 
-<meta content="2019-09-12 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
-<meta content="2019-09-12 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+<meta content="2019-06-04 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2019-06-04 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -360,7 +360,12 @@
   <div>
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
-        <a href="/authors/ahmed-khaled/">Ahmed Khaled</a>
+        <a href="/authors/xun-qian/">Xun Qian</a>
+      </span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/alibek-sailanbayev/">Alibek Sailanbayev</a>
       </span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
@@ -384,7 +389,7 @@
     
       
     
-    <time>September 2019</time>
+    <time>June 2019</time>
   </span>
   
 
@@ -393,7 +398,7 @@
   
   
   <span class="middot-divider"></span>
-  <a href="/publication/local_sgd/#disqus_thread"></a>
+  <a href="/publication/19_miso/#disqus_thread"></a>
   
 
   
@@ -404,35 +409,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Better%20Communication%20Complexity%20for%20Local%20SGD&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2flocal_sgd%2f"
+         href="https://twitter.com/intent/tweet?text=MISO%20is%20Making%20a%20Comeback%20With%20Better%20Proofs%20and%20Rates&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_miso%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2flocal_sgd%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_miso%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2flocal_sgd%2f&amp;title=Better%20Communication%20Complexity%20for%20Local%20SGD"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_miso%2f&amp;title=MISO%20is%20Making%20a%20Comeback%20With%20Better%20Proofs%20and%20Rates"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2flocal_sgd%2f&amp;title=Better%20Communication%20Complexity%20for%20Local%20SGD"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_miso%2f&amp;title=MISO%20is%20Making%20a%20Comeback%20With%20Better%20Proofs%20and%20Rates"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Better%20Communication%20Complexity%20for%20Local%20SGD&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2flocal_sgd%2f">
+         href="mailto:?subject=MISO%20is%20Making%20a%20Comeback%20With%20Better%20Proofs%20and%20Rates&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_miso%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -478,14 +483,14 @@
   
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1909.04746.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1906.01474.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/local_sgd/cite.bib">
+        data-filename="/publication/19_miso/cite.bib">
   Cite
 </button>
 
@@ -513,7 +518,7 @@
   
     
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1909.04746" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1906.01474" target="_blank" rel="noopener">
     
     arXiv
   </a>
@@ -531,7 +536,7 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">We revisit the local Stochastic Gradient Descent (local SGD) method and prove new convergence rates. We close the gap in the theory by showing that it works under unbounded gradients and extend its convergence to weakly convex functions. Furthermore, by changing the assumptions, we manage to get new bounds that explain in what regimes local SGD is faster that its non-local version. For instance, if the objective is strongly convex, we show that, up to constants, it is sufficient to synchronize M times in total, where M is the number of nodes. This improves upon the known requirement of Stich (2018) of sqrt&trade; synchronization times in total, where T is the total number of iterations, which helps to explain the empirical success of local SGD.</p>
+    <p class="pub-abstract" itemprop="text">MISO, also known as Finito, was one of the first stochastic variance reduced methods discovered, yet its popularity is fairly low. Its initial analysis was significantly limited by the so-called Big Data assumption. Although the assumption was lifted in subsequent work using negative momentum, this introduced a new parameter and required knowledge of strong convexity and smoothness constants, which is rarely possible in practice. We rehabilitate the method by introducing a new variant that needs only smoothness constant and does not have any extra parameters. Furthermore, when removing the strong convexity constant from the stepsize, we present a new analysis of the method, which no longer uses the assumption that every component is strongly convex. This allows us to also obtain so far unknown nonconvex convergence of MISO. To make the proposed method efficient in practice, we derive minibatching bounds with arbitrary uniform sampling that lead to linear speedup when the expected minibatch size is in a certain range. Our numerical experiments show that MISO is a serious competitor to SAGA and SVRG and sometimes outperforms them on real datasets.</p>
     
 
     

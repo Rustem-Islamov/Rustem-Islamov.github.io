@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="We consider the problem of minimizing the sum of three convex functions: i) a smooth function $f$ in the form of an expectation or a finite average, ii) a non-smooth function $g$ in the form of a finite average of proximable functions $g_j$, and iii) a proximable regularizer $R$. We design a variance reduced method which is able progressively  learn the proximal operator of $g$ via the computation of the proximal operator of a single randomly selected function $g_j$ in each iteration only. Our method can provably and efficiently accommodate many strategies for the estimation of the gradient of $f$, including via standard and variance-reduced stochastic estimation, effectively decoupling the smooth part of the problem from the non-smooth part. We prove a number of iteration complexity results, including a general $O(1/t)$ rate, $O(1/t^2)$ rate in the case of strongly convex $f$, and several linear rates in special cases, including accelerated linear rate. For example, our method achieves a linear rate for the problem of minimizing a strongly convex function $f$ under linear constraints under no assumption on the constraints beyond consistency. When combined with SGD or SAGA estimators for the gradient of $f$, this  leads to  a very efficient method for empirical risk minimization with large linear constraints.  Our method generalizes several existing algorithms, including forward-backward splitting, Douglas-Rachford splitting, proximal SGD, proximal SAGA, SDCA, randomized Kaczmarz and Point-SAGA. However, our method leads to many new specific methods in special cases; for instance,  we obtain the first randomized variant of the Dykstra&#39;s method for projection onto the intersection of closed convex sets. ">
+  <meta name="description" content="We revisit the local Stochastic Gradient Descent (local SGD) method and prove new convergence rates. We close the gap in the theory by showing that it works under unbounded gradients and extend its convergence to weakly convex functions. Furthermore, by changing the assumptions, we manage to get new bounds that explain in what regimes local SGD is faster that its non-local version. For instance, if the objective is strongly convex, we show that, up to constants, it is sufficient to synchronize M times in total, where M is the number of nodes. This improves upon the known requirement of Stich (2018) of sqrt(TM) synchronization times in total, where T is the total number of iterations, which helps to explain the empirical success of local SGD.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/stoch_decoupling/">
+  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/19_local_sgd/">
 
   
 
@@ -119,7 +119,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://konstmish.github.io/publication/stoch_decoupling/">
+  <link rel="canonical" href="https://konstmish.github.io/publication/19_local_sgd/">
 
   
   
@@ -131,21 +131,21 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
-  <meta property="og:url" content="https://konstmish.github.io/publication/stoch_decoupling/">
-  <meta property="og:title" content="A Stochastic Decoupling Method for Minimizing the Sum of Smooth and Non-Smooth Functions | Konstantin Mishchenko">
-  <meta property="og:description" content="We consider the problem of minimizing the sum of three convex functions: i) a smooth function $f$ in the form of an expectation or a finite average, ii) a non-smooth function $g$ in the form of a finite average of proximable functions $g_j$, and iii) a proximable regularizer $R$. We design a variance reduced method which is able progressively  learn the proximal operator of $g$ via the computation of the proximal operator of a single randomly selected function $g_j$ in each iteration only. Our method can provably and efficiently accommodate many strategies for the estimation of the gradient of $f$, including via standard and variance-reduced stochastic estimation, effectively decoupling the smooth part of the problem from the non-smooth part. We prove a number of iteration complexity results, including a general $O(1/t)$ rate, $O(1/t^2)$ rate in the case of strongly convex $f$, and several linear rates in special cases, including accelerated linear rate. For example, our method achieves a linear rate for the problem of minimizing a strongly convex function $f$ under linear constraints under no assumption on the constraints beyond consistency. When combined with SGD or SAGA estimators for the gradient of $f$, this  leads to  a very efficient method for empirical risk minimization with large linear constraints.  Our method generalizes several existing algorithms, including forward-backward splitting, Douglas-Rachford splitting, proximal SGD, proximal SAGA, SDCA, randomized Kaczmarz and Point-SAGA. However, our method leads to many new specific methods in special cases; for instance,  we obtain the first randomized variant of the Dykstra&#39;s method for projection onto the intersection of closed convex sets. "><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://konstmish.github.io/publication/19_local_sgd/">
+  <meta property="og:title" content="Better Communication Complexity for Local SGD | Konstantin Mishchenko">
+  <meta property="og:description" content="We revisit the local Stochastic Gradient Descent (local SGD) method and prove new convergence rates. We close the gap in the theory by showing that it works under unbounded gradients and extend its convergence to weakly convex functions. Furthermore, by changing the assumptions, we manage to get new bounds that explain in what regimes local SGD is faster that its non-local version. For instance, if the objective is strongly convex, we show that, up to constants, it is sufficient to synchronize M times in total, where M is the number of nodes. This improves upon the known requirement of Stich (2018) of sqrt(TM) synchronization times in total, where T is the total number of iterations, which helps to explain the empirical success of local SGD."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-27T00:00:00&#43;03:00">
+  <meta property="article:published_time" content="2019-09-12T00:00:00&#43;03:00">
   
-  <meta property="article:modified_time" content="2019-05-27T00:00:00&#43;03:00">
-  
-
+  <meta property="article:modified_time" content="2019-09-12T00:00:00&#43;03:00">
   
 
   
 
-  <title>A Stochastic Decoupling Method for Minimizing the Sum of Smooth and Non-Smooth Functions | Konstantin Mishchenko</title>
+  
+
+  <title>Better Communication Complexity for Local SGD | Konstantin Mishchenko</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -340,7 +340,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">A Stochastic Decoupling Method for Minimizing the Sum of Smooth and Non-Smooth Functions</h1>
+  <h1 itemprop="name">Better Communication Complexity for Local SGD</h1>
 
   
 
@@ -348,8 +348,8 @@
     
 
 
-<meta content="2019-05-27 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
-<meta content="2019-05-27 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+<meta content="2019-09-12 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2019-09-12 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -358,6 +358,11 @@
   
   
   <div>
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/ahmed-khaled/">Ahmed Khaled</a>
+      </span>
+    </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
         <a href="/authors/konstantin-mishchenko/">Konstantin Mishchenko</a>
@@ -379,7 +384,7 @@
     
       
     
-    <time>May 2019</time>
+    <time>September 2019</time>
   </span>
   
 
@@ -388,7 +393,7 @@
   
   
   <span class="middot-divider"></span>
-  <a href="/publication/stoch_decoupling/#disqus_thread"></a>
+  <a href="/publication/19_local_sgd/#disqus_thread"></a>
   
 
   
@@ -399,35 +404,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=A%20Stochastic%20Decoupling%20Method%20for%20Minimizing%20the%20Sum%20of%20Smooth%20and%20Non-Smooth%20Functions&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fstoch_decoupling%2f"
+         href="https://twitter.com/intent/tweet?text=Better%20Communication%20Complexity%20for%20Local%20SGD&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_local_sgd%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2fstoch_decoupling%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_local_sgd%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fstoch_decoupling%2f&amp;title=A%20Stochastic%20Decoupling%20Method%20for%20Minimizing%20the%20Sum%20of%20Smooth%20and%20Non-Smooth%20Functions"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_local_sgd%2f&amp;title=Better%20Communication%20Complexity%20for%20Local%20SGD"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fstoch_decoupling%2f&amp;title=A%20Stochastic%20Decoupling%20Method%20for%20Minimizing%20the%20Sum%20of%20Smooth%20and%20Non-Smooth%20Functions"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_local_sgd%2f&amp;title=Better%20Communication%20Complexity%20for%20Local%20SGD"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=A%20Stochastic%20Decoupling%20Method%20for%20Minimizing%20the%20Sum%20of%20Smooth%20and%20Non-Smooth%20Functions&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2fstoch_decoupling%2f">
+         href="mailto:?subject=Better%20Communication%20Complexity%20for%20Local%20SGD&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_local_sgd%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -473,14 +478,14 @@
   
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1905.11535.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1909.04746.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/stoch_decoupling/cite.bib">
+        data-filename="/publication/19_local_sgd/cite.bib">
   Cite
 </button>
 
@@ -508,7 +513,7 @@
   
     
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1905.11535" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1909.04746" target="_blank" rel="noopener">
     
     arXiv
   </a>
@@ -526,7 +531,7 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">We consider the problem of minimizing the sum of three convex functions: i) a smooth function $f$ in the form of an expectation or a finite average, ii) a non-smooth function $g$ in the form of a finite average of proximable functions $g_j$, and iii) a proximable regularizer $R$. We design a variance reduced method which is able progressively  learn the proximal operator of $g$ via the computation of the proximal operator of a single randomly selected function $g_j$ in each iteration only. Our method can provably and efficiently accommodate many strategies for the estimation of the gradient of $f$, including via standard and variance-reduced stochastic estimation, effectively decoupling the smooth part of the problem from the non-smooth part. We prove a number of iteration complexity results, including a general $O(1/t)$ rate, $O(1/t^2)$ rate in the case of strongly convex $f$, and several linear rates in special cases, including accelerated linear rate. For example, our method achieves a linear rate for the problem of minimizing a strongly convex function $f$ under linear constraints under no assumption on the constraints beyond consistency. When combined with SGD or SAGA estimators for the gradient of $f$, this  leads to  a very efficient method for empirical risk minimization with large linear constraints.  Our method generalizes several existing algorithms, including forward-backward splitting, Douglas-Rachford splitting, proximal SGD, proximal SAGA, SDCA, randomized Kaczmarz and Point-SAGA. However, our method leads to many new specific methods in special cases; for instance,  we obtain the first randomized variant of the Dykstra&rsquo;s method for projection onto the intersection of closed convex sets.</p>
+    <p class="pub-abstract" itemprop="text">We revisit the local Stochastic Gradient Descent (local SGD) method and prove new convergence rates. We close the gap in the theory by showing that it works under unbounded gradients and extend its convergence to weakly convex functions. Furthermore, by changing the assumptions, we manage to get new bounds that explain in what regimes local SGD is faster that its non-local version. For instance, if the objective is strongly convex, we show that, up to constants, it is sufficient to synchronize M times in total, where M is the number of nodes. This improves upon the known requirement of Stich (2018) of sqrt&trade; synchronization times in total, where T is the total number of iterations, which helps to explain the empirical success of local SGD.</p>
     
 
     

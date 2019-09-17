@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="The last decade witnessed a rise in the importance of supervised  learning applications involving big data and big models.  Big data refers to  situations where the amounts of training data  available and needed causes difficulties in the training phase of the pipeline. Big model refers to  situations where large dimensional  and over-parameterized models are  needed for the application at hand. Both of these phenomena lead to a dramatic increase in research activity aimed at taming the issues via the design of new sophisticated optimization algorithms.  In this paper we turn attention to the big constraints scenario and argue that elaborate machine learning systems of the future will necessarily need to account for a large number of  real-world constraints, which will need to be incorporated  in the training process. This line of work is largely unexplored, and provides ample opportunities for future work and applications.  To handle the big constraints regime, we propose a stochastic penalty formulation which reduces the problem to the well understood big data regime. Our formulation has many interesting  properties which relate it  to the original problem in various ways, with  mathematical guarantees. We give a number of results specialized to nonconvex loss functions, smooth convex functions, strongly convex functions and convex constraints. We show through experiments that our approach can beat  competing approaches by several orders of magnitude when a medium accuracy solution is required.">
+  <meta name="description" content="We consider distributed optimization where the objective function is spread among different devices, each sending incremental model updates to a central server. To alleviate the communication bottleneck, recent work proposed various schemes to compress (e.g. quantize or sparsify) the gradients, thereby introducing additional variance $ \omega\ge $ 1 that might slow down convergence. For strongly convex functions with condition number kappa distributed among $n$ machines, we (i) give a scheme that converges in $O((\kappa&#43;\kappa \omega / n&#43;\omega) \log(1/\epsilon))$ steps to a neighborhood of the optimal solution. For objective functions with a finite-sum structure, each worker having less than m components, we (ii) present novel variance reduced schemes that converge in $O((\kappa&#43;\kappa \omega / n&#43;\omega&#43;m)log(1/\epsilon))$ steps to arbitrary accuracy $\epsilon&gt;0$.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/penalty/">
+  <link rel="alternate" hreflang="en-us" href="https://konstmish.github.io/publication/19_quant_vr/">
 
   
 
@@ -119,7 +119,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://konstmish.github.io/publication/penalty/">
+  <link rel="canonical" href="https://konstmish.github.io/publication/19_quant_vr/">
 
   
   
@@ -131,21 +131,21 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Konstantin Mishchenko">
-  <meta property="og:url" content="https://konstmish.github.io/publication/penalty/">
-  <meta property="og:title" content="A Stochastic Penalty Model for Convex and Nonconvex Optimization with Big Constraints | Konstantin Mishchenko">
-  <meta property="og:description" content="The last decade witnessed a rise in the importance of supervised  learning applications involving big data and big models.  Big data refers to  situations where the amounts of training data  available and needed causes difficulties in the training phase of the pipeline. Big model refers to  situations where large dimensional  and over-parameterized models are  needed for the application at hand. Both of these phenomena lead to a dramatic increase in research activity aimed at taming the issues via the design of new sophisticated optimization algorithms.  In this paper we turn attention to the big constraints scenario and argue that elaborate machine learning systems of the future will necessarily need to account for a large number of  real-world constraints, which will need to be incorporated  in the training process. This line of work is largely unexplored, and provides ample opportunities for future work and applications.  To handle the big constraints regime, we propose a stochastic penalty formulation which reduces the problem to the well understood big data regime. Our formulation has many interesting  properties which relate it  to the original problem in various ways, with  mathematical guarantees. We give a number of results specialized to nonconvex loss functions, smooth convex functions, strongly convex functions and convex constraints. We show through experiments that our approach can beat  competing approaches by several orders of magnitude when a medium accuracy solution is required."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://konstmish.github.io/publication/19_quant_vr/">
+  <meta property="og:title" content="Stochastic Distributed Learning with Gradient Quantization and Variance Reduction | Konstantin Mishchenko">
+  <meta property="og:description" content="We consider distributed optimization where the objective function is spread among different devices, each sending incremental model updates to a central server. To alleviate the communication bottleneck, recent work proposed various schemes to compress (e.g. quantize or sparsify) the gradients, thereby introducing additional variance $ \omega\ge $ 1 that might slow down convergence. For strongly convex functions with condition number kappa distributed among $n$ machines, we (i) give a scheme that converges in $O((\kappa&#43;\kappa \omega / n&#43;\omega) \log(1/\epsilon))$ steps to a neighborhood of the optimal solution. For objective functions with a finite-sum structure, each worker having less than m components, we (ii) present novel variance reduced schemes that converge in $O((\kappa&#43;\kappa \omega / n&#43;\omega&#43;m)log(1/\epsilon))$ steps to arbitrary accuracy $\epsilon&gt;0$."><meta property="og:image" content="https://konstmish.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2018-10-31T00:00:00&#43;03:00">
+  <meta property="article:published_time" content="2019-04-11T00:00:00&#43;03:00">
   
-  <meta property="article:modified_time" content="2018-10-31T00:00:00&#43;03:00">
-  
-
+  <meta property="article:modified_time" content="2019-04-11T00:00:00&#43;03:00">
   
 
   
 
-  <title>A Stochastic Penalty Model for Convex and Nonconvex Optimization with Big Constraints | Konstantin Mishchenko</title>
+  
+
+  <title>Stochastic Distributed Learning with Gradient Quantization and Variance Reduction | Konstantin Mishchenko</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -340,7 +340,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">A Stochastic Penalty Model for Convex and Nonconvex Optimization with Big Constraints</h1>
+  <h1 itemprop="name">Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</h1>
 
   
 
@@ -348,8 +348,8 @@
     
 
 
-<meta content="2018-10-31 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
-<meta content="2018-10-31 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
+<meta content="2019-04-11 00:00:00 &#43;0300 &#43;03" itemprop="datePublished">
+<meta content="2019-04-11 00:00:00 &#43;0300 &#43;03" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -360,7 +360,22 @@
   <div>
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">
+        <a href="/authors/samuel-horv%C3%A1th/">Samuel Horváth</a>
+      </span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/dmitry-kovalev/">Dmitry Kovalev</a>
+      </span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
         <a href="/authors/konstantin-mishchenko/">Konstantin Mishchenko</a>
+      </span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        <a href="/authors/sebastian-stich/">Sebastian Stich</a>
       </span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
@@ -379,7 +394,7 @@
     
       
     
-    <time>October 2018</time>
+    <time>April 2019</time>
   </span>
   
 
@@ -388,7 +403,7 @@
   
   
   <span class="middot-divider"></span>
-  <a href="/publication/penalty/#disqus_thread"></a>
+  <a href="/publication/19_quant_vr/#disqus_thread"></a>
   
 
   
@@ -399,35 +414,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=A%20Stochastic%20Penalty%20Model%20for%20Convex%20and%20Nonconvex%20Optimization%20with%20Big%20Constraints&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fpenalty%2f"
+         href="https://twitter.com/intent/tweet?text=Stochastic%20Distributed%20Learning%20with%20Gradient%20Quantization%20and%20Variance%20Reduction&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_quant_vr%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2fpenalty%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_quant_vr%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fpenalty%2f&amp;title=A%20Stochastic%20Penalty%20Model%20for%20Convex%20and%20Nonconvex%20Optimization%20with%20Big%20Constraints"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_quant_vr%2f&amp;title=Stochastic%20Distributed%20Learning%20with%20Gradient%20Quantization%20and%20Variance%20Reduction"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2fpenalty%2f&amp;title=A%20Stochastic%20Penalty%20Model%20for%20Convex%20and%20Nonconvex%20Optimization%20with%20Big%20Constraints"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_quant_vr%2f&amp;title=Stochastic%20Distributed%20Learning%20with%20Gradient%20Quantization%20and%20Variance%20Reduction"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=A%20Stochastic%20Penalty%20Model%20for%20Convex%20and%20Nonconvex%20Optimization%20with%20Big%20Constraints&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2fpenalty%2f">
+         href="mailto:?subject=Stochastic%20Distributed%20Learning%20with%20Gradient%20Quantization%20and%20Variance%20Reduction&amp;body=https%3a%2f%2fkonstmish.github.io%2fpublication%2f19_quant_vr%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -473,14 +488,14 @@
   
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1810.13387.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1904.05115.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/penalty/cite.bib">
+        data-filename="/publication/19_quant_vr/cite.bib">
   Cite
 </button>
 
@@ -508,7 +523,7 @@
   
     
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1810.13387" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1904.05115" target="_blank" rel="noopener">
     
     arXiv
   </a>
@@ -526,7 +541,7 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">The last decade witnessed a rise in the importance of supervised  learning applications involving big data and big models.  Big data refers to  situations where the amounts of training data  available and needed causes difficulties in the training phase of the pipeline. Big model refers to  situations where large dimensional  and over-parameterized models are  needed for the application at hand. Both of these phenomena lead to a dramatic increase in research activity aimed at taming the issues via the design of new sophisticated optimization algorithms.  In this paper we turn attention to the big constraints scenario and argue that elaborate machine learning systems of the future will necessarily need to account for a large number of  real-world constraints, which will need to be incorporated  in the training process. This line of work is largely unexplored, and provides ample opportunities for future work and applications.  To handle the big constraints regime, we propose a stochastic penalty formulation which reduces the problem to the well understood big data regime. Our formulation has many interesting  properties which relate it  to the original problem in various ways, with  mathematical guarantees. We give a number of results specialized to nonconvex loss functions, smooth convex functions, strongly convex functions and convex constraints. We show through experiments that our approach can beat  competing approaches by several orders of magnitude when a medium accuracy solution is required.</p>
+    <p class="pub-abstract" itemprop="text">We consider distributed optimization where the objective function is spread among different devices, each sending incremental model updates to a central server. To alleviate the communication bottleneck, recent work proposed various schemes to compress (e.g. quantize or sparsify) the gradients, thereby introducing additional variance $ \omega\ge $ 1 that might slow down convergence. For strongly convex functions with condition number kappa distributed among $n$ machines, we (i) give a scheme that converges in $O((\kappa+\kappa \omega / n+\omega) \log(1/\epsilon))$ steps to a neighborhood of the optimal solution. For objective functions with a finite-sum structure, each worker having less than m components, we (ii) present novel variance reduced schemes that converge in $O((\kappa+\kappa \omega / n+\omega+m)log(1/\epsilon))$ steps to arbitrary accuracy $\epsilon&gt;0$.</p>
     
 
     
