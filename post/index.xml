@@ -13,6 +13,24 @@
     
     
     <item>
+      <title>A new paper connects Sinkhorn Algorithm and Stochastc Mirror Descent</title>
+      <link>https://konstmish.github.io/post/19_sinkhorn/</link>
+      <pubDate>Tue, 17 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/19_sinkhorn/</guid>
+      <description>My new paper (for the first time I wrote a single authored work!) is now available online, see the publication section. It turned out the famous Sinkhorn algorithm is nothing but an instance of stochastic mirror descent. Very exciting to see the notion of relative smoothness appear as the only explanation of convergence from the mirror descent perspective.</description>
+    </item>
+    
+    <item>
+      <title>Reviewer for the NeurIPS workshop &#39;Bridging Game Theory and Deep Learning&#39;</title>
+      <link>https://konstmish.github.io/post/19_neurips_games_reviewer/</link>
+      <pubDate>Tue, 17 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/19_neurips_games_reviewer/</guid>
+      <description>As I&amp;rsquo;ve done some research in the field of minmax optimization and deep learning, I was invited to be a reviewer for this year instance of the Smooth Games Optimization and Machine Learning Series of workshops.</description>
+    </item>
+    
+    <item>
       <title>Two new papers on federated learning (and more are coming!)</title>
       <link>https://konstmish.github.io/post/19_fed_learning/</link>
       <pubDate>Fri, 13 Sep 2019 00:00:00 +0300</pubDate>
