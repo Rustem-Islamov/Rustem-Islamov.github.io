@@ -1,202 +1,50 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Konstantin Mishchenko on Konstantin Mishchenko</title>
+    <title>Konstantin Mishchenko</title>
     <link>https://konstmish.github.io/</link>
-    <description>Recent content in Konstantin Mishchenko on Konstantin Mishchenko</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on Konstantin Mishchenko</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0300</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Sep 2019 00:00:00 +0300</lastBuildDate>
+    
+	    <atom:link href="https://konstmish.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>A new paper connects Sinkhorn Algorithm and Stochastc Mirror Descent</title>
-      <link>https://konstmish.github.io/post/19_sinkhorn/</link>
+      <title>Posts</title>
+      <link>https://konstmish.github.io/post/</link>
       <pubDate>Tue, 17 Sep 2019 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/post/19_sinkhorn/</guid>
-      <description>&lt;p&gt;My new paper (for the first time I wrote a single authored work!) is now available online, see the publication section. It turned out the famous Sinkhorn algorithm is nothing but an instance of stochastic mirror descent. Very exciting to see the notion of relative smoothness appear as the only explanation of convergence from the mirror descent perspective.&lt;/p&gt;
-</description>
+      <guid>https://konstmish.github.io/post/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Reviewer for the NeurIPS workshop &#39;Bridging Game Theory and Deep Learning&#39;</title>
-      <link>https://konstmish.github.io/post/19_neurips_games_reviewer/</link>
-      <pubDate>Tue, 17 Sep 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/post/19_neurips_games_reviewer/</guid>
-      <description>&lt;p&gt;As I&amp;rsquo;ve done some research in the field of minmax optimization and deep learning, I was invited to be a reviewer for this year instance of the Smooth Games Optimization and Machine Learning Series of workshops.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Sinkhorn Algorithm as a Special Case of Stochastic Mirror Descent</title>
-      <link>https://konstmish.github.io/publication/19_sinkhorn/</link>
+      <title>Publications</title>
+      <link>https://konstmish.github.io/publication/</link>
       <pubDate>Mon, 16 Sep 2019 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/publication/19_sinkhorn/</guid>
+      <guid>https://konstmish.github.io/publication/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Two new papers on federated learning (and more are coming!)</title>
-      <link>https://konstmish.github.io/post/19_fed_learning/</link>
-      <pubDate>Fri, 13 Sep 2019 00:00:00 +0300</pubDate>
+      <title></title>
+      <link></link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://konstmish.github.io/post/19_fed_learning/</guid>
-      <description>&lt;p&gt;This summer I collaborated with an intern at our group, Ahmed Khaled (these are just 2 of his 4 first names and he actually doesn&amp;rsquo;t have a last name as any othey Egyptian). The topic of these works is federated learning, which is de facto the standard way of training large models with data from mobile users. Despite its numerical success in certain applications, there are significant difficulties in applying it to setting with heterogeneous data, and in most cases data are not homogeneous. To address why this happens, we tried to tighten the existing theory and found out that our theoretical discoveries have a tight match with numerical experiments. We are still working on this, so more papers are to come!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Better Communication Complexity for Local SGD</title>
-      <link>https://konstmish.github.io/publication/19_local_sgd/</link>
-      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_local_sgd/</guid>
+      <guid></guid>
       <description></description>
     </item>
     
     <item>
-      <title>First Analysis of Local GD on Heterogeneous Data</title>
-      <link>https://konstmish.github.io/publication/19_local_gd/</link>
-      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://konstmish.github.io/talk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://konstmish.github.io/publication/19_local_gd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NeurIPS 2019 Best Reviewer Award</title>
-      <link>https://konstmish.github.io/post/19_neurips_award/</link>
-      <pubDate>Thu, 05 Sep 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/post/19_neurips_award/</guid>
-      <description>&lt;p&gt;I received free NeurIPS registration for providing high quality reviews. It is awarded to the top 400 reviewers, and some people call it &amp;ldquo;Best Reviewer Award&amp;rdquo;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>AAAI-20: Program Committee member</title>
-      <link>https://konstmish.github.io/post/19_aaai/</link>
-      <pubDate>Fri, 16 Aug 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/post/19_aaai/</guid>
-      <description>&lt;p&gt;This year I am also serving as a reviewer for the AAAI conference, which will take place in February in New-York. See the official website for more details &lt;a href=&#34;https://aaai.org/Conferences/AAAI-20/#&#34; target=&#34;_blank&#34;&gt;https://aaai.org/Conferences/AAAI-20/#&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>My sessions at ICCCOPT</title>
-      <link>https://konstmish.github.io/post/19_iccopt/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/post/19_iccopt/</guid>
-      <description>&lt;p&gt;I was at the ICCOPT conference in Berlin from 5 to 8 August as the chair of 3 sessions: 2 on variational inequality/minimax/GANs and 1 on non-smooth optimization.&lt;/p&gt;
-
-&lt;p&gt;ICCOPT is my favorite conference so far. It was completely devoted to optimization and the density of interesting talks was overwhelming, very often I could not decide to which parallel session I should go. I was lucky to meet with many brilliant people, whose work inspired some of my papers. I find the diversity of the presented topics quite high, and it is surprising how many different ideas and applications are covered by mathematical optimization.&lt;/p&gt;
-
-&lt;p&gt;Organizing was quite fun as well. Next time I may try to organize a couple more sessions to see if it is even more fun at a larger scale.&lt;/p&gt;
-
-&lt;p&gt;My 3 sessions were:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Variational Inequalities, Minimax Problems and GANs (Part 1, Monday). Speakers: Simon Lacoste-Julien, Dmitry Kovalev, Gauthier Gidel.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Stochastic Methods for Nonsmooth Optimization (Tuesday). Speakers: Tianyi Lin, Adil Salim and me.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Variational Inequalities, Minimax Problems and GANs (Part 2, Thursday). Speakers: Daoli Zhu,  Sarath Pattathil,  Georgios Piliouras.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;More details about the conference can be found here:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://iccopt2019.berlin/&#34; target=&#34;_blank&#34;&gt;https://iccopt2019.berlin/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The speakers and the titles of their presentations:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Simon Lacoste-Julien &amp;ldquo;Negative Momentum for Improved Game Dynamics&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Dmitry Kovalev &amp;ldquo;Revisiting Stochastic Extragradient Method&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Gauthier Gidel &amp;ldquo;New Optimization Perspectives on Generative Adversarial Networks&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Daoli Zhu &amp;ldquo;A Variational Approach on Level sets and Linear Convergence of Variable Bregman Proximal Gradient Method for Nonconvex Optimization Problems&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Sarath Pattathil &amp;ldquo;A unified analysis of optimistic gradient and extra-gradient methods for saddle point problems&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Georgios Piliouras &amp;ldquo;Online Optimization in Zero - Sum Games and Beyond: A Dynamical Systems Approach&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Tianyi Lin &amp;ldquo;On Gradient Descent Ascent for Nonconvex-Concave Minimax Optimization&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Adil Salim &amp;ldquo;Stochastic Proximal Langevin Algorithm&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Konstantin Mishchenko &amp;ldquo;Variance Reduction for Sums with Smooth and Nonsmooth Components with Linear Convergence&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;P.S. Staying in Berlin was as fanstastic as the conference, it is a lovely city and German beer is very helpful for fruitful discussions! :)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>I am at Simons Institute until 18 July</title>
-      <link>https://konstmish.github.io/post/19_simons/</link>
-      <pubDate>Tue, 16 Jul 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/post/19_simons/</guid>
-      <description>&lt;p&gt;I am an attendee of the Frontiers of Deep Learning workshop at Simons Insitute for the Theory of Computing. There many well-known researchers here and just yesterday Yuanzhi Li gave a fantastic talk titled &amp;ldquo;Learning and Generalization in Over-parametrized Neural Networks, Going Beyond Kernels&amp;rdquo;. He presented a very simple explanation of what I believed to be very complicated and I encourage everyone interested in the topic to watch his presentation (should appear on youtube shortly).&lt;/p&gt;
-
-&lt;p&gt;The workshop website is here: &lt;a href=&#34;https://simons.berkeley.edu/programs/dl2019&#34; target=&#34;_blank&#34;&gt;https://simons.berkeley.edu/programs/dl2019&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>I visited Matthias Ehrhardt at Bath University</title>
-      <link>https://konstmish.github.io/post/19_bath/</link>
-      <pubDate>Tue, 16 Jul 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/post/19_bath/</guid>
-      <description>&lt;p&gt;Matthias Ehrhardt is a prize fellow at Bath university and I first met him when I visited Cambridge in 2017-2018. Back then I was just a first-year PhD student and it was hard for me to fully understand his work on stochastic primal-dual hybrid gradient (&lt;a href=&#34;https://arxiv.org/abs/1706.04957&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/abs/1706.04957&lt;/a&gt;). However, I have more experience now and just in two weeks I managed to do a nice extension of my recent work (&lt;a href=&#34;https://arxiv.org/abs/1905.11535&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/abs/1905.11535&lt;/a&gt;) to the same setting as in the work by Matthias. The work is motivated by imaging application and I hope it will find important applications in practice.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>I was at ICML 2019 presenting the work I did at Amazon</title>
-      <link>https://konstmish.github.io/post/19_icml_ts/</link>
-      <pubDate>Tue, 16 Jul 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/post/19_icml_ts/</guid>
-      <description>&lt;p&gt;Our work on time series was accepted as a poster to the Time Series Workshop at ICML and I presented it together with Federico Vaggi. The conference was in Los Angeles from 9 to 15 June. I attended it with many other members of our group: Aritra Dutta, Samuel Horvath, Nicolas Loizou, Alibek Sailanbayev, Adil Selim and of course Peter Richtárik.&lt;/p&gt;
-
-&lt;p&gt;You can find the website of the workshop and my paper here: &lt;a href=&#34;http://roseyu.com/time-series-workshop/&#34; target=&#34;_blank&#34;&gt;http://roseyu.com/time-series-workshop/&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A Self-supervised Approach to Hierarchical Forecasting with Applications to Groupwise Synthetic Controls</title>
-      <link>https://konstmish.github.io/publication/19_time_series/</link>
-      <pubDate>Tue, 25 Jun 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_time_series/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MISO is Making a Comeback With Better Proofs and Rates</title>
-      <link>https://konstmish.github.io/publication/19_miso/</link>
-      <pubDate>Tue, 04 Jun 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_miso/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DAve-QN: A Distributed Averaged Quasi-Newton Method with Local Superlinear Convergence Rate</title>
-      <link>https://konstmish.github.io/publication/19_dave_qn/</link>
-      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_dave_qn/</guid>
+      <guid>https://konstmish.github.io/talk/</guid>
       <description></description>
     </item>
     

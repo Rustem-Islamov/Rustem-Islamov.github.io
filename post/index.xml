@@ -4,12 +4,12 @@
     <title>Posts on Konstantin Mishchenko</title>
     <link>https://konstmish.github.io/post/</link>
     <description>Recent content in Posts on Konstantin Mishchenko</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 17 Sep 2019 00:00:00 +0300</lastBuildDate>
     
-	<atom:link href="https://konstmish.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://konstmish.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,8 @@
       <pubDate>Tue, 17 Sep 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/19_sinkhorn/</guid>
-      <description>My new paper (for the first time I wrote a single authored work!) is now available online, see the publication section. It turned out the famous Sinkhorn algorithm is nothing but an instance of stochastic mirror descent. Very exciting to see the notion of relative smoothness appear as the only explanation of convergence from the mirror descent perspective.</description>
+      <description>&lt;p&gt;My new paper (for the first time I wrote a single authored work!) is now available online, see the publication section. It turned out the famous Sinkhorn algorithm is nothing but an instance of stochastic mirror descent. Very exciting to see the notion of relative smoothness appear as the only explanation of convergence from the mirror descent perspective.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Tue, 17 Sep 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/19_neurips_games_reviewer/</guid>
-      <description>As I&amp;rsquo;ve done some research in the field of minmax optimization and deep learning, I was invited to be a reviewer for this year instance of the Smooth Games Optimization and Machine Learning Series of workshops.</description>
+      <description>&lt;p&gt;As I&amp;rsquo;ve done some research in the field of minmax optimization and deep learning, I was invited to be a reviewer for this year instance of the Smooth Games Optimization and Machine Learning Series of workshops.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Fri, 13 Sep 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/19_fed_learning/</guid>
-      <description>This summer I collaborated with an intern at our group, Ahmed Khaled (these are just 2 of his 4 first names and he actually doesn&amp;rsquo;t have a last name as any othey Egyptian). The topic of these works is federated learning, which is de facto the standard way of training large models with data from mobile users. Despite its numerical success in certain applications, there are significant difficulties in applying it to setting with heterogeneous data, and in most cases data are not homogeneous.</description>
+      <description>&lt;p&gt;This summer I collaborated with an intern at our group, Ahmed Khaled (these are just 2 of his 4 first names and he actually doesn&amp;rsquo;t have a last name as any othey Egyptian). The topic of these works is federated learning, which is de facto the standard way of training large models with data from mobile users. Despite its numerical success in certain applications, there are significant difficulties in applying it to setting with heterogeneous data, and in most cases data are not homogeneous. To address why this happens, we tried to tighten the existing theory and found out that our theoretical discoveries have a tight match with numerical experiments. We are still working on this, so more papers are to come!&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -45,7 +48,8 @@
       <pubDate>Thu, 05 Sep 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/19_neurips_award/</guid>
-      <description>I received free NeurIPS registration for providing high quality reviews. It is awarded to the top 400 reviewers, and some people call it &amp;ldquo;Best Reviewer Award&amp;rdquo;.</description>
+      <description>&lt;p&gt;I received free NeurIPS registration for providing high quality reviews. It is awarded to the top 400 reviewers, and some people call it &amp;ldquo;Best Reviewer Award&amp;rdquo;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -54,7 +58,8 @@
       <pubDate>Fri, 16 Aug 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/19_aaai/</guid>
-      <description>This year I am also serving as a reviewer for the AAAI conference, which will take place in February in New-York. See the official website for more details https://aaai.org/Conferences/AAAI-20/#.</description>
+      <description>&lt;p&gt;This year I am also serving as a reviewer for the AAAI conference, which will take place in February in New-York. See the official website for more details &lt;a href=&#34;https://aaai.org/Conferences/AAAI-20/#&#34; target=&#34;_blank&#34;&gt;https://aaai.org/Conferences/AAAI-20/#&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -63,8 +68,50 @@
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/19_iccopt/</guid>
-      <description>I was at the ICCOPT conference in Berlin from 5 to 8 August as the chair of 3 sessions: 2 on variational inequality/minimax/GANs and 1 on non-smooth optimization.
-ICCOPT is my favorite conference so far. It was completely devoted to optimization and the density of interesting talks was overwhelming, very often I could not decide to which parallel session I should go. I was lucky to meet with many brilliant people, whose work inspired some of my papers.</description>
+      <description>&lt;p&gt;I was at the ICCOPT conference in Berlin from 5 to 8 August as the chair of 3 sessions: 2 on variational inequality/minimax/GANs and 1 on non-smooth optimization.&lt;/p&gt;
+
+&lt;p&gt;ICCOPT is my favorite conference so far. It was completely devoted to optimization and the density of interesting talks was overwhelming, very often I could not decide to which parallel session I should go. I was lucky to meet with many brilliant people, whose work inspired some of my papers. I find the diversity of the presented topics quite high, and it is surprising how many different ideas and applications are covered by mathematical optimization.&lt;/p&gt;
+
+&lt;p&gt;Organizing was quite fun as well. Next time I may try to organize a couple more sessions to see if it is even more fun at a larger scale.&lt;/p&gt;
+
+&lt;p&gt;My 3 sessions were:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Variational Inequalities, Minimax Problems and GANs (Part 1, Monday). Speakers: Simon Lacoste-Julien, Dmitry Kovalev, Gauthier Gidel.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Stochastic Methods for Nonsmooth Optimization (Tuesday). Speakers: Tianyi Lin, Adil Salim and me.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Variational Inequalities, Minimax Problems and GANs (Part 2, Thursday). Speakers: Daoli Zhu,  Sarath Pattathil,  Georgios Piliouras.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;More details about the conference can be found here:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://iccopt2019.berlin/&#34; target=&#34;_blank&#34;&gt;https://iccopt2019.berlin/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The speakers and the titles of their presentations:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Simon Lacoste-Julien &amp;ldquo;Negative Momentum for Improved Game Dynamics&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Dmitry Kovalev &amp;ldquo;Revisiting Stochastic Extragradient Method&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Gauthier Gidel &amp;ldquo;New Optimization Perspectives on Generative Adversarial Networks&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Daoli Zhu &amp;ldquo;A Variational Approach on Level sets and Linear Convergence of Variable Bregman Proximal Gradient Method for Nonconvex Optimization Problems&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Sarath Pattathil &amp;ldquo;A unified analysis of optimistic gradient and extra-gradient methods for saddle point problems&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Georgios Piliouras &amp;ldquo;Online Optimization in Zero - Sum Games and Beyond: A Dynamical Systems Approach&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Tianyi Lin &amp;ldquo;On Gradient Descent Ascent for Nonconvex-Concave Minimax Optimization&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Adil Salim &amp;ldquo;Stochastic Proximal Langevin Algorithm&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Konstantin Mishchenko &amp;ldquo;Variance Reduction for Sums with Smooth and Nonsmooth Components with Linear Convergence&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;P.S. Staying in Berlin was as fanstastic as the conference, it is a lovely city and German beer is very helpful for fruitful discussions! :)&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -73,7 +120,10 @@ ICCOPT is my favorite conference so far. It was completely devoted to optimizati
       <pubDate>Tue, 16 Jul 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/19_simons/</guid>
-      <description>I am an attendee of the Frontiers of Deep Learning workshop at Simons Insitute for the Theory of Computing. There many well-known researchers here and just yesterday Yuanzhi Li gave a fantastic talk titled &amp;ldquo;Learning and Generalization in Over-parametrized Neural Networks, Going Beyond Kernels&amp;rdquo;. He presented a very simple explanation of what I believed to be very complicated and I encourage everyone interested in the topic to watch his presentation (should appear on youtube shortly).</description>
+      <description>&lt;p&gt;I am an attendee of the Frontiers of Deep Learning workshop at Simons Insitute for the Theory of Computing. There many well-known researchers here and just yesterday Yuanzhi Li gave a fantastic talk titled &amp;ldquo;Learning and Generalization in Over-parametrized Neural Networks, Going Beyond Kernels&amp;rdquo;. He presented a very simple explanation of what I believed to be very complicated and I encourage everyone interested in the topic to watch his presentation (should appear on youtube shortly).&lt;/p&gt;
+
+&lt;p&gt;The workshop website is here: &lt;a href=&#34;https://simons.berkeley.edu/programs/dl2019&#34; target=&#34;_blank&#34;&gt;https://simons.berkeley.edu/programs/dl2019&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -82,7 +132,8 @@ ICCOPT is my favorite conference so far. It was completely devoted to optimizati
       <pubDate>Tue, 16 Jul 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/19_bath/</guid>
-      <description>Matthias Ehrhardt is a prize fellow at Bath university and I first met him when I visited Cambridge in 2017-2018. Back then I was just a first-year PhD student and it was hard for me to fully understand his work on stochastic primal-dual hybrid gradient (https://arxiv.org/abs/1706.04957). However, I have more experience now and just in two weeks I managed to do a nice extension of my recent work (https://arxiv.org/abs/1905.11535) to the same setting as in the work by Matthias.</description>
+      <description>&lt;p&gt;Matthias Ehrhardt is a prize fellow at Bath university and I first met him when I visited Cambridge in 2017-2018. Back then I was just a first-year PhD student and it was hard for me to fully understand his work on stochastic primal-dual hybrid gradient (&lt;a href=&#34;https://arxiv.org/abs/1706.04957&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/abs/1706.04957&lt;/a&gt;). However, I have more experience now and just in two weeks I managed to do a nice extension of my recent work (&lt;a href=&#34;https://arxiv.org/abs/1905.11535&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/abs/1905.11535&lt;/a&gt;) to the same setting as in the work by Matthias. The work is motivated by imaging application and I hope it will find important applications in practice.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -91,8 +142,10 @@ ICCOPT is my favorite conference so far. It was completely devoted to optimizati
       <pubDate>Tue, 16 Jul 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/19_icml_ts/</guid>
-      <description>Our work on time series was accepted as a poster to the Time Series Workshop at ICML and I presented it together with Federico Vaggi. The conference was in Los Angeles from 9 to 15 June. I attended it with many other members of our group: Aritra Dutta, Samuel Horvath, Nicolas Loizou, Alibek Sailanbayev, Adil Selim and of course Peter Richtárik.
-You can find the website of the workshop and my paper here: http://roseyu.</description>
+      <description>&lt;p&gt;Our work on time series was accepted as a poster to the Time Series Workshop at ICML and I presented it together with Federico Vaggi. The conference was in Los Angeles from 9 to 15 June. I attended it with many other members of our group: Aritra Dutta, Samuel Horvath, Nicolas Loizou, Alibek Sailanbayev, Adil Selim and of course Peter Richtárik.&lt;/p&gt;
+
+&lt;p&gt;You can find the website of the workshop and my paper here: &lt;a href=&#34;http://roseyu.com/time-series-workshop/&#34; target=&#34;_blank&#34;&gt;http://roseyu.com/time-series-workshop/&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -101,7 +154,8 @@ You can find the website of the workshop and my paper here: http://roseyu.</desc
       <pubDate>Tue, 12 Mar 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/19_neurips_uai/</guid>
-      <description>After a successful round of reviews for International Conference on Machine Learning (ICML) I was invited to serve on committee for two more important ML conferences: Conference on Neural Information Processing Systems (NeurIPS) and Uncertainty in Artificial Intelligence (UAI). The review period for UAI is from 21 March to 21 April 2019 and all paper submissions have already been done, while for NeurIPS the deadline to submit a paper is on 23 May 2019 and the review period is from 18 June to 15 July 2019.</description>
+      <description>&lt;p&gt;After a successful round of reviews for International Conference on Machine Learning (ICML) I was invited to serve on committee for two more important ML conferences: Conference on Neural Information Processing Systems (NeurIPS) and Uncertainty in Artificial Intelligence (UAI). The review period for UAI is from 21 March to 21 April 2019 and all paper submissions have already been done, while for NeurIPS the deadline to submit a paper is on 23 May 2019 and the review period is from 18 June to 15 July 2019.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -110,8 +164,10 @@ You can find the website of the workshop and my paper here: http://roseyu.</desc
       <pubDate>Sun, 17 Feb 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/18_epfl/</guid>
-      <description>There is no specific project to work on yet, but my research interests are almost a subset of what Martin and his group have worked on. I would not be surprised if it leads to more than one project and hope that this visit will not be the last one :).
-As of today, the group&amp;rsquo;s website is available at https://mlo.epfl.ch/</description>
+      <description>&lt;p&gt;There is no specific project to work on yet, but my research interests are almost a subset of what Martin and his group have worked on. I would not be surprised if it leads to more than one project and hope that this visit will not be the last one :).&lt;/p&gt;
+
+&lt;p&gt;As of today, the group&amp;rsquo;s website is available at &lt;a href=&#34;https://mlo.epfl.ch/&#34; target=&#34;_blank&#34;&gt;https://mlo.epfl.ch/&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -120,7 +176,20 @@ As of today, the group&amp;rsquo;s website is available at https://mlo.epfl.ch/<
       <pubDate>Thu, 07 Feb 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/18_group/</guid>
-      <description>   </description>
+      <description>
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;featured.jpg&#34; &gt;
+
+
+&lt;/figure&gt;
+
+</description>
     </item>
     
     <item>
@@ -129,7 +198,8 @@ As of today, the group&amp;rsquo;s website is available at https://mlo.epfl.ch/<
       <pubDate>Fri, 26 Oct 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/19_icml/</guid>
-      <description>This is my first time being a reviewer for such a venue, so I hope I will not be &amp;ldquo;that stupid reviewer&amp;rdquo; :)</description>
+      <description>&lt;p&gt;This is my first time being a reviewer for such a venue, so I hope I will not be &amp;ldquo;that stupid reviewer&amp;rdquo; :)&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -138,9 +208,12 @@ As of today, the group&amp;rsquo;s website is available at https://mlo.epfl.ch/<
       <pubDate>Sun, 21 Oct 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/18_ieeextreme/</guid>
-      <description>In a 24 hours programming competition Alibek and I were solving tough mathematical and programming problems for the sake of fun and, maybe, some prizes. Fortunately, we managed to make it to top 100, which means that we are eligible for prizes from IEEE!
-Last year I participated in the same competition with Samuel Horvath, but back then we were only 123rd.
-Link to the results: https://ieeextreme.org/wp-content/uploads/2018/11/IEEEXtreme-12.0-Global-Ranking.pdf</description>
+      <description>&lt;p&gt;In a 24 hours programming competition Alibek and I were solving tough mathematical and programming problems for the sake of fun and, &lt;em&gt;maybe&lt;/em&gt;, some prizes. Fortunately, we managed to make it to top 100, which means that we are eligible for prizes from IEEE!&lt;/p&gt;
+
+&lt;p&gt;Last year I participated in the same competition with Samuel Horvath, but back then we were only 123rd.&lt;/p&gt;
+
+&lt;p&gt;Link to the results: &lt;a href=&#34;https://ieeextreme.org/wp-content/uploads/2018/11/IEEEXtreme-12.0-Global-Ranking.pdf&#34; target=&#34;_blank&#34;&gt;https://ieeextreme.org/wp-content/uploads/2018/11/IEEEXtreme-12.0-Global-Ranking.pdf&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -149,7 +222,8 @@ Link to the results: https://ieeextreme.org/wp-content/uploads/2018/11/IEEEXtrem
       <pubDate>Thu, 30 Aug 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/18_nips/</guid>
-      <description>I&amp;rsquo;m happy to say that our paper &amp;ldquo;SEGA: Variance Reduction via Gradient Sketching&amp;rdquo; about variance reduction for coordinate descent methods was accepted to NIPS. In this work, we discover how coordinate descent methods can be extended to problems with non-separable regularizer. We consider minibatch, importance sampling and acceleration of the produced method. What&amp;rsquo;s more, we additionally introduced a variant with non-trivial sketches of the gradient, under maximal possible stepsizes can be larger by an arbitrary number than in classical coordinate descent methods.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m happy to say that our paper &amp;ldquo;SEGA: Variance Reduction via Gradient Sketching&amp;rdquo; about variance reduction for coordinate descent methods was accepted to NIPS. In this work, we discover how coordinate descent methods can be extended to problems with non-separable regularizer. We consider minibatch, importance sampling and acceleration of the produced method. What&amp;rsquo;s more, we additionally introduced a variant with non-trivial sketches of the gradient, under maximal possible stepsizes can be larger by an arbitrary number than in classical coordinate descent methods.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -158,7 +232,13 @@ Link to the results: https://ieeextreme.org/wp-content/uploads/2018/11/IEEEXtrem
       <pubDate>Thu, 19 Apr 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/18_amazon/</guid>
-      <description>During my MSc in Paris, we had an amazing course taught by Fabian Pedregosa (http://fa.bianp.net/) and Fajwel Fogel (http://www.di.ens.fr/~fogel/). In this course, we learnt how to use Python for data analysis and to evaluate our knowledge we needed to participate in a challenge with other Paris students. Together with Matthieu Mazzolini and Paul Dufosse (they are very cool guys) I chose PlumeLabs challenge where the data was the air pollution in different cities over time.</description>
+      <description>&lt;p&gt;During my MSc in Paris, we had an amazing course taught by Fabian Pedregosa (&lt;a href=&#34;http://fa.bianp.net/&#34; target=&#34;_blank&#34;&gt;http://fa.bianp.net/&lt;/a&gt;) and Fajwel Fogel (&lt;a href=&#34;http://www.di.ens.fr/~fogel/&#34; target=&#34;_blank&#34;&gt;http://www.di.ens.fr/~fogel/&lt;/a&gt;). In this course, we learnt how to use Python for data analysis and to evaluate our knowledge we needed to participate in a challenge with other Paris students. Together with Matthieu Mazzolini and Paul Dufosse (they are very cool guys) I chose PlumeLabs challenge where the data was the air pollution in different cities over time. Long story short, we won it, which is totally due to my teammates, I would never be able to do it alone.&lt;/p&gt;
+
+&lt;p&gt;Back then, both Fabian and Fajwel were supervised by Alexandre d&amp;rsquo;Aspremont (postdoc and PhD student respectively). And they invited another postdoc of Alexandre, Federico Vaggi, to help them with grading our final presentations. Based on our grade, I guess that we made good impression on them, and I was pretty happy about it.&lt;/p&gt;
+
+&lt;p&gt;What is interesting is that Federico just a few weeks later was already working at Amazon. Last Fall I wrote Federico an email and after a few interviews a got accepted to intern in the same research team.
+The topic of my internship is not specified yet, but it will involve research in machine learning for problems motivated by Amazon&amp;rsquo;s needs. The coolest thing is that while the team&amp;rsquo;s work is very applied, for my internship they agree to work on quite theoretical topics, so that I would be able to use it for my PhD. Let us see what results I will have by the end of my internship.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -167,8 +247,19 @@ Link to the results: https://ieeextreme.org/wp-content/uploads/2018/11/IEEEXtrem
       <pubDate>Tue, 20 Mar 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/18mar_vatican/</guid>
-      <description>To begin with, the pope didn&amp;rsquo;t come to us to say &amp;ldquo;hi&amp;rdquo;. He gave a speech from a balcony instead and it was the first time he said &amp;ldquo;hackathon&amp;rdquo; in public. Moreover, it would be unfair to say that we were not welcome: the Vatican invested deeply in this event.
-The hackathon went well, although our team didn&amp;rsquo;t win anything. It was a nice experience and since I didn&amp;rsquo;t expect to win a hackathon at the first attempt, I&amp;rsquo;m pretty happy about having being there.</description>
+      <description>&lt;p&gt;To begin with, the pope didn&amp;rsquo;t come to us to say &amp;ldquo;hi&amp;rdquo;. He gave a speech from a balcony instead and it was the first time he said &amp;ldquo;hackathon&amp;rdquo; in public. Moreover, it would be unfair to say that we were not welcome: the Vatican invested deeply in this event.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://konstmish.github.io/img/vatican_priest.jpg&#34; alt=&#34;priest&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The hackathon went well, although our team didn&amp;rsquo;t win anything. It was a nice experience and since I didn&amp;rsquo;t expect to win a hackathon at the first attempt, I&amp;rsquo;m pretty happy about having being there. And as we actually did work a lot on our project, after coming back to KAUST I had an amazing 12-hours sleep.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://konstmish.github.io/img/major_league_hacking.jpg&#34; alt=&#34;coding&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What was really surprising is the dinner that we had in a private palace. This palace is called &amp;ldquo;Palazzo Taverna&amp;rdquo; and was built by Cardinal Giordano Orsini approximately in 1400. There is a short wikipedia page in Italian about it: &lt;a href=&#34;https://it.wikipedia.org/wiki/Palazzo_Taverna_(Roma)&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;. Every room looks so fancy, there are so many paintings everywhere, it looks overwhelmingly luxurious. I bet everyone was impressed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://konstmish.github.io/img/vatican_paintings.jpg&#34; alt=&#34;vatican_paintings&#34; /&gt;
+&lt;img src=&#34;https://konstmish.github.io/img/vatican_dinner.jpg&#34; alt=&#34;vatican_dinner&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -177,8 +268,13 @@ The hackathon went well, although our team didn&amp;rsquo;t win anything. It was
       <pubDate>Fri, 19 Jan 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/18jan_vatican/</guid>
-      <description>I was selected to be one of 120 students invited to the Vatican to participate in a hackathon. Hackathon&amp;rsquo;s theme are (1) social inclusion, (2) interfaith dialogue and (3) migrants &amp;amp; refugees. I am no expert in religions or migrants problems, so I applied and got accepted to participate addressing the first theme.
-The even is organized by OPTIC - &amp;ldquo;an organization founded in 2012 dedicated to research and innovation regarding the ethics of new and disruptive technologies&amp;rdquo;.</description>
+      <description>&lt;p&gt;I was selected to be one of 120 students invited to the Vatican to participate in a hackathon. Hackathon&amp;rsquo;s theme are (1) social inclusion, (2) interfaith dialogue and (3) migrants &amp;amp; refugees. I am no expert in religions or migrants problems, so I applied and got accepted to participate addressing the first theme.&lt;/p&gt;
+
+&lt;p&gt;The even is organized by OPTIC - &amp;ldquo;an organization founded in 2012 dedicated to research and innovation regarding the ethics of new and disruptive technologies&amp;rdquo;. More details can be found on this webpage:
+&lt;a href=&#34;https://vhacks.org/faq/&#34; target=&#34;_blank&#34;&gt;https://vhacks.org/faq/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t have a good hackathon participations record, but I believe it will be amazing :) It is especially nice to represent KAUST in such an event.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -187,7 +283,8 @@ The even is organized by OPTIC - &amp;ldquo;an organization founded in 2012 dedi
       <pubDate>Wed, 20 Dec 2017 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/18_informs/</guid>
-      <description>In September Peter suggested me to take part in organizing a few sessions at INFORMS Optimization Society Conference. Since I had no idea of what it means back then, I decided to first try with just one. In addition, I could choose to invite either 3 or 4 speakers, and I decided to go for the former option. It allowed me to choose speakers carefully, but unfortunately I didn&amp;rsquo;t foresee that one of the speakers I invited may not be able to come.</description>
+      <description>&lt;p&gt;In September Peter suggested me to take part in organizing a few sessions at INFORMS Optimization Society Conference. Since I had no idea of what it means back then, I decided to first try with just one. In addition, I could choose to invite either 3 or 4 speakers, and I decided to go for the former option. It allowed me to choose speakers carefully, but unfortunately I didn&amp;rsquo;t foresee that one of the speakers I invited may not be able to come. So now I am going to be a speaker there as well, which is a common phenomenon, though I rather wanted to listen than to present.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -196,7 +293,8 @@ The even is organized by OPTIC - &amp;ldquo;an organization founded in 2012 dedi
       <pubDate>Thu, 14 Dec 2017 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/17_visiting_cambridge/</guid>
-      <description>I&amp;rsquo;m visiting Dr. Carola-Bibiane Schönlieb&amp;rsquo;s group at Cambridge until 9 January. I will also be here for a few more weeks in February.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m visiting Dr. Carola-Bibiane Schönlieb&amp;rsquo;s group at Cambridge until 9 January. I will also be here for a few more weeks in February.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -205,8 +303,11 @@ The even is organized by OPTIC - &amp;ldquo;an organization founded in 2012 dedi
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/post/17_ieeextreme/</guid>
-      <description>I teamed up with Samuel Horvath to participate in a competition called &amp;ldquo;IEEEXtreme&amp;rdquo; organized by IEEE for students worldwide. We got ranked 123 worldwide or 43 in our Region (Africa, Europe and Middle East). Unfortunately, we didn&amp;rsquo;t get in top 100, so we are not going to get T-shirts as a prize, but the competition was extremely fun and it was cool to work with Samuel in a team.
-Official results are available here: http://ieeextreme.</description>
+      <description>&lt;p&gt;I teamed up with Samuel Horvath to participate in a competition called &amp;ldquo;IEEEXtreme&amp;rdquo; organized by IEEE for students worldwide. We got ranked 123 worldwide or 43 in our Region (Africa, Europe and Middle East). Unfortunately, we didn&amp;rsquo;t get in top 100, so we are not going to get T-shirts as a prize, but the competition was extremely fun and it was cool to work with Samuel in a team.&lt;/p&gt;
+
+&lt;p&gt;Official results are available here:
+&lt;a href=&#34;http://ieeextreme.org/files/2017/11/IEEEXtreme-11.0-Rankings-Globally.pdf&#34; target=&#34;_blank&#34;&gt;http://ieeextreme.org/files/2017/11/IEEEXtreme-11.0-Rankings-Globally.pdf&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>
