@@ -7,10 +7,20 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Tue, 17 Sep 2019 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 28 Sep 2019 00:00:00 +0300</lastBuildDate>
     
 	    <atom:link href="https://konstmish.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Paper accepted as spotlight to NeurIPS workshop &#39;Beyond First-Order Methods in ML&#39;</title>
+      <link>https://konstmish.github.io/post/19_neurips_newton/</link>
+      <pubDate>Sat, 28 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/19_neurips_newton/</guid>
+      <description>&lt;p&gt;We just got a notification that our paper (by D. Kovalev, P. Richtárik and me) was accepted to the NeurIPS workshop &amp;ldquo;Beyond First-Order Optimization Methods in Machine Learning&amp;rdquo; for a spotlight (8 minute talk) and poster presentation. Together with the free registration that I got as one of the top reviewers, this gives more than enough reason to attend the conference. We are also waiting for the decisions for our submissions to other workshops, so soon there might be more news!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>A new paper connects Sinkhorn Algorithm and Stochastc Mirror Descent</title>

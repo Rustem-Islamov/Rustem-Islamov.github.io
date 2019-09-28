@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://konstmish.github.io/post/19_sinkhorn/</loc>
-    <lastmod>2019-09-17T00:00:00+03:00</lastmod>
+    <loc>https://konstmish.github.io/</loc>
+    <lastmod>2019-09-28T00:00:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://konstmish.github.io/</loc>
-    <lastmod>2019-09-17T00:00:00+03:00</lastmod>
+    <loc>https://konstmish.github.io/post/19_neurips_newton/</loc>
+    <lastmod>2019-09-28T00:00:00+03:00</lastmod>
   </url>
   
   <url>
     <loc>https://konstmish.github.io/post/</loc>
+    <lastmod>2019-09-28T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://konstmish.github.io/post/19_sinkhorn/</loc>
     <lastmod>2019-09-17T00:00:00+03:00</lastmod>
   </url>
   
@@ -273,17 +278,27 @@
   </url>
   
   <url>
-    <loc>https://konstmish.github.io/publication/18_dave_siopt/</loc>
-    <lastmod>2018-06-25T00:00:00+00:00</lastmod>
+    <loc>https://konstmish.github.io/publication/18_dave_icml/</loc>
+    <lastmod>2018-07-10T00:00:00+03:00</lastmod>
   </url>
   
   <url>
     <loc>https://konstmish.github.io/authors/franck-iutzeler/</loc>
-    <lastmod>2018-06-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-10T00:00:00+03:00</lastmod>
   </url>
   
   <url>
     <loc>https://konstmish.github.io/authors/j%C3%A9r%C3%B4me-malick/</loc>
+    <lastmod>2018-07-10T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://konstmish.github.io/authors/massih-reza-amini/</loc>
+    <lastmod>2018-07-10T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://konstmish.github.io/publication/18_dave_siopt/</loc>
     <lastmod>2018-06-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -322,15 +337,7 @@
   </url>
   
   <url>
-    <loc>https://konstmish.github.io/publication/18_dave_icml/</loc>
-  </url>
-  
-  <url>
     <loc>https://konstmish.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://konstmish.github.io/authors/massih-reza-amini/</loc>
   </url>
   
   <url>
