@@ -7,10 +7,32 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Sat, 28 Sep 2019 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0300</lastBuildDate>
     
 	    <atom:link href="https://konstmish.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NeurIPS workshops: 5 accepted papers</title>
+      <link>https://konstmish.github.io/post/19_workshops/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/19_workshops/</guid>
+      <description>&lt;p&gt;We have submitted 5 papers to 4 different workshops hosted by NeurIPS and all of them were accepted, including one work for oral presentation. The list of papers:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Stochastic Newton and Cubic Newton Methods with Simple Local Linear-Quadratic Rates (oral, with D. Kovalev and P. Richtárik)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Sinkhorn Algorithm as a Special Case of Stochastic Mirror Descent (single-author work)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Better Communication Complexity for Local SGD (with A. Khaled and P. Richtárik)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;First Analysis of Local GD on Heterogeneous Data (with A. Khaled and P. Richtárik)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Revisiting Stochastic Extragradient (with D. Kovalev and P. Richtárik)&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>Paper accepted as spotlight to NeurIPS workshop &#39;Beyond First-Order Methods in ML&#39;</title>
@@ -125,7 +147,7 @@
     </item>
     
     <item>
-      <title>I am at Simons Institute until 18 July</title>
+      <title>I am at Simons Institute from 15 to 18 July</title>
       <link>https://konstmish.github.io/post/19_simons/</link>
       <pubDate>Tue, 16 Jul 2019 00:00:00 +0300</pubDate>
       
@@ -133,6 +155,8 @@
       <description>&lt;p&gt;I am an attendee of the Frontiers of Deep Learning workshop at Simons Insitute for the Theory of Computing. There many well-known researchers here and just yesterday Yuanzhi Li gave a fantastic talk titled &amp;ldquo;Learning and Generalization in Over-parametrized Neural Networks, Going Beyond Kernels&amp;rdquo;. He presented a very simple explanation of what I believed to be very complicated and I encourage everyone interested in the topic to watch his presentation (should appear on youtube shortly).&lt;/p&gt;
 
 &lt;p&gt;The workshop website is here: &lt;a href=&#34;https://simons.berkeley.edu/programs/dl2019&#34; target=&#34;_blank&#34;&gt;https://simons.berkeley.edu/programs/dl2019&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Update: the talk by Yuanzhi Li is available on Youtube: &lt;a href=&#34;https://www.youtube.com/watch?v=NNPCk2gvTnI&#34; target=&#34;_blank&#34;&gt;https://www.youtube.com/watch?v=NNPCk2gvTnI&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
