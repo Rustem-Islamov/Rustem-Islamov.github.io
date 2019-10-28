@@ -7,10 +7,20 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 00:00:00 +0300</lastBuildDate>
     
 	    <atom:link href="https://konstmish.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Invited talk at Boris Polyak&#39;s seminar</title>
+      <link>https://konstmish.github.io/post/19_polyak/</link>
+      <pubDate>Sun, 27 Oct 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/19_polyak/</guid>
+      <description>&lt;p&gt;I was invited by Boris Polyak to present my work on Sinkhorn algorithm at his seminar. The talk took place on Tuesday, 22 October, at the Institute of Control Sciences. It was a great pleasure to hear that Boris liked my work for its simplicity. The slides of my talk are now attached to the corresponding publication (&lt;a href=&#34;https://konstmish.github.io/publication/19_sinkhorn/&#34; target=&#34;_blank&#34;&gt;https://konstmish.github.io/publication/19_sinkhorn/&lt;/a&gt;).&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>NeurIPS workshops: 5 accepted papers</title>

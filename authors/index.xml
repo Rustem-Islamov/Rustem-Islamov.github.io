@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Mon, 16 Sep 2019 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 21 Oct 2019 00:00:00 +0300</lastBuildDate>
     
 	    <atom:link href="https://konstmish.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,18 @@
     <item>
       <title>Konstantin Mishchenko</title>
       <link>https://konstmish.github.io/authors/konstantin-mishchenko/</link>
-      <pubDate>Mon, 16 Sep 2019 00:00:00 +0300</pubDate>
+      <pubDate>Mon, 21 Oct 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/authors/konstantin-mishchenko/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yura Malitsky</title>
+      <link>https://konstmish.github.io/authors/yura-malitsky/</link>
+      <pubDate>Mon, 21 Oct 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/authors/yura-malitsky/</guid>
       <description></description>
     </item>
     
@@ -130,15 +139,6 @@
     </item>
     
     <item>
-      <title>Yura Malitsky</title>
-      <link>https://konstmish.github.io/authors/yura-malitsky/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/authors/yura-malitsky/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Samuel Horváth</title>
       <link>https://konstmish.github.io/authors/samuel-horv%C3%A1th/</link>
       <pubDate>Thu, 11 Apr 2019 00:00:00 +0300</pubDate>
@@ -225,7 +225,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://konstmish.github.io/authors/admin/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m a PhD candidate supervised by &lt;a href=&#34;https://richtarik.org/&#34;&gt;Peter Richtárik&lt;/a&gt;, working on Optimization and its applications to Machine Learning. Prior to this, I was a research intern at Université Grenoble Alpes, where I worked with F. Iutzeler and J. Malick. This internship allowed me to obtain my double degree MSc diploma from École Normale Supérieure Paris-Saclay and Paris-Dauphine. I obtained my BSc from Moscow Institute of Physics and Technology, where I was having a lot of fun with quantum mechanics and various branches of classical and modern physics.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;I&amp;rsquo;m on the job market.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m a PhD candidate supervised by &lt;a href=&#34;https://richtarik.org/&#34;&gt;Peter Richtárik&lt;/a&gt;, working on Optimization and its applications to Machine Learning. Prior to this, I was a research intern at Université Grenoble Alpes, where I worked with F. Iutzeler and J. Malick. This internship allowed me to obtain my double degree MSc diploma from École Normale Supérieure Paris-Saclay and Paris-Dauphine. I obtained my BSc from Moscow Institute of Physics and Technology, where I was having a lot of fun with quantum mechanics and various branches of classical and modern physics.&lt;/p&gt;
 
 &lt;p&gt;My hobbies include squash, bouldering and competitive programming.&lt;/p&gt;
 </description>
