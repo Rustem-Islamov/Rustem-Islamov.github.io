@@ -3,37 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://konstmish.github.io/post/19_neurips_award_travel/</loc>
+    <lastmod>2019-12-04T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://konstmish.github.io/</loc>
+    <lastmod>2019-12-04T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://konstmish.github.io/post/</loc>
+    <lastmod>2019-12-04T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://konstmish.github.io/authors/</loc>
+    <lastmod>2019-12-03T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://konstmish.github.io/authors/dmitry-kovalev/</loc>
+    <lastmod>2019-12-03T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://konstmish.github.io/authors/konstantin-mishchenko/</loc>
+    <lastmod>2019-12-03T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</loc>
+    <lastmod>2019-12-03T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://konstmish.github.io/publication/</loc>
+    <lastmod>2019-12-03T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://konstmish.github.io/publication/19_newton/</loc>
+    <lastmod>2019-12-03T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://konstmish.github.io/post/19_polyak/</loc>
     <lastmod>2019-10-27T00:00:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://konstmish.github.io/</loc>
-    <lastmod>2019-10-27T00:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://konstmish.github.io/post/</loc>
-    <lastmod>2019-10-27T00:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://konstmish.github.io/publication/19_adgd/</loc>
-    <lastmod>2019-10-21T00:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://konstmish.github.io/authors/</loc>
-    <lastmod>2019-10-21T00:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://konstmish.github.io/authors/konstantin-mishchenko/</loc>
-    <lastmod>2019-10-21T00:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://konstmish.github.io/publication/</loc>
     <lastmod>2019-10-21T00:00:00+03:00</lastmod>
   </url>
   
@@ -84,11 +104,6 @@
   
   <url>
     <loc>https://konstmish.github.io/publication/19_local_gd/</loc>
-    <lastmod>2019-09-12T00:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</loc>
     <lastmod>2019-09-12T00:00:00+03:00</lastmod>
   </url>
   
@@ -179,11 +194,6 @@
   
   <url>
     <loc>https://konstmish.github.io/publication/19_stoch_decoupling/</loc>
-    <lastmod>2019-05-27T00:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://konstmish.github.io/authors/dmitry-kovalev/</loc>
     <lastmod>2019-05-27T00:00:00+03:00</lastmod>
   </url>
   

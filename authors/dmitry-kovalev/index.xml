@@ -7,10 +7,19 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 03 Dec 2019 00:00:00 +0300</lastBuildDate>
     
 	    <atom:link href="https://konstmish.github.io/authors/dmitry-kovalev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Stochastic Newton and Cubic Newton Methods with Simple Local Linear-Quadratic Rates</title>
+      <link>https://konstmish.github.io/publication/19_newton/</link>
+      <pubDate>Tue, 03 Dec 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/19_newton/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Revisiting Stochastic Extragradient</title>
