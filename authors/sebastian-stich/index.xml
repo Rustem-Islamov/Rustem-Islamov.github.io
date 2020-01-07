@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0300</lastBuildDate>
     
 	    <atom:link href="https://konstmish.github.io/authors/sebastian-stich/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</title>
       <link>https://konstmish.github.io/publication/19_quant_vr/</link>
-      <pubDate>Thu, 11 Apr 2019 00:00:00 -0700</pubDate>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_quant_vr/</guid>
       <description></description>

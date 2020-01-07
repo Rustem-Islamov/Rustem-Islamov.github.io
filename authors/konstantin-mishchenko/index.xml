@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Tue, 03 Dec 2019 00:00:00 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Dec 2019 00:00:00 +0300</lastBuildDate>
     
 	    <atom:link href="https://konstmish.github.io/authors/konstantin-mishchenko/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Stochastic Newton and Cubic Newton Methods with Simple Local Linear-Quadratic Rates</title>
       <link>https://konstmish.github.io/publication/19_newton/</link>
-      <pubDate>Tue, 03 Dec 2019 00:00:00 -0800</pubDate>
+      <pubDate>Tue, 03 Dec 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_newton/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Adaptive gradient descent without descent</title>
       <link>https://konstmish.github.io/publication/19_adgd/</link>
-      <pubDate>Mon, 21 Oct 2019 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 21 Oct 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_adgd/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>Sinkhorn Algorithm as a Special Case of Stochastic Mirror Descent</title>
       <link>https://konstmish.github.io/publication/19_sinkhorn/</link>
-      <pubDate>Mon, 16 Sep 2019 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_sinkhorn/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>Better Communication Complexity for Local SGD</title>
       <link>https://konstmish.github.io/publication/19_local_sgd/</link>
-      <pubDate>Thu, 12 Sep 2019 00:00:00 -0700</pubDate>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_local_sgd/</guid>
       <description></description>
@@ -51,7 +51,7 @@
     <item>
       <title>First Analysis of Local GD on Heterogeneous Data</title>
       <link>https://konstmish.github.io/publication/19_local_gd/</link>
-      <pubDate>Thu, 12 Sep 2019 00:00:00 -0700</pubDate>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_local_gd/</guid>
       <description></description>
@@ -60,7 +60,7 @@
     <item>
       <title>A Self-supervised Approach to Hierarchical Forecasting with Applications to Groupwise Synthetic Controls</title>
       <link>https://konstmish.github.io/publication/19_time_series/</link>
-      <pubDate>Tue, 25 Jun 2019 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 25 Jun 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_time_series/</guid>
       <description></description>
@@ -69,7 +69,7 @@
     <item>
       <title>MISO is Making a Comeback With Better Proofs and Rates</title>
       <link>https://konstmish.github.io/publication/19_miso/</link>
-      <pubDate>Tue, 04 Jun 2019 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 04 Jun 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_miso/</guid>
       <description></description>
@@ -87,7 +87,7 @@
     <item>
       <title>A Stochastic Decoupling Method for Minimizing the Sum of Smooth and Non-Smooth Functions</title>
       <link>https://konstmish.github.io/publication/19_stoch_decoupling/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_stoch_decoupling/</guid>
       <description></description>
@@ -96,7 +96,7 @@
     <item>
       <title>Revisiting Stochastic Extragradient</title>
       <link>https://konstmish.github.io/publication/19_extra_vi/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_extra_vi/</guid>
       <description></description>
@@ -105,7 +105,7 @@
     <item>
       <title>Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</title>
       <link>https://konstmish.github.io/publication/19_quant_vr/</link>
-      <pubDate>Thu, 11 Apr 2019 00:00:00 -0700</pubDate>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_quant_vr/</guid>
       <description></description>
@@ -114,7 +114,7 @@
     <item>
       <title>99% of Distributed Optimization is a Waste of Time: The Issue and How to Fix it</title>
       <link>https://konstmish.github.io/publication/19_99/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 -0800</pubDate>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_99/</guid>
       <description></description>
@@ -123,7 +123,7 @@
     <item>
       <title>Distributed Learning with Compressed Gradient Differences</title>
       <link>https://konstmish.github.io/publication/19_diana/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 -0800</pubDate>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_diana/</guid>
       <description></description>
@@ -132,7 +132,7 @@
     <item>
       <title>A Stochastic Penalty Model for Convex and Nonconvex Optimization with Big Constraints</title>
       <link>https://konstmish.github.io/publication/18_penalty/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0700</pubDate>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/18_penalty/</guid>
       <description></description>
@@ -150,7 +150,7 @@
     <item>
       <title>A Delay-tolerant Proximal-Gradient Algorithm for Distributed Learning</title>
       <link>https://konstmish.github.io/publication/18_dave_icml/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 10 Jul 2018 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/18_dave_icml/</guid>
       <description></description>
