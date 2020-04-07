@@ -7,10 +7,46 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Tue, 03 Dec 2019 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2020 00:00:00 +0300</lastBuildDate>
     
 	    <atom:link href="https://konstmish.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Adil Salim</title>
+      <link>https://konstmish.github.io/authors/adil-salim/</link>
+      <pubDate>Fri, 03 Apr 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/authors/adil-salim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Konstantin Mishchenko</title>
+      <link>https://konstmish.github.io/authors/konstantin-mishchenko/</link>
+      <pubDate>Fri, 03 Apr 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/authors/konstantin-mishchenko/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Laurent Condat</title>
+      <link>https://konstmish.github.io/authors/laurent-condat/</link>
+      <pubDate>Fri, 03 Apr 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/authors/laurent-condat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Peter Richtárik</title>
+      <link>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</link>
+      <pubDate>Fri, 03 Apr 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Dmitry Kovalev</title>
@@ -18,24 +54,6 @@
       <pubDate>Tue, 03 Dec 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/authors/dmitry-kovalev/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Konstantin Mishchenko</title>
-      <link>https://konstmish.github.io/authors/konstantin-mishchenko/</link>
-      <pubDate>Tue, 03 Dec 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/authors/konstantin-mishchenko/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Peter Richtárik</title>
-      <link>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</link>
-      <pubDate>Tue, 03 Dec 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</guid>
       <description></description>
     </item>
     
