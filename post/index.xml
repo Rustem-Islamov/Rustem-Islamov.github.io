@@ -7,10 +7,20 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Wed, 20 May 2020 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0300</lastBuildDate>
     
 	    <atom:link href="https://konstmish.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Adaptive Gradient got accepted to ICML</title>
+      <link>https://konstmish.github.io/post/20_uai_accept-2/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/20_uai_accept-2/</guid>
+      <description>&lt;p&gt;Our work with Yura Malitsky &amp;ldquo;Adaptive Gradient Descent without Descent&amp;rdquo; got accepted ICML with scores &amp;lsquo;Accept&amp;rsquo;, &amp;lsquo;Accept&amp;rsquo; and &amp;lsquo;Weak Accept&amp;rsquo;. You can see the arxiv version of the paper here: &lt;a href=&#34;https://arxiv.org/abs/1910.09529&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/abs/1910.09529&lt;/a&gt;. Also wait for our follow-up work that we hope to release in the next few months!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>UAI: paper accepted (1 strong accept and 4 accepts)</title>
