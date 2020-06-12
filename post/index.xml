@@ -14,11 +14,21 @@
     
     <item>
       <title>Adaptive Gradient got accepted to ICML</title>
-      <link>https://konstmish.github.io/post/20_uai_accept-2/</link>
+      <link>https://konstmish.github.io/post/20_icml_accept/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/post/20_uai_accept-2/</guid>
+      <guid>https://konstmish.github.io/post/20_icml_accept/</guid>
       <description>&lt;p&gt;Our work with Yura Malitsky &amp;ldquo;Adaptive Gradient Descent without Descent&amp;rdquo; got accepted ICML with scores &amp;lsquo;Accept&amp;rsquo;, &amp;lsquo;Accept&amp;rsquo; and &amp;lsquo;Weak Accept&amp;rsquo;. You can see the arxiv version of the paper here: &lt;a href=&#34;https://arxiv.org/abs/1910.09529&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/abs/1910.09529&lt;/a&gt;. Also wait for our follow-up work that we hope to release in the next few months!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>UAI: paper accepted (1 strong accept and 4 accepts)</title>
+      <link>https://konstmish.github.io/post/20_rr/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/20_rr/</guid>
+      <description>&lt;p&gt;This year we (Filip, Peter and I) submitted one paper to the conference on Uncertainty in Artificial Intelligence (UAI). The paper got overwhelmiingly positive feedback and will be presented virtually this summer. The current title of the paper is &amp;ldquo;99% of Distributed Optimization is a Waste of Time: The Issue and How to Fix it&amp;rdquo;, but following the reviewers&amp;rsquo; suggestions, the title will be changed to avoid confusion about its content.&lt;/p&gt;
 </description>
     </item>
     

@@ -7,10 +7,37 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
-    <lastBuildDate>Fri, 03 Apr 2020 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2020 00:00:00 +0300</lastBuildDate>
     
 	    <atom:link href="https://konstmish.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ahmed Khaled</title>
+      <link>https://konstmish.github.io/authors/ahmed-khaled/</link>
+      <pubDate>Thu, 11 Jun 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/authors/ahmed-khaled/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Konstantin Mishchenko</title>
+      <link>https://konstmish.github.io/authors/konstantin-mishchenko/</link>
+      <pubDate>Thu, 11 Jun 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/authors/konstantin-mishchenko/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Peter Richtárik</title>
+      <link>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</link>
+      <pubDate>Thu, 11 Jun 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Adil Salim</title>
@@ -22,29 +49,11 @@
     </item>
     
     <item>
-      <title>Konstantin Mishchenko</title>
-      <link>https://konstmish.github.io/authors/konstantin-mishchenko/</link>
-      <pubDate>Fri, 03 Apr 2020 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/authors/konstantin-mishchenko/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Laurent Condat</title>
       <link>https://konstmish.github.io/authors/laurent-condat/</link>
       <pubDate>Fri, 03 Apr 2020 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/authors/laurent-condat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Peter Richtárik</title>
-      <link>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</link>
-      <pubDate>Fri, 03 Apr 2020 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</guid>
       <description></description>
     </item>
     
@@ -63,15 +72,6 @@
       <pubDate>Mon, 21 Oct 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/authors/yura-malitsky/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ahmed Khaled</title>
-      <link>https://konstmish.github.io/authors/ahmed-khaled/</link>
-      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/authors/ahmed-khaled/</guid>
       <description></description>
     </item>
     
