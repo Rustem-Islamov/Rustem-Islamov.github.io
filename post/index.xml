@@ -12,6 +12,21 @@
     
     
     <item>
+      <title>Our session on Optimization for Deep Learning at MDS Conference</title>
+      <link>https://konstmish.github.io/post/20_mds_conf/</link>
+      <pubDate>Fri, 26 Jun 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/20_mds_conf/</guid>
+      <description>&lt;p&gt;Peter Richtárik, Filip Hanzely and I are organizing a session on Optimization for Deep Learning at the SIAM Conference on Mathematics of Datascience (MDS20). See the link below for more info:
+&lt;a href=&#34;https://www.siam.org/conferences/cm/conference/mds20&#34; target=&#34;_blank&#34;&gt;https://www.siam.org/conferences/cm/conference/mds20&lt;/a&gt;
+Our presenters are:
+Simon Shaolei Du from the Institute for Advanced Study of Princeton (&lt;a href=&#34;http://simonshaoleidu.com/&#34; target=&#34;_blank&#34;&gt;http://simonshaoleidu.com/&lt;/a&gt;)
+Haihao Lu from Google Research NYC (&lt;a href=&#34;http://web.mit.edu/haihao/www/&#34; target=&#34;_blank&#34;&gt;http://web.mit.edu/haihao/www/&lt;/a&gt;)
+Filip Hanzely from KAUST (&lt;a href=&#34;https://fhanzely.github.io/&#34; target=&#34;_blank&#34;&gt;https://fhanzely.github.io/&lt;/a&gt;)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Adaptive Gradient got accepted to ICML</title>
       <link>https://konstmish.github.io/post/20_icml_accept/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0300</pubDate>
