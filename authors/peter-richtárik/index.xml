@@ -40,20 +40,20 @@
     </item>
     
     <item>
-      <title>Better Communication Complexity for Local SGD</title>
-      <link>https://konstmish.github.io/publication/19_local_sgd/</link>
-      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_local_sgd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>First Analysis of Local GD on Heterogeneous Data</title>
       <link>https://konstmish.github.io/publication/19_local_gd/</link>
       <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
       
       <guid>https://konstmish.github.io/publication/19_local_gd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tighter Theory for Local SGD on Identical and Heterogeneous Data</title>
+      <link>https://konstmish.github.io/publication/19_local_sgd/</link>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/publication/19_local_sgd/</guid>
       <description></description>
     </item>
     
