@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Paper Accepted to NeurIPS</title>
+      <link>https://konstmish.github.io/post/20_neurips_accept/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/20_neurips_accept/</guid>
+      <description>&lt;p&gt;Our recent paper on SGD with data shuffling (a.k.a. Random Reshuffling) got accepted and will be presented at NeurIPS in December. As this year it is fully virtual, I will be preparing a video presentation. Stay tuned! Meanwhile, you can read it on arxiv: &lt;a href=&#34;https://arxiv.org/abs/2006.05988&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/abs/2006.05988&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>ICML Top Reviewer</title>
       <link>https://konstmish.github.io/post/20_09_icml_reviewer_award/</link>
       <pubDate>Tue, 15 Sep 2020 00:00:00 +0300</pubDate>
