@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>My presentation on Random Reshuffling at the Informs Annual Meeting 2020</title>
+      <link>https://konstmish.github.io/post/20_informs/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/20_informs/</guid>
+      <description>&lt;p&gt;Today I&amp;rsquo;m presenting at the INFORMS Annual Meeting at the session &amp;ldquo;Painless Large-Scale Optimization with (Almost) Hessian-Free Acceleration&amp;rdquo;, which can be &lt;a href=&#34;https://cattendee.abstractsonline.com/meeting/9022/Session/2913&#34;&gt;accessed here&lt;/a&gt; if you registered for the conference. I am covering &lt;a href=&#34;https://arxiv.org/abs/2006.05988&#34;&gt;our recent work on Random Reshuffling&lt;/a&gt; which has been accepted at NeurIPS 2020 as a conference paper. The session is organized by &lt;a href=&#34;https://web.stanford.edu/~junziz/&#34;&gt;Junzi Zhang&lt;/a&gt; and features three more speakers: &lt;a href=&#34;https://bodono.github.io/&#34;&gt;Brendan O&amp;rsquo;Donoghue&lt;/a&gt;, &lt;a href=&#34;https://scholar.google.com/citations?user=uBMitLsAAAAJ&amp;hl=zh-CN&#34;&gt;Wentao Tang&lt;/a&gt; and &lt;a href=&#34;http://staff.ustc.edu.cn/~juyong/&#34;&gt;Juyong Zhang&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Paper accepted to NeurIPS</title>
       <link>https://konstmish.github.io/post/20_neurips_accept/</link>
       <pubDate>Sat, 26 Sep 2020 00:00:00 +0300</pubDate>
