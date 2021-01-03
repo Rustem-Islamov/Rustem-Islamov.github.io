@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>41 Papers reviewed in 2020 and some thoughts on reviewing</title>
+      <link>https://konstmish.github.io/post/21_01_reviews/</link>
+      <pubDate>Mon, 04 Jan 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://konstmish.github.io/post/21_01_reviews/</guid>
+      <description>&lt;p&gt;Reflecting on 2020, I realized I spent a lot of time reviewing. I reviewed 34 conference papers, 3 journal papers and 4 workshop papers. To my surprise, Lihua Lei &lt;a href=&#34;https://twitter.com/lihua_lei_stat/status/1344845638769410048?s=20&#34;&gt;reviewed 48 papers&lt;/a&gt;, 20 of which were for journals and probably took extra time due to revisions.&lt;/p&gt;
+
+&lt;p&gt;Reviewing is an important part of doing a PhD and it actually helps when writing papers. However, it does not help anymore once reviewing takes more time than writing. Of course, one solution that seems to be a common choice is to spend less time on each reviewed paper but this has led to the popular joke of the notorious Reviewer #2. I plan, nevertheless, to keep spending as much time as I need for every paper. My only hope is that the overall system at ML conferences would improve in near future, lowering the load on the people involved, for example by adopting the reviewing system of ICLR.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>My presentation on Random Reshuffling at the Informs Annual Meeting 2020</title>
       <link>https://konstmish.github.io/post/20_informs/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0300</pubDate>
