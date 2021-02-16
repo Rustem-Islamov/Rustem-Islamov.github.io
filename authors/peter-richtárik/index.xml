@@ -1,122 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Peter Richtárik on Konstantin Mishchenko</title>
-    <link>https://konstmish.github.io/authors/peter-richt%C3%A1rik/</link>
-    <description>Recent content in Peter Richtárik on Konstantin Mishchenko</description>
+    <title>Peter Richtárik on Rustem Islamov</title>
+    <link>https://rustem-islamov.github.io/authors/peter-richt%C3%A1rik/</link>
+    <description>Recent content in Peter Richtárik on Rustem Islamov</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Konstantin Mishchenko</copyright>
+    <copyright>&amp;copy; 2021 Rustem Islamov</copyright>
     <lastBuildDate>Thu, 11 Jun 2020 00:00:00 +0300</lastBuildDate>
     
-	    <atom:link href="https://konstmish.github.io/authors/peter-richt%C3%A1rik/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://rustem-islamov.github.io/authors/peter-richt%C3%A1rik/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Random Reshuffling: Simple Analysis with Vast Improvements</title>
-      <link>https://konstmish.github.io/publication/20_rr/</link>
+      <title>Distributed Second Order Methods with Fast Rates and Compressed Communication</title>
+      <link>https://rustem-islamov.github.io/publication/21_mn/</link>
       <pubDate>Thu, 11 Jun 2020 00:00:00 +0300</pubDate>
       
-      <guid>https://konstmish.github.io/publication/20_rr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dualize, Split, Randomize: Fast Nonsmooth Optimization Algorithms</title>
-      <link>https://konstmish.github.io/publication/20_pddy/</link>
-      <pubDate>Fri, 03 Apr 2020 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/20_pddy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Stochastic Newton and Cubic Newton Methods with Simple Local Linear-Quadratic Rates</title>
-      <link>https://konstmish.github.io/publication/19_newton/</link>
-      <pubDate>Tue, 03 Dec 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_newton/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>First Analysis of Local GD on Heterogeneous Data</title>
-      <link>https://konstmish.github.io/publication/19_local_gd/</link>
-      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_local_gd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tighter Theory for Local SGD on Identical and Heterogeneous Data</title>
-      <link>https://konstmish.github.io/publication/19_local_sgd/</link>
-      <pubDate>Thu, 12 Sep 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_local_sgd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MISO is Making a Comeback With Better Proofs and Rates</title>
-      <link>https://konstmish.github.io/publication/19_miso/</link>
-      <pubDate>Tue, 04 Jun 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_miso/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>A Stochastic Decoupling Method for Minimizing the Sum of Smooth and Non-Smooth Functions</title>
-      <link>https://konstmish.github.io/publication/19_stoch_decoupling/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_stoch_decoupling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Revisiting Stochastic Extragradient</title>
-      <link>https://konstmish.github.io/publication/19_extra_vi/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_extra_vi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Stochastic Distributed Learning with Gradient Quantization and Variance Reduction</title>
-      <link>https://konstmish.github.io/publication/19_quant_vr/</link>
-      <pubDate>Thu, 11 Apr 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_quant_vr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>99% of Worker-Master Communication in Distributed Optimization Is Not Needed</title>
-      <link>https://konstmish.github.io/publication/19_99/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_99/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Distributed Learning with Compressed Gradient Differences</title>
-      <link>https://konstmish.github.io/publication/19_diana/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/19_diana/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>A Stochastic Penalty Model for Convex and Nonconvex Optimization with Big Constraints</title>
-      <link>https://konstmish.github.io/publication/18_penalty/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 +0300</pubDate>
-      
-      <guid>https://konstmish.github.io/publication/18_penalty/</guid>
+      <guid>https://rustem-islamov.github.io/publication/21_mn/</guid>
       <description></description>
     </item>
     
