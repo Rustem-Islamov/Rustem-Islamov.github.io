@@ -18,7 +18,7 @@
       <pubDate>Tue, 02 Mar 2021 00:00:00 +0300</pubDate>
       
       <guid>https://rustem-islamov.github.io/post/21_internship/</guid>
-      <description> I have gotten one more internship in Machine Learning and Optimization Laboratory that Prof. Peter Richtárik runs. We will continue our work on second-order methods for distributed optimization.
+      <description> I have gotten one more internship at Machine Learning and Optimization Laboratory that Prof. Peter Richtárik runs. We will continue our work on second-order methods for distributed optimization.
 </description>
     </item>	  
 	  
@@ -28,7 +28,7 @@
       <pubDate>Mon, 16 Feb 2021 00:00:00 +0300</pubDate>
       
       <guid>https://rustem-islamov.github.io/post/21_mn/</guid>
-      <description> we developed several new second order communication efficient methods with fast rates. Our results are supported with experimental results on real datasets, and show several orders of magnitude improvement on baseline and state-of-the-art methods in terms of communication complexity.
+      <description> We developed several new second order communication efficient methods with fast rates. Our results are supported with experimental results on real datasets, and show several orders of magnitude improvement on baseline and state-of-the-art methods in terms of communication complexity.
 	      
 	You can read it via the link: &lt;a href=&#34;https://arxiv.org/abs/2102.07158&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/abs/2102.07158&lt;/a&gt;&lt;/p&gt;
 </description>
