@@ -12,10 +12,21 @@
 	    <atom:link href="https://rustem-islamov.github.io/authors/xun-qian/index.xml" rel="self" type="application/rss+xml" />
     
     
+	  
+	  <item>
+      <title>FedNL: Making Newton-Type Methods Applicable to Federated Learning</title>
+      <link>https://rustem-islamov.github.io/publication/21_fednl/</link>
+      <pubDate>Tue, 08 June 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://rustem-islamov.github.io/publication/21_fednl/</guid>
+      <description></description>
+    </item>
+	  
+	  
     <item>
       <title>Distributed Second Order Methods with Fast Rates and Compressed Communication</title>
       <link>https://rustem-islamov.github.io/publication/21_mn/</link>
-      <pubDate>Tue, 04 Jun 2019 00:00:00 +0300</pubDate>
+      <pubDate>Sat, 16 Feb 2021 00:00:00 +0300</pubDate>
       
       <guid>https://rustem-islamov.github.io/publication/21_mn/</guid>
       <description></description>
