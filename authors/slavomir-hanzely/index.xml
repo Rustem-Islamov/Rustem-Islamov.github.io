@@ -3,13 +3,13 @@
   <channel>
     <title>Xun Qian on Rustem Islamov</title>
     <link>https://rustem-islamov.github.io/authors/xun-qian/</link>
-    <description>Recent content in Mher Safaryan on Rustem Islamov</description>
+    <description>Recent content in Xun Qian on Rustem Islamov</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2022 Rustem Islamov</copyright>
+    <copyright>&amp;copy; 2021 Rustem Islamov</copyright>
     <lastBuildDate>Tue, 04 Jun 2019 00:00:00 +0300</lastBuildDate>
     
-	    <atom:link href="https://rustem-islamov.github.io/authors/mher-safaryan/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://rustem-islamov.github.io/authors/xun-qian/index.xml" rel="self" type="application/rss+xml" />
     
     
 	  
@@ -21,7 +21,16 @@
       <guid>https://rustem-islamov.github.io/publication/21_fednl/</guid>
       <description></description>
     </item>
-
+	  
+	  
+    <item>
+      <title>Distributed Second Order Methods with Fast Rates and Compressed Communication</title>
+      <link>https://rustem-islamov.github.io/publication/21_mn/</link>
+      <pubDate>Sat, 16 Feb 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://rustem-islamov.github.io/publication/21_mn/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
