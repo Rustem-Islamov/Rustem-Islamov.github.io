@@ -32,7 +32,6 @@ a.specialeffects::before {
   bottom: 0;
   transform-origin: 100% 50%;
   transform: scaleX(0);
-  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
 a.specialeffects::after {
   content: attr(data-replace);
@@ -40,7 +39,6 @@ a.specialeffects::after {
   top: 0;
   transform-origin: 100% 50%;
   transform: translate3d(200%, 0, 0);
-  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
   color: #1F51FF;
 }
 
@@ -50,11 +48,6 @@ a.specialeffects:hover::before {
 }
 a.specialeffects:hover::after {
   transform: translate3d(0, 0, 0);
-}
-
-a.specialeffects span {
-  display: inline-block;
-  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 a:hover span {
