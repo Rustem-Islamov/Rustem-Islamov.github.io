@@ -129,7 +129,7 @@
 
 
 
-  <title>EControl: Fast Distributed Optimization with Compression and Error Control</title>
+  <title>Near Optimal Decentralized Optimization with Compression and Momentum Tracking</title>
 
 </head>
 
@@ -256,7 +256,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">EControl: Fast Distributed Optimization with Compression and Error Control</h1>
+  <h1 itemprop="name">Near Optimal Decentralized Optimization with Compression and Momentum Tracking</h1>
 
   
 
@@ -279,13 +279,13 @@
 
 
 
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.linkedin.com/in/yuan-gao-1654471b8/?originalSubdomain=de">Yuan Gao</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/rustem-islamov/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.sstich.ch">Sebastian Stich</a></span>
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/rustem-islamov/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.linkedin.com/in/yuan-gao-1654471b8/?originalSubdomain=de">Yuan Gao</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.sstich.ch">Sebastian Stich</a></span>
 
   </div>
   
-  <span>12th International Conference on Learning Representations (ICLR 2024)</span><br>
+  <br>
   <span class="article-date">
-    <time>November 2023</time>
+    <time>May 2024</time>
   </span>
   
 
@@ -355,28 +355,21 @@
 
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="/files/publications/EControl/econtrol.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="/files/publications/Motef/motef.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/23_econtrol/cite.bib">
+        data-filename="/publication/24_motef/cite.bib">
   Cite
 </button>
 
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/2311.05645" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/2405.2011" target="_blank" rel="noopener">
     arXiv
   </a>
-  
-   <a class="btn btn-outline-primary my-1 mr-1" href="https://openreview.net/forum?id=lsvlvWB9vz" target="_blank" rel="noopener">
-    ICLR
-  </a>
-  
-  <a class="btn btn-outline-primary my-1 mr-1" href="/files/files/posters/EControl/EControl_poster.pdf" target="_blank" rel="noopener">
-    Poster
-  </a>
+
  
   
   <a class="btn btn-outline-primary my-1 mr-1" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -384,7 +377,7 @@
   </a>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-    <font size="2">Modern distributed training relies heavily on communication compression to reduce the communication overhead. In this work, we study algorithms employing a popular class of contractive compressors in order to reduce communication overhead. However, the naive implementation often leads to unstable convergence or even exponential divergence due to the compression bias. Error Compensation (EC) is an extremely popular mechanism to mitigate the aforementioned issues during the training of models enhanced by contractive compression operators. Compared to the effectiveness of EC in the data homogeneous regime, the understanding of the practicality and theoretical foundations of EC in the data heterogeneous regime is limited. Existing convergence analyses typically rely on strong assumptions such as bounded gradients, bounded data heterogeneity, or large batch accesses, which are often infeasible in modern machine learning applications. We resolve the majority of current issues by proposing EControl, a novel mechanism that can regulate error compensation by controlling the strength of the feedback signal. We prove fast convergence for EControl in standard strongly convex, general convex, and nonconvex settings without any additional assumptions on the problem or data heterogeneity. We conduct extensive numerical evaluations to illustrate the efficacy of our method and support our theoretical findings.
+    <font size="2">Communication efficiency has garnered significant attention as it is considered the main bottleneck for large-scale decentralized Machine Learning applications in distributed and federated settings. In this regime, clients are restricted to transmitting small amounts of quantized information to their neighbors over a communication graph. Numerous endeavors have been made to address this challenging problem by developing algorithms with compressed communication for decentralized non-convex optimization problems. Despite considerable efforts, the current results suffer from various issues such as non-scalability with the number of clients, requirements for large batches, or bounded gradient assumption. In this paper, we introduce MoTEF, a novel approach that integrates communication compression with Momentum Tracking and Error Feedback. Our analysis demonstrates that MoTEF achieves most of the desired properties, and significantly outperforms existing methods under arbitrary data heterogeneity. We provide numerical experiments to validate our theoretical findings and confirm the practical superiority of MoTEF.
     </font>  
 </div>
 </div>
