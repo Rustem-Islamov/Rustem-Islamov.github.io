@@ -373,22 +373,18 @@
     arXiv
   </a>
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="/files/posters/Adam-SDE/adam_sde_poster.pdf" target="_blank" rel="noopener">
-    arXiv
-  </a>
-  
-   
-  
   <a class="btn btn-outline-primary my-1 mr-1" href="https://openreview.net/forum?id=ww3CLRhF1v" target="_blank" rel="noopener">
     ICLR
   </a>
   
+  <a class="btn btn-outline-primary my-1 mr-1" href="/files/posters/Adam-SDE/adam_sde_poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
 
- 
-  
   <a class="btn btn-outline-primary my-1 mr-1" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     Abstract
   </a>
+  
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
     <font size="2">Despite the vast empirical evidence supporting the efficacy of adaptive optimization methods in deep learning, their theoretical understanding is far from complete. This work introduces novel SDEs for commonly used adaptive optimizers: SignSGD, RMSprop(W), and Adam(W). These SDEs offer a quantitatively accurate description of these optimizers and help illuminate an intricate relationship between adaptivity, gradient noise, and curvature. Our novel analysis of SignSGD highlights a noteworthy and precise contrast to SGD in terms of convergence speed, stationary distribution, and robustness to heavy-tail noise. We extend this analysis to AdamW and RMSpropW, for which we observe that the role of noise is much more complex. Crucially, we support our theoretical analysis with experimental evidence by verifying our insights: this includes numerically integrating our SDEs using Euler-Maruyama discretization on various neural network architectures such as MLPs, CNNs, ResNets, and Transformers. Our SDEs accurately track the behavior of the respective optimizers, especially when compared to previous SDEs derived for Adam and RMSprop. We believe our approach can provide valuable insights into best training practices and novel scaling rules.
