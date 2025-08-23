@@ -295,22 +295,22 @@
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [17]
   <span itemprop="author" class="article-metadata li-cite-author">
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://yas.pub/">Yarden As</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=UCOWHb4AAAAJ&hl=en">Ilyas Fatkhullin</a></span>.
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://yas.pub/">Niccolò Ajroldi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="http://orvi.altervista.org/">Antonio Orvieto</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://omls.dmi.unibas.ch/en/persons/aurelien-lucchi/">Aurelien Lucchi</a></span>.
     </span>
-  <a class="specialeffects" href="/publication/25_safe_ef/" itemprop="name">On the Interaction of Noise, Compression Role, and Adaptivity under (L0,L1)-Smoothness: An SDE-based Approach</a>.
+  <a class="specialeffects" href="/publication/25_safe_ef/" itemprop="name">Enhancing Optimizer Stability: Momentum Adaptation of The NGN Step-size</a>.
 
 
     
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/SDE_L0L1/sde_l0l1.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/NGNM/ngnm.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/25_l0l1_sde/cite.bib">
+        data-filename="/publication/25_ngnm/cite.bib">
   Cite
 </button>
     
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2506.00181" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2508.15071" target="_blank" rel="noopener">
     arXiv
   </a>
   
@@ -320,7 +320,7 @@
   
 <div class="collapse" id="collapseExample16">
   <div class="card card-body">
-    <font size="2"> Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under (L0,L1)-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that \textit{adaptive} methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.     </font>
+    <font size="2"> Modern optimization algorithms that incorporate momentum and adaptive step-size offer improved performance in numerous challenging deep learning tasks. However, their effectiveness is often highly sensitive to the choice of hyperparameters, especially the step-size. Tuning these parameters is often difficult, resource-intensive, and time-consuming. Therefore, recent efforts have been directed toward enhancing the stability of optimizers across a wide range of hyperparameter choices [Schaipp et al., 2024]. In this paper, we introduce an algorithm that matches the performance of state-of-the-art optimizers while improving stability to the choice of the step-size hyperparameter through a novel adaptation of the NGN step-size method [Orvieto and Xiao, 2024]. Specifically, we propose a momentum-based version (NGN-M) that attains the standard convergence rate of O(1/\sqrt{K}) under less restrictive assumptions, without the need for interpolation condition or assumptions of bounded stochastic gradients or iterates, in contrast to previous approaches. Additionally, we empirically demonstrate that the combination of the NGN step-size with momentum results in enhanced robustness to the choice of the step-size hyperparameter while delivering performance that is comparable to or surpasses other state-of-the-art optimizers.     </font>
 </div>
 </div>
 
