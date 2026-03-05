@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="SafeEF">
+  <meta name="description" content="Warmup">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://rustem-islamov.github.io/publication/21_fednl/">
+  <link rel="alternate" hreflang="en-us" href="https://rustem-islamov.github.io/publication/25_warmup/">
 
   
 
@@ -129,7 +129,7 @@
 
 
 
-  <title>Safe-EF: Error Feedback for Nonsmooth Constrained Optimization | Rustem Islamov</title>
+  <title>-Why Do We Need Warm-up? A Theoretical Perspective | Rustem Islamov</title>
 
 </head>
 
@@ -256,7 +256,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Safe-EF: Error Feedback for Nonsmooth Constrained Optimization</h1>
+  <h1 itemprop="name">Why Do We Need Warm-up? A Theoretical Perspective</h1>
 
   
 
@@ -279,12 +279,11 @@
 
 
 
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://yas.pub/">Yarden As</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=UCOWHb4AAAAJ&hl=en">Ilyas Fatkhullin</a></span>
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sites.google.com/view/foivos-alimisis">Foivos Alimisis</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"></span><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>
 
   </div>
   
-  <span>42nd International Conference on Machine Learning  (ICML 2025)</span><br>
-  
+
 
   
   <span class="article-date">
@@ -292,7 +291,7 @@
     
       
     
-    <time>May 2025</time>
+    <time>October 2025</time>
   </span>
   
 
@@ -315,7 +314,7 @@
    
       
       <li>
-        <a href="mailto:?subject=Safe-EF:%20Error%20Feedback%20for%20Nonsmooth%20Constrained%20Optimization&amp;body=https://rustem-islamov.github.io/publication/25_safe_efl/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=WarmUp&amp;body=https://rustem-islamov.github.io/publication/25_warmup/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -362,14 +361,14 @@
 
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="/files/publications/SafeEF/safe_ef.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="/files/publications/Warmup/warmup.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/25_safe_ef/cite.bib">
+        data-filename="/publication/25_warmup/cite.bib">
   Cite
 </button>
 
@@ -377,27 +376,18 @@
   
     
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/2505.06053" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/2510.03164" target="_blank" rel="noopener">
     
     arXiv
   </a>
-
-<a class="btn btn-outline-primary my-1 mr-1" href="https://openreview.net/forum?id=9D5aM5LQ3Y" target="_blank" rel="noopener">
-    
-    ICML
-  </a>
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="/files/posters/SafeEF/safeef_poster.pdf" target="_blank" rel="noopener">
-    
-    Poster
-  </a>
 
  <a class="btn btn-outline-primary my-1 mr-1" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     Abstract
   </a>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-    <font size="2">Federated learning faces severe communication bottlenecks due to the high dimensionality of model updates. Communication compression with contractive compressors (e.g., Top-K) is often preferable in practice but can degrade performance without proper handling. Error feedback (EF) mitigates such issues but has been largely restricted for smooth, unconstrained problems, limiting its real-world applicability where non-smooth objectives and safety constraints are critical. We advance our understanding of EF in the canonical non-smooth convex setting by establishing new lower complexity bounds for first-order algorithms with contractive compression. Next, we propose Safe-EF, a novel algorithm that matches our lower bound (up to a constant) while enforcing safety constraints essential for practical applications. Extending our approach to the stochastic setting, we bridge the gap between theory and practical implementation. Extensive experiments in a reinforcement learning setup, simulating distributed humanoid robot training, validate the effectiveness of Safe-EF in ensuring safety and reducing communication complexity.
+    <font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the (L0, L1)-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.
   </font></div>
 </div>
 
@@ -577,7 +567,7 @@
   
 
   <p class="powered-by">
-    &copy; 2025 Rustem Islamov &middot; 
+    &copy; 2026 Rustem Islamov &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
