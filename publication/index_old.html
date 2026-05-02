@@ -39,62 +39,6 @@
     a.specialgray:hover{
     color: #1F51FF;
   }	
-  
-  /* ===== Publications toggle styles ===== */
-  #pub-controls {
-    margin: 1.2rem 0 1.5rem 0;
-  }
-  #pub-stats-box {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 10px 20px;
-    border: 2px solid #2962ff;
-    border-radius: 8px;
-    padding: 10px 18px;
-    margin-bottom: 14px;
-    background: #f4f6ff;
-    font-size: 0.95rem;
-  }
-  #pub-stats-box .stat-item {
-    display: inline-block;
-  }
-  #pub-stats-box .stat-item strong {
-    color: #2962ff;
-  }
-  #pub-stats-box .stat-total {
-    font-weight: 600;
-    margin-right: 8px;
-  }
-  .sort-toggle-btn {
-    margin-right: 8px;
-    transition: all 0.2s;
-  }
-  .sort-toggle-btn.active {
-    background-color: #2962ff !important;
-    color: #fff !important;
-    border-color: #2962ff !important;
-  }
-  #topic-view .topic-section { margin-bottom: 2rem; }
-  #topic-view .topic-header {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #2962ff;
-    border-bottom: 2px solid #2962ff;
-    padding-bottom: 5px;
-    margin-top: 2rem;
-    margin-bottom: 0.6rem;
-  }
-  #topic-view .year-subheader {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #555;
-    margin-top: 1rem;
-    margin-bottom: 0.4rem;
-    padding-left: 4px;
-    border-left: 3px solid #aac;
-    padding-left: 8px;
-  }
-
   </style>
   
   
@@ -335,21 +279,6 @@
 
 
 
-
-<div class="container" id="pub-controls">
-  <div id="pub-stats-box">
-    <span class="stat-total">Total conference publications:</span>
-    <span class="stat-item"><strong>3</strong> NeurIPS</span>
-    <span class="stat-item"><strong>7</strong> ICML</span>
-    <span class="stat-item"><strong>4</strong> ICLR</span>
-    <span class="stat-item"><strong>3</strong> AISTATS</span>
-  </div>
-  <div>
-    <button class="btn btn-outline-primary btn-sm sort-toggle-btn active" id="btn-by-year" onclick="pubSortByYear()">&#128197; Sort by Year</button>
-    <button class="btn btn-outline-primary btn-sm sort-toggle-btn" id="btn-by-topic" onclick="pubSortByTopic()">&#128196; Sort by Topic</button>
-  </div>
-</div>
-<div id="year-view">
 <div class="universal-wrapper pt-3">
   <h1 itemprop="name">Prepared in 2026</h1>
 
@@ -361,7 +290,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [21]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -415,7 +344,7 @@
 
 
 
-<div data-topic="Loss Landscape of Neural Networks" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [20]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -476,7 +405,7 @@
 
 
 
-<div data-topic="Privacy Preserving Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [19]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -550,7 +479,7 @@
 
 
 
-<div data-topic="Loss Landscape of Neural Networks" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [18]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -603,7 +532,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [17]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -665,7 +594,7 @@
 
 
 
-<div data-topic="Loss Landscape of Neural Networks" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [16]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -727,7 +656,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [15]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -798,7 +727,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
             
             
@@ -859,7 +788,7 @@
 
 
 
-<div data-topic="Privacy Preserving Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [13]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -937,7 +866,7 @@
   
   
   
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2024">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2024">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [12]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1002,7 +931,7 @@
   
   
   
-  <div data-topic="Loss Landscape of Neural Networks" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2024">
+  <div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2024">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [11]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1063,7 +992,7 @@
   
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2024">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2024">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [10]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1147,7 +1076,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [9]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1203,7 +1132,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [8]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1258,7 +1187,7 @@
 
 
 
-<div data-topic="Privacy Preserving Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [7]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1302,7 +1231,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [6]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1370,7 +1299,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2022">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2022">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [5]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1416,7 +1345,7 @@
 
 
 
-<div data-topic="Second-Order Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2022">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2022">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [4]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1502,7 +1431,7 @@
 
 
 
-<div data-topic="Second-Order Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2021">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2021">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [3]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1557,7 +1486,7 @@
 
 
 
-<div data-topic="Second-Order Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2021">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2021">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [2]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1630,7 +1559,7 @@
 
 
 
-<div data-topic="Second-Order Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2021">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2021">
           
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [1]
@@ -1695,12 +1624,6 @@
 
 
 </section>
-</div><!-- #year-view -->
-
-<div id="topic-view" class="container" style="display:none; padding: 0 15px;">
-</div><!-- #topic-view -->
-
-
 
 <section class="header5 cid-rZJT6yYGwi" id="header5-2c">
 
@@ -2033,73 +1956,6 @@
     </div>
   </div>
 </div>
-
-
-<script>
-(function() {
-  var TOPIC_ORDER = [
-    'Large-scale Optimization',
-    'Loss Landscape of Neural Networks',
-    'Privacy Preserving Optimization',
-    'Second-Order Optimization'
-  ];
-
-  window.pubSortByYear = function() {
-    document.getElementById('year-view').style.display = '';
-    document.getElementById('topic-view').style.display = 'none';
-    document.getElementById('btn-by-year').classList.add('active');
-    document.getElementById('btn-by-topic').classList.remove('active');
-  };
-
-  window.pubSortByTopic = function() {
-    document.getElementById('year-view').style.display = 'none';
-    var tv = document.getElementById('topic-view');
-    tv.style.display = '';
-    document.getElementById('btn-by-year').classList.remove('active');
-    document.getElementById('btn-by-topic').classList.add('active');
-
-    if (tv.dataset.built) return;
-    tv.dataset.built = '1';
-
-    // Collect all papers from year-view
-    var papers = document.querySelectorAll('[data-topic]');
-    var byTopic = {};
-    papers.forEach(function(p) {
-      var topic = p.dataset.topic || 'Other';
-      var yearCls = Array.from(p.classList).find(function(c){ return c.startsWith('year-'); });
-      var year = yearCls ? yearCls.replace('year-', '') : '0000';
-      if (!byTopic[topic]) byTopic[topic] = {};
-      if (!byTopic[topic][year]) byTopic[topic][year] = [];
-      byTopic[topic][year].push(p.cloneNode(true));
-    });
-
-    var frag = document.createDocumentFragment();
-    var order = TOPIC_ORDER.concat(Object.keys(byTopic).filter(function(t){ return TOPIC_ORDER.indexOf(t) === -1; }));
-    order.forEach(function(topic) {
-      if (!byTopic[topic]) return;
-      var section = document.createElement('div');
-      section.className = 'topic-section';
-      var h2 = document.createElement('h2');
-      h2.className = 'topic-header';
-      h2.textContent = topic;
-      section.appendChild(h2);
-
-      var years = Object.keys(byTopic[topic]).sort(function(a,b){ return parseInt(b)-parseInt(a); });
-      years.forEach(function(year) {
-        var h3 = document.createElement('h3');
-        h3.className = 'year-subheader';
-        h3.textContent = year;
-        section.appendChild(h3);
-        byTopic[topic][year].forEach(function(node) {
-          section.appendChild(node);
-        });
-      });
-      frag.appendChild(section);
-    });
-    tv.appendChild(frag);
-  };
-})();
-</script>
 
 </body>
 </html>
