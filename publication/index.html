@@ -40,59 +40,38 @@
     color: #1F51FF;
   }	
   
-  /* ===== Publications toggle styles ===== */
-  #pub-controls {
-    margin: 1.2rem 0 1.5rem 0;
-  }
+  /* ── pub toggle ── */
+  body.show-by-topic  .year-section  { display: none !important; }
+  body.show-by-year   #topic-view    { display: none !important; }
+  #topic-view { display: none; }
+
+  /* stats & buttons */
+  #pub-controls { padding: 1.5rem 0 0.5rem; }
   #pub-stats-box {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 10px 20px;
-    border: 2px solid #2962ff;
-    border-radius: 8px;
-    padding: 10px 18px;
-    margin-bottom: 14px;
-    background: #f4f6ff;
-    font-size: 0.95rem;
+    display: inline-flex; flex-wrap: wrap; gap: 8px 18px;
+    border: 2px solid #2962ff; border-radius: 8px;
+    padding: 9px 16px; margin-bottom: 12px;
+    background: #f4f6ff; font-size: .95rem;
   }
-  #pub-stats-box .stat-item {
-    display: inline-block;
-  }
-  #pub-stats-box .stat-item strong {
-    color: #2962ff;
-  }
-  #pub-stats-box .stat-total {
-    font-weight: 600;
-    margin-right: 8px;
-  }
-  .sort-toggle-btn {
-    margin-right: 8px;
-    transition: all 0.2s;
-  }
-  .sort-toggle-btn.active {
+  #pub-stats-box .stat-total { font-weight: 600; }
+  #pub-stats-box strong { color: #2962ff; }
+  .sort-btn { margin-right: 8px; }
+  .sort-btn.active {
     background-color: #2962ff !important;
-    color: #fff !important;
-    border-color: #2962ff !important;
+    color: #fff !important; border-color: #2962ff !important;
   }
-  #topic-view .topic-section { margin-bottom: 2rem; }
-  #topic-view .topic-header {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #2962ff;
-    border-bottom: 2px solid #2962ff;
-    padding-bottom: 5px;
-    margin-top: 2rem;
-    margin-bottom: 0.6rem;
+  /* topic view */
+  .pub-topic-item { margin-bottom: 1.2rem; }
+  .topic-section  { margin-bottom: 2rem; }
+  .topic-header {
+    font-size: 1.2rem; font-weight: 700; color: #2962ff;
+    border-bottom: 2px solid #2962ff; padding-bottom: 4px;
+    margin: 1.5rem 0 .4rem;
   }
-  #topic-view .year-subheader {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #555;
-    margin-top: 1rem;
-    margin-bottom: 0.4rem;
-    padding-left: 4px;
+  .year-subheader {
+    font-size: .95rem; font-weight: 600; color: #666;
+    margin: .8rem 0 .3rem; padding-left: 8px;
     border-left: 3px solid #aac;
-    padding-left: 8px;
   }
 
   </style>
@@ -336,21 +315,20 @@
 
 
 
-<div class="container" id="pub-controls">
+<div class="universal-wrapper pt-3" id="pub-controls">
   <div id="pub-stats-box">
-    <span class="stat-total">Total conference publications:</span>
-    <span class="stat-item"><strong>3</strong> NeurIPS</span>
-    <span class="stat-item"><strong>7</strong> ICML</span>
-    <span class="stat-item"><strong>4</strong> ICLR</span>
-    <span class="stat-item"><strong>3</strong> AISTATS</span>
-  </div>
-  <div>
-    <button class="btn btn-outline-primary btn-sm sort-toggle-btn active" id="btn-by-year" onclick="pubSortByYear()">&#128197; Sort by Year</button>
-    <button class="btn btn-outline-primary btn-sm sort-toggle-btn" id="btn-by-topic" onclick="pubSortByTopic()">&#128196; Sort by Topic</button>
-  </div>
+    <span class="stat-total">Total conference publications:&nbsp;</span>
+    <span><strong>3</strong> NeurIPS</span>
+    <span><strong>7</strong> ICML</span>
+    <span><strong>4</strong> ICLR</span>
+    <span><strong>3</strong> AISTATS</span>
+  </div><br>
+  <button class="btn btn-outline-primary btn-sm sort-btn active"
+          id="btn-year"  onclick="pubByYear()">Sort by Year</button>
+  <button class="btn btn-outline-primary btn-sm sort-btn"
+          id="btn-topic" onclick="pubByTopic()">Sort by Topic</button>
 </div>
-<div id="year-view">
-<div class="universal-wrapper pt-3">
+<div class="universal-wrapper pt-3 year-section">
   <h1 itemprop="name">Prepared in 2026</h1>
 
 
@@ -361,7 +339,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [21]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -415,7 +393,7 @@
 
 
 
-<div data-topic="Loss Landscape of Neural Networks" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [20]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -476,7 +454,7 @@
 
 
 
-<div data-topic="Privacy Preserving Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [19]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -533,7 +511,7 @@
 <section class="header5 cid-rZJT6yYGwi" id="header5-2c">
 </div>
 
-<div class="universal-wrapper pt-3">
+<div class="universal-wrapper pt-3 year-section">
   <h1 itemprop="name">Prepared in 2025</h1>
 
 
@@ -550,7 +528,7 @@
 
 
 
-<div data-topic="Loss Landscape of Neural Networks" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [18]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -603,7 +581,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [17]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -665,7 +643,7 @@
 
 
 
-<div data-topic="Loss Landscape of Neural Networks" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [16]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -727,7 +705,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [15]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -798,7 +776,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
             
             
@@ -859,7 +837,7 @@
 
 
 
-<div data-topic="Privacy Preserving Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2025">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [13]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -918,7 +896,7 @@
 
 
 
-<div class="universal-wrapper pt-3">
+<div class="universal-wrapper pt-3 year-section">
   <h1 itemprop="name">Prepared in 2024</h1>
   
   
@@ -937,7 +915,7 @@
   
   
   
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2024">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2024">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [12]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1002,7 +980,7 @@
   
   
   
-  <div data-topic="Loss Landscape of Neural Networks" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2024">
+  <div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2024">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [11]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1063,7 +1041,7 @@
   
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2024">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2024">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [10]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1132,7 +1110,7 @@
 
 
 
-<div class="universal-wrapper pt-3">
+<div class="universal-wrapper pt-3 year-section">
   <h1 itemprop="name">Prepared in 2023</h1>
 
 
@@ -1147,7 +1125,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [9]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1203,7 +1181,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [8]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1258,7 +1236,7 @@
 
 
 
-<div data-topic="Privacy Preserving Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [7]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1302,7 +1280,7 @@
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2023">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [6]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1363,14 +1341,14 @@
 
 
 
-<div class="universal-wrapper pt-3">
+<div class="universal-wrapper pt-3 year-section">
   <h1 itemprop="name">Prepared in 2022</h1>
 
 
 
 
 
-<div data-topic="Large-scale Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2022">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2022">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [5]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1416,7 +1394,7 @@
 
 
 
-<div data-topic="Second-Order Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2022">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2022">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [4]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1497,12 +1475,12 @@
   
     
   
-<div class="universal-wrapper pt-3">
+<div class="universal-wrapper pt-3 year-section">
   <h1 itemprop="name">Prepared in 2021</h1>
 
 
 
-<div data-topic="Second-Order Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2021">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2021">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [3]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1557,7 +1535,7 @@
 
 
 
-<div data-topic="Second-Order Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2021">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2021">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [2]
   <span itemprop="author" class="article-metadata li-cite-author">
@@ -1630,7 +1608,7 @@
 
 
 
-<div data-topic="Second-Order Optimization" class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2021">
+<div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2021">
           
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [1]
@@ -1695,12 +1673,6 @@
 
 
 </section>
-</div><!-- #year-view -->
-
-<div id="topic-view" class="container" style="display:none; padding: 0 15px;">
-</div><!-- #topic-view -->
-
-
 
 <section class="header5 cid-rZJT6yYGwi" id="header5-2c">
 
@@ -1874,7 +1846,1047 @@
     
     
     
-    <script src="/js/mathjax-config.js"></script>
+    
+<div id="topic-view" class="universal-wrapper pt-3">
+<div class="topic-section">
+<h2 class="topic-header">Large-scale Optimization</h2>
+<h3 class="year-subheader">2026</h3>
+<div class="pub-topic-item" data-topic="Large-scale Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [21]
+  <span itemprop="author" class="article-metadata li-cite-author">
+    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://seg.inf.unibe.ch/team/roman-machacek/">Roman Machacek</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://tonysf.github.io/">Antonio Silveti-Falls</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io/index.html">Eduard Gorbunov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.epfl.ch/labs/lions/people/volkan-cevher/">Volkan Cevher</a></span>.
+</span>
+    </span>
+  <a class="specialeffects" href="/publication/26_bst/" itemprop="name">On the Role of Batch Size in Stochastic Conditional Gradient Methods</a>.
+  <p>
+   43rd International Conference on Machine Learning (ICML 2026)<br>
+
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/BST/BST.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/26_bst/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.21191" target="_blank" rel="noopener">
+    arXiv
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=yTFTLj7MoN" target="_blank" rel="noopener">
+    ICML
+  </a>
+
+  
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample21" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample21">
+  <div class="card card-body">
+    <font size="2">We study the role of batch size in stochastic conditional gradient methods under a μ-Kurdyka-Łojasiewicz (μ-KL) condition. Focusing on momentum-based stochastic conditional gradient algorithms (e.g., Scion), we derive a new analysis that explicitly captures the interaction between stepsize, batch size, and stochastic noise. Our study reveals a regime-dependent behavior: increasing the batch size initially improves optimization accuracy but, beyond a critical threshold, the benefits saturate and can eventually degrade performance under a fixed token budget. Notably, the theory predicts the magnitude of the optimal stepsize and aligns well with empirical practices observed in large-scale training. Leveraging these insights, we derive principled guidelines for selecting the batch size and stepsize, and propose an adaptive strategy that increases batch size and sequence length during training while preserving convergence guarantees. Experiments on NanoGPT are consistent with the theoretical predictions and illustrate the emergence of the predicted scaling regimes. Overall, our results provide a theoretical framework for understanding batch size scaling in stochastic conditional gradient methods and offer guidance for designing efficient training schedules in large-scale optimization. </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<h3 class="year-subheader">2025</h3>
+<div class="pub-topic-item" data-topic="Large-scale Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [17]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://github.com/Niccolo-Ajroldi">Niccolò Ajroldi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="http://orvi.altervista.org/">Antonio Orvieto</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://omls.dmi.unibas.ch/en/persons/aurelien-lucchi/">Aurelien Lucchi</a></span>.
+    </span> 
+    <br>
+  <a class="specialeffects" href="/publication/25_ngnm/" itemprop="name">Enhancing Optimizer Stability: Momentum Adaptation of The NGN Step-size</a>.
+ <p>
+   39th Annual Conference on Neural Information Processing Systems (NeurIPS 2025)<br>
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/NGNM/ngnm.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/25_ngnm/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2508.15071" target="_blank" rel="noopener">
+    arXiv
+  </a>
+
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=9t2OtyQ9mf" target="_blank" rel="noopener">
+    NeurIPS
+  </a>
+
+   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/Warmup/warmup_poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+  
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample17" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample17">
+  <div class="card card-body">
+    <font size="2"> Modern optimization algorithms that incorporate momentum and adaptive step-size offer improved performance in numerous challenging deep learning tasks. However, their effectiveness is often highly sensitive to the choice of hyperparameters, especially the step-size. Tuning these parameters is often difficult, resource-intensive, and time-consuming. Therefore, recent efforts have been directed toward enhancing the stability of optimizers across a wide range of hyperparameter choices [Schaipp et al., 2024]. In this paper, we introduce an algorithm that matches the performance of state-of-the-art optimizers while improving stability to the choice of the step-size hyperparameter through a novel adaptation of the NGN step-size method [Orvieto and Xiao, 2024]. Specifically, we propose a momentum-based version (NGN-M) that attains the standard convergence rate of O(1/\sqrt{K}) under less restrictive assumptions, without the need for interpolation condition or assumptions of bounded stochastic gradients or iterates, in contrast to previous approaches. Additionally, we empirically demonstrate that the combination of the NGN step-size with momentum results in enhanced robustness to the choice of the step-size hyperparameter while delivering performance that is comparable to or surpasses other state-of-the-art optimizers.     </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<div class="pub-topic-item" data-topic="Large-scale Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [15]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://yas.pub/">Yarden As</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=UCOWHb4AAAAJ&hl=en">Ilyas Fatkhullin</a></span>.
+    </span>
+  <a class="specialeffects" href="/publication/25_safe_ef/" itemprop="name">Safe-EF: Error Feedback for Nonsmooth Constrained Optimization</a>.
+ <p>
+  42nd International Conference on Machine Learning (ICML 2025)<br>
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/SafeEF/safe_ef.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/25_safe_ef/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2505.06053" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=9D5aM5LQ3Y" target="_blank" rel="noopener">
+    ICML
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/SafeEF/safeef_poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+  
+  
+  
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample15" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample15">
+  <div class="card card-body">
+    <font size="2"> Federated learning faces severe communication bottlenecks due to the high dimensionality of model updates. Communication compression with contractive compressors (e.g., Top-K) is often preferable in practice but can degrade performance without proper handling. Error feedback (EF) mitigates such issues but has been largely restricted for smooth, unconstrained problems, limiting its real-world applicability where non-smooth objectives and safety constraints are critical. We advance our understanding of EF in the canonical non-smooth convex setting by establishing new lower complexity bounds for first-order algorithms with contractive compression. Next, we propose Safe-EF, a novel algorithm that matches our lower bound (up to a constant) while enforcing safety constraints essential for practical applications. Extending our approach to the stochastic setting, we bridge the gap between theory and practical implementation. Extensive experiments in a reinforcement learning setup, simulating distributed humanoid robot training, validate the effectiveness of Safe-EF in ensuring safety and reducing communication complexity.     </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<div class="pub-topic-item" data-topic="Large-scale Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+            
+            
+            
+  [14]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eneamc.github.io/">Enea Monzio Compagnoni</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.mn.uio.no/math/english/people/aca/proske/">Frank Norbert Proske</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>.
+    </span>
+  <a class="specialeffects" href="/publication/24_signsgd/" itemprop="name">Unbiased and Sign Compression in Distributed Learning: Comparing Noise Resilience via SDEs</a>.
+ <p>
+  28th International Conference on Artificial Intelligence and Statistics (<b>Oral</b>, AISTATS 2025)<br>
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/SignSGD/signsgd.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/24_signsgd/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2502.17009" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=RRrftHtEfK" target="_blank" rel="noopener">
+    AISTATS
+  </a>
+  
+   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/SignSGD/sign_sgd_poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+  
+
+
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample14" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample14">
+  <div class="card card-body">
+    <font size="2"> Distributed methods are essential for handling machine learning pipelines comprising large-scale models and datasets. However, their benefits often come at the cost of increased communication overhead between the central server and agents, which can become the main bottleneck, making training costly or even unfeasible in such systems. Compression methods such as quantization and sparsification can alleviate this issue. Still, their robustness to large and heavy-tailed gradient noise, a phenomenon sometimes observed in language modeling, remains poorly understood. This work addresses this gap by analyzing Distributed Compressed SGD (DCSGD) and Distributed SignSGD (DSignSGD) using stochastic differential equations (SDEs). Our results show that DCSGD with unbiased compression is more vulnerable to noise in stochastic gradients, while DSignSGD remains robust, even under large and heavy-tailed noise. Additionally, we propose new scaling rules for hyperparameter tuning to mitigate performance degradation due to compression. These findings are empirically validated across multiple deep learning architectures and datasets, providing practical recommendations for distributed optimization.     </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<h3 class="year-subheader">2024</h3>
+<div class="pub-topic-item" data-topic="Large-scale Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [12]
+  <span itemprop="author" class="article-metadata li-cite-author">
+   <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://omls.dmi.unibas.ch/en/persons/enea-monzio-compagnoni/">Enea Monzio Compagnoni</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://tianlinliu.com/about">Tianlin Liu</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.mn.uio.no/math/english/people/aca/proske/">Frank Norbert Proske</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="http://orvi.altervista.org/">Antonio Orvieto</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>.
+  </span>
+  <a class="specialeffects" href="/publication/24_sde_adam/" itemprop="name">Adaptive Methods through the Lens of SDEs: Theoretical Insights on the Role of Noise</a>.
+ <p>
+ 13th International Conference on Learning Representations (ICLR 2025)<br>
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/SDE_ADAM/sde_adam.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/24_sde_adam/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2411.15958" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=ww3CLRhF1v" target="_blank" rel="noopener">
+    ICLR
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/Adam-SDE/adam_sde_poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+  
+  
+  
+
+
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample12" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample12">
+  <div class="card card-body">
+    <font size="2"> Despite the vast empirical evidence supporting the efficacy of adaptive optimization methods in deep learning, their theoretical understanding is far from complete. This work introduces novel SDEs for commonly used adaptive optimizers: SignSGD, RMSprop(W), and Adam(W). These SDEs offer a quantitatively accurate description of these optimizers and help illuminate an intricate relationship between adaptivity, gradient noise, and curvature. Our novel analysis of SignSGD highlights a noteworthy and precise contrast to SGD in terms of convergence speed, stationary distribution, and robustness to heavy-tail noise. We extend this analysis to AdamW and RMSpropW, for which we observe that the role of noise is much more complex. Crucially, we support our theoretical analysis with experimental evidence by verifying our insights: this includes numerically integrating our SDEs using Euler-Maruyama discretization on various neural network architectures such as MLPs, CNNs, ResNets, and Transformers. Our SDEs accurately track the behavior of the respective optimizers, especially when compared to previous SDEs derived for Adam and RMSprop. We believe our approach can provide valuable insights into best training practices and novel scaling rules.
+      </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<div class="pub-topic-item" data-topic="Large-scale Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [10]
+  <span itemprop="author" class="article-metadata li-cite-author">
+   <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.linkedin.com/in/yuan-gao-1654471b8/?originalSubdomain=de">Yuan Gao</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.sstich.ch">Sebastian Stich</a></span>.
+  </span>
+  <a class="specialeffects" href="/publication/24_motef/" itemprop="name">Towards Faster Decentralized Stochastic Optimization with Communication Compression</a>.
+  <p>
+  13th International Conference on Learning Representations (ICLR 2025)<br>
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Motef/motef.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/24_motef/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2405.20114" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=CMMpcs9prj" target="_blank" rel="noopener">
+    ICLR
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/MoTEF/motef_poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+  
+ 
+
+
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample10" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample10">
+  <div class="card card-body">
+    <font size="2"> Communication efficiency has garnered significant attention as it is considered the main bottleneck for large-scale decentralized Machine Learning applications in distributed and federated settings. In this regime, clients are restricted to transmitting small amounts of quantized information to their neighbors over a communication graph. Numerous endeavors have been made to address this challenging problem by developing algorithms with compressed communication for decentralized non-convex optimization problems. Despite considerable efforts, the current results suffer from various issues such as non-scalability with the number of clients, requirements for large batches, or bounded gradient assumption. In this paper, we introduce MoTEF, a novel approach that integrates communication compression with Momentum Tracking and Error Feedback. Our analysis demonstrates that MoTEF achieves most of the desired properties, and significantly outperforms existing methods under arbitrary data heterogeneity. We provide numerical experiments to validate our theoretical findings and confirm the practical superiority of MoTEF.
+      </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<h3 class="year-subheader">2023</h3>
+<div class="pub-topic-item" data-topic="Large-scale Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [9]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.linkedin.com/in/yuan-gao-1654471b8/?originalSubdomain=de">Yuan Gao</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.sstich.ch">Sebastian Stich</a></span>.
+  </span>
+  <a class="specialeffects" href="/publication/23_econtrol/" itemprop="name">EControl: Fast Distributed Optimization with Compression and Error Control</a>.
+  <p>
+  12th International Conference on Learning Representations (ICLR 2024)<br>
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/EControl/econtrol.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/23_econtrol/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2311.05645" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=lsvlvWB9vz" target="_blank" rel="noopener">
+    ICLR
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/EControl/EControl_poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample9">
+  <div class="card card-body">
+    <font size="2"> Modern distributed training relies heavily on communication compression to reduce the communication overhead. In this work, we study algorithms employing a popular class of contractive compressors in order to reduce communication overhead. However, the naive implementation often leads to unstable convergence or even exponential divergence due to the compression bias. Error Compensation (EC) is an extremely popular mechanism to mitigate the aforementioned issues during the training of models enhanced by contractive compression operators. Compared to the effectiveness of EC in the data homogeneous regime, the understanding of the practicality and theoretical foundations of EC in the data heterogeneous regime is limited. Existing convergence analyses typically rely on strong assumptions such as bounded gradients, bounded data heterogeneity, or large batch accesses, which are often infeasible in modern machine learning applications. We resolve the majority of current issues by proposing EControl, a novel mechanism that can regulate error compensation by controlling the strength of the feedback signal. We prove fast convergence for EControl in standard strongly convex, general convex, and nonconvex settings without any additional assumptions on the problem or data heterogeneity. We conduct extensive numerical evaluations to illustrate the efficacy of our method and support our theoretical findings.
+      </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<div class="pub-topic-item" data-topic="Large-scale Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [8]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=dJNwgT8AAAAJ&hl=en">Mher Safaryan</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://people.csail.mit.edu/alistarh/">Dan Alistarh</a></span>.
+  </span>
+  <a class="specialeffects" href="/publication/23_AsyncSGD/" itemprop="name">AsGrad: A Sharp Unified Analysis of Asynchronous-SGD Algorithms</a>.
+  <p>
+      27th International Conference on Artificial Intelligence and Statistics (AISTATS 2024)<br>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/AsyncSGD/AsyncSGD.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/23_AsyncSGD/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2310.20452" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://proceedings.mlr.press/v238/islamov24a.html" target="_blank" rel="noopener">
+    AISTATS
+  </a>
+  
+   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/AsyncSGD/AsyncSGD_poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample8">
+  <div class="card card-body">
+    <font size="2"> We analyze asynchronous-type algorithms for distributed SGD in the heterogeneous setting, where each worker has its own computation and communication speeds, as well as data distribution. In these algorithms, workers compute possibly stale and stochastic gradients associated with their local data at some iteration back in history and then return those gradients to the server without synchronizing with other workers. We present a unified convergence theory for non-convex smooth functions in the heterogeneous regime. The proposed analysis provides convergence for pure asynchronous SGD and its various modifications. Moreover, our theory explains what affects the convergence rate and what can be done to improve the performance of asynchronous algorithms. In particular, we introduce a novel asynchronous method based on worker shuffling. As a by-product of our analysis, we also demonstrate convergence guarantees for gradient-type algorithms such as SGD with random reshuffling and shuffle-once mini-batch SGD. The derived rates match the best-known results for those algorithms, highlighting the tightness of our approach. Finally, our numerical evaluations support theoretical findings and show the good practical performance of our method.
+  </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<div class="pub-topic-item" data-topic="Large-scale Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [6]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.konstmish.com">Konstantin Mishchenko</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io">Eduard Gorbunov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sites.google.com/view/samuelhorvath">Samuel Horváth</a>.</span>
+  </span>
+  <a class="specialeffects" href="/publication/23_partial/" itemprop="name">Partially Personalized Federated Learning: Breaking the Curse of Data Heterogeneity</a>.
+  <p>
+  Transactions on Machine Learning Research (TMLR 2025)<br>
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Partial/partial.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/23_partial/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2305.18285" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=8tMMCf4YYn" target="_blank" rel="noopener">
+    TMLR
+  </a>
+  
+  
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+<div class="collapse" id="collapseExample6">
+  <div class="card card-body">
+    <font size="2"> We present a partially personalized formulation of Federated Learning (FL) that strikes a balance between the flexibility of personalization and cooperativeness of global training. In our framework, we split the variables into global parameters, which are shared across all clients, and individual local parameters, which are kept private. We prove that under the right split of parameters, it is possible to find global parameters that allow each client to fit their data perfectly, and refer to the obtained problem as overpersonalized. For instance, the shared global parameters can be used to learn good data representations, whereas the personalized layers are fine-tuned for a specific client. Moreover, we present a simple algorithm for the partially personalized formulation that offers significant benefits to all clients. In particular, it breaks the curse of data heterogeneity in several settings, such as training with local steps, asynchronous training, and Byzantine-robust training.
+  </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<h3 class="year-subheader">2022</h3>
+<div class="pub-topic-item" data-topic="Large-scale Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [5]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=jXPpMXkAAAAJ&hl=en">Maksim Makarenko</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://elnurgasanov.com">Elnur Gasanov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sadiev.netlify.app">Abdurakhmon Sadiev</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org">Peter Richtárik</a>.</span>
+  </span>
+  <a class="specialeffects" href="/publication/22_ada3pc/" itemprop="name">Adaptive Compression for Communication-Efficient Distributed Training</a>.
+  <p>
+  Transactions on Machine Learning Research (TMLR 2023)<br>
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Ada3PC/ada3pc.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/22_ada3pc/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2211.00188" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=Rb6VDOHebB" target="_blank" rel="noopener">
+    TMLR
+  </a>
+  
+ <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample">    Abstract
+  </a>
+<div class="collapse" id="collapseExample5">
+  <div class="card card-body">
+    <font size="2"> We propose Adaptive Compressed Gradient Descent (AdaCGD) - a novel optimization algorithm for communication-efficient training of supervised machine learning models with adaptive compression level. Our approach is inspired by the recently proposed three point compressor (3PC) framework of Richtarik et al. (2022), which includes error feedback (EF21), lazily aggregated gradient (LAG), and their combination as special cases, and offers the current state-of-the-art rates for these methods under weak assumptions. While the above mechanisms offer a fixed compression level, or adapt between two extremes only, our proposal is to perform a much finer adaptation. In particular, we allow the user to choose any number of arbitrarily chosen contractive compression mechanisms, such as Top-K sparsification with a user-defined selection of sparsification levels K, or quantization with a user-defined selection of quantization levels, or their combination. AdaCGD chooses the appropriate compressor and compression level adaptively during the optimization process. Besides i) proposing a theoretically-grounded multi-adaptive communication compression mechanism, we further ii) extend the 3PC framework to bidirectional compression, i.e., we allow the server to compress as well, and iii) provide sharp convergence bounds in the strongly convex, convex and nonconvex settings. The convex regime results are new even for several key special cases of our general mechanism, including 3PC and EF21. In all regimes, our rates are superior compared to all existing adaptive compression methods.
+  </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+</div>
+<div class="topic-section">
+<h2 class="topic-header">Loss Landscape of Neural Networks</h2>
+<h3 class="year-subheader">2026</h3>
+<div class="pub-topic-item" data-topic="Loss Landscape of Neural Networks">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [20]
+  <span itemprop="author" class="article-metadata li-cite-author">
+    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://mtcrawshaw.github.io/">Michael Crawshaw</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://jmcohen.github.io/">Jeremy Cohen</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?hl=ru&user=okKw87MAAAAJ&view_op=list_works&sortby=pubdate">Robert Gower</a></span>.
+</span>
+    </span>
+  <a class="specialeffects" href="/publication/26_eos/" itemprop="name">Non-Euclidean Gradient Descent Operates at the Edge of Stability</a>.
+  <p>
+   43rd International Conference on Machine Learning (<b>Spotlight</b>, ICML 2026)<br>
+
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/EOS/eos.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/26_eos/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.05002" target="_blank" rel="noopener">
+    arXiv
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=piWlEHb4Db" target="_blank" rel="noopener">
+    ICML
+  </a>
+
+  
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample20" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample20">
+  <div class="card card-body">
+    <font size="2">The Edge of Stability (EoS) is a phenomenon where the sharpness (largest eigenvalue) of the Hessian converges to $2/\eta$ during training with gradient descent (GD) with a step-size $\eta$. Despite (apparently) violating classical smoothness assumptions, EoS has been widely observed in deep learning, but its theoretical foundations remain incomplete. We provide an interpretation ofEoS through the lens of Directional Smoothness Mishkin et al. [2024]. This interpretation naturally extends to non-Euclidean norms, which we use to define generalized sharpness under an arbitrary norm. Our generalized sharpness measure includes previously studied vanilla GD and preconditioned GD as special cases, as well as methods for which EoS has not been studied, such as $\ell_{\infty}$-descent, Block CD, Spectral GD, and Muon without momentum. Through experiments on neural networks, we show that non-Euclidean GD with our generalized sharpness also exhibits progressive sharpening followed by oscillations around or above the threshold $2/\eta$. Practically, our framework provides a single, geometry-aware spectral measure that works across optimizers.    </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<h3 class="year-subheader">2025</h3>
+<div class="pub-topic-item" data-topic="Loss Landscape of Neural Networks">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [18]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sites.google.com/view/foivos-alimisis">Foivos Alimisis</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>,  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>.
+    </span>
+  <a class="specialeffects" href="/publication/25_warmup/" itemprop="name">Why Do We Need Warm-up? A Theoretical Perspective</a>.
+  <p>
+   43rd International Conference on Machine Learning (ICML 2026)<br>
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Warmup/warmup.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/25_warmup/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2510.03164" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=a6fo32UnpU" target="_blank" rel="noopener">
+    ICML
+  </a>
+  
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample18" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample18">
+  <div class="card card-body">
+    <font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the (L0, L1)-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.    </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<div class="pub-topic-item" data-topic="Loss Landscape of Neural Networks">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [16]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eneamc.github.io/">Enea Monzio Compagnoni</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="http://orvi.altervista.org/">Antonio Orvieto</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io/index.html">Eduard Gorbunov</a></span>.
+    </span>
+  <a class="specialeffects" href="/publication/25_l0l1sde/" itemprop="name">On the Interaction of Noise, Compression Role, and Adaptivity under (L0,L1)-Smoothness: An SDE-based Approach</a>.
+<p>
+   43rd International Conference on Machine Learning (ICML 2026)<br>
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/SDE_L0L1/sde_l0l1.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/25_l0l1sde/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2506.00181" target="_blank" rel="noopener">
+    arXiv
+  </a>
+
+   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=Pmsc4yytlf" target="_blank" rel="noopener">
+    ICML
+  </a>
+  
+  
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample16" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample16">
+  <div class="card card-body">
+    <font size="2"> Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under (L0,L1)-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that \textit{adaptive} methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.     </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<h3 class="year-subheader">2024</h3>
+<div class="pub-topic-item" data-topic="Loss Landscape of Neural Networks">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [11]
+  <span itemprop="author" class="article-metadata li-cite-author">
+   <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://github.com/Niccolo-Ajroldi">Niccolò Ajroldi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="http://orvi.altervista.org/">Antonio Orvieto</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>.
+  </span>
+  <a class="specialeffects" href="/publication/24_alphabeta/" itemprop="name">Loss Landscape Characterization of Neural Networks without Over-Parametrization</a>.
+  <p>
+  38th Annual Conference on Neural Information Processing Systems (NeurIPS 2024)<br>
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Alphabeta/alphabeta.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/24_alphabeta/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2410.12455" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/52f050499cf82fa8efb588e263f6f3a7-Abstract-Conference.html" target="_blank" rel="noopener">
+    NeurIPS
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/Alpha-beta/alpha-beta-poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+
+
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample11" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample11">
+  <div class="card card-body">
+    <font size="2"> Optimization methods play a crucial role in modern machine learning, powering the remarkable empirical achievements of deep learning models. These successes are even more remarkable given the complex non-convex nature of the loss landscape of these models. Yet, ensuring the convergence of optimization methods requires specific structural conditions on the objective function that are rarely satisfied in practice. One prominent example is the widely recognized Polyak-Łojasiewicz (PL) inequality, which has gained considerable attention in recent years. However, validating such assumptions for deep neural networks entails substantial and often impractical levels of over-parametrization. In order to address this limitation, we propose a novel class of functions that can characterize the loss landscape of modern deep models without requiring extensive over-parametrization and can also include saddle points. Crucially, we prove that gradient-based optimizers possess theoretical guarantees of convergence under this assumption. Finally, we validate the soundness of our new function class through both theoretical analysis and empirical experimentation across a diverse range of deep learning models.      </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+</div>
+<div class="topic-section">
+<h2 class="topic-header">Privacy Preserving Optimization</h2>
+<h3 class="year-subheader">2026</h3>
+<div class="pub-topic-item" data-topic="Privacy Preserving Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [19]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eneamc.github.io/">Enea Monzio Compagnoni</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?hl=ru&user=DAyhO-oAAAAJ">Alessandro Stanghellini</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://koloskova.github.io/">Anastasia Koloskova</a></span>.
+</span>
+    </span>
+  <a class="specialeffects" href="/publication/26_dpsde/" itemprop="name">Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective</a>.
+  <p>
+   14th International Conference on Learning Representations (ICLR 2026)<br>
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/DPSDE/dpsde.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/26_dpsde/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.03226" target="_blank" rel="noopener">
+    arXiv
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=hSpA4DAoMk" target="_blank" rel="noopener">
+    ICLR
+  </a>
+
+
+  
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample19" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample19">
+  <div class="card card-body">
+    <font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of ${\small \mathcal{O}(1/\varepsilon^2)}$ with speed independent of ${\small \varepsilon}$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an ${\small \mathcal{O}(1/\varepsilon)}$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with ${\small \varepsilon}$, while that of DP-SignSGD is essentially ${\small \varepsilon}$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<h3 class="year-subheader">2025</h3>
+<div class="pub-topic-item" data-topic="Privacy Preserving Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [13]
+  <span itemprop="author" class="article-metadata li-cite-author">
+   <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sites.google.com/view/samuelhorvath">Samuel Horváth</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org/">Peter Richtárik</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io/">Eduard Gorbunov</a></span>.
+  </span>
+  <a class="specialeffects" href="/publication/25_clip21m/" itemprop="name">Double Momentum and Error Feedback for Clipping with Fast Rates and Differential Privacy</a>.
+ <p>
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Clip21M/clip21m.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/25_clip21m/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2502.11682" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+
+
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample13" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample13">
+  <div class="card card-body">
+    <font size="2"> Strong Differential Privacy (DP) and Optimization guarantees are two desirable properties for a method in Federated Learning (FL). However, existing algorithms do not achieve both properties at once: they either have optimal DP guarantees but rely on restrictive assumptions such as bounded gradients/bounded data heterogeneity, or they ensure strong optimization performance but lack DP guarantees. To address this gap in the literature, we propose and analyze a new method called Clip21-SGD2M based on a novel combination of clipping, heavy-ball momentum, and Error Feedback. In particular, for non-convex smooth distributed problems with clients having arbitrarily heterogeneous data, we prove that Clip21-SGD2M has optimal convergence rate and also near optimal (local-)DP neighborhood. Our numerical experiments on non-convex logistic regression and training of neural networks highlight the superiority of Clip21-SGD2M over baselines in terms of the optimization performance for a given DP-budget.      </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<h3 class="year-subheader">2023</h3>
+<div class="pub-topic-item" data-topic="Privacy Preserving Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [7]
+  <span itemprop="author" class="article-metadata li-cite-author">
+   <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sarit-khirirat.netlify.app">Sarit Khirirat</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io">Eduard Gorbunov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sites.google.com/view/samuelhorvath">Samuel Horváth</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.ca/citations?user=9_Hpd5kAAAAJ&hl=en">Fakhri Karray</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org">Peter Richtárik</a></span>.
+  </span>
+  <a class="specialeffects" href="/publication/23_clip21/" itemprop="name">Clip21: Error Feedback for Gradient Clipping</a>.
+  <p>
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Clip21/clip21.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/23_clip21/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2305.18929" target="_blank" rel="noopener">
+    arXiv
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample7">
+  <div class="card card-body">
+    <font size="2"> Motivated by the increasing popularity and importance of large-scale training under differential privacy (DP) constraints, we study distributed gradient methods with gradient clipping, i.e., clipping applied to the gradients computed from local information at the nodes. While gradient clipping is an essential tool for injecting formal DP guarantees into gradient-based methods [Abadi et al., 2016], it also induces bias which causes serious convergence issues specific to the distributed setting. Inspired by recent progress in the error-feedback literature which is focused on taming the bias/error introduced by communication compression operators such as Top-k [Richtárik et al., 2021], and mathematical similarities between the clipping operator and contractive compression operators, we design Clip21 -- the first provably effective and practically useful error feedback mechanism for distributed methods with gradient clipping. We prove that our method converges at the same ${\tiny \mathcal{O}(1/K)}$ rate as distributed gradient descent in the smooth nonconvex regime, which improves the previous best ${\tiny \mathcal{O}(1/\sqrt{K})}$ rate which was obtained under significantly stronger assumptions. Our method converges significantly faster in practice than competing methods.
+  </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+</div>
+<div class="topic-section">
+<h2 class="topic-header">Second-Order Optimization</h2>
+<h3 class="year-subheader">2022</h3>
+<div class="pub-topic-item" data-topic="Second-Order Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [4]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=2QtdkysAAAAJ&hl=en">Xun Qian</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://slavomir-hanzely.github.io">Slavomir Hanzely</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=dJNwgT8AAAAJ&hl=en">Mher Safaryan</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org">Peter Richtárik</a>.</span>
+
+  </span>
+  <a class="specialeffects" href="/publication/22_3pc/" itemprop="name">Distributed Newton-Type Methods with Communication Compression and Bernoulli Aggregation</a>.
+  <p>
+  Transactions on Machine Learning Research (TMLR 2023)<br>
+  
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/3PC/3PC.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/22_3pc/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2206.03588" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=NekBTCKJ1H" target="_blank" rel="noopener">
+    TMLR
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/Newton-3PC/Newton3PC-poster.pdf" target="_blank" rel="noopener">
+    poster
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://order-up-ml.github.io/" target="_blank" rel="noopener">
+    HOO-22 NeurIPS
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+<div class="collapse" id="collapseExample4">
+  <div class="card card-body">
+    <font size="2">Despite their high computation and communication costs, Newton-type methods remain an appealing option for distributed training due to their robustness against ill-conditioned convex problems. In this work, we study communication compression and aggregation mechanisms for curvature information in order to reduce these costs while preserving theoretically superior local convergence guarantees. We prove that the recently developed class of three point compressors (3PC) of Richtarik et al. [2022] for gradient communication can be generalized to Hessian communication as well. This result opens up a wide variety of communication strategies, such as contractive compression and lazy aggregation, available to our disposal to compress prohibitively costly curvature information. Moreover, we discovered several new 3PC mechanisms, such as adaptive thresholding and Bernoulli aggregation, which require reduced communication and occasional Hessian computations. Furthermore, we extend and analyze our approach to bidirectional communication compression and partial device participation setups to cater to the practical considerations of applications in federated learning. For all our methods, we derive fast condition-number-independent local linear and/or superlinear convergence rates. Finally, with extensive numerical evaluations on convex optimization problems, we illustrate that our designed schemes achieve state-of-the-art communication complexity compared to several key baselines using second-order information.
+</font>  
+</div>
+</div>
+
+
+   
+</p>
+
+</div>
+        </div>
+<h3 class="year-subheader">2021</h3>
+<div class="pub-topic-item" data-topic="Second-Order Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [3]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=2QtdkysAAAAJ&hl=en">Xun Qian</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=dJNwgT8AAAAJ&hl=en">Mher Safaryan</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org">Peter Richtárik</a>.</span>
+
+  </span>
+  <a class="specialeffects" href="/publication/21_bl/" itemprop="name">Basis Matters: Better Communication-Efficient Second Order Methods for Federated Learning</a>.
+  
+  <p>
+  25th International Conference on Artificial Intelligence and Statistics (AISTATS 2022)<br>
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/BL/bl.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/21_bl/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2111.01847" target="_blank" rel="noopener">
+    arXiv
+  </a>
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://proceedings.mlr.press/v151/qian22a.html" target="_blank" rel="noopener">
+    AISTATS
+  </a>
+ 
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/BasisLearn/basis_learn_poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+
+
+   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+<div class="collapse" id="collapseExample3">
+  <div class="card card-body">
+    <font size="2">Recent advances in distributed optimization have shown that Newton-type methods with proper communication compression mechanisms can guarantee fast local rates and low communication cost compared to first order methods. We discover that the communication cost of these methods can be further reduced, sometimes dramatically so, with a surprisingly simple trick: Basis Learn (BL). The idea is to transform the usual representation of the local Hessians via a change of basis in the space of matrices and apply compression tools to the new representation. To demonstrate the potential of using custom bases, we design a new Newton-type method (BL1), which reduces communication cost via both BL technique and bidirectional compression mechanism. Furthermore, we present two alternative extensions (BL2 and BL3) to partial participation to accommodate federated learning applications. We prove local linear and superlinear rates independent of the condition number. Finally, we support our claims with numerical experiments by comparing several first and second-order methods.
+  </font></div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<div class="pub-topic-item" data-topic="Second-Order Optimization">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [2]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=dJNwgT8AAAAJ&hl=en">Mher Safaryan</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=2QtdkysAAAAJ&hl=en">Xun Qian</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org">Peter Richtárik</a>.</span>
+
+  </span>
+  <a class="specialeffects" href="/publication/21_fednl/" itemprop="name">FedNL: Making Newton-Type Methods Applicable to Federated Learning</a>.
+  
+  <p>
+  39th International Conference on Machine Learning (ICML 2022)<br>
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/FedNL/FedNL.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/21_fednl/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2106.02969" target="_blank" rel="noopener">
+    arXiv
+  </a>
+
+ <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://proceedings.mlr.press/v162/safaryan22a.html" target="_blank" rel="noopener">
+    ICML
+  </a>
+
+
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="http://federated-learning.org/fl-icml-2021/" target="_blank" rel="noopener">
+    FL-ICML
+  </a>
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://sites.google.com/view/optml-icml2021/accepted-papers?authuser=0" target="_blank" rel="noopener">
+    BFOM-ICML
+  </a>
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/FedNL/FedNL_poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.youtube.com/watch?v=eAGqO4pYEW4" target="_blank" rel="noopener">
+    3-min video
+  </a>
+
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+<div class="collapse" id="collapseExample2">
+  <div class="card card-body">
+    <font size="2">Inspired by recent work of Islamov et al (2021), we propose a family of Federated Newton Learn (FedNL) methods, which we believe is a marked step in the direction of making second-order methods applicable to FL. In contrast to the aforementioned work, FedNL employs a different Hessian learning technique which i) enhances privacy as it does not rely on the training data to be revealed to the coordinating server, ii) makes it applicable beyond generalized linear models, and iii) provably works with general contractive compression operators for compressing the local Hessians, such as Top-K or Rank-R, which are vastly superior in practice. Notably, we do not need to rely on error feedback for our methods to work with contractive compressors. Moreover, we develop FedNL-PP, FedNL-CR and FedNL-LS, which are variants of FedNL that support partial participation, and globalization via cubic regularization and line search, respectively, and FedNL-BC, which is a variant that can further benefit from bidirectional compression of gradients and models, i.e., smart uplink gradient and smart downlink model compression. We prove local convergence rates that are independent of the condition number, the number of training data points, and compression variance. Our communication efficient Hessian learning technique provably learns the Hessian at the optimum. Finally, we perform a variety of numerical experiments that show that our FedNL methods have state-of-the-art communication complexity when compared to key baselines.
+</font>  
+</div>
+</div>
+
+
+
+     
+</p>
+</div>
+        </div>
+<div class="pub-topic-item" data-topic="Second-Order Optimization">
+          
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [1]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=2QtdkysAAAAJ&hl=en">Xun Qian</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org">Peter Richtárik</a>.</span>
+  </span>
+  <a class="specialeffects" href="/publication/21_mn/" itemprop="name">Distributed Second Order Methods with Fast Rates and Compressed Communication</a>.
+  
+  <p>
+
+38th International Conference on Machine Learning (ICML 2021)<br>
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/NEWTON-LEARN/NEWTON-LEARN.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/21_mn/cite.bib">
+  Cite
+</button>
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2102.07158" target="_blank" rel="noopener">
+    arXiv
+  </a>
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="http://proceedings.mlr.press/v139/islamov21a.html" target="_blank" rel="noopener">
+    
+    ICML
+  </a>
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://sites.google.com/ucsd.edu/cedo/posters?authuser=0" target="_blank" rel="noopener">
+    NSF-TRIPODS
+  </a>
+
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/NEWTON-LEARN/Newton_Learn_Poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.youtube.com/watch?v=iSKBZXlaoWo&list=PLC28kDljnOrj-_w-MHKW36gVRvUe3XFjx&index=43" target="_blank" rel="noopener">
+    
+    5-min video
+  </a>
+
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+<div class="collapse" id="collapseExample1">
+  <div class="card card-body">
+    <font size="2">We develop several new communication-efficient second-order methods for distributed optimization. Our first method, NEWTON-STAR, is a variant of Newton’s method from which it inherits its fast local quadratic rate. However, unlike Newton’s method, NEWTON-STAR enjoys the same per iteration communication cost as gradient descent. While this method is impractical as it relies on the use of certain unknown parameters characterizing the Hessian of the objective function at the optimum, it serves as the starting point which enables us design practical variants thereof with strong theoretical guarantees. In particular, we design a stochastic sparsification strategy for learning the unknown parameters in an iterative fashion in a communication efficient manner. Applying this strategy to NEWTON-STAR leads to our next method, NEWTON-LEARN, for which we prove local linear and superlinear rates independent of the condition number. When applicable, this method can have dramatically superior convergence behavior when compared to state-of-the-art methods. Finally, we develop a globalization strategy using cubic regularization which leads to our next method, CUBIC-NEWTON-LEARN, for which we prove global sublinear and linear convergence rates, and a fast superlinear rate. Our results are supported with experimental results on real datasets, and show several orders of magnitude improvement on baseline and state-of-the-art methods in terms of communication complexity.
+</font>  
+</div>
+</div>
+
+</p>
+</div>
+        </div>
+</div>
+</div>
+
+<script src="/js/mathjax-config.js"></script>
     
 
     
@@ -2036,70 +3048,20 @@
 
 
 <script>
-(function() {
-  var TOPIC_ORDER = [
-    'Large-scale Optimization',
-    'Loss Landscape of Neural Networks',
-    'Privacy Preserving Optimization',
-    'Second-Order Optimization'
-  ];
-
-  window.pubSortByYear = function() {
-    document.getElementById('year-view').style.display = '';
-    document.getElementById('topic-view').style.display = 'none';
-    document.getElementById('btn-by-year').classList.add('active');
-    document.getElementById('btn-by-topic').classList.remove('active');
-  };
-
-  window.pubSortByTopic = function() {
-    document.getElementById('year-view').style.display = 'none';
-    var tv = document.getElementById('topic-view');
-    tv.style.display = '';
-    document.getElementById('btn-by-year').classList.remove('active');
-    document.getElementById('btn-by-topic').classList.add('active');
-
-    if (tv.dataset.built) return;
-    tv.dataset.built = '1';
-
-    // Collect all papers from year-view
-    var papers = document.querySelectorAll('[data-topic]');
-    var byTopic = {};
-    papers.forEach(function(p) {
-      var topic = p.dataset.topic || 'Other';
-      var yearCls = Array.from(p.classList).find(function(c){ return c.startsWith('year-'); });
-      var year = yearCls ? yearCls.replace('year-', '') : '0000';
-      if (!byTopic[topic]) byTopic[topic] = {};
-      if (!byTopic[topic][year]) byTopic[topic][year] = [];
-      byTopic[topic][year].push(p.cloneNode(true));
-    });
-
-    var frag = document.createDocumentFragment();
-    var order = TOPIC_ORDER.concat(Object.keys(byTopic).filter(function(t){ return TOPIC_ORDER.indexOf(t) === -1; }));
-    order.forEach(function(topic) {
-      if (!byTopic[topic]) return;
-      var section = document.createElement('div');
-      section.className = 'topic-section';
-      var h2 = document.createElement('h2');
-      h2.className = 'topic-header';
-      h2.textContent = topic;
-      section.appendChild(h2);
-
-      var years = Object.keys(byTopic[topic]).sort(function(a,b){ return parseInt(b)-parseInt(a); });
-      years.forEach(function(year) {
-        var h3 = document.createElement('h3');
-        h3.className = 'year-subheader';
-        h3.textContent = year;
-        section.appendChild(h3);
-        byTopic[topic][year].forEach(function(node) {
-          section.appendChild(node);
-        });
-      });
-      frag.appendChild(section);
-    });
-    tv.appendChild(frag);
-  };
-})();
+function pubByYear() {
+  document.body.classList.remove('show-by-topic');
+  document.body.classList.add('show-by-year');
+  document.getElementById('btn-year').classList.add('active');
+  document.getElementById('btn-topic').classList.remove('active');
+  document.getElementById('topic-view').style.display = 'none';
+}
+function pubByTopic() {
+  document.body.classList.remove('show-by-year');
+  document.body.classList.add('show-by-topic');
+  document.getElementById('btn-year').classList.remove('active');
+  document.getElementById('btn-topic').classList.add('active');
+  document.getElementById('topic-view').style.display = 'block';
+}
 </script>
-
 </body>
 </html>
