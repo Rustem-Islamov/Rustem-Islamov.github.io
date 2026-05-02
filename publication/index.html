@@ -55,7 +55,7 @@
   #pub-stats-box .stat-total { font-weight: 600; margin-right: 6px; }
   #pub-stats-box span { margin-right: 14px; }
   #pub-stats-box strong { color: #2962ff; }
-  .sort-btn { margin-right: 8px; }
+  .sort-btn { margin-right: 8px; padding: 6px 18px; font-size: 0.95rem; }
   .sort-btn.active {
     background-color: #2962ff !important;
     color: #fff !important; border-color: #2962ff !important;
@@ -76,7 +76,7 @@
   .collapsed > h2 > .tri  { transform: rotate(-90deg); }
 
   /* collapse states */
-  .year-section { border-bottom: 2px solid #bbb; padding-bottom: 1.5rem; margin-bottom: 0.5rem; }
+  .year-section { border-bottom: 1px solid #bbb; padding-bottom: 1.5rem; margin-bottom: 0.5rem; }
   .year-section.collapsed .grid-sizer    { display: none !important; }
   .topic-section.collapsed .topic-body   { display: none !important; }
   .year-group.collapsed    .year-body    { display: none !important; }
@@ -345,9 +345,9 @@
     <span><strong>3</strong> AISTATS</span>
     <span><strong>3</strong> TMLR</span>
   </div>
-  <button class="btn btn-outline-primary btn-sm sort-btn active"
+  <button class="btn btn-outline-primary sort-btn active"
           id="btn-year"  onclick="pubByYear()">Sort by Year</button>
-  <button class="btn btn-outline-primary btn-sm sort-btn"
+  <button class="btn btn-outline-primary sort-btn"
           id="btn-topic" onclick="pubByTopic()">Sort by Topic</button>
 </div>
 <div class="universal-wrapper pt-3 year-section">
