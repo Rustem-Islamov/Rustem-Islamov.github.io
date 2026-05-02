@@ -49,7 +49,7 @@
   #pub-stats-box {
     display: block; width: fit-content;
     border: 2px solid #2962ff; border-radius: 8px;
-    padding: 9px 16px; margin-bottom: 14px;
+    padding: 9px 16px; margin-bottom: 6px;
     background: #f4f6ff; font-size: .95rem;
   }
   #pub-stats-box .stat-total { font-weight: 600; margin-right: 6px; }
@@ -76,6 +76,7 @@
   .collapsed > h2 > .tri  { transform: rotate(-90deg); }
 
   /* collapse states */
+  .year-section { border-bottom: 2px solid #bbb; padding-bottom: 1.5rem; margin-bottom: 0.5rem; }
   .year-section.collapsed .grid-sizer    { display: none !important; }
   .topic-section.collapsed .topic-body   { display: none !important; }
   .year-group.collapsed    .year-body    { display: none !important; }
@@ -343,7 +344,7 @@
     <span><strong>4</strong> ICLR</span>
     <span><strong>3</strong> AISTATS</span>
     <span><strong>3</strong> TMLR</span>
-  </div><br>
+  </div>
   <button class="btn btn-outline-primary btn-sm sort-btn active"
           id="btn-year"  onclick="pubByYear()">Sort by Year</button>
   <button class="btn btn-outline-primary btn-sm sort-btn"
