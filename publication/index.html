@@ -46,28 +46,34 @@
   #topic-view { display: none; }
 
   /* stats & buttons */
+  /* ── stats box ── */
   #pub-controls { padding: 1.5rem 0 0.5rem; }
   #pub-stats-box {
-    display: inline-flex; flex-wrap: wrap; gap: 8px 18px;
+    display: block;
+    width: fit-content;
     border: 2px solid #2962ff; border-radius: 8px;
-    padding: 9px 16px; margin-bottom: 12px;
+    padding: 9px 16px; margin-bottom: 14px;
     background: #f4f6ff; font-size: .95rem;
   }
-  #pub-stats-box .stat-total { font-weight: 600; }
+  #pub-stats-box .stat-total { font-weight: 600; margin-right: 6px; }
+  #pub-stats-box span { margin-right: 14px; }
   #pub-stats-box strong { color: #2962ff; }
   .sort-btn { margin-right: 8px; }
   .sort-btn.active {
     background-color: #2962ff !important;
     color: #fff !important; border-color: #2962ff !important;
   }
-  /* topic view */
-  .pub-topic-item { margin-bottom: 1.2rem; }
-  .topic-section  { margin-bottom: 2rem; }
+  /* ── topic view indentation ── */
+  .topic-section  { margin-bottom: 2.5rem; }
+  .pub-topic-item { margin-bottom: 1.2rem; padding-left: 3em; }
   .year-subheader {
     font-size: 1.4rem !important;
-    margin-top: 1rem !important;
-    margin-bottom: 0.2rem !important;
+    margin-top: 1.2rem !important;
+    margin-bottom: 0.4rem !important;
+    padding-left: 1.5em !important;
+    padding-bottom: 4px !important;
     color: #555 !important;
+    border-bottom: 1px solid #bbb !important;
   }
 
   </style>
