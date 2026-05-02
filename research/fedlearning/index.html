@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
+
+  
+
+  <style>
+  a.specialwhitebold:link{
+    color: #FFFDD0;
+    font-weight: bold;
+  }
+    a.specialwhitebold:visited{
+    color: #FFFDD0;
+    font-weight: bold;
+  }
+    a.specialwhitebold:active{
+    color: #FFFDD0;
+    font-weight: bold;
+  }
+    a.specialwhitebold:hover{
+    color: #F3E5AB;
+    font-weight: bold;
+  }
+
+  a.specialwhite:link{
+    color: #FFFDD0;
+  }
+    a.specialwhite:visited{
+    color: #FFFDD0;
+  }
+    a.specialwhite:active{
+    color: #FFFDD0;
+  }
+    a.specialwhite:hover{
+    color: #F3E5AB;
+  }
+
+  a.specialeffects:link{
+    color: #050505;
+  }
+    a.specialeffects:visited{
+    color: #050505;
+  }
+    a.specialeffects:active{
+    color: #050505;
+  }
+    a.specialeffects:hover{
+    color: #1F51FF;
+  }
+	
+  a.specialgray:link{
+    color: gray;
+  }
+    a.specialgray:visited{
+    color: gray;
+  }
+    a.specialgray:active{
+    color: gray;
+  }
+    a.specialgray:hover{
+    color: #1F51FF;
+  }	
+  </style>
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Rustem Islamov">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="PhD student">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://rustem-islamov.github.io/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Lora:400,700|Roboto:400,700&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.a37180a901f566adcde30f087191d2c2.css">
+
+  
+  
+  
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-107711380-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Rustem Islamov">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://rustem-islamov.github.io/">
+
+  
+  
+  
+  
+    
+    
+
+  
+
+
+
+
+  <title>Federated Learning – Rustem Islamov</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Rustem Islamov</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about" data-target="#about"><span>Home</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#education" data-target="#education"><span>Education</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="/research/" class="active"><span>Research</span></a>
+        </li>
+          
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts" data-target="#posts"><span>Posts</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="./publication"><span>Publications</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact" data-target="#contact"><span>Contact</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<style>
+/* Research page styles */
+.research-hero {
+  background: linear-gradient(135deg, #0d2680 0%, #2962ff 55%, #6b9aff 100%);
+  padding: 5rem 0 4rem;
+  margin-bottom: 0;
+  color: white;
+}
+.research-hero-box {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 12px;
+  padding: 2rem 2.4rem;
+  max-width: 720px;
+  margin: 0 auto 0;
+}
+.research-hero-box h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: .5rem;
+}
+.research-hero-box p {
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.85);
+  margin: 0;
+}
+.research-intro {
+  padding: 2.5rem 0 2rem;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #222;
+  max-width: 820px;
+}
+.research-intro .highlight { color: #8b0000; font-weight: 700; }
+.research-intro strong { font-weight: 700; }
+
+/* Topic cards */
+.topic-cards-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.topic-card-link { text-decoration: none !important; flex: 1; min-width: 260px; }
+.topic-card {
+  border: 1.5px solid #dce4ff;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  background: #fff;
+  height: 100%;
+}
+.topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(41,98,255,.15);
+  border-color: #2962ff;
+}
+.topic-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+.topic-card-img.dark-bg { background: #111; object-fit: contain; padding: 12px; }
+.topic-card-body { padding: 1.2rem 1.3rem 1.4rem; }
+.topic-card-body h3 {
+  color: #1a1a2e;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: .7rem;
+}
+.topic-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.topic-tag {
+  background: #eef1ff;
+  color: #2962ff;
+  font-size: .75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid #c5d0ff;
+}
+
+/* Topic page styles */
+.topic-hero {
+  background: linear-gradient(135deg, #0d2680 0%, #2962ff 55%, #6b9aff 100%);
+  color: white;
+  padding: 4rem 0 3rem;
+  margin-bottom: 2.5rem;
+}
+.topic-hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: .4rem; }
+.topic-hero p  { font-size: 1rem; opacity: .88; max-width: 640px; }
+.section-block { margin-bottom: 2.5rem; }
+.section-block h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2962ff;
+  border-left: 4px solid #2962ff;
+  padding-left: 12px;
+  margin-bottom: 1rem;
+}
+.challenge-list { list-style: none; padding: 0; }
+.challenge-list li {
+  padding: .6rem 0 .6rem 1.6rem;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+  line-height: 1.6;
+}
+.challenge-list li::before {
+  content: "▸";
+  color: #2962ff;
+  position: absolute;
+  left: 0;
+  font-size: .9rem;
+}
+.contrib-card {
+  border-left: 3px solid #2962ff;
+  background: #f7f9ff;
+  border-radius: 0 8px 8px 0;
+  padding: .9rem 1.2rem;
+  margin-bottom: .9rem;
+}
+.contrib-card strong { color: #1a1a2e; }
+.contrib-card .venue-badge {
+  display: inline-block;
+  background: #2962ff;
+  color: white;
+  font-size: .7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.impact-box {
+  background: linear-gradient(135deg, #eef1ff 0%, #f7f9ff 100%);
+  border: 1px solid #c5d0ff;
+  border-radius: 10px;
+  padding: 1.4rem 1.6rem;
+}
+.impact-box p { color: #333; line-height: 1.7; margin: 0; }
+.pub-year-label {
+  font-size: .95rem;
+  font-weight: 600;
+  color: #777;
+  border-left: 3px solid #bbb;
+  padding-left: 8px;
+  margin: 1.3rem 0 .5rem;
+}
+.pub-topic-item { margin-bottom: 1.1rem; }
+.back-link {
+  color: #2962ff; font-size: .88rem;
+  display: inline-block; margin-bottom: 1rem;
+}
+.back-link:hover { text-decoration: underline; }
+</style>
+
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Rustem Islamov</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about" data-target="#about"><span>Home</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#education" data-target="#education"><span>Education</span></a>
+        </li>
+          
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts" data-target="#posts"><span>Posts</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="./publication"><span>Publications</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact" data-target="#contact"><span>Contact</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<div class="topic-hero">
+  <div class="container">
+    <a href="/research/" class="back-link" style="color:rgba(255,255,255,.7);">← Research</a>
+    <h1>Federated Learning</h1>
+    <p>Privacy-preserving and communication-efficient distributed learning —
+    compression, local methods, and differential privacy for heterogeneous networks.</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="section-block">
+    <h2>Main Challenges</h2>
+    <ul class="challenge-list">
+      <li><strong>Communication cost:</strong> In federated settings, clients communicate
+        with a central server over limited-bandwidth links; raw gradient transmission is
+        infeasible at scale.</li>
+      <li><strong>Data heterogeneity:</strong> Client datasets are non-IID, causing client
+        drift in local-update methods and degrading global convergence.</li>
+      <li><strong>Privacy guarantees:</strong> Differential privacy adds noise that
+        interacts non-trivially with gradient clipping and adaptive optimizers,
+        weakening convergence in ways that are poorly understood.</li>
+      <li><strong>Partial participation:</strong> Only a random subset of clients
+        participates in each round; standard analyses either ignore this or rely on
+        overly pessimistic bounds.</li>
+      <li><strong>Gradient clipping for privacy:</strong> Per-sample clipping required
+        by DP-SGD has complex interactions with momentum and adaptive step-sizes that
+        existing theory does not capture.</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>My Contributions</h2>
+
+    <div class="contrib-card">
+      <strong>Differential Privacy meets Adaptive Optimizers (DP-SDE)</strong>
+      <span class="venue-badge">ICLR 2026</span><br>
+      We analyse differentially private adaptive gradient methods via an SDE lens,
+      proving that the privacy noise fundamentally limits the benefit of adaptivity
+      and providing tight bounds that match empirical observations on LLM fine-tuning.
+    </div>
+
+    <div class="contrib-card">
+      <strong>CLIP21 with Momentum</strong>
+      <span class="venue-badge">ICML 2025</span><br>
+      We show that adding momentum to clipped SGD provably accelerates convergence
+      in the federated setting and derive the first tight convergence guarantees for
+      clipped momentum methods under partial participation and data heterogeneity.
+    </div>
+
+    <div class="contrib-card">
+      <strong>CLIP21: Clipping as a Communication Primitive</strong>
+      <span class="venue-badge">NeurIPS 2023</span><br>
+      We reinterpret gradient clipping as a compression mechanism and prove that
+      clipped SGD achieves the same convergence rate as unclipped SGD while
+      dramatically reducing the effective communication cost per round.
+    </div>
+
+  </div>
+
+  <div class="section-block">
+    <h2>Research Impact</h2>
+    <div class="impact-box">
+      <p>
+        The DP-SDE framework provides the first principled explanation of why
+        differentially private training with adaptive optimizers underperforms
+        non-private counterparts, and it guides practitioners in setting clipping
+        thresholds and noise levels for privacy-utility trade-offs. The CLIP21
+        family of methods is directly applicable to federated fine-tuning of
+        large language models, where communication and privacy constraints are
+        simultaneously binding. Our results on partial participation close a
+        significant gap between theory and the deployment reality of large
+        federated networks.
+      </p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>Selected Publications</h2>
+    <div class="pub-year-label">2026</div>
+<div class="pub-topic-item">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [19]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eneamc.github.io/">Enea Monzio Compagnoni</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?hl=ru&user=DAyhO-oAAAAJ">Alessandro Stanghellini</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://koloskova.github.io/">Anastasia Koloskova</a></span>.
+</span>
+    </span>
+  <a class="specialeffects" href="/publication/26_dpsde/" itemprop="name">Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective</a>.
+  <p>
+   14th International Conference on Learning Representations (ICLR 2026)<br>
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/DPSDE/dpsde.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/26_dpsde/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.03226" target="_blank" rel="noopener">
+    arXiv
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=hSpA4DAoMk" target="_blank" rel="noopener">
+    ICLR
+  </a>
+
+
+  
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample19" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample19">
+  <div class="card card-body">
+    <font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of ${\small \mathcal{O}(1/\varepsilon^2)}$ with speed independent of ${\small \varepsilon}$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an ${\small \mathcal{O}(1/\varepsilon)}$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with ${\small \varepsilon}$, while that of DP-SignSGD is essentially ${\small \varepsilon}$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<div class="pub-year-label">2025</div>
+<div class="pub-topic-item">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [13]
+  <span itemprop="author" class="article-metadata li-cite-author">
+   <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sites.google.com/view/samuelhorvath">Samuel Horváth</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org/">Peter Richtárik</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io/">Eduard Gorbunov</a></span>.
+  </span>
+  <a class="specialeffects" href="/publication/25_clip21m/" itemprop="name">Double Momentum and Error Feedback for Clipping with Fast Rates and Differential Privacy</a>.
+ <p>
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Clip21M/clip21m.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/25_clip21m/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2502.11682" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+
+
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample13" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample13">
+  <div class="card card-body">
+    <font size="2"> Strong Differential Privacy (DP) and Optimization guarantees are two desirable properties for a method in Federated Learning (FL). However, existing algorithms do not achieve both properties at once: they either have optimal DP guarantees but rely on restrictive assumptions such as bounded gradients/bounded data heterogeneity, or they ensure strong optimization performance but lack DP guarantees. To address this gap in the literature, we propose and analyze a new method called Clip21-SGD2M based on a novel combination of clipping, heavy-ball momentum, and Error Feedback. In particular, for non-convex smooth distributed problems with clients having arbitrarily heterogeneous data, we prove that Clip21-SGD2M has optimal convergence rate and also near optimal (local-)DP neighborhood. Our numerical experiments on non-convex logistic regression and training of neural networks highlight the superiority of Clip21-SGD2M over baselines in terms of the optimization performance for a given DP-budget.      </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+<div class="pub-year-label">2023</div>
+<div class="pub-topic-item">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [7]
+  <span itemprop="author" class="article-metadata li-cite-author">
+   <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sarit-khirirat.netlify.app">Sarit Khirirat</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io">Eduard Gorbunov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sites.google.com/view/samuelhorvath">Samuel Horváth</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.ca/citations?user=9_Hpd5kAAAAJ&hl=en">Fakhri Karray</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org">Peter Richtárik</a></span>.
+  </span>
+  <a class="specialeffects" href="/publication/23_clip21/" itemprop="name">Clip21: Error Feedback for Gradient Clipping</a>.
+  <p>
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Clip21/clip21.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/23_clip21/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2305.18929" target="_blank" rel="noopener">
+    arXiv
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample7">
+  <div class="card card-body">
+    <font size="2"> Motivated by the increasing popularity and importance of large-scale training under differential privacy (DP) constraints, we study distributed gradient methods with gradient clipping, i.e., clipping applied to the gradients computed from local information at the nodes. While gradient clipping is an essential tool for injecting formal DP guarantees into gradient-based methods [Abadi et al., 2016], it also induces bias which causes serious convergence issues specific to the distributed setting. Inspired by recent progress in the error-feedback literature which is focused on taming the bias/error introduced by communication compression operators such as Top-k [Richtárik et al., 2021], and mathematical similarities between the clipping operator and contractive compression operators, we design Clip21 -- the first provably effective and practically useful error feedback mechanism for distributed methods with gradient clipping. We prove that our method converges at the same ${\tiny \mathcal{O}(1/K)}$ rate as distributed gradient descent in the smooth nonconvex regime, which improves the previous best ${\tiny \mathcal{O}(1/\sqrt{K})}$ rate which was obtained under significantly stronger assumptions. Our method converges significantly faster in practice than competing methods.
+  </font>
+</div>
+</div>
+
+   
+</p>
+
+</div>
+        </div>
+
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2026 Rustem Islamov &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
