@@ -40,8 +40,8 @@
     color: #1F51FF;
   }	
   
-  /* ── pub toggle ── */
-  body.show-by-topic .year-section { display: none !important; }
+  /* ── publication toggle ── */
+  body.show-by-topic .year-section  { display: none !important; }
   #topic-view { display: none; }
 
   /* stats box */
@@ -49,7 +49,7 @@
   #pub-stats-box {
     display: block; width: fit-content;
     border: 2px solid #2962ff; border-radius: 8px;
-    padding: 9px 16px; margin-bottom: 5px;
+    padding: 9px 16px; margin-bottom: 14px;
     background: #f4f6ff; font-size: .95rem;
   }
   #pub-stats-box .stat-total { font-weight: 600; margin-right: 6px; }
@@ -60,18 +60,39 @@
     background-color: #2962ff !important;
     color: #fff !important; border-color: #2962ff !important;
   }
-  /* topic view indentation */
+
+  /* triangle toggle button */
+  .tri {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 8px;
+    font-size: 0.65em;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+    user-select: none;
+    color: #555;
+  }
+  .collapsed > h1 > .tri,
+  .collapsed > h2 > .tri  { transform: rotate(-90deg); }
+
+  /* collapse states */
+  .year-section.collapsed .grid-sizer    { display: none !important; }
+  .topic-section.collapsed .topic-body   { display: none !important; }
+  .year-group.collapsed    .year-body    { display: none !important; }
+
+  /* topic-view indentation */
   .topic-section  { margin-bottom: 2.5rem; }
-  .pub-topic-item { margin-bottom: 1.2rem; padding-left: 3em; }
+  .topic-body     { padding-left: 1.5em; }
   .year-subheader {
     font-size: 1.4rem !important;
-    margin-top: 1.2rem !important;
-    margin-bottom: 0.4rem !important;
-    padding-left: 1.5em !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0.3rem !important;
     padding-bottom: 4px !important;
     color: #555 !important;
     border-bottom: 1px solid #bbb !important;
   }
+  .year-body { padding-left: 1.5em; }
+  .pub-topic-item { margin-bottom: 1.2rem; }
 
   </style>
   
@@ -322,14 +343,14 @@
     <span><strong>4</strong> ICLR</span>
     <span><strong>3</strong> AISTATS</span>
     <span><strong>3</strong> TMLR</span>
-  </div>
-  <div id="btn-row">
-    <button class="btn btn-outline-primary btn-sm sort-btn active" id="btn-year" onclick="pubByYear()">Sort by Year</button>
-    <button class="btn btn-outline-primary btn-sm sort-btn" id="btn-topic" onclick="pubByTopic()">Sort by Topic</button>
-  </div>
+  </div><br>
+  <button class="btn btn-outline-primary btn-sm sort-btn active"
+          id="btn-year"  onclick="pubByYear()">Sort by Year</button>
+  <button class="btn btn-outline-primary btn-sm sort-btn"
+          id="btn-topic" onclick="pubByTopic()">Sort by Topic</button>
 </div>
 <div class="universal-wrapper pt-3 year-section">
-  <h1 itemprop="name">Prepared in 2026</h1>
+  <h1 itemprop="name"><span class="tri">▼</span>Prepared in 2026</h1>
 
 
 
@@ -512,7 +533,7 @@
 </div>
 
 <div class="universal-wrapper pt-3 year-section">
-  <h1 itemprop="name">Prepared in 2025</h1>
+  <h1 itemprop="name"><span class="tri">▼</span>Prepared in 2025</h1>
 
 
 
@@ -897,7 +918,7 @@
 
 
 <div class="universal-wrapper pt-3 year-section">
-  <h1 itemprop="name">Prepared in 2024</h1>
+  <h1 itemprop="name"><span class="tri">▼</span>Prepared in 2024</h1>
   
   
   
@@ -1111,7 +1132,7 @@
 
 
 <div class="universal-wrapper pt-3 year-section">
-  <h1 itemprop="name">Prepared in 2023</h1>
+  <h1 itemprop="name"><span class="tri">▼</span>Prepared in 2023</h1>
 
 
 
@@ -1342,7 +1363,7 @@
 
 
 <div class="universal-wrapper pt-3 year-section">
-  <h1 itemprop="name">Prepared in 2022</h1>
+  <h1 itemprop="name"><span class="tri">▼</span>Prepared in 2022</h1>
 
 
 
@@ -1476,7 +1497,7 @@
     
   
 <div class="universal-wrapper pt-3 year-section">
-  <h1 itemprop="name">Prepared in 2021</h1>
+  <h1 itemprop="name"><span class="tri">▼</span>Prepared in 2021</h1>
 
 
 
@@ -1849,8 +1870,11 @@
     
 <div id="topic-view" class="universal-wrapper pt-3">
 <div class="topic-section">
-<h1 itemprop="name">Large-scale Optimization</h1>
-<h2 itemprop="name" class="year-subheader">Prepared in 2026</h2>
+<h1 itemprop="name"><span class="tri">▼</span>Large-scale Optimization</h1>
+<div class="topic-body">
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2026</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [21]
@@ -1897,7 +1921,11 @@
 
 </div>
         </div>
-<h2 itemprop="name" class="year-subheader">Prepared in 2025</h2>
+</div>
+</div>
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2025</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [17]
@@ -2047,7 +2075,11 @@
 
 </div>
         </div>
-<h2 itemprop="name" class="year-subheader">Prepared in 2024</h2>
+</div>
+</div>
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2024</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [12]
@@ -2153,7 +2185,11 @@
 
 </div>
         </div>
-<h2 itemprop="name" class="year-subheader">Prepared in 2023</h2>
+</div>
+</div>
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2023</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [9]
@@ -2291,7 +2327,11 @@
 
 </div>
         </div>
-<h2 itemprop="name" class="year-subheader">Prepared in 2022</h2>
+</div>
+</div>
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2022</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [5]
@@ -2334,9 +2374,15 @@
 </div>
         </div>
 </div>
+</div>
+</div>
+</div>
 <div class="topic-section">
-<h1 itemprop="name">Loss Landscape of Neural Networks</h1>
-<h2 itemprop="name" class="year-subheader">Prepared in 2026</h2>
+<h1 itemprop="name"><span class="tri">▼</span>Loss Landscape of Neural Networks</h1>
+<div class="topic-body">
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2026</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [20]
@@ -2383,7 +2429,11 @@
 
 </div>
         </div>
-<h2 itemprop="name" class="year-subheader">Prepared in 2025</h2>
+</div>
+</div>
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2025</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [18]
@@ -2471,7 +2521,11 @@
 
 </div>
         </div>
-<h2 itemprop="name" class="year-subheader">Prepared in 2024</h2>
+</div>
+</div>
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2024</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [11]
@@ -2522,9 +2576,15 @@
 </div>
         </div>
 </div>
+</div>
+</div>
+</div>
 <div class="topic-section">
-<h1 itemprop="name">Privacy Preserving Optimization</h1>
-<h2 itemprop="name" class="year-subheader">Prepared in 2026</h2>
+<h1 itemprop="name"><span class="tri">▼</span>Privacy Preserving Optimization</h1>
+<div class="topic-body">
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2026</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [19]
@@ -2571,7 +2631,11 @@
 
 </div>
         </div>
-<h2 itemprop="name" class="year-subheader">Prepared in 2025</h2>
+</div>
+</div>
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2025</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [13]
@@ -2613,7 +2677,11 @@
 
 </div>
         </div>
-<h2 itemprop="name" class="year-subheader">Prepared in 2023</h2>
+</div>
+</div>
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2023</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [7]
@@ -2653,9 +2721,15 @@
 </div>
         </div>
 </div>
+</div>
+</div>
+</div>
 <div class="topic-section">
-<h1 itemprop="name">Second-Order Optimization</h1>
-<h2 itemprop="name" class="year-subheader">Prepared in 2022</h2>
+<h1 itemprop="name"><span class="tri">▼</span>Second-Order Optimization</h1>
+<div class="topic-body">
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2022</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [4]
@@ -2709,7 +2783,11 @@
 
 </div>
         </div>
-<h2 itemprop="name" class="year-subheader">Prepared in 2021</h2>
+</div>
+</div>
+<div class="year-group">
+<h2 itemprop="name" class="year-subheader"><span class="tri">▼</span>2021</h2>
+<div class="year-body">
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   [3]
@@ -2885,6 +2963,9 @@
         </div>
 </div>
 </div>
+</div>
+</div>
+</div>
 
 <script src="/js/mathjax-config.js"></script>
     
@@ -3048,6 +3129,7 @@
 
 
 <script>
+/* ── view toggle ── */
 function pubByYear() {
   document.body.classList.remove('show-by-topic');
   document.getElementById('topic-view').style.display = 'none';
@@ -3060,20 +3142,31 @@ function pubByTopic() {
   document.getElementById('btn-year').classList.remove('active');
   document.getElementById('btn-topic').classList.add('active');
 }
-/* Align stats box and buttons with the year h1 left edge */
-function alignControls() {
-  var h1  = document.querySelector('.year-section h1');
-  var box = document.getElementById('pub-stats-box');
-  if (!h1 || !box) return;
-  var parent = box.parentElement;
-  var offset = h1.getBoundingClientRect().left
-             - parent.getBoundingClientRect().left;
-  box.style.marginLeft = Math.max(0, offset) + 'px';
-  var brow = document.getElementById('btn-row');
-  if (brow) brow.style.marginLeft = Math.max(0, offset) + 'px';
-}
-window.addEventListener('load',   alignControls);
-window.addEventListener('resize', alignControls);
+
+/* ── collapse triangles ── */
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* Year-view: triangle on each year-section h1 */
+  document.querySelectorAll('.year-section h1 .tri').forEach(function(tri) {
+    tri.addEventListener('click', function() {
+      tri.closest('.year-section').classList.toggle('collapsed');
+    });
+  });
+
+  /* Topic-view: triangle on each topic header h1 */
+  document.querySelectorAll('.topic-section > h1 .tri').forEach(function(tri) {
+    tri.addEventListener('click', function() {
+      tri.closest('.topic-section').classList.toggle('collapsed');
+    });
+  });
+
+  /* Topic-view: triangle on each year-group subheader h2 */
+  document.querySelectorAll('.year-group > h2 .tri').forEach(function(tri) {
+    tri.addEventListener('click', function() {
+      tri.closest('.year-group').classList.toggle('collapsed');
+    });
+  });
+});
 </script>
 </body>
 </html>
