@@ -49,7 +49,7 @@
   #pub-stats-box {
     display: block; width: fit-content;
     border: 2px solid #2962ff; border-radius: 8px;
-    padding: 9px 16px; margin-bottom: 14px;
+    padding: 9px 16px; margin-bottom: 5px;
     background: #f4f6ff; font-size: .95rem;
   }
   #pub-stats-box .stat-total { font-weight: 600; margin-right: 6px; }
@@ -322,11 +322,11 @@
     <span><strong>4</strong> ICLR</span>
     <span><strong>3</strong> AISTATS</span>
     <span><strong>3</strong> TMLR</span>
-  </div><br>
-  <button class="btn btn-outline-primary btn-sm sort-btn active"
-          id="btn-year"  onclick="pubByYear()">Sort by Year</button>
-  <button class="btn btn-outline-primary btn-sm sort-btn"
-          id="btn-topic" onclick="pubByTopic()">Sort by Topic</button>
+  </div>
+  <div id="btn-row">
+    <button class="btn btn-outline-primary btn-sm sort-btn active" id="btn-year" onclick="pubByYear()">Sort by Year</button>
+    <button class="btn btn-outline-primary btn-sm sort-btn" id="btn-topic" onclick="pubByTopic()">Sort by Topic</button>
+  </div>
 </div>
 <div class="universal-wrapper pt-3 year-section">
   <h1 itemprop="name">Prepared in 2026</h1>
@@ -3060,6 +3060,20 @@ function pubByTopic() {
   document.getElementById('btn-year').classList.remove('active');
   document.getElementById('btn-topic').classList.add('active');
 }
+/* Align stats box and buttons with the year h1 left edge */
+function alignControls() {
+  var h1  = document.querySelector('.year-section h1');
+  var box = document.getElementById('pub-stats-box');
+  if (!h1 || !box) return;
+  var parent = box.parentElement;
+  var offset = h1.getBoundingClientRect().left
+             - parent.getBoundingClientRect().left;
+  box.style.marginLeft = Math.max(0, offset) + 'px';
+  var brow = document.getElementById('btn-row');
+  if (brow) brow.style.marginLeft = Math.max(0, offset) + 'px';
+}
+window.addEventListener('load',   alignControls);
+window.addEventListener('resize', alignControls);
 </script>
 </body>
 </html>
