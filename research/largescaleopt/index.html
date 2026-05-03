@@ -90,11 +90,9 @@
   <div class="section-block">
     <h2>Main Challenges</h2>
     <ul class="challenge-list">
-      <li><strong>Scale:</strong> Modern LLMs require optimizers that remain efficient across billions of parameters, yet most convergence theory is asymptotic or applies only in the convex setting.</li>
-      <li><strong>Adaptive methods:</strong> Optimizers such as Adam dominate practice, but their theoretical foundations are poorly understood — convergence guarantees are weak and rarely explain the observed behaviour.</li>
-      <li><strong>Gradient clipping:</strong> Clipping is ubiquitous in LLM training for stability, yet theoretical analyses either ignore it or rely on strong assumptions that do not hold in practice.</li>
-      <li><strong>Communication bottleneck:</strong> In distributed training, gradient compression is essential, but error-feedback schemes interact with adaptive optimizers in subtle, often divergence-prone ways.</li>
-      <li><strong>Robustness to hyperparameters:</strong> Learning-rate schedules and momentum coefficients are tuned by hand; principled, theory-backed choices are largely missing.</li>
+      <li><strong>Scale:</strong> Modern large language models need optimizers that scale efficiently to billions of parameters. At the same time, extensive hyperparameter tuning becomes impractical at such scales due to limited resources. This makes it essential to develop theoretically grounded methods for transferring hyperparameters from smaller models to larger ones.</li>
+      <li><strong>Adaptive methods:</strong> Optimizers like Adam are widely used in practice, yet their theoretical properties remain only partially understood. Developing a predictive convergence theory for adaptive optimizers is therefore both important and challenging.</li>
+      <li><strong>Robustness:</strong> Because hyperparameter tuning is costly at large scale, modern algorithms must be robust to their choice. Small perturbations in hyperparameters should not lead to significant performance changes. Therefore, designing optimization methods that are insensitive to hyperparameter selection is crucial for large-scale settings.</li>
     </ul>
   </div>
 
