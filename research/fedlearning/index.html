@@ -40,6 +40,26 @@
   /* pubs */
   .pub-year-label { font-size: .95rem; font-weight: 600; color: #777; border-left: 3px solid #bbb; padding-left: 8px; margin: 1.3rem 0 .5rem; }
   .pub-topic-item { margin-bottom: 1.1rem; }
+  
+  /* Publication list styles matching pub tab */
+  a.specialeffects:link    { color: #303030; font-weight: bold; text-decoration: none; }
+  a.specialeffects:visited { color: #303030; font-weight: bold; text-decoration: none; }
+  a.specialeffects:active  { color: #303030; font-weight: bold; text-decoration: none; }
+  a.specialeffects:hover   { color: #1F51FF; font-weight: bold; text-decoration: underline; }
+  a.specialgray:link    { color: gray; text-decoration: none; }
+  a.specialgray:visited { color: gray; text-decoration: none; }
+  a.specialgray:active  { color: gray; text-decoration: none; }
+  a.specialgray:hover   { color: #1F51FF; text-decoration: underline; }
+  .pub-topic-item .pub-list-item a { text-decoration: none; }
+  .pub-topic-item .pub-list-item a:hover { color: #1F51FF; text-decoration: underline; }
+  /* Card hover highlight */
+  .card.shadow-sm { transition: box-shadow 0.2s, border-color 0.2s; cursor: default; }
+  .card.shadow-sm:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.15) !important; border-color: #888 !important; }
+  
+  /* Author names: black, not bold */
+  .li-cite-author a { color: #303030 !important; font-weight: normal !important; text-decoration: none; }
+  .li-cite-author a:hover { color: #1F51FF !important; text-decoration: underline; }
+  .li-cite-author { color: #303030; font-weight: normal; }
   </style>
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main">
@@ -110,10 +130,7 @@
   <div class="section-block">
     <h2>My Contributions</h2>
     <div class="row experience">
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
+      <div class="col">&nbsp;</div>
         </div>
         <div class="m-2">
           <span class="badge badge-pill border exp-fill">&nbsp;</span>
@@ -133,10 +150,7 @@
       </div>
     </div>
     <div class="row experience">
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
+      <div class="col">&nbsp;</div>
         </div>
         <div class="m-2">
           <span class="badge badge-pill border exp-fill">&nbsp;</span>
@@ -156,10 +170,7 @@
       </div>
     </div>
     <div class="row experience">
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
+      <div class="col">&nbsp;</div>
         </div>
         <div class="m-2">
           <span class="badge badge-pill border exp-fill">&nbsp;</span>
