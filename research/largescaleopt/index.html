@@ -131,47 +131,23 @@
       <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
         <div class="card-body" style="padding:0.6rem 1rem;">
           <h4 class="exp-card-title">SDE Analysis of Adam-like Optimizers</h4>
-          <p class="exp-card-desc">We study the noise resilience of algorithms like SGD, Sign SGD, and Adam through the lens of stochastic differential equations (SDE). These SDEs offer a quantitatively accurate description of these optimizers and help illuminate an intricate relationship between adaptivity, gradient noise, and curvature. Our novel analysis of SignSGD highlights a noteworthy and precise contrast to SGD in terms of convergence speed, stationary distribution, and robustness to heavy-tail noise.</p>
+          <p class="exp-card-desc">We study optimization algorithms such as SGD, Sign SGD, and Adam through the lens of stochastic differential equations (SDE). These SDEs offer a quantitatively accurate description of these optimizers and help illuminate an intricate relationship between adaptivity, gradient noise, and curvature. Our novel analysis of SignSGD highlights a noteworthy and precise contrast to SGD in terms of convergence speed, stationary distribution, and robustness to heavy-tail noise.</p>
         </div>
       </div>
     </div>
     <div style="margin-bottom:0.3rem;">
       <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
         <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">SignSGD and Majority Vote: Sharp Analysis</h4>
-          <p class="exp-card-desc">We provide sharp convergence bounds for signSGD under general noise, resolving long-standing open questions and explaining why sign-based methods match or outperform Adam in practice.</p>
+          <h4 class="exp-card-title">Robustness to Learning Rate Choice</h4>
+          <p class="exp-card-desc">We study the coupling of the NGN stepsize with Polyak momentum. Incorporating this combination into base optimizers such as SGD and Adam improves their robustness to the choice of learning rate. In some cases, increasing the learning rate by up to an order of magnitude beyond its optimal value results in little to no performance degradation. Importantly, the peak performance of the base optimizer is preserved.</p>
         </div>
       </div>
     </div>
     <div style="margin-bottom:0.3rem;">
       <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
         <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">Momentum Error-Feedback (MoTEF)</h4>
-          <p class="exp-card-desc">By coupling momentum with error feedback we obtain the first compressed distributed optimiser with provable linear speed-up and no penalty on compression ratio, matching uncompressed SGD in convergence rate.</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">Safe Error Feedback (Safe-EF)</h4>
-          <p class="exp-card-desc">We extend error-feedback to the nonsmooth constrained setting, proving optimal communication complexity and demonstrating 100x communication savings in humanoid-robot PPO training.</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">Asynchronous SGD: Tight Analysis</h4>
-          <p class="exp-card-desc">We derive tight complexity bounds for asynchronous SGD that close the gap with synchronous methods, providing the first analysis that does not require bounded gradient delays.</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">Adaptive Three-Point Compression (Ada3PC)</h4>
-          <p class="exp-card-desc">An adaptive compression scheme that automatically tunes the compression level to match the noise in the gradient, yielding communication savings without sacrificing convergence speed.</p>
+          <h4 class="exp-card-title">BST Scaling Rule</h4>
+          <p class="exp-card-desc">We study the convergence of stochastic conditional gradient methods under a fixed token budget. Our analysis shows that there exists an optimal batch size that yields the best performance. Moreover, the resulting convergence rates are predictive, enabling us to derive joint scaling laws for batch size, sequence length, Frank–Wolfe stepsize, and momentum as the model size or token horizon changes.</p>
         </div>
       </div>
     </div>
