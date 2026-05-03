@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en-us">
 <head>
   <meta charset="utf-8">
@@ -21,16 +20,24 @@
   .navbar-nav .nav-item { display: block !important; visibility: visible !important; opacity: 1 !important; }
   .topic-hero { background: none; padding: 1.5rem 0 0.5rem; margin-bottom: 0; }
   .topic-hero h1 { font-size: 2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0; }
-  .section-block { margin-bottom: 2.5rem; }
-  .section-block h2 { font-size: 1.25rem; font-weight: 700; color: #2962ff; border-left: 4px solid #2962ff; padding-left: 12px; margin-bottom: 1rem; }
-  .challenge-list { list-style: none; padding: 0; }
-  .challenge-list li { padding: .6rem 0 .6rem 1.6rem; position: relative; border-bottom: 1px solid #f0f0f0; color: #333; line-height: 1.6; }
-  .challenge-list li::before { content: "\25B8"; color: #2962ff; position: absolute; left: 0; font-size: .9rem; }
-  .contrib-card { border-left: 3px solid #2962ff; background: #f7f9ff; border-radius: 0 8px 8px 0; padding: .9rem 1.2rem; margin-bottom: .9rem; }
-  .contrib-card strong { color: #1a1a2e; }
-  .venue-badge { display: inline-block; background: #2962ff; color: white; font-size: .7rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
-  .impact-box { background: linear-gradient(135deg, #eef1ff 0%, #f7f9ff 100%); border: 1px solid #c5d0ff; border-radius: 10px; padding: 1.4rem 1.6rem; }
+    .section-block { margin-bottom: 0; padding: 2rem 0; }
+  .section-block h2 { font-size: 1.25rem; font-weight: 700; color: #444; border-left: none; padding-left: 0; margin-bottom: 0.8rem; border-bottom: 2px solid #ccc; padding-bottom: 6px; width: 100%; }
+  .section-grey { background: #f8f9fa; }
+  .section-white { background: #fff; }
+  /* Education-style cards */
+  .contrib-card { border: none; background: none; border-radius: 0; padding: 0; margin-bottom: 0; }
+  .venue-badge { display: none; }
+  .exp-card-title { font-size: 1rem; font-weight: 600; color: #303030; margin: 0 0 0.15rem; }
+  .exp-card-meta { font-size: 0.875rem; color: #888; margin: 0 0 0.4rem; }
+  .exp-card-desc { font-size: 0.9rem; color: #555; margin: 0; }
+  /* challenge list */
+  .challenge-list { list-style: disc; padding-left: 1.4rem; }
+  .challenge-list li { padding: .3rem 0; border-bottom: none; color: #333; line-height: 1.6; list-style-type: disc; }
+  .challenge-list li::before { content: none; }
+  /* impact */
+  .impact-box { background: none; border: none; border-radius: 0; padding: 0; }
   .impact-box p { color: #333; line-height: 1.7; margin: 0; }
+  /* pubs */
   .pub-year-label { font-size: .95rem; font-weight: 600; color: #777; border-left: 3px solid #bbb; padding-left: 8px; margin: 1.3rem 0 .5rem; }
   .pub-topic-item { margin-bottom: 1.1rem; }
   </style>
@@ -79,14 +86,13 @@
   </div>
 </nav>
 
-<div class="topic-hero">
+<div class="section-white"><div class="topic-hero">
   <div class="container">
     <h1>Federated Learning</h1>
   </div>
-</div>
+</div></div>
 
-<div class="container">
-
+<div class="section-white"><div class="container">
   <div class="section-block">
     <h2>Main Challenges</h2>
     <ul class="challenge-list">
@@ -98,22 +104,85 @@
     </ul>
   </div>
 
+</div></div>
+
+<div class="section-grey"><div class="container">
   <div class="section-block">
     <h2>My Contributions</h2>
-    <div class="contrib-card">
-      <strong>Differential Privacy meets Adaptive Optimizers (DP-SDE)</strong><span class="venue-badge">ICLR 2026</span><br>
-      We analyse differentially private adaptive gradient methods via an SDE lens, proving that the privacy noise fundamentally limits the benefit of adaptivity and providing tight bounds that match empirical observations on LLM fine-tuning.
+    <div class="row experience">
+      <div class="col-auto text-center flex-column d-none d-sm-flex">
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="m-2">
+          <span class="badge badge-pill border exp-fill">&nbsp;</span>
+        </div>
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+      </div>
+      <div class="col py-2">
+        <div class="card shadow-sm" style="border-left: 4px solid #555 !important;">
+          <div class="card-body">
+            <h4 class="exp-card-title">Differential Privacy meets Adaptive Optimizers (DP-SDE)</h4>
+            <p class="exp-card-desc">We analyse differentially private adaptive gradient methods via an SDE lens, proving that the privacy noise fundamentally limits the benefit of adaptivity and providing tight bounds that match empirical observations on LLM fine-tuning.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="contrib-card">
-      <strong>CLIP21 with Momentum</strong><span class="venue-badge">ICML 2025</span><br>
-      We show that adding momentum to clipped SGD provably accelerates convergence in the federated setting and derive the first tight convergence guarantees for clipped momentum methods under partial participation and data heterogeneity.
+    <div class="row experience">
+      <div class="col-auto text-center flex-column d-none d-sm-flex">
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="m-2">
+          <span class="badge badge-pill border exp-fill">&nbsp;</span>
+        </div>
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+      </div>
+      <div class="col py-2">
+        <div class="card shadow-sm" style="border-left: 4px solid #555 !important;">
+          <div class="card-body">
+            <h4 class="exp-card-title">CLIP21 with Momentum</h4>
+            <p class="exp-card-desc">We show that adding momentum to clipped SGD provably accelerates convergence in the federated setting and derive the first tight convergence guarantees for clipped momentum methods under partial participation and data heterogeneity.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="contrib-card">
-      <strong>CLIP21: Clipping as a Communication Primitive</strong><span class="venue-badge">NeurIPS 2023</span><br>
-      We reinterpret gradient clipping as a compression mechanism and prove that clipped SGD achieves the same convergence rate as unclipped SGD while dramatically reducing the effective communication cost per round.
+    <div class="row experience">
+      <div class="col-auto text-center flex-column d-none d-sm-flex">
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="m-2">
+          <span class="badge badge-pill border exp-fill">&nbsp;</span>
+        </div>
+        <div class="row h-50">
+          <div class="col ">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+      </div>
+      <div class="col py-2">
+        <div class="card shadow-sm" style="border-left: 4px solid #555 !important;">
+          <div class="card-body">
+            <h4 class="exp-card-title">CLIP21: Clipping as a Communication Primitive</h4>
+            <p class="exp-card-desc">We reinterpret gradient clipping as a compression mechanism and prove that clipped SGD achieves the same convergence rate as unclipped SGD while dramatically reducing the effective communication cost per round.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
+</div></div>
+
+<div class="section-white"><div class="container">
   <div class="section-block">
     <h2>Research Impact</h2>
     <div class="impact-box">
@@ -121,6 +190,9 @@
     </div>
   </div>
 
+</div></div>
+
+<div class="section-grey"><div class="container">
   <div class="section-block">
     <h2>Selected Publications</h2>
 <div class="pub-year-label">2026</div>
@@ -135,15 +207,16 @@
   <p>
    14th International Conference on Learning Representations (ICLR 2026)<br>
 
+    
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/DPSDE/dpsde.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-data-filename="/publication/26_dpsde/cite.bib">
-Cite
+        data-filename="/publication/26_dpsde/cite.bib">
+  Cite
 </button>
-
+    
   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.03226" target="_blank" rel="noopener">
     arXiv
   </a>
@@ -152,19 +225,19 @@ Cite
     ICLR
   </a>
 
-```
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample19" role="button" aria-expanded="false" aria-controls="collapseExample">
-Abstract
-```
 
+  
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample19" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
   </a>
-
+  
 <div class="collapse" id="collapseExample19">
   <div class="card card-body">
     <font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of ${\small \mathcal{O}(1/\varepsilon^2)}$ with speed independent of ${\small \varepsilon}$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an ${\small \mathcal{O}(1/\varepsilon)}$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with ${\small \varepsilon}$, while that of DP-SignSGD is essentially ${\small \varepsilon}$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
 </div>
 </div>
 
+   
 </p>
 
 </div>
@@ -179,29 +252,34 @@ Abstract
   <a class="specialeffects" href="/publication/25_clip21m/" itemprop="name">Double Momentum and Error Feedback for Clipping with Fast Rates and Differential Privacy</a>.
  <p>
 
+    
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Clip21M/clip21m.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-data-filename="/publication/25_clip21m/cite.bib">
-Cite
+        data-filename="/publication/25_clip21m/cite.bib">
+  Cite
 </button>
-
+    
   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2502.11682" target="_blank" rel="noopener">
     arXiv
   </a>
+  
+
+
 
   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample13" role="button" aria-expanded="false" aria-controls="collapseExample">
     Abstract
   </a>
-
+  
 <div class="collapse" id="collapseExample13">
   <div class="card card-body">
     <font size="2"> Strong Differential Privacy (DP) and Optimization guarantees are two desirable properties for a method in Federated Learning (FL). However, existing algorithms do not achieve both properties at once: they either have optimal DP guarantees but rely on restrictive assumptions such as bounded gradients/bounded data heterogeneity, or they ensure strong optimization performance but lack DP guarantees. To address this gap in the literature, we propose and analyze a new method called Clip21-SGD2M based on a novel combination of clipping, heavy-ball momentum, and Error Feedback. In particular, for non-convex smooth distributed problems with clients having arbitrarily heterogeneous data, we prove that Clip21-SGD2M has optimal convergence rate and also near optimal (local-)DP neighborhood. Our numerical experiments on non-convex logistic regression and training of neural networks highlight the superiority of Clip21-SGD2M over baselines in terms of the optimization performance for a given DP-budget.      </font>
 </div>
 </div>
 
+   
 </p>
 
 </div>
@@ -215,16 +293,16 @@ Cite
   </span>
   <a class="specialeffects" href="/publication/23_clip21/" itemprop="name">Clip21: Error Feedback for Gradient Clipping</a>.
   <p>
-
+    
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Clip21/clip21.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-data-filename="/publication/23_clip21/cite.bib">
-Cite
+        data-filename="/publication/23_clip21/cite.bib">
+  Cite
 </button>
-
+    
   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2305.18929" target="_blank" rel="noopener">
     arXiv
   </a>
@@ -232,7 +310,7 @@ Cite
   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample">
     Abstract
   </a>
-
+  
 <div class="collapse" id="collapseExample7">
   <div class="card card-body">
     <font size="2"> Motivated by the increasing popularity and importance of large-scale training under differential privacy (DP) constraints, we study distributed gradient methods with gradient clipping, i.e., clipping applied to the gradients computed from local information at the nodes. While gradient clipping is an essential tool for injecting formal DP guarantees into gradient-based methods [Abadi et al., 2016], it also induces bias which causes serious convergence issues specific to the distributed setting. Inspired by recent progress in the error-feedback literature which is focused on taming the bias/error introduced by communication compression operators such as Top-k [Richtárik et al., 2021], and mathematical similarities between the clipping operator and contractive compression operators, we design Clip21 -- the first provably effective and practically useful error feedback mechanism for distributed methods with gradient clipping. We prove that our method converges at the same ${\tiny \mathcal{O}(1/K)}$ rate as distributed gradient descent in the smooth nonconvex regime, which improves the previous best ${\tiny \mathcal{O}(1/\sqrt{K})}$ rate which was obtained under significantly stronger assumptions. Our method converges significantly faster in practice than competing methods.
@@ -240,6 +318,7 @@ Cite
 </div>
 </div>
 
+   
 </p>
 
 </div>
@@ -250,15 +329,10 @@ Cite
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-
 <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
-
 <div class="container">
   <footer class="site-footer">
     <p class="powered-by">
