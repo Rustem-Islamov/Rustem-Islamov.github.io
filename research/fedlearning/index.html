@@ -187,6 +187,9 @@
 
   <title>Federated Learning – Rustem Islamov</title>
 
+<style>
+.navbar-nav .nav-item { display: block !important; visibility: visible !important; opacity: 1 !important; }
+</style>
 </head>
 
 
@@ -243,61 +246,27 @@
       
       
       <ul class="navbar-nav mr-auto">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
         <li class="nav-item">
-          <a class="nav-link" href="/#about" data-target="#about"><span>Home</span></a>
+          <a class="nav-link " href="/#about"><span>Home</span></a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="/#education"><span>Education</span></a>
+          <a class="nav-link " href="/#education"><span>Education</span></a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="/research/"><span>Research</span></a>
+          <a class="nav-link " href="/publication/"><span>Publications</span></a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="/publication/"><span>Publications</span></a>
+          <a class="nav-link " href="/research/"><span>Research</span></a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="/#posts"><span>Posts</span></a>
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="/#contact" data-target="#contact"><span>Contact</span></a>
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="/files/cv.pdf"><span>CV</span></a>
+          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
         </li>
-        
-        
-
-      
       </ul>
       <ul class="navbar-nav ml-auto">
       
@@ -401,13 +370,30 @@
 
 /* Topic page styles */
 .topic-hero {
-  background: linear-gradient(135deg, #0d2680 0%, #2962ff 55%, #6b9aff 100%);
-  color: white;
-  padding: 4rem 0 3rem;
-  margin-bottom: 2.5rem;
+  background: none;
+  padding: 2rem 0 1rem;
+  margin-bottom: 0;
 }
-.topic-hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: .4rem; }
-.topic-hero p  { font-size: 1rem; opacity: .88; max-width: 640px; }
+.topic-hero-box {
+  background: linear-gradient(135deg, #0d2680 0%, #2962ff 55%, #6b9aff 100%);
+  border-radius: 12px;
+  padding: 2rem 2.4rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1.5rem;
+}
+.topic-hero-box h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: .5rem;
+}
+.topic-hero-box p {
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.85);
+  margin: 0;
+}
 .section-block { margin-bottom: 2.5rem; }
 .section-block h2 {
   font-size: 1.25rem;
@@ -605,10 +591,10 @@
 
 <div class="topic-hero">
   <div class="container">
-    <a href="/research/" class="back-link" style="color:rgba(255,255,255,.7);">← Research</a>
-    <h1>Federated Learning</h1>
-    <p>Privacy-preserving and communication-efficient distributed learning —
-    compression, local methods, and differential privacy for heterogeneous networks.</p>
+    <div class="topic-hero-box">
+      <h1>Federated Learning</h1>
+      <p>Privacy-preserving and communication-efficient distributed learning — compression, local methods, and differential privacy for heterogeneous networks.</p>
+    </div>
   </div>
 </div>
 
