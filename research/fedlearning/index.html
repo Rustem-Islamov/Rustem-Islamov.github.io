@@ -116,11 +116,9 @@
   <div class="section-block">
     <h2>Main Challenges</h2>
     <ul class="challenge-list">
-      <li><strong>Communication cost:</strong> In federated settings, clients communicate with a central server over limited-bandwidth links; raw gradient transmission is infeasible at scale.</li>
-      <li><strong>Data heterogeneity:</strong> Client datasets are non-IID, causing client drift in local-update methods and degrading global convergence.</li>
-      <li><strong>Privacy guarantees:</strong> Differential privacy adds noise that interacts non-trivially with gradient clipping and adaptive optimizers, weakening convergence in ways that are poorly understood.</li>
-      <li><strong>Partial participation:</strong> Only a random subset of clients participates in each round; standard analyses either ignore this or rely on overly pessimistic bounds.</li>
-      <li><strong>Gradient clipping for privacy:</strong> Per-sample clipping required by DP-SGD has complex interactions with momentum and adaptive step-sizes that existing theory does not capture.</li>
+      <li><strong>Communication cost:</strong> In federated settings, clients communicate with a central server over limited-bandwidth links; transmission of dense vectors is infeasible at large scale.</li>
+      <li><strong>Data heterogeneity:</strong> Client datasets are non-IID, causing client drift in local methods, which degrades the overall performance.</li>
+      <li><strong>Privacy guarantees:</strong> To protect user data, privacy-preserving algorithms clip update magnitudes and add noise. This DP noise degrades model performance, making the privacy–utility tradeoff a key practical concern.</li>
     </ul>
   </div>
 
