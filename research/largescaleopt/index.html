@@ -157,7 +157,7 @@
   <div class="section-block">
     <h2>Research Impact</h2>
     <div class="impact-box">
-      <p>Our SDE framework for Adam has been adopted as a theoretical tool in several subsequent works studying adaptive optimizers and learning-rate schedules for large language models. The MoTEF and Safe-EF algorithms address real engineering bottlenecks in large-scale distributed training pipelines. The sharp signSGD analysis has clarified why sign-based methods are competitive with Adam under heavy-tailed gradient noise, motivating their use in memory-constrained settings.</p>
+      <p>BST scaling reduces resource use by eliminating exhaustive sweeps for empirical scaling rules. It also improves training efficiency by adapting hyperparameters to the token horizon. Incorporating NGN step sizes into base algorithms such as SGD and Adam reduces the need for learning-rate tuning, making them less sensitive to its choice and further saving compute. Finally, SDE analyses show that adaptive methods are more robust to heavy-tailed gradient noise—commonly observed in practice—helping explain their empirical success.</p>
     </div>
   </div>
 
