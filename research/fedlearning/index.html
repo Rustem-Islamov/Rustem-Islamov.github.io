@@ -118,7 +118,7 @@
     <ul class="challenge-list">
       <li><strong>Communication cost:</strong> In federated settings, clients communicate with a central server over limited-bandwidth links; transmission of dense vectors is infeasible at large scale.</li>
       <li><strong>Data heterogeneity:</strong> Client datasets are non-IID, causing client drift in local methods, which degrades the overall performance.</li>
-      <li><strong>Privacy guarantees:</strong> To protect user data, privacy-preserving algorithms clip update magnitudes and add noise. This DP noise degrades model performance, making the privacy–utility tradeoff a key practical concern.</li>
+      <li><strong>Privacy guarantees:</strong> To protect user data, privacy-preserving algorithms clip update magnitudes and add noise. This DP noise degrades model performance, making the privacy-utility tradeoff a key practical concern.</li>
     </ul>
   </div>
 
@@ -146,8 +146,8 @@
     <div style="margin-bottom:0.3rem;">
       <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
         <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">CLIP21: Clipping as a Communication Primitive</h4>
-          <p class="exp-card-desc">We reinterpret gradient clipping as a compression mechanism and prove that clipped SGD achieves the same convergence rate as unclipped SGD while dramatically reducing the effective communication cost per round.</p>
+          <h4 class="exp-card-title">Second-order Algorithms for Federated Learning with Compression</h4>
+          <p class="exp-card-desc">Transmitting Hessians in federated settings is infeasible. We develop second-order methods that incorporate Hessian and gradient compression to reduce communication. Importantly, their convergence guarantees retain key properties of Newton’s method, including local superlinear convergence independent of the condition number.</p>
         </div>
       </div>
     </div>
