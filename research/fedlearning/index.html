@@ -130,8 +130,8 @@
     <div style="margin-bottom:0.3rem;">
       <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
         <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">Differential Privacy meets Adaptive Optimizers (DP-SDE)</h4>
-          <p class="exp-card-desc">We analyse differentially private adaptive gradient methods via an SDE lens, proving that the privacy noise fundamentally limits the benefit of adaptivity and providing tight bounds that match empirical observations on LLM fine-tuning.</p>
+          <h4 class="exp-card-title">Analysis of Differential Private Algorithms</h4>
+          <p class="exp-card-desc">Standard analyses of DP-SGD rely on the unrealistic bounded-gradient assumption. We propose an algorithm with high-probability convergence guarantees that avoids this restriction while achieving an optimal privacy-utility tradeoff [13]. Complementary SDE analyses [19] show that adaptive methods such as DP-SignSGD and DP-Adam perform better under strong privacy constraints and are less sensitive to learning-rate tuning.</p>
         </div>
       </div>
     </div>
@@ -139,7 +139,7 @@
       <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
         <div class="card-body" style="padding:0.6rem 1rem;">
           <h4 class="exp-card-title">Gradient Methods with Biased Compression and Convergence Guarantees</h4>
-          <p class="exp-card-desc">We show that adding momentum to clipped SGD provably accelerates convergence in the federated setting and derive the first tight convergence guarantees for clipped momentum methods under partial participation and data heterogeneity.</p>
+          <p class="exp-card-desc">Compression is a practical approach to reducing communication overhead. Biased compressors (e.g., Top-K) are particularly effective in practice, but introduce bias that can degrade performance. We design provably convergent algorithms for smooth nonconvex, convex, and strongly convex objectives that achieve optimal asymptotic complexity while reducing communication in both centralized [9] and decentralized [10] settings. In [5], we further develop adaptive biased compressors that adjust compression strength during training.</p>
         </div>
       </div>
     </div>
