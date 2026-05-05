@@ -549,8 +549,90 @@
    
 </p>
 
+<div class="pub-topic-item">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [6]
+  <span itemprop="author" class="article-metadata li-cite-author">
+   <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.konstmish.com">Konstantin Mishchenko</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io">Eduard Gorbunov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sites.google.com/view/samuelhorvath">Samuel Horváth</a>.</span>
+  </span>
+  <a class="specialeffects" href="/publication/23_partial/" itemprop="name">Partially Personalized Federated Learning: Breaking the Curse of Data Heterogeneity</a>.
+  <p>
+    Transactions on Machine Learning Research (TMLR 2025)<br>
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Partial/partial.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/23_partial/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2305.18285" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=8tMMCf4YYn" target="_blank" rel="noopener">
+    TMLR
+  </a>
+  
+  
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+<div class="collapse" id="collapseExample6">
+  <div class="card card-body">
+    <font size="2"> We present a partially personalized formulation of Federated Learning (FL) that strikes a balance between the flexibility of personalization and cooperativeness of global training. In our framework, we split the variables into global parameters, which are shared across all clients, and individual local parameters, which are kept private. We prove that under the right split of parameters, it is possible to find global parameters that allow each client to fit their data perfectly, and refer to the obtained problem as overpersonalized. For instance, the shared global parameters can be used to learn good data representations, whereas the personalized layers are fine-tuned for a specific client. Moreover, we present a simple algorithm for the partially personalized formulation that offers significant benefits to all clients. In particular, it breaks the curse of data heterogeneity in several settings, such as training with local steps, asynchronous training, and Byzantine-robust training.
+  </font>
+</div>
+</div>
+
+   
+</p>
+
 </div>
         </div>
+
+<div class="pub-year-label">2022</div>
+<div class="pub-topic-item">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  [5]
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=jXPpMXkAAAAJ&hl=en">Maksim Makarenko</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://elnurgasanov.com">Elnur Gasanov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sadiev.netlify.app">Abdurakhmon Sadiev</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org">Peter Richtárik</a>.</span>
+  </span>
+  <a class="specialeffects" href="/publication/22_ada3pc/" itemprop="name">Adaptive Compression for Communication-Efficient Distributed Training</a>.
+  <p>
+  Transactions on Machine Learning Research (TMLR 2023)<br>
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Ada3PC/ada3pc.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/22_ada3pc/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2211.00188" target="_blank" rel="noopener">
+    arXiv
+  </a>
+  
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=Rb6VDOHebB" target="_blank" rel="noopener">
+    TMLR
+  </a>
+  
+ <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample">    Abstract
+  </a>
+<div class="collapse" id="collapseExample5">
+  <div class="card card-body">
+    <font size="2"> We propose Adaptive Compressed Gradient Descent (AdaCGD) - a novel optimization algorithm for communication-efficient training of supervised machine learning models with adaptive compression level. Our approach is inspired by the recently proposed three point compressor (3PC) framework of Richtarik et al. (2022), which includes error feedback (EF21), lazily aggregated gradient (LAG), and their combination as special cases, and offers the current state-of-the-art rates for these methods under weak assumptions. While the above mechanisms offer a fixed compression level, or adapt between two extremes only, our proposal is to perform a much finer adaptation. In particular, we allow the user to choose any number of arbitrarily chosen contractive compression mechanisms, such as Top-K sparsification with a user-defined selection of sparsification levels K, or quantization with a user-defined selection of quantization levels, or their combination. AdaCGD chooses the appropriate compressor and compression level adaptively during the optimization process. Besides i) proposing a theoretically-grounded multi-adaptive communication compression mechanism, we further ii) extend the 3PC framework to bidirectional compression, i.e., we allow the server to compress as well, and iii) provide sharp convergence bounds in the strongly convex, convex and nonconvex settings. The convex regime results are new even for several key special cases of our general mechanism, including 3PC and EF21. In all regimes, our rates are superior compared to all existing adaptive compression methods.
+  </font>
+</div>
+</div>
+
+   
+</p>
 
   </div>
 
