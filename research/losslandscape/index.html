@@ -116,11 +116,8 @@
   <div class="section-block">
     <h2>Main Challenges</h2>
     <ul class="challenge-list">
-      <li><strong>Edge of Stability:</strong> Neural networks trained with gradient descent consistently operate at the edge of linear stability, yet classical optimisation theory has no explanation for this behaviour.</li>
-      <li><strong>Loss landscape geometry:</strong> The landscape is highly non-convex and high-dimensional; characterising its critical points and flat regions remains an open theoretical problem.</li>
-      <li><strong>Warm-up schedules:</strong> Learning-rate warm-up is used in virtually all large-model training pipelines, but there is no theoretical justification for why it helps or how to set its duration.</li>
-      <li><strong>Non-Euclidean dynamics:</strong> Sharpness-aware and mirror-descent type methods implicitly change the geometry of the loss landscape, and their interaction with the edge-of-stability phenomenon is not understood.</li>
-      <li><strong>Implicit regularisation:</strong> Gradient descent finds flat minima that generalise well, but the mechanism linking landscape geometry to generalisation is unclear.</li>
+      <li><strong>Edge of Stability:</strong> Neural networks trained with gradient based methods consistently operate at the edge of stability, a regime where spectral chararectiristic of the loss are oscillating around a particular threshold. The classical optimisation theory has no explanation for this behaviour.</li>
+      <li><strong>Loss landscape geometry:</strong> Despite the highly nonconvex and high-dimensional nature of neural network loss landscapes, gradient-based methods perform remarkably well in practice. Developing a theoretical characterization of these landscapes remains an important challenge. Establishing connections between landscape structure and algorithm design is key to achieving efficient training.</li>
     </ul>
   </div>
 
