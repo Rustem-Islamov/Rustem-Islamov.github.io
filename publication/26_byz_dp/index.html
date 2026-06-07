@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="EOS">
+  <meta name="description" content="Byz-DP">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://rustem-islamov.github.io/publication/26_eos/">
+  <link rel="alternate" hreflang="en-us" href="https://rustem-islamov.github.io/publication/26_byz_dp/">
 
   
 
@@ -110,7 +110,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://rustem-islamov.github.io/publication/26_eos/">
+  <link rel="canonical" href="https://rustem-islamov.github.io/publication/26_byz_dp/">
 
   
   
@@ -262,7 +262,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Non-Euclidean Gradient Descent Operates at the Edge of Stability</h1>
+  <h1 itemprop="name">Byzantine-Robust and Differentially Private Federated Optimization under Weaker Assumptions</h1>
 
   
 
@@ -285,16 +285,16 @@
 
 
 
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://mtcrawshaw.github.io/">Michael Crawshaw</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://jmcohen.github.io/">Jeremy Cohen</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?hl=ru&user=okKw87MAAAAJ&view_op=list_works&sortby=pubdate">Robert Gower</a></span>
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://grigory-malinovsky.github.io/">Grigory Malinovsky</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=3rwI_9wAAAAJ&hl=en">Alexander Gaponov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org/">Peter Richtárik</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io/index.html">Eduard Gorbunov</a></span>
 
   </div>
 
   
   
 
-  <span>43rd International Conference on Machine Learning (<span style="color: darkred;"><b>Oral</b></span>, ICML 2026)</span></span><br>
+  <span>42nd Conference on Uncertainty in Artificial Intelligence (UAI 2026)</span></span><br>
   <span class="article-date">
-    <time>March 2026</time>
+    <time>June 2026</time>
   </span>
   
 
@@ -317,7 +317,7 @@
    
       
       <li>
-        <a href="mailto:?subject=EOS&amp;body=https://rustem-islamov.github.io/publication/26_eos/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Byz-DP&amp;body=https://rustem-islamov.github.io/publication/26_byz_dp/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -364,14 +364,14 @@
 
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="/files/publications/EOS/eos.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="/files/publications/ByzDP/byz_dp.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/26_eos/cite.bib">
+        data-filename="/publication/26_byz_dp/cite.bib">
   Cite
 </button>
 
@@ -379,13 +379,13 @@
   
     
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/2603.05002" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/2603.23472" target="_blank" rel="noopener">
     
     arXiv
   </a>
 
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://openreview.net/forum?id=piWlEHb4Db" target="_blank" rel="noopener">
-    ICML
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://openreview.net/forum?id=pEUxsRj5F4" target="_blank" rel="noopener">
+    UAI
   </a>
 
   
@@ -396,7 +396,7 @@
 
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-    <font size="2">The Edge of Stability (EoS) is a phenomenon where the sharpness (largest eigenvalue) of the Hessian converges to $2/\eta$ during training with gradient descent (GD) with a step-size $\eta$. Despite (apparently) violating classical smoothness assumptions, EoS has been widely observed in deep learning, but its theoretical foundations remain incomplete. We provide an interpretation ofEoS through the lens of Directional Smoothness Mishkin et al. [2024]. This interpretation naturally extends to non-Euclidean norms, which we use to define generalized sharpness under an arbitrary norm. Our generalized sharpness measure includes previously studied vanilla GD and preconditioned GD as special cases, as well as methods for which EoS has not been studied, such as $\ell_{\infty}$-descent, Block CD, Spectral GD, and Muon without momentum. Through experiments on neural networks, we show that non-Euclidean GD with our generalized sharpness also exhibits progressive sharpening followed by oscillations around or above the threshold $2/\eta$. Practically, our framework provides a single, geometry-aware spectral measure that works across optimizers.
+    <font size="2">Federated Learning (FL) enables heterogeneous clients to collaboratively train a shared model without centralizing their raw data, offering an inherent level of privacy. However, gradients and model updates can still leak sensitive information, while malicious servers may mount adversarial attacks such as Byzantine manipulation. These vulnerabilities highlight the need to address differential privacy (DP) and Byzantine robustness within a unified framework. Existing approaches, however, often rely on unrealistic assumptions such as bounded gradients, require auxiliary server-side datasets, or fail to provide convergence guarantees. We address these limitations by proposing Byz-Clip21-SGD2M, a new algorithm that integrates robust aggregation with double momentum and carefully designed clipping. We prove high-probability convergence guarantees under standard $L$-smoothness and $\sigma$-sub-Gaussian gradient noise assumptions, thereby relaxing conditions that dominate prior work. Our analysis recovers state-of-the-art convergence rates in the absence of adversaries and improves utility guarantees under Byzantine and DP settings. Empirical evaluations on CNN and MLP models trained on MNIST further validate the effectiveness of our approach.
 </div>
 
 </div>
