@@ -8,58 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<style>
-  :root{
-    --fg:#1a1a1a; --muted:#666; --primary:#8e4585; --bg:#ffffff; --rule:#e5e5e5;
-    --mono:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    --sans:'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  }
-  *{box-sizing:border-box;}
-  html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
-  body{
-    margin:0; background:var(--bg); color:var(--fg);
-    font-family:var(--mono); font-size:15px; line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  ::selection{ background:rgba(181,126,220,.4); }
-  a{ color:var(--primary); text-decoration:none; }
-  a:hover{ text-decoration:underline; }
-  .wrap{ max-width:1120px; margin:0 auto; padding:28px 28px 72px; }
-
-  /* top menu */
-  .topnav{
-    display:flex; justify-content:flex-end; align-items:center; flex-wrap:wrap;
-    gap:14px 30px; font-family:var(--sans); font-size:1.05rem; font-weight:500;
-    padding:10px 0 4px;
-  }
-  .topnav a{ color:var(--fg); }
-  .topnav a:hover{ color:var(--primary); text-decoration:none; }
-
-  /* hero */
-  .hero{ display:flex; justify-content:space-between; align-items:center; gap:32px; margin-top:96px; }
-  .hero h1{ font-size:clamp(2.6rem,6vw,4.4rem); font-weight:700; line-height:1; margin:0; letter-spacing:.5px; }
-  .avatar{ width:170px; height:170px; border-radius:50%; object-fit:cover; flex:0 0 auto; }
-  @media (max-width:560px){ .avatar{ width:120px; height:120px; } .hero{ margin-top:48px; } }
-
-  /* body grid */
-  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px 56px; margin-top:56px; }
-  @media (max-width:820px){ .grid{ grid-template-columns:1fr; } }
-  h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7rem; scroll-margin-top:20px; }
-  .col-left h2:first-child, .col-right h2:first-child{ margin-top:0; }
-  p{ margin:.5rem 0; }
-  ul{ margin:.4rem 0; padding-left:1.25rem; }
-  li{ margin:.15rem 0; }
-  ul ul{ margin:.1rem 0 .3rem; }
-  .muted{ color:var(--muted); }
-  .edu-item{ margin-bottom:1.1rem; }
-  .edu-item .deg{ font-weight:600; }
-
-  .news li{ list-style:none; margin:0 0 1rem; }
-  .news ul{ padding-left:0; }
-  .news .date{ font-weight:600; display:block; }
-
-  footer{ margin-top:64px; padding-top:20px; border-top:1px solid var(--rule); color:var(--muted); font-size:.85rem; }
-</style>
+<link rel="stylesheet" href="/style.css" />
 </head>
 <body>
 <div class="wrap">
@@ -83,10 +32,10 @@
     <div class="col-left">
       <h2 id="about">About me</h2>
       <p>I am a third year PhD student at <a href="https://www.unibas.ch/en.html" target="_blank" rel="noopener">University of Basel</a> working under the supervision of <a href="https://dmi.unibas.ch/en/persons/aurelien-lucchi/" target="_blank" rel="noopener">Aurelien Lucchi</a>. Prior to that, I obtained my Master diploma from <a href="https://www.ip-paris.fr/" target="_blank" rel="noopener">Institut Polytechnique de Paris</a> in Data Science and Bachelor diploma from <a href="https://mipt.ru/english/" target="_blank" rel="noopener">Moscow Institute of Physics and Technology</a> in Applied Mathematics. I am interested in Optimization and its applications to Machine Learning.</p>
-      <p>On top of that, I am a big fan of football and judo.</p>
+      <p>On top of that, I am a big fan of tennis and judo.</p>
 
       <h2>Computer skills</h2>
-      <p><strong>Programming languages:</strong> Python, C/C++, LaTeX</p>
+      <p><strong>Programming languages:</strong> Python, Pytorch, LaTeX</p>
 
       <h2 id="education">Education</h2>
       <div class="edu-item">
@@ -110,6 +59,17 @@
         <div>Thesis Supervisor: <a href="https://richtarik.org/" target="_blank" rel="noopener">Peter Richt&aacute;rik</a></div>
       </div>
 
+      <h2 id="contact">Reaching out</h2>
+      <ul>
+        <li><a href="mailto:rustem.islamov@unibas.ch">rustem.islamov@unibas.ch</a></li>
+        <li>Spiegelgasse 1, 4051 Basel, Switzerland</li>
+        <li><a href="https://github.com/Rustem-Islamov" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://scholar.google.com/citations?user=dNiHy50AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+        <li><a href="/files/CV.pdf" target="_blank" rel="noopener">CV</a></li>
+      </ul>
+    </div>
+
+    <div class="col-right news">
       <h2>Interests</h2>
       <ul>
         <li><strong>Optimization</strong>
@@ -126,18 +86,7 @@
           <ul><li>Communication-efficient and Scalable Algorithms</li></ul>
         </li>
       </ul>
-
-      <h2 id="contact">Reaching out</h2>
-      <ul>
-        <li><a href="mailto:rustem.islamov@unibas.ch">rustem.islamov@unibas.ch</a></li>
-        <li>Spiegelgasse 1, 4051 Basel, Switzerland</li>
-        <li><a href="https://github.com/Rustem-Islamov" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://scholar.google.com/citations?user=dNiHy50AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
-        <li><a href="/files/CV.pdf" target="_blank" rel="noopener">CV</a></li>
-      </ul>
-    </div>
-
-    <div class="col-right news">
+      
       <h2 id="posts">Recent news</h2>
       <ul>
         <li><span class="date">June 6, 2026</span>I attended SIOPT 2026. I organized a session on recent advances in federated optimization.</li>
