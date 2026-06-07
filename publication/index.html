@@ -285,6 +285,29 @@
 
   <title>Publications | Rustem Islamov</title>
 
+<style>
+  /* ---- publications header + filter panel ---- */
+  .pub-header{ display:flex; gap:36px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; padding-top:1.5rem; }
+  .pub-head-left{ flex:1 1 300px; min-width:280px; }
+  .pub-head-right{ flex:1 1 340px; min-width:300px; }
+  .pub-page-title{ font-family:var(--mono); font-size:clamp(1.9rem,4vw,2.6rem); font-weight:700; color:var(--fg); margin:0 0 1rem; }
+  .pub-filter{ display:flex; flex-direction:column; gap:10px; }
+  .pub-filter label{ font-family:var(--sans); font-weight:600; font-size:.9rem; color:var(--fg); }
+  .pub-filter input, .pub-filter select{
+    width:100%; font-family:var(--sans); font-size:.95rem; color:var(--fg);
+    background:#fff; border:1px solid var(--rule); border-radius:10px; padding:10px 14px;
+  }
+  .pub-filter input::placeholder{ color:#9a9a9a; }
+  .pub-filter input:focus, .pub-filter select:focus{ outline:none; border-color:var(--primary); box-shadow:0 0 0 3px rgba(142,69,133,.15); }
+  .pub-filter select{
+    appearance:none; -webkit-appearance:none; cursor:pointer; padding-right:38px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='none' stroke='%238e4585' stroke-width='1.6' d='M1 1l5 5 5-5'/></svg>");
+    background-repeat:no-repeat; background-position:right 14px center;
+  }
+  .pub-no-results{ font-family:var(--sans); color:var(--muted); padding:1rem 0; display:none; }
+  #topic-view{ display:none !important; }
+  @media (max-width:760px){ .pub-header{ flex-direction:column; gap:20px; } }
+</style>
 </head>
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -407,23 +430,34 @@
 
 
 
-<div class="universal-wrapper pt-3" id="pub-controls">
-  <div id="pub-stats-box">
-    <span class="stat-total">Total publications:&nbsp;</span>
-    <span><strong>2</strong> NeurIPS</span>
-    <span><strong>7</strong> ICML</span>
-    <span><strong>4</strong> ICLR</span>
-    <span><strong>3</strong> AISTATS</span>
-    <span><strong>1</strong> UAI</span>
-    <span><strong>3</strong> TMLR</span>
+<div class="universal-wrapper pt-3 pub-header">
+  <div class="pub-head-left">
+    <h1 class="pub-page-title">Publications</h1>
+    <div id="pub-stats-box">
+        <span class="stat-total">Total publications:&nbsp;</span>
+        <span><strong>2</strong> NeurIPS</span>
+        <span><strong>7</strong> ICML</span>
+        <span><strong>4</strong> ICLR</span>
+        <span><strong>3</strong> AISTATS</span>
+        <span><strong>1</strong> UAI</span>
+        <span><strong>3</strong> TMLR</span>
+      </div>
   </div>
-  <div style="display:flex; gap:10px; justify-content:center;">
-    <button class="btn btn-outline-primary sort-btn active"
-            id="btn-year"  onclick="pubByYear()">Sort by Year</button>
-    <button class="btn btn-outline-primary sort-btn"
-            id="btn-topic" onclick="pubByTopic()">Sort by Topic</button>
+  <div class="pub-head-right">
+    <div class="pub-filter">
+      <label for="pub-search">Search papers</label>
+      <input id="pub-search" type="search" autocomplete="off" placeholder="Search by title, author, venue, year…">
+      <select id="pub-year-filter" aria-label="Filter by year"><option value="">All years</option></select>
+      <select id="pub-type-filter" aria-label="Filter by type">
+        <option value="">All types</option>
+        <option value="Conference">Conference</option>
+        <option value="Journal">Journal</option>
+        <option value="Misc">Misc</option>
+      </select>
+    </div>
   </div>
 </div>
+<div class="universal-wrapper pt-3 pub-no-results" id="pub-no-results">No papers match your filters.</div>
 <div class="universal-wrapper pt-3 year-section">
   <h1 itemprop="name"><span class="tri">▼</span>Prepared in 2026</h1>
 
@@ -3346,6 +3380,52 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+</script>
+<script>
+(function(){
+  var items = Array.prototype.slice.call(document.querySelectorAll('.year-section .grid-sizer'));
+  function firstText(p){ if(!p) return ''; for(var i=0;i<p.childNodes.length;i++){var n=p.childNodes[i]; if(n.nodeType===3 && n.textContent.trim()) return n.textContent.trim();} return ''; }
+  var years = {};
+  items.forEach(function(it){
+    var ym = (it.className.match(/year-(\d{4})/)||[])[1] || '';
+    var titleEl = it.querySelector('a.specialeffects');
+    var aEl = it.querySelector('.li-cite-author');
+    var venue = firstText(it.querySelector('p'));
+    var title = titleEl ? titleEl.textContent : '';
+    var authors = aEl ? aEl.textContent : '';
+    var v = venue.toLowerCase();
+    var type = /transactions|journal/.test(v) ? 'Journal' : (/conference|symposium/.test(v) ? 'Conference' : 'Misc');
+    it._year = ym; it._type = type;
+    it._search = (title+' '+authors+' '+venue+' '+ym).toLowerCase();
+    if(ym) years[ym]=true;
+  });
+
+  // populate year dropdown (newest first)
+  var ysel = document.getElementById('pub-year-filter');
+  Object.keys(years).sort().reverse().forEach(function(y){
+    var o=document.createElement('option'); o.value=y; o.textContent=y; ysel.appendChild(o);
+  });
+
+  var search = document.getElementById('pub-search');
+  var tsel = document.getElementById('pub-type-filter');
+
+  function apply(){
+    var q=(search.value||'').trim().toLowerCase(), fy=ysel.value, ft=tsel.value, visYears={}, shown=0;
+    items.forEach(function(it){
+      var ok = (!q || it._search.indexOf(q)>-1) && (!fy || it._year===fy) && (!ft || it._type===ft);
+      it.style.display = ok ? '' : 'none';
+      if(ok){ visYears[it._year]=true; shown++; }
+    });
+    document.querySelectorAll('.year-section').forEach(function(sec){
+      var h=sec.querySelector('h1'); var m=h?h.textContent.match(/(\d{4})/):null; var y=m?m[1]:'';
+      sec.style.display = (!y || visYears[y]) ? '' : 'none';
+    });
+    var nr=document.getElementById('pub-no-results'); if(nr) nr.style.display = shown? 'none':'block';
+  }
+  search.addEventListener('input', apply);
+  ysel.addEventListener('change', apply);
+  tsel.addEventListener('change', apply);
+})();
 </script>
 </body>
 </html>
