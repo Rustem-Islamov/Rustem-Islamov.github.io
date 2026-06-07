@@ -28,7 +28,7 @@ p{ margin:.5rem 0; }
 ul{ margin:.4rem 0; padding-left:1.25rem; }
 /* li{ margin:.15rem 0; }
 ul ul{ margin:.1rem 0 .3rem; } */
-li{ margin:.05rem 0; line-height:1.35; }
+li{ margin:.05rem 0; line-height:1.0; }
 ul ul{ margin:.05rem 0 .2rem; }
 .muted{ color:var(--muted); }
 h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7rem; scroll-margin-top:20px; }
