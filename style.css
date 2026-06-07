@@ -112,8 +112,9 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
 /* year — horizontal rule */
 .pub-year-label{
   font-family:var(--mono); font-size:1.15rem; font-weight:700; color:var(--fg);
-  border-left:0; padding:0 0 6px; margin:2.2rem 0 1rem; border-bottom:2px solid var(--rule);
+  border-left:0; padding:0 0 6px; margin:0 0 1.4rem; border-bottom:2px solid var(--rule);
 }
+.pub-list-item{ margin-bottom:0 !important; padding-bottom:2.2rem !important; }
 
 /* contribution cards: gray line hugs the text exactly */
 .section-grey .card-body{ padding-top:0 !important; padding-bottom:0 !important; }
