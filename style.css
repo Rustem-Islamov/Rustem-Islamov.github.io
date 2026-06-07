@@ -96,6 +96,10 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
 .li-cite-author a{ color:var(--fg); text-decoration:none; }
 .li-cite-author a:hover{ color:var(--primary); text-decoration:underline; }
 
+/* tighten title→venue gap, add room between publications */
+.pub-list-item{ margin-bottom:2rem !important; }   /* space between papers */
+.pub-list-item p{ margin-top:.15rem; }             /* title → venue gap */
+
 /* paper title — bold, highlight on hover */
 .pub-list-item a.specialeffects{ color:var(--fg); font-weight:700; text-decoration:none; }
 .pub-list-item a.specialeffects:hover{ color:var(--primary); text-decoration:underline; }
@@ -144,6 +148,7 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
   border:1px solid var(--primary); border-radius:8px; padding:8px 16px;
   cursor:pointer; text-decoration:none; }
 .modal-footer .btn:hover{ background:var(--primary); color:#fff; }
+
 
 /* ---------- footer (both layouts) ---------- */
 footer, .site-footer{ margin-top:64px; padding-top:20px; border-top:1px solid var(--rule); color:var(--muted); font-size:.85rem; }
