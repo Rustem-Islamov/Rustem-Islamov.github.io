@@ -122,6 +122,29 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
   background:#fafafa; font-size:.9rem; color:var(--muted);
 }
 
+/* ---------- Cite modal ---------- */
+.modal{ display:none; position:fixed; inset:0; z-index:1050; overflow:auto;
+  background:rgba(0,0,0,.5); }
+.modal.show{ display:block; }                 /* JS adds .show to open it */
+.modal-dialog{ max-width:680px; margin:6vh auto; }
+.modal-content{ background:#fff; border:1px solid var(--rule); border-radius:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.25); overflow:hidden; }
+.modal-header{ display:flex; align-items:center; justify-content:space-between;
+  padding:16px 20px; border-bottom:1px solid var(--rule); }
+.modal-title{ font-family:var(--mono); font-weight:700; font-size:1.3rem; margin:0; }
+.modal-header .close{ background:none; border:0; font-size:1.6rem; line-height:1;
+  color:var(--muted); cursor:pointer; }
+.modal-body{ padding:20px; }
+.modal-body pre{ background:#f6f6f6; border:1px solid var(--rule); border-radius:8px;
+  padding:14px; overflow:auto; font-family:var(--mono); font-size:.85rem; }
+.modal-footer{ display:flex; justify-content:flex-end; gap:10px;
+  padding:14px 20px; border-top:1px solid var(--rule); }
+.modal-footer .btn{ display:inline-flex; align-items:center; gap:6px;
+  font-family:var(--sans); font-size:.9rem; color:var(--primary); background:#fff;
+  border:1px solid var(--primary); border-radius:8px; padding:8px 16px;
+  cursor:pointer; text-decoration:none; }
+.modal-footer .btn:hover{ background:var(--primary); color:#fff; }
+
 /* ---------- footer (both layouts) ---------- */
 footer, .site-footer{ margin-top:64px; padding-top:20px; border-top:1px solid var(--rule); color:var(--muted); font-size:.85rem; }
 .site-footer .powered-by{ margin:0; }
