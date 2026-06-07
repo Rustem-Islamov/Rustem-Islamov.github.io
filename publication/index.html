@@ -3357,6 +3357,7 @@
     
     
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 
     
@@ -3413,8 +3414,6 @@
     </div>
   </div>
 </div>
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.pub-list-item [data-toggle="collapse"]').forEach(function (btn) {
@@ -3523,5 +3522,168 @@ document.addEventListener('DOMContentLoaded', function () {
   tsel.addEventListener('change', apply);
 })();
 </script>
+
+
+
+
+<script id="publication-cite-modal-fix">
+(function () {
+  function ready(fn) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fn);
+    } else {
+      fn();
+    }
+  }
+
+  ready(function () {
+    var modal = document.getElementById('modal');
+    if (!modal) return;
+
+    var codeEl = modal.querySelector('.modal-body code');
+    var errorEl = modal.querySelector('#modal-error');
+    var copyBtn = modal.querySelector('.js-copy-cite');
+    var downloadBtn = modal.querySelector('.js-download-cite');
+    var currentBib = '';
+    var lastFocused = null;
+
+    function setError(message) {
+      if (errorEl) errorEl.textContent = message || '';
+    }
+
+    function openModal() {
+      modal.classList.add('show');
+      modal.style.display = 'block';
+      modal.removeAttribute('aria-hidden');
+      modal.setAttribute('aria-modal', 'true');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeModal() {
+      modal.classList.remove('show');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      modal.removeAttribute('aria-modal');
+      document.body.classList.remove('modal-open');
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    function resetCopyButton() {
+      if (!copyBtn) return;
+      var original = copyBtn.getAttribute('data-original-html');
+      if (original) copyBtn.innerHTML = original;
+    }
+
+    function setCopyButton(label, restore) {
+      if (!copyBtn) return;
+      if (!copyBtn.getAttribute('data-original-html')) {
+        copyBtn.setAttribute('data-original-html', copyBtn.innerHTML);
+      }
+      copyBtn.textContent = label;
+      if (restore) window.setTimeout(resetCopyButton, 1200);
+    }
+
+    function fallbackCopy(text) {
+      var textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        setCopyButton('Copied', true);
+      } catch (err) {
+        setCopyButton('Copy failed', true);
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function loadCitation(filename) {
+      currentBib = '';
+      resetCopyButton();
+      setError('');
+
+      if (codeEl) codeEl.textContent = 'Loading citation...';
+      if (downloadBtn) {
+        downloadBtn.setAttribute('href', filename);
+        downloadBtn.setAttribute('download', 'cite.bib');
+        downloadBtn.removeAttribute('target');
+      }
+
+      fetch(filename, { credentials: 'same-origin', cache: 'no-cache' })
+        .then(function (response) {
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          return response.text();
+        })
+        .then(function (bibtex) {
+          currentBib = bibtex.trim();
+          if (codeEl) codeEl.textContent = currentBib;
+          setError('');
+          if (window.hljs && window.hljs.highlightBlock && codeEl) {
+            window.hljs.highlightBlock(codeEl);
+          }
+        })
+        .catch(function () {
+          if (codeEl) codeEl.textContent = '';
+          setError('Could not load ' + filename + '. Make sure the .bib file exists and preview the site through HTTP(S), not file://.');
+        });
+    }
+
+    // Capture Cite clicks before the legacy Academic handler, so this works even
+    // when Bootstrap modal JS is unavailable or the old theme CSS is disabled.
+    document.addEventListener('click', function (e) {
+      var citeBtn = e.target.closest ? e.target.closest('.js-cite-modal') : null;
+      if (!citeBtn) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+
+      var filename = citeBtn.getAttribute('data-filename');
+      if (!filename) return;
+
+      lastFocused = citeBtn;
+      openModal();
+      loadCitation(filename);
+    }, true);
+
+    modal.querySelectorAll('[data-dismiss="modal"], .modal-header .close').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        closeModal();
+      });
+    });
+
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+    });
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (!currentBib) {
+          setCopyButton('Nothing to copy', true);
+          return;
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(currentBib)
+            .then(function () { setCopyButton('Copied', true); })
+            .catch(function () { fallbackCopy(currentBib); });
+        } else {
+          fallbackCopy(currentBib);
+        }
+      });
+    }
+  });
+})();
+</script>
+
+
 </body>
 </html>
