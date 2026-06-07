@@ -118,6 +118,8 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
   border-left:0; padding:0 0 6px; margin:2.2rem 0 1rem; border-bottom:2px solid var(--rule);
 }
 
+.pub-list-item p{ margin-top:0 !important; margin-bottom:.15rem !important; line-height:1.5; }
+
 /* abstract — collapsed until the Abstract button is clicked */
 .collapse{ display:none; }
 .collapse.show{ display:block; }
