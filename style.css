@@ -217,42 +217,9 @@ footer, .site-footer{ margin-top:64px; padding-top:20px; border-top:1px solid va
   margin-bottom:0;
 }
 
-/* contribution cards: vertical line matches text block
-.contrib-item{
-  margin-bottom:.3rem;
-}
 
-.contrib-card{
-  position:relative;
-  border:0 !important;
-  background:transparent;
-  box-shadow:none !important;
-}
 
-.contrib-card .card-body{
-  position:relative;
-  padding:0 0 0 1rem !important;
-}
-
-.contrib-card .card-body::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:.18em;
-  bottom:.25em;
-  width:4px;
-  background:#555;
-}
-
-.contrib-card .exp-card-title{
-  margin:0 0 .15rem !important;
-}
-
-.contrib-card .exp-card-desc{
-  margin:0 !important;
-} */
-
-/* contribution cards: gray line only beside the topic/title */
+/* contribution cards: gray line only beside the topic/title
 .contrib-item{
   margin-bottom:.3rem;
 }
@@ -287,5 +254,61 @@ footer, .site-footer{ margin-top:64px; padding-top:20px; border-top:1px solid va
 .contrib-card .exp-card-desc{
   margin:0 !important;
   padding-left:calc(4px + 1rem);
+  border-left:0 !important;
+} */
+
+/* My Contributions: gray line from topic through first description line */
+.contrib-item{
+  margin-bottom:.3rem;
+}
+
+.contrib-card{
+  --contrib-line-width:4px;
+  --contrib-left-gap:1rem;
+
+  /* line height controls */
+  --contrib-line-top:0px;
+  --contrib-title-block:1.25em;
+  --contrib-title-desc-gap:.18rem;
+  --contrib-desc-first-line:1.6em;
+  --contrib-line-extra:0px;
+
+  --contrib-line-color:#555;
+
+  border:0 !important;
+  background:transparent;
+  box-shadow:none !important;
+}
+
+.contrib-card .card-body{
+  position:relative;
+  padding:0 0 .55rem calc(var(--contrib-line-width) + var(--contrib-left-gap)) !important;
+}
+
+.contrib-card .card-body::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:var(--contrib-line-top);
+  width:var(--contrib-line-width);
+  height:calc(
+    var(--contrib-title-block)
+    + var(--contrib-title-desc-gap)
+    + var(--contrib-desc-first-line)
+    + var(--contrib-line-extra)
+    - var(--contrib-line-top)
+  );
+  background:var(--contrib-line-color);
+}
+
+.contrib-card .exp-card-title{
+  margin:0 0 var(--contrib-title-desc-gap) 0 !important;
+  line-height:1.25;
+}
+
+.contrib-card .exp-card-desc{
+  margin:0 !important;
+  line-height:1.6;
+  padding-left:0 !important;
   border-left:0 !important;
 }
