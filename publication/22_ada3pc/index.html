@@ -46,45 +46,116 @@
 
   
   
-  
-  
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/style.css" />
 
-    
-    
-    
-      
-    
-    
-      
-      
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
-        
-      
-    
+<style>
+/* ===== publication detail page — yas.pub skin ===== */
 
-    
+/* keep the legacy navbar inside the 1120px column */
+.navbar > .container{
+  max-width:1120px !important;
+  width:auto !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:28px !important;
+  padding-right:28px !important;
+  box-sizing:border-box;
+}
 
-    
+html, body{
+  overflow-x:hidden;
+}
 
-  
+/* centered content column */
+.pub .article-container{
+  max-width:1120px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:28px;
+  padding-right:28px;
+}
 
-  
-  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Lora:400,700|Roboto:400,700&display=swap">
-  
+.pub .article-container .article-container{
+  padding-left:0;
+  padding-right:0;
+  max-width:none;
+}
 
-  
-  
-  
-  <link rel="stylesheet" href="/css/academic.min.a37180a901f566adcde30f087191d2c2.css">
+/* title */
+.article-container h1[itemprop="name"]{
+  font-family:var(--mono);
+  font-size:clamp(1.6rem,3.5vw,2.3rem);
+  font-weight:700;
+  color:var(--fg);
+  margin:1.4rem 0 1rem;
+  line-height:1.2;
+}
 
-  
+/* authors + venue + date */
+.article-metadata a{
+  color:var(--fg);
+  text-decoration:none;
+}
+
+.article-metadata a:hover{
+  color:var(--primary);
+  text-decoration:underline;
+}
+
+.article-metadata > div{
+  margin-bottom:.35rem;
+  font-size:1.02rem;
+}
+
+.article-date,
+.article-date time{
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+/* link buttons: PDF / Cite / arXiv / venue / Abstract */
+.article-container .btn{
+  display:inline-block;
+  font-family:var(--sans);
+  font-size:.85rem;
+  font-weight:500;
+  color:var(--primary);
+  background:#fff;
+  border:1px solid var(--primary);
+  border-radius:8px;
+  padding:4px 14px;
+  margin:5px 6px 0 0;
+  line-height:1.6;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+.article-container .btn:hover{
+  background:var(--primary);
+  color:#fff;
+  text-decoration:none;
+}
+
+/* abstract box */
+.collapse .card-body{
+  margin-top:10px;
+  padding:14px 16px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:#fafafa;
+  font-size:.92rem;
+  color:var(--fg);
+  line-height:1.6;
+}
+
+/* hide leftover Academic widgets not used in this layout */
+.share-box,
+.author-card{
+  display:none !important;
+}
+</style>
+
 
   
   
@@ -557,9 +628,8 @@
     
     
     
-    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
-
-    
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 
 
 
@@ -572,12 +642,7 @@
   
 
   <p class="powered-by">
-    &copy; 2026 Rustem Islamov &middot; 
-
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-
+    &copy; 2026 Rustem Islamov
     
     <span class="float-right" aria-hidden="true">
       <a href="#" id="back_to_top">
@@ -618,6 +683,26 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.querySelectorAll('[data-toggle="collapse"]').forEach(function(b){
+    b.addEventListener("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      var sel = b.getAttribute('href') || b.getAttribute('data-target');
+      var t = sel ? document.querySelector(sel) : b.nextElementSibling;
+
+      while (t && !(t.classList && t.classList.contains('collapse'))) {
+        t = t.nextElementSibling;
+      }
+
+      if (t) {
+        t.classList.toggle('show');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
