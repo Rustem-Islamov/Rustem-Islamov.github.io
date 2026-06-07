@@ -123,8 +123,14 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
 
 /* spacing inside & between publications */
 .pub-list-item p{ margin-top:0 !important; margin-bottom:.15rem !important; line-height:1.5; }
-.pub-list-item{ margin-bottom:2.2rem !important; }   /* same gap below every paper */
-.pub-topic-item{ margin-bottom:0 !important; }       /* no extra gap between year groups */
+/* each paper sits in its own .pub-topic-item — make THAT the only spacing unit */
+.pub-topic-item{ margin:0 0 2.2rem 0 !important; }   /* identical gap below every paper */
+.pub-list-item{ margin:0 !important; }               /* kill inline 1rem so nothing stacks/collapses */
+
+.pub-year-label{
+  font-family:var(--mono); font-size:1.15rem; font-weight:700; color:var(--fg);
+  border-left:0; padding:0 0 6px; margin:0 0 1.4rem; border-bottom:2px solid var(--rule);
+}
 
 /* abstract — collapsed until the Abstract button is clicked */
 .collapse{ display:none; }
