@@ -741,6 +741,7 @@
   document.querySelectorAll('.pub-list-item [data-toggle="collapse"]').forEach(function(b){
     b.addEventListener('click', function(e){
       e.preventDefault();
+      e.stopPropagation();              // keep Bootstrap's collapse handler from also firing
       var t = b.nextElementSibling;
       while (t && !(t.classList && t.classList.contains('collapse'))) t = t.nextElementSibling;
       if (t) t.classList.toggle('show');
