@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Lora:400,700|Roboto:400,700&display=swap">
-  <link rel="stylesheet" href="/css/academic.min.a37180a901f566adcde30f087191d2c2.css">
+  <!-- <link rel="stylesheet" href="/css/academic.min.a37180a901f566adcde30f087191d2c2.css"> -->
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
-  <style>
+  <!-- <style>
   .navbar-nav .nav-item { display: block !important; visibility: visible !important; opacity: 1 !important; }
   .topic-hero { background: none; padding: 1.5rem 0 0.5rem; margin-bottom: 0; }
   .topic-hero h1 { font-size: 2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0; }
@@ -60,7 +60,13 @@
   .li-cite-author a { color: #303030 !important; font-weight: normal !important; text-decoration: none; }
   .li-cite-author a:hover { color: #1F51FF !important; text-decoration: underline; }
   .li-cite-author { color: #303030; font-weight: normal; }
-  </style>
+  </style> -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main">
 
@@ -358,7 +364,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
@@ -398,5 +404,15 @@
     </div>
   </div>
 </div>
+<script>
+  document.querySelectorAll('.pub-list-item [data-toggle="collapse"]').forEach(function(b){
+    b.addEventListener("click", function(e){
+      e.preventDefault();
+      var t = b.nextElementSibling;
+      while (t && !(t.classList && t.classList.contains('collapse'))) t = t.nextElementSibling;
+      if (t) t.classList.toggle('show');
+    });
+  });
+</script>
 </body>
 </html>
