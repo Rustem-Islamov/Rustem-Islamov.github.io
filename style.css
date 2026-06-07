@@ -97,8 +97,8 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
 .li-cite-author a:hover{ color:var(--primary); text-decoration:underline; }
 
 /* tighten title→venue gap, add room between publications */
-.pub-list-item{ margin-bottom:2rem !important; }   /* space between papers */
-.pub-list-item p{ margin-top:.15rem; }             /* title → venue gap */
+.pub-list-item p{ margin:.15rem 0 !important; }     /* title→venue & venue→buttons, both tight */
+.pub-list-item{ margin-bottom:2.8rem !important; }  /* space between papers */
 
 /* paper title — bold, highlight on hover */
 .pub-list-item a.specialeffects{ color:var(--fg); font-weight:700; text-decoration:none; }
