@@ -109,12 +109,6 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
 }
 .pub-list-item .btn:hover{ background:var(--primary); color:#fff; text-decoration:none; }
 
-/* year — horizontal rule */
-.pub-year-label{
-  font-family:var(--mono); font-size:1.15rem; font-weight:700; color:var(--fg);
-  border-left:0; padding:0 0 6px; margin:0 0 1.4rem; border-bottom:2px solid var(--rule);
-}
-
 /* contribution cards: gray line hugs the text exactly */
 .section-grey .card-body{ padding-top:0 !important; padding-bottom:0 !important; }
 .section-grey .exp-card-title{ margin-top:0 !important; }
