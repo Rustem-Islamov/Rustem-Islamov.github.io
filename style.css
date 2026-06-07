@@ -76,7 +76,7 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
 /* ---------- research page ---------- */
 .research-hero{ background:none; padding:40px 0 0; margin:0; }
 .research-hero-box{ background:none; border:0; padding:0; box-shadow:none; }
-.research-hero-box h1{ font-family:var(--mono); font-size:clamp(1.9rem,4.5vw,2.6rem); font-weight:700; color:var(--fg); margin:0 0 .4rem; line-height:1.1; }
+.research-hero-box h1{ font-family:var(--mono); font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:var(--fg); margin:0 0 .4rem; line-height:1.15; }
 .research-hero-box p{ font-style:normal; font-size:1.05rem; color:var(--muted); margin:0; }
 .research-intro{ padding:1.5rem 0 2rem; max-width:100%; }
 .research-intro .highlight{ color:var(--primary); font-weight:700; }
