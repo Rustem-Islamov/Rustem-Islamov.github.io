@@ -178,15 +178,40 @@
 
   /* stats box — re-skinned to plum */
   #pub-controls { padding:1.5rem 28px .5rem; display:flex; flex-direction:column; align-items:center; }
-  #pub-stats-box{
-    display:block; width:fit-content;
-    border:1px solid var(--primary); border-radius:8px;
-    padding:9px 16px; margin-bottom:12px;
-    background:#f9f4f8; font-family:var(--sans); font-size:.9rem; color:var(--fg);
-  }
-  #pub-stats-box .stat-total{ font-weight:600; margin-right:6px; }
-  #pub-stats-box span{ margin-right:14px; }
-  #pub-stats-box strong{ color:var(--primary); }
+ #pub-stats-box{
+  display:grid;
+  grid-template-columns:max-content repeat(4, max-content);
+  column-gap:28px;
+  row-gap:6px;
+  align-items:baseline;
+
+  width:fit-content;
+  border:1px solid var(--primary);
+  border-radius:8px;
+  padding:9px 16px;
+  margin-bottom:12px;
+  background:#f9f4f8;
+  font-family:var(--sans);
+  font-size:.9rem;
+  color:var(--fg);
+}
+
+#pub-stats-box span{
+  margin-right:0;
+  white-space:nowrap;
+}
+
+#pub-stats-box .stat-total{
+  grid-column:1;
+  grid-row:1 / span 2;
+  align-self:start;
+  font-weight:600;
+  margin-right:0;
+}
+
+#pub-stats-box strong{
+  color:var(--primary);
+}
 
   /* sort buttons — boxed plum, like the other page buttons */
   .sort-btn{
