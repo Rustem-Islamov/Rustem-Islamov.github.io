@@ -216,3 +216,38 @@ footer, .site-footer{ margin-top:64px; padding-top:20px; border-top:1px solid va
 #contact + ul > li:last-child{
   margin-bottom:0;
 }
+
+/* contribution cards: vertical line matches text block */
+.contrib-item{
+  margin-bottom:.3rem;
+}
+
+.contrib-card{
+  position:relative;
+  border:0 !important;
+  background:transparent;
+  box-shadow:none !important;
+}
+
+.contrib-card .card-body{
+  position:relative;
+  padding:0 0 0 1rem !important;
+}
+
+.contrib-card .card-body::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.18em;
+  bottom:.25em;
+  width:4px;
+  background:#555;
+}
+
+.contrib-card .exp-card-title{
+  margin:0 0 .15rem !important;
+}
+
+.contrib-card .exp-card-desc{
+  margin:0 !important;
+}
