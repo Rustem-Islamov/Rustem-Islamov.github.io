@@ -3342,18 +3342,27 @@
 </div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script>
-  document.querySelectorAll('.pub-list-item [data-toggle="collapse"]').forEach(function(b){
-    b.addEventListener("click", function(e){
-      e.preventDefault(); e.stopPropagation();
-      var t = b.nextElementSibling;
-      while (t && !(t.classList && t.classList.contains('collapse'))) t = t.nextElementSibling;
-      if (t) t.classList.toggle('show');
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.pub-list-item [data-toggle="collapse"]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const item = btn.closest('.pub-list-item');
+      const selector = btn.getAttribute('href') || btn.getAttribute('data-target');
+
+      let panel = selector && item ? item.querySelector(selector) : null;
+      if (!panel && item) panel = item.querySelector('.collapse');
+
+      if (!panel) return;
+
+      const isOpen = panel.classList.toggle('show');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   });
+});
 </script>
-<script>
 /* ── view toggle ── */
 function pubByYear() {
   document.body.classList.remove('show-by-topic');
