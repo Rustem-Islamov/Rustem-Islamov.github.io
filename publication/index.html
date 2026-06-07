@@ -9,7 +9,7 @@
   <meta name="generator" content="Source Themes Academic 4.4.0">
   
   
-  <style>
+  <!-- <style>
   a.specialeffects:link{
     color: #303030;
     font-weight: bold;
@@ -96,7 +96,7 @@
   .year-body { padding-left: 1.5em; }
   .pub-topic-item { margin-bottom: 1.2rem; }
 
-  </style>
+  </style> -->
   
   
   
@@ -161,13 +161,79 @@
 
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Lora:400,700|Roboto:400,700&display=swap">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Lora:400,700|Roboto:400,700&display=swap"> -->
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.a37180a901f566adcde30f087191d2c2.css">
+  <!-- <link rel="stylesheet" href="/css/academic.min.a37180a901f566adcde30f087191d2c2.css"> -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+  /* ===== publications page — yas.pub skin (functionality preserved) ===== */
+  /* view toggle (functional) */
+  body.show-by-topic .year-section { display:none !important; }
+  #topic-view { display:none; }
+
+  /* stats box — re-skinned to plum */
+  #pub-controls { padding:1.5rem 0 .5rem; display:flex; flex-direction:column; align-items:center; }
+  #pub-stats-box{
+    display:block; width:fit-content;
+    border:1px solid var(--primary); border-radius:8px;
+    padding:9px 16px; margin-bottom:12px;
+    background:#f9f4f8; font-family:var(--sans); font-size:.9rem; color:var(--fg);
+  }
+  #pub-stats-box .stat-total{ font-weight:600; margin-right:6px; }
+  #pub-stats-box span{ margin-right:14px; }
+  #pub-stats-box strong{ color:var(--primary); }
+
+  /* sort buttons — boxed plum, like the other page buttons */
+  .sort-btn{
+    font-family:var(--sans); font-size:.85rem; font-weight:500;
+    color:var(--primary); background:#fff;
+    border:1px solid var(--primary); border-radius:8px;
+    padding:6px 16px; cursor:pointer; text-decoration:none;
+  }
+  .sort-btn:hover{ background:#f3eef2; }
+  .sort-btn.active{ background:var(--primary) !important; color:#fff !important; border-color:var(--primary) !important; }
+
+  /* triangle toggle (functional + skin) */
+  .tri{
+    display:inline-block; cursor:pointer; margin-right:8px;
+    font-size:.5em; vertical-align:middle;
+    transition:transform .2s ease; user-select:none; color:var(--muted);
+  }
+  h1 > .tri{ font-size:.5em; }
+  .collapsed > h1 > .tri,
+  .collapsed > h2 > .tri{ transform:rotate(-90deg); }
+
+  /* collapse states (functional) */
+  .year-section.collapsed .grid-sizer  { display:none !important; }
+  .topic-section.collapsed .topic-body { display:none !important; }
+  .year-group.collapsed   .year-body   { display:none !important; }
+
+  /* year / topic headers — match the .pub-year-label rule on other pages */
+  .year-section{ border-bottom:0; padding-bottom:.5rem; margin-bottom:1rem; }
+  .year-section > h1,
+  .topic-section > h1{
+    font-family:var(--mono); font-weight:700; color:var(--fg);
+    font-size:1.5rem; margin:1.4rem 0 1rem; padding-bottom:6px;
+    border-bottom:2px solid var(--rule);
+  }
+  .year-subheader{
+    font-family:var(--mono) !important; font-weight:700 !important; color:var(--fg) !important;
+    font-size:1.15rem !important; margin:1rem 0 .7rem !important;
+    padding-bottom:6px !important; border-bottom:2px solid var(--rule) !important;
+  }
+
+  /* indentation (topic view) + paper spacing */
+  .topic-section{ margin-bottom:2.5rem; }
+  .topic-body{ padding-left:1.25em; }
+  .year-body{ padding-left:1.25em; }
+  .pub-topic-item{ margin:0 0 1.2rem 0 !important; }
+  .pub-list-item{ margin:0 0 1rem 0 !important; }   /* year-view spacing (overrides /style.css) */
+  </style>
 
   
 
@@ -3136,6 +3202,17 @@
 </div>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('.pub-list-item [data-toggle="collapse"]').forEach(function(b){
+    b.addEventListener("click", function(e){
+      e.preventDefault(); e.stopPropagation();
+      var t = b.nextElementSibling;
+      while (t && !(t.classList && t.classList.contains('collapse'))) t = t.nextElementSibling;
+      if (t) t.classList.toggle('show');
+    });
+  });
+</script>
 <script>
 /* ── view toggle ── */
 function pubByYear() {
@@ -3176,5 +3253,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+<div class="container">
+  <<footer>&copy; 2026 Rustem Islamov</footer>
+</div>
 </body>
 </html>
