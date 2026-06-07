@@ -117,7 +117,7 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
 /* spacing inside & between publications */
 /* .pub-list-item p{ margin-top:0 !important; margin-bottom:.15rem !important; line-height:1.5; } */
 /* each paper sits in its own .pub-topic-item — make THAT the only spacing unit */
-.pub-topic-item{ margin:0 0 0.3rem 0 !important; }   /* identical gap below every paper */
+.pub-topic-item{ margin:0 0 0.7rem 0 !important; }   /* identical gap below every paper */
 .pub-list-item{ margin:0 !important; }               /* kill inline 1rem so nothing stacks/collapses */
 
 .pub-year-label{
