@@ -217,7 +217,7 @@ footer, .site-footer{ margin-top:64px; padding-top:20px; border-top:1px solid va
   margin-bottom:0;
 }
 
-/* contribution cards: vertical line matches text block */
+/* contribution cards: vertical line matches text block
 .contrib-item{
   margin-bottom:.3rem;
 }
@@ -250,4 +250,42 @@ footer, .site-footer{ margin-top:64px; padding-top:20px; border-top:1px solid va
 
 .contrib-card .exp-card-desc{
   margin:0 !important;
+} */
+
+/* contribution cards: gray line only beside the topic/title */
+.contrib-item{
+  margin-bottom:.3rem;
+}
+
+.contrib-card{
+  border:0 !important;
+  background:transparent;
+  box-shadow:none !important;
+}
+
+.contrib-card .card-body{
+  padding:.35rem 0 .55rem 0 !important;
+}
+
+.contrib-card .exp-card-title{
+  position:relative;
+  margin:0 0 .35rem 0 !important;
+  padding-left:calc(4px + 1rem);
+  line-height:1.25;
+}
+
+.contrib-card .exp-card-title::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.12em;
+  bottom:.12em;
+  width:4px;
+  background:#555;
+}
+
+.contrib-card .exp-card-desc{
+  margin:0 !important;
+  padding-left:calc(4px + 1rem);
+  border-left:0 !important;
 }
