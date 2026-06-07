@@ -95,6 +95,7 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
 /* author names — highlight only on hover */
 .li-cite-author a{ color:var(--fg); text-decoration:none; }
 .li-cite-author a:hover{ color:var(--primary); text-decoration:underline; }
+.universal-wrapper{ max-width:1120px; margin:0 auto; padding-left:28px; padding-right:28px; }
 
 
 /* paper title — bold, highlight on hover */
