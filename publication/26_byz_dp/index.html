@@ -45,28 +45,8 @@
   
 
   
-    <link rel="stylesheet" href="/style.css">
-  
-  
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
-
-    
-    
-    
-      
-    
-    
-      
-      
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="/css/academic.min.a37180a901f566adcde30f087191d2c2.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />     
 
   
 
@@ -115,111 +95,111 @@
 
   <title>-Non-Euclidean Gradient Descent Operates at the Edge of Stability | Rustem Islamov</title>
 
-  <style id="publication-detail-bridge">
-  /* Single-publication page bridge to /style.css */
-  body{ padding-top:0 !important; }
+  <style>
+/* ===== publication detail page — yas.pub skin ===== */
 
-  .pub{ padding-top:1.8rem; padding-bottom:1rem; }
+/* keep the legacy navbar inside the 1120px column */
+.navbar > .container{
+  max-width:1120px !important;
+  width:auto !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:28px !important;
+  padding-right:28px !important;
+  box-sizing:border-box;
+}
 
-  .article-container{
-    max-width:1120px;
-    margin:0 auto;
-    padding-left:28px;
-    padding-right:28px;
-  }
+html, body{
+  overflow-x:hidden;
+}
 
-  .article-container.pt-3{ padding-top:1.5rem !important; }
+/* centered content column */
+.pub .article-container{
+  max-width:1120px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:28px;
+  padding-right:28px;
+}
 
-  .article-container h1[itemprop="name"]{
-    font-family:var(--mono);
-    font-size:clamp(1.9rem,4vw,2.75rem);
-    font-weight:700;
-    line-height:1.12;
-    letter-spacing:.1px;
-    color:var(--fg);
-    margin:0 0 1rem;
-    max-width:980px;
-  }
+.pub .article-container .article-container{
+  padding-left:0;
+  padding-right:0;
+  max-width:none;
+}
 
-  .article-metadata{
-    font-family:var(--sans);
-    font-size:.98rem;
-    line-height:1.6;
-    color:var(--muted);
-    margin:0 0 1.15rem;
-    max-width:980px;
-  }
+/* title */
+.article-container h1[itemprop="name"]{
+  font-family:var(--mono);
+  font-size:clamp(1.6rem,3.5vw,2.3rem);
+  font-weight:700;
+  color:var(--fg);
+  margin:1.4rem 0 1rem;
+  line-height:1.2;
+}
 
-  .article-metadata a{ color:var(--fg); text-decoration:none; font-weight:500; }
-  .article-metadata a:hover{ color:var(--primary); text-decoration:underline; }
-  .article-metadata > div{ margin-bottom:.35rem; }
-  .article-metadata span,
-  .article-metadata time,
-  .article-date{ color:var(--muted); }
+/* authors + venue + date */
+.article-metadata a{
+  color:var(--fg);
+  text-decoration:none;
+}
 
-  .share-box,
-  .media.author-card{ display:none !important; }
+.article-metadata a:hover{
+  color:var(--primary);
+  text-decoration:underline;
+}
 
-  .btn-links{
-    max-width:1120px;
-    margin:0 auto 1.6rem;
-    padding-left:28px;
-    padding-right:28px;
-    font-family:var(--sans);
-  }
+.article-metadata > div{
+  margin-bottom:.35rem;
+  font-size:1.02rem;
+}
 
-  .btn-links .btn,
-  .btn-links button{
-    display:inline-block;
-    font-family:var(--sans);
-    font-size:.86rem;
-    font-weight:500;
-    color:var(--primary) !important;
-    background:#fff !important;
-    border:1px solid var(--primary) !important;
-    border-radius:8px;
-    padding:5px 13px;
-    margin:5px 5px 0 0;
-    line-height:1.5;
-    cursor:pointer;
-    text-decoration:none !important;
-    box-shadow:none !important;
-  }
+.article-date,
+.article-date time{
+  color:var(--muted);
+  font-size:.95rem;
+}
 
-  .btn-links .btn:hover,
-  .btn-links .btn:focus,
-  .btn-links button:hover,
-  .btn-links button:focus{
-    background:var(--primary) !important;
-    color:#fff !important;
-    text-decoration:none !important;
-  }
+/* link buttons: PDF / Cite / arXiv / venue / Abstract */
+.article-container .btn{
+  display:inline-block;
+  font-family:var(--sans);
+  font-size:.85rem;
+  font-weight:500;
+  color:var(--primary);
+  background:#fff;
+  border:1px solid var(--primary);
+  border-radius:8px;
+  padding:4px 14px;
+  margin:5px 6px 0 0;
+  line-height:1.6;
+  cursor:pointer;
+  text-decoration:none;
+}
 
-  .pub .collapse{ display:none; margin-top:12px; }
-  .pub .collapse.show{ display:block; }
-  .pub .collapse .card-body{
-    max-width:980px;
-    margin-top:8px;
-    padding:14px 16px;
-    border:1px solid var(--rule);
-    border-radius:10px;
-    background:#fafafa;
-    font-family:var(--sans);
-    font-size:.95rem;
-    line-height:1.65;
-    color:var(--muted);
-  }
+.article-container .btn:hover{
+  background:var(--primary);
+  color:#fff;
+  text-decoration:none;
+}
 
-  .site-footer{ font-family:var(--sans); }
+/* abstract box */
+.collapse .card-body{
+  margin-top:10px;
+  padding:14px 16px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:#fafafa;
+  font-size:.92rem;
+  color:var(--fg);
+  line-height:1.6;
+}
 
-  @media (max-width:760px){
-    .pub{ padding-top:1rem; }
-    .article-container,
-    .btn-links{ padding-left:20px; padding-right:20px; }
-    .article-container h1[itemprop="name"]{ font-size:1.8rem; }
-    .btn-links .btn,
-    .btn-links button{ font-size:.8rem; }
-  }
+/* hide leftover Academic widgets not used in this layout */
+.share-box,
+.author-card{
+  display:none !important;
+}
 </style>
 
 </head>
@@ -651,6 +631,7 @@
     
     
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 
     
@@ -709,23 +690,24 @@
   </div>
 </div>
 
-<script id="publication-detail-abstract-toggle">
-/* Abstract toggle for single-publication pages styled by /style.css. */
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.btn-links [data-toggle="collapse"]').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
+<script>
+  document.querySelectorAll('[data-toggle="collapse"]').forEach(function(b){
+    b.addEventListener("click", function(e){
       e.preventDefault();
       e.stopPropagation();
 
-      var selector = btn.getAttribute('href') || btn.getAttribute('data-target');
-      var panel = selector ? document.querySelector(selector) : null;
-      if (!panel) return;
+      var sel = b.getAttribute('href') || b.getAttribute('data-target');
+      var t = sel ? document.querySelector(sel) : b.nextElementSibling;
 
-      var isOpen = panel.classList.toggle('show');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      while (t && !(t.classList && t.classList.contains('collapse'))) {
+        t = t.nextElementSibling;
+      }
+
+      if (t) {
+        t.classList.toggle('show');
+      }
     });
   });
-});
 </script>
 
 </body>
