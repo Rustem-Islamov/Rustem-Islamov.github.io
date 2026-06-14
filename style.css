@@ -360,16 +360,20 @@ footer, .site-footer{ margin-top:64px; padding-top:20px; border-top:1px solid va
 }
 
 .hero-socials{
+  --hero-social-size:24px;
+  --hero-social-icon-size:13px;
+
   display:flex;
   align-items:center;
-  gap:10px;
-  margin-top:16px;
+  gap:7px;
+  margin-top:8px;
 }
 
 .hero-social,
-.hero-social:visited{
-  width:38px;
-  height:38px;
+.hero-social:visited,
+.hero-social:active{
+  width:var(--hero-social-size);
+  height:var(--hero-social-size);
   border-radius:50%;
   display:inline-flex;
   align-items:center;
@@ -378,8 +382,8 @@ footer, .site-footer{ margin-top:64px; padding-top:20px; border-top:1px solid va
   background:#fff;
   border:1px solid #e3d2df;
   text-decoration:none;
-  box-shadow:0 2px 10px rgba(0,0,0,.04);
-  transition:transform .15s ease, color .15s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
+  box-shadow:none;
+  transition:transform .15s ease, color .15s ease, border-color .15s ease, background .15s ease;
 }
 
 .hero-social:hover,
@@ -388,20 +392,30 @@ footer, .site-footer{ margin-top:64px; padding-top:20px; border-top:1px solid va
   background:var(--primary);
   border-color:var(--primary);
   text-decoration:none;
-  transform:translateY(-2px);
-  box-shadow:0 8px 18px rgba(142,69,133,.18);
+  transform:translateY(-1px);
 }
 
 .hero-social svg{
-  width:19px;
-  height:19px;
+  width:var(--hero-social-icon-size);
+  height:var(--hero-social-icon-size);
   display:block;
+}
+
+.hero-social-scholar svg{
+  width:calc(var(--hero-social-icon-size) + 1px);
+  height:calc(var(--hero-social-icon-size) + 1px);
+}
+
+.hero-social-cv svg{
+  width:calc(var(--hero-social-icon-size) + 1px);
+  height:calc(var(--hero-social-icon-size) + 1px);
 }
 
 /* make inline SVG icons inherit the plum link/highlight color */
 .hero-social svg [stroke]{
   stroke:currentColor !important;
 }
+
 .hero-social svg [fill]:not([fill="none"]){
   fill:currentColor !important;
 }
@@ -409,20 +423,17 @@ footer, .site-footer{ margin-top:64px; padding-top:20px; border-top:1px solid va
 .hero-social-text{
   font-family:var(--sans);
   font-weight:700;
-  font-size:.78rem;
+  font-size:.62rem;
   line-height:1;
   letter-spacing:.01em;
   color:currentColor;
 }
 
-.hero-social-cv .hero-social-text{
-  font-size:.76rem;
-}
-
 @media (max-width:560px){
-  .hero-socials{ gap:8px; margin-top:12px; }
-  .hero-social{ width:34px; height:34px; }
-  .hero-social svg{ width:17px; height:17px; }
-  .hero-social-text{ font-size:.72rem; }
+  .hero-socials{
+    --hero-social-size:22px;
+    --hero-social-icon-size:12px;
+    gap:6px;
+    margin-top:7px;
+  }
 }
-
