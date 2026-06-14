@@ -69,7 +69,7 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
 .hero-text{ display:flex; flex-direction:column; gap:.55rem; }
 .hero-icons{ display:flex !important; flex-direction:row !important; flex-wrap:nowrap;
   align-items:center; gap:.4em; line-height:1;
-  font-size:clamp(2.6rem,6vw,4.4rem);            /* same scale as .hero h1 */ }
+  font-size:clamp(1.73rem,4vw,2.93rem);          /* ~1.5x smaller than the name */ }
 .hero-icons a{ color:var(--fg); display:inline-flex; }
 .hero-icons a:hover{ color:var(--primary); text-decoration:none; }
 .hero-icons svg{ width:1em; height:1em; display:block; flex:0 0 auto; }
