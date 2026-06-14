@@ -65,13 +65,50 @@ h2{ font-size:clamp(1.5rem,3.5vw,1.95rem); font-weight:700; margin:1.8rem 0 .7re
 .hero{ display:flex; justify-content:space-between; align-items:center; gap:32px; margin-top:96px; }
 .hero h1{ font-size:clamp(2.6rem,6vw,4.4rem); font-weight:700; line-height:1; margin:0; letter-spacing:.5px; }
 .avatar{ width:170px; height:170px; border-radius:50%; object-fit:cover; flex:0 0 auto; }
+/* ---------- hero social icons (sized to match the name) ---------- */
+.hero-text{ display:flex; flex-direction:column; gap:.55rem; }
+.hero-icons{ display:flex; align-items:center; gap:.45em; line-height:1;
+  font-size:clamp(2.6rem,6vw,4.4rem);            /* same scale as .hero h1 */ }
+.hero-icons a{ color:var(--fg); display:inline-flex; }
+.hero-icons a:hover{ color:var(--primary); text-decoration:none; }
+.hero-icons svg{ width:1em; height:1em; display:block; }
+
 .grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px 56px; margin-top:56px; }
 .col-left h2:first-child, .col-right h2:first-child{ margin-top:0; }
+
 .edu-item{ margin-bottom:1.1rem; }
 .edu-item .deg{ font-weight:600; }
+.edu-item .edu-meta{
+  font-family:var(--sans);
+  font-size:.82rem;
+  line-height:1.35;
+  margin:.08rem 0 .18rem;
+}
+.edu-item .edu-meta a{ font-size:inherit; }
+
 .news ul{ padding-left:0; }
 .news li{ list-style:none; margin:0 0 1rem; }
 .news .date{ font-weight:600; display:block; }
+
+/* compact homepage Interests list without affecting Recent news */
+.news .interests-list{
+  padding-left:0;
+  margin:.15rem 0 .9rem;
+}
+.news .interests-list > li{
+  list-style:none;
+  margin:0 0 .45rem;
+  line-height:1.25;
+}
+.news .interests-list > li > ul{
+  padding-left:1rem;
+  margin:.08rem 0 0;
+}
+.news .interests-list > li > ul > li{
+  list-style:none;
+  margin:0 0 .08rem;
+  line-height:1.18;
+}
 
 /* ---------- research page ---------- */
 .research-hero{ background:none; padding:40px 0 0; margin:0; }
@@ -171,269 +208,3 @@ footer, .site-footer{ margin-top:64px; padding-top:20px; border-top:1px solid va
 /* ---------- responsive ---------- */
 @media (max-width:820px){ .grid{ grid-template-columns:1fr; } }
 @media (max-width:560px){ .avatar{ width:120px; height:120px; } .hero{ margin-top:48px; } }
-
-/* ---------- homepage refinements ---------- */
-.edu-item .edu-meta{
-  font-family:var(--sans);
-  font-size:.82rem;
-  line-height:1.35;
-  margin:.08rem 0 .18rem;
-}
-.edu-item .edu-meta a{ font-size:inherit; }
-
-/* compact homepage Interests list without affecting Recent news */
-.news .interests-list{
-  padding-left:0;
-  margin:.15rem 0 .9rem;
-}
-.news .interests-list,
-.news .interests-list ul{
-  list-style:none;
-}
-.news .interests-list > li{
-  list-style:none;
-  margin:0 0 .45rem;
-  line-height:1.25;
-}
-.news .interests-list > li > ul{
-  padding-left:1rem;
-  margin:.08rem 0 0;
-}
-.news .interests-list > li > ul > li{
-  list-style:none;
-  margin:0 0 .08rem;
-  line-height:1.18;
-}
-
-.news .news-list{
-  padding-left:0;
-}
-.news .news-list > li{
-  list-style:none;
-  margin:0 0 1rem;
-  line-height:1.6;
-}
-.news .news-list .date{
-  font-weight:600;
-  display:block;
-}
-
-.contact{
-  margin:.15rem 0 0;
-  padding-left:0;
-}
-.contact > li,
-#contact + ul > li{
-  list-style:none;
-  margin:0 0 .16rem;
-  line-height:1.25;
-}
-.contact > li:last-child,
-#contact + ul > li:last-child{
-  margin-bottom:0;
-}
-
-/* ---------- homepage Selected Publications ---------- */
-.selected-pubs-section,
-.selected-pub-section{
-  margin-top:1.8rem;
-}
-.selected-pubs-section h2,
-.selected-pub-section h2{
-  margin-top:1.8rem;
-}
-.selected-pubs-intro,
-.selected-pub-intro{
-  margin:.35rem 0 .85rem;
-  line-height:1.45;
-}
-.selected-pubs-list,
-.selected-pub-list{
-  margin:.35rem 0 1rem;
-}
-.selected-pubs-list .pub-topic-item,
-.selected-pub-list .pub-topic-item{
-  margin:0 0 .9rem 0 !important;
-}
-.selected-pubs-list .pub-list-item,
-.selected-pub-list .pub-list-item{
-  font-size:.94rem;
-  line-height:1.45;
-}
-.selected-pubs-list .pub-num,
-.selected-pub-list .pub-num{
-  font-weight:700;
-}
-.selected-pubs-list .li-cite-author,
-.selected-pubs-list .li-cite-author a,
-.selected-pub-list .li-cite-author,
-.selected-pub-list .li-cite-author a{
-  font-weight:400 !important;
-}
-.selected-pubs-list .pub-list-item p,
-.selected-pub-list .pub-list-item p{
-  margin:.12rem 0 0;
-  color:var(--muted);
-  line-height:1.35;
-}
-.oral-highlight{
-  color:darkred;
-  font-weight:700;
-}
-.selected-pub-more-wrap,
-.selected-pubs-more-wrap{
-  margin:.45rem 0 1.25rem;
-}
-.selected-pub-more,
-.selected-pubs-more,
-.selected-pub-button,
-.selected-pubs-button{
-  display:inline-block;
-  font-family:var(--sans);
-  font-size:.85rem;
-  font-weight:500;
-  color:var(--primary);
-  background:#fff;
-  border:1px solid var(--primary);
-  border-radius:8px;
-  padding:4px 14px;
-  line-height:1.6;
-  cursor:pointer;
-  text-decoration:none;
-}
-.selected-pub-more:hover,
-.selected-pubs-more:hover,
-.selected-pub-button:hover,
-.selected-pubs-button:hover{
-  background:var(--primary);
-  color:#fff;
-  text-decoration:none;
-}
-
-/* My Contributions: gray line from topic through first description line */
-.contrib-item{
-  margin-bottom:.3rem;
-}
-.contrib-card{
-  --contrib-line-width:4px;
-  --contrib-left-gap:1rem;
-  --contrib-line-top:0px;
-  --contrib-title-block:1.25em;
-  --contrib-title-desc-gap:.18rem;
-  --contrib-desc-first-line:1.6em;
-  --contrib-line-extra:0px;
-  --contrib-line-color:#555;
-  border:0 !important;
-  background:transparent;
-  box-shadow:none !important;
-}
-.contrib-card .card-body{
-  position:relative;
-  padding:0 0 .55rem calc(var(--contrib-line-width) + var(--contrib-left-gap)) !important;
-}
-.contrib-card .card-body::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:var(--contrib-line-top);
-  width:var(--contrib-line-width);
-  height:calc(var(--contrib-title-block) + var(--contrib-title-desc-gap) + var(--contrib-desc-first-line) + var(--contrib-line-extra) - var(--contrib-line-top));
-  background:var(--contrib-line-color);
-}
-.contrib-card .exp-card-title{
-  margin:0 0 var(--contrib-title-desc-gap) 0 !important;
-  line-height:1.25;
-}
-.contrib-card .exp-card-desc{
-  margin:0 !important;
-  line-height:1.6;
-  padding-left:0 !important;
-  border-left:0 !important;
-}
-/* ---------- homepage hero social/contact buttons ---------- */
-.hero-text{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:0;
-  min-width:0;
-}
-
-.hero-socials{
-  --hero-social-size:24px;
-  --hero-social-icon-size:13px;
-
-  display:flex;
-  align-items:center;
-  gap:7px;
-  margin-top:8px;
-}
-
-.hero-social,
-.hero-social:visited,
-.hero-social:active{
-  width:var(--hero-social-size);
-  height:var(--hero-social-size);
-  border-radius:50%;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--primary) !important;
-  background:#fff;
-  border:1px solid #e3d2df;
-  text-decoration:none;
-  box-shadow:none;
-  transition:transform .15s ease, color .15s ease, border-color .15s ease, background .15s ease;
-}
-
-.hero-social:hover,
-.hero-social:focus{
-  color:#fff !important;
-  background:var(--primary);
-  border-color:var(--primary);
-  text-decoration:none;
-  transform:translateY(-1px);
-}
-
-.hero-social svg{
-  width:var(--hero-social-icon-size);
-  height:var(--hero-social-icon-size);
-  display:block;
-}
-
-.hero-social-scholar svg{
-  width:calc(var(--hero-social-icon-size) + 1px);
-  height:calc(var(--hero-social-icon-size) + 1px);
-}
-
-.hero-social-cv svg{
-  width:calc(var(--hero-social-icon-size) + 1px);
-  height:calc(var(--hero-social-icon-size) + 1px);
-}
-
-/* make inline SVG icons inherit the plum link/highlight color */
-.hero-social svg [stroke]{
-  stroke:currentColor !important;
-}
-
-.hero-social svg [fill]:not([fill="none"]){
-  fill:currentColor !important;
-}
-
-.hero-social-text{
-  font-family:var(--sans);
-  font-weight:700;
-  font-size:.62rem;
-  line-height:1;
-  letter-spacing:.01em;
-  color:currentColor;
-}
-
-@media (max-width:560px){
-  .hero-socials{
-    --hero-social-size:22px;
-    --hero-social-icon-size:12px;
-    gap:6px;
-    margin-top:7px;
-  }
-}
