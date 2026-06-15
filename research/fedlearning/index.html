@@ -68,7 +68,23 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
     onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
-</link></link></head>
+</link></link><style>
+  /* ---- contributions: restored gray accent line + spacing ---- */
+  .contrib-item{ margin-bottom: 2.1rem; }            /* larger gap BETWEEN contributions */
+  .contrib-item:last-child{ margin-bottom: 0; }
+
+  .contrib-card .card-body{ position:relative; padding-left:16px !important; }
+  .contrib-card .card-body::before{                  /* the vertical gray line */
+    content:""; position:absolute; left:0;
+    top:0.18rem;        /* starts at the title */
+    height:2.7rem;      /* ends between the 1st and 2nd lines of the description */
+    width:3px; background:#bbb; border-radius:2px;
+  }
+
+  .exp-card-title{ line-height:1.3; margin:0 0 0.12rem !important; }  /* title close to desc */
+  .exp-card-desc{ line-height:1.55; margin:0 !important; }
+</style>
+</head>
 <body data-offset="70" data-spy="scroll" data-target="#navbar-main" id="top">
 <aside class="search-results" id="search">
 <div class="container">
