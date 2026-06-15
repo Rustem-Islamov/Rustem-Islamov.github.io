@@ -3685,5 +3685,52 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
+<script>
+/* self-contained Cite popup (independent of academic.js / Bootstrap modal plugin) */
+(function(){
+  var modal = document.getElementById('modal');
+  if(!modal) return;
+  var codeEl = modal.querySelector('.modal-body code') || modal.querySelector('.modal-body');
+  var copyBtn = modal.querySelector('.js-copy-cite');
+  var dlBtn   = modal.querySelector('.js-download-cite');
+  var cur = { text:'', name:'cite.bib' };
+
+  function open(){ modal.classList.add('show'); }
+  function close(){ modal.classList.remove('show'); }
+
+  document.querySelectorAll('.js-cite-modal').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault(); e.stopImmediatePropagation();   /* suppress the broken academic.js handler */
+      var file = btn.getAttribute('data-filename') || '';
+      cur.name = file.split('/').pop() || 'cite.bib';
+      codeEl.textContent = 'Loading\u2026';
+      open();
+      fetch(file).then(function(r){ if(!r.ok) throw r.status; return r.text(); })
+        .then(function(t){ cur.text = t; codeEl.textContent = t;
+          if(window.hljs){ try{ codeEl.className='tex hljs'; hljs.highlightBlock(codeEl); }catch(_){} } })
+        .catch(function(){ codeEl.textContent = 'Could not load citation file: ' + file; });
+    }, true);   /* capture phase: runs before academic.js */
+  });
+
+  modal.querySelectorAll('[data-dismiss="modal"], .close').forEach(function(b){
+    b.addEventListener('click', function(e){ e.preventDefault(); close(); });
+  });
+  modal.addEventListener('click', function(e){ if(e.target === modal) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+
+  if(copyBtn) copyBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    if(navigator.clipboard){ navigator.clipboard.writeText(cur.text); }
+    else { var t=document.createElement('textarea'); t.value=cur.text; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); }
+  });
+  if(dlBtn) dlBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    var blob = new Blob([cur.text], {type:'application/x-bibtex'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a'); a.href = url; a.download = cur.name;
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  });
+})();
+</script>
 </body>
 </html>
