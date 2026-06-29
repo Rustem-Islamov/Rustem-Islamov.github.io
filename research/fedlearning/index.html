@@ -68,24 +68,61 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
     onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
-</link></link><style>
-  /* ---- contributions: restored gray accent line + spacing ---- */
-  .contrib-item{ margin-bottom: 2.1rem; }            /* larger gap BETWEEN contributions */
-  .contrib-item:last-child{ margin-bottom: 0; }
-
-  .contrib-card .card-body{ position:relative; padding-left:16px !important; }
-  .contrib-card .card-body::before{                  /* the vertical gray line */
-    content:""; position:absolute; left:0;
-    top:0.18rem;        /* starts at the title */
-    height:2.7rem;      /* ends between the 1st and 2nd lines of the description */
-    width:3px; background:#bbb; border-radius:2px;
-  }
-
-  .exp-card-title{ line-height:1.3; margin:0 0 0.12rem !important; }  /* title close to desc */
-  .exp-card-desc{ line-height:1.55; margin:0 !important; }
-</style>
-</head>
+</link></link></head>
 <body data-offset="70" data-spy="scroll" data-target="#navbar-main" id="top">
+<script id="cite-popup-self-contained">
+/* Self-contained Cite popup: builds its own window, no dependency on the theme
+   #modal markup, Bootstrap, or even style.css. Registered in the capture phase
+   at the very top of <body> so it runs before any theme handler. */
+(function(){
+  var box=null, preEl=null, curBib='', curName='cite.bib';
+  function build(){
+    if(box) return;
+    box=document.createElement('div');
+    box.id='cite-popup';
+    box.style.cssText='display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(0,0,0,.5);overflow:auto;';
+    var card=document.createElement('div');
+    card.style.cssText="background:#fff;max-width:680px;margin:6vh auto;border-radius:12px;border:1px solid #e5e5e5;box-shadow:0 20px 60px rgba(0,0,0,.25);overflow:hidden;font-family:'IBM Plex Mono',ui-monospace,monospace;";
+    card.innerHTML=
+      '<div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #e5e5e5;">'
+        +'<strong style="font-size:1.25rem;">Cite</strong>'
+        +'<button type="button" data-x style="background:none;border:0;font-size:1.7rem;line-height:1;color:#666;cursor:pointer;">&times;</button></div>'
+      +'<div style="padding:20px;"><pre data-pre style="background:#f6f6f6;border:1px solid #e5e5e5;border-radius:8px;padding:14px;overflow:auto;font-size:.85rem;white-space:pre-wrap;word-break:break-word;margin:0;max-height:50vh;"></pre></div>'
+      +'<div style="display:flex;justify-content:flex-end;gap:10px;padding:14px 20px;border-top:1px solid #e5e5e5;font-family:Inter,sans-serif;">'
+        +'<a href="#" data-copy style="font-size:.9rem;color:#8e4585;background:#fff;border:1px solid #8e4585;border-radius:8px;padding:8px 16px;text-decoration:none;cursor:pointer;">Copy</a>'
+        +'<a href="#" data-dl style="font-size:.9rem;color:#8e4585;background:#fff;border:1px solid #8e4585;border-radius:8px;padding:8px 16px;text-decoration:none;cursor:pointer;">Download</a></div>';
+    box.appendChild(card);
+    (document.body||document.documentElement).appendChild(box);
+    preEl=card.querySelector('[data-pre]');
+    card.querySelector('[data-x]').addEventListener('click',function(e){e.preventDefault();hide();});
+    card.querySelector('[data-copy]').addEventListener('click',function(e){e.preventDefault();
+      if(navigator.clipboard){navigator.clipboard.writeText(curBib);}
+      else{var ta=document.createElement('textarea');ta.value=curBib;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(_){}ta.remove();}});
+    card.querySelector('[data-dl]').addEventListener('click',function(e){e.preventDefault();
+      var b=new Blob([curBib],{type:'application/x-bibtex'}),u=URL.createObjectURL(b),a=document.createElement('a');
+      a.href=u;a.download=curName;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(u);});
+    box.addEventListener('click',function(e){ if(e.target===box) hide(); });
+  }
+  function show(){ build(); box.style.setProperty('display','block','important'); }
+  function hide(){ if(box) box.style.setProperty('display','none','important'); }
+  function open(file){
+    show(); curName=(file||'cite.bib').split('/').pop()||'cite.bib'; curBib='';
+    preEl.textContent='Loading citation\u2026';
+    fetch(file,{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.text();})
+      .then(function(t){curBib=t.trim();preEl.textContent=curBib;})
+      .catch(function(){preEl.textContent='Could not load '+file+'\n(serve the site over http(s) and check the .bib exists).';});
+  }
+  // capture-phase, registered immediately -> runs before any theme handler
+  document.addEventListener('click',function(e){
+    var btn=e.target && e.target.closest ? e.target.closest('.js-cite-modal') : null;
+    if(!btn) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    open(btn.getAttribute('data-filename'));
+  },true);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+})();
+</script>
+
 <aside class="search-results" id="search">
 <div class="container">
 <section class="search-header">
@@ -145,41 +182,41 @@
 <div class="section-grey"><div class="container">
 <div class="section-block">
 <h2>My Contributions</h2>
-<div class="contrib-item">
-  <div class="card shadow-sm contrib-card">
-    <div class="card-body">
+<div style="margin-bottom:0.3rem;">
+<div class="card shadow-sm" style="border-left:4px solid #555 !important;">
+<div class="card-body" style="padding:0.6rem 1rem;">
 <h4 class="exp-card-title">Analysis of Differential Private Algorithms</h4>
 <p class="exp-card-desc">Standard analyses of DP-SGD rely on the unrealistic bounded-gradient assumption. We propose an algorithm with high-probability convergence guarantees that avoids this restriction while achieving an optimal privacy-utility tradeoff [13]. Complementary SDE analyses [19] show that adaptive methods such as DP-SignSGD and DP-Adam perform better under strong privacy constraints and are less sensitive to learning-rate tuning.</p>
 </div>
 </div>
 </div>
-<div class="contrib-item">
-  <div class="card shadow-sm contrib-card">
-    <div class="card-body">
+<div style="margin-bottom:0.3rem;">
+<div class="card shadow-sm" style="border-left:4px solid #555 !important;">
+<div class="card-body" style="padding:0.6rem 1rem;">
 <h4 class="exp-card-title">Non-smooth Distributed Optimization with Compression</h4>
 <p class="exp-card-desc">Works on distributed RL remains limited, and such problems are inherently nonsmooth due to operations like maximization. In [15], we develop an algorithm with provable convergence for nonsmooth convex objectives that simultaneously handles both the objective and constraints. The method significantly outperforms several baselines in distributed training of humanoid agents.</p>
 </div>
 </div>
 </div>
-<div class="contrib-item">
-  <div class="card shadow-sm contrib-card">
-    <div class="card-body">
+<div style="margin-bottom:0.3rem;">
+<div class="card shadow-sm" style="border-left:4px solid #555 !important;">
+<div class="card-body" style="padding:0.6rem 1rem;">
 <h4 class="exp-card-title">Gradient Methods with Biased Compression and Convergence Guarantees</h4>
 <p class="exp-card-desc">Compression is a practical approach to reducing communication overhead. Biased compressors (e.g., Top-K) are particularly effective in practice, but introduce bias that can degrade performance. We design provably convergent algorithms for smooth nonconvex, convex, and strongly convex objectives that achieve optimal asymptotic complexity while reducing communication in both centralized [9] and decentralized [10] settings. In [5], we further develop adaptive biased compressors that adjust compression strength during training.</p>
 </div>
 </div>
 </div>
-<div class="contrib-item">
-  <div class="card shadow-sm contrib-card">
-    <div class="card-body">
+<div style="margin-bottom:0.3rem;">
+<div class="card shadow-sm" style="border-left:4px solid #555 !important;">
+<div class="card-body" style="padding:0.6rem 1rem;">
 <h4 class="exp-card-title">Methods with Provable Improvements from Local Updates</h4>
 <p class="exp-card-desc">Standard convergence guarantees for local methods do not capture the benefits of local updates, despite their strong empirical performance. In [6], we identified a class of functions for which local methods provably achieve faster convergence.</p>
 </div>
 </div>
 </div>
-<div class="contrib-item">
-  <div class="card shadow-sm contrib-card">
-    <div class="card-body">
+<div style="margin-bottom:0.3rem;">
+<div class="card shadow-sm" style="border-left:4px solid #555 !important;">
+<div class="card-body" style="padding:0.6rem 1rem;">
 <h4 class="exp-card-title">Second-order Algorithms for Federated Learning with Compression</h4>
 <p class="exp-card-desc">Transmitting full Hessians in federated settings is impractical. We address this bottleneck by designing second-order methods that employ Hessian and gradient compression to reduce communication overhead [1-4]. Crucially, these methods retain the hallmark properties of Newton's method, achieving local superlinear convergence independent of the condition number.</p>
 </div>
@@ -203,53 +240,15 @@
 
   <b class="pub-num">[19]</b>
   <span class="article-metadata li-cite-author" itemprop="author">
-<span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://grigory-malinovsky.github.io/">Grigory Malinovsky</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=3rwI_9wAAAAJ&hl=en">Alexander Gaponov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org/">Peter Richtárik</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io/index.html">Eduard Gorbunov</a></span>.
-</span>
-<a class="specialeffects" href="/publication/26_dpsde/" itemprop="name">Byzantine-Robust and Differentially Private Federated Optimization under Weaker Assumptions</a>.
-  <br>
-   42nd Conference on Uncertainty in Artificial Intelligence (UAI 2026)<br/>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/ByzDP/byz_dp.pdf" rel="noopener" target="_blank">
-  PDF
-</a>
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/26_byz_dp/cite.bib">
-  Cite
-</button>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2603.23472" rel="noopener" target="_blank">
-    arXiv
-  </a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=pEUxsRj5F4" rel="noopener" target="_blank">
-    UAI
-  </a>
-<a aria-controls="collapseExample" aria-expanded="false" class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample19" role="button">
-    Abstract
-  </a>
-<div class="collapse" id="collapseExample19">
-<div class="card card-body">
-<font size="2">Federated Learning (FL) enables heterogeneous clients to collaboratively train a shared model without centralizing their raw data, offering an inherent level of privacy. However, gradients and model updates can still leak sensitive information, while malicious servers may mount adversarial attacks such as Byzantine manipulation. These vulnerabilities highlight the need to address differential privacy (DP) and Byzantine robustness within a unified framework. Existing approaches, however, often rely on unrealistic assumptions such as bounded gradients, require auxiliary server-side datasets, or fail to provide convergence guarantees. We address these limitations by proposing Byz-Clip21-SGD2M, a new algorithm that integrates robust aggregation with double momentum and carefully designed clipping. We prove high-probability convergence guarantees under standard $L$-smoothness and $\sigma$-sub-Gaussian gradient noise assumptions, thereby relaxing conditions that dominate prior work. Our analysis recovers state-of-the-art convergence rates in the absence of adversaries and improves utility guarantees under Byzantine and DP settings. Empirical evaluations on CNN and MLP models trained on MNIST further validate the effectiveness of our approach.    </font>
-</div>
-</div>
-</p>
-</div>
-</div>
-
-
-
-<div class="pub-topic-item">
-<div class="pub-list-item" itemscope="" itemtype="http://schema.org/CreativeWork">
-
-  <b class="pub-num">[19]</b>
-  <span class="article-metadata li-cite-author" itemprop="author">
 <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eneamc.github.io/">Enea Monzio Compagnoni</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?hl=ru&amp;user=DAyhO-oAAAAJ">Alessandro Stanghellini</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&amp;hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://koloskova.github.io/">Anastasia Koloskova</a></span>.
 </span>
 <a class="specialeffects" href="/publication/26_dpsde/" itemprop="name">Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective</a>.
-  <br>
+  <p>
    14th International Conference on Learning Representations (ICLR 2026)<br/>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/DPSDE/dpsde.pdf" rel="noopener" target="_blank">
   PDF
 </a>
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/26_dpsde/cite.bib">
+<button class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename="/publication/26_dpsde/cite.bib" type="button">
   Cite
 </button>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.03226" rel="noopener" target="_blank">
@@ -258,7 +257,7 @@
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=hSpA4DAoMk" rel="noopener" target="_blank">
     ICLR
   </a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/DP-SDE/dp_sde_poster.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/Adam-SDE/adam_sde_poster.pdf" rel="noopener" target="_blank">
     Poster
   </a>
 <a aria-controls="collapseExample" aria-expanded="false" class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample19" role="button">
@@ -281,7 +280,7 @@
 <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://yas.pub/">Yarden As</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=UCOWHb4AAAAJ&amp;hl=en">Ilyas Fatkhullin</a></span>.
   </span>
 <a class="specialeffects" href="/publication/25_safe_ef/" itemprop="name">Safe-EF: Error Feedback for Nonsmooth Constrained Optimization</a>.
- <br>
+ <p>
   42nd International Conference on Machine Learning (ICML 2025)<br/>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/SafeEF/safe_ef.pdf" rel="noopener" target="_blank">
   PDF
@@ -317,13 +316,12 @@
 <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eneamc.github.io/">Enea Monzio Compagnoni</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.mn.uio.no/math/english/people/aca/proske/">Frank Norbert Proske</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&amp;hl=en">Aurelien Lucchi</a></span>.
   </span>
 <a class="specialeffects" href="/publication/24_signsgd/" itemprop="name">Unbiased and Sign Compression in Distributed Learning: Comparing Noise Resilience via SDEs</a>.
- <br>
+ <p>
   28th International Conference on Artificial Intelligence and Statistics (<span style="color: darkred;"><b>Oral</b></span>, AISTATS 2025)<br/>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/SignSGD/signsgd.pdf" rel="noopener" target="_blank">
   PDF
 </a>
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/25_safe_ef/cite.bib">
+<button class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename="/publication/24_signsgd/cite.bib" type="button">
   Cite
 </button>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2502.17009" rel="noopener" target="_blank">
@@ -381,10 +379,10 @@
 
   <b class="pub-num">[10]</b>
   <span class="article-metadata li-cite-author" itemprop="author">
-<span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov${}^*$</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.linkedin.com/in/yuan-gao-1654471b8/?originalSubdomain=de">Yuan Gao${}^*$</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.sstich.ch">Sebastian Stich</a></span>.
+<span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov*</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.linkedin.com/in/yuan-gao-1654471b8/?originalSubdomain=de">Yuan Gao*</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.sstich.ch">Sebastian Stich</a></span>.
   </span>
 <a class="specialeffects" href="/publication/24_motef/" itemprop="name">Towards Faster Decentralized Stochastic Optimization with Communication Compression</a>.
-  <br>
+  <p>
     13th International Conference on Learning Representations (ICLR 2025)<br/>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Motef/motef.pdf" rel="noopener" target="_blank">
   PDF
@@ -419,10 +417,10 @@
 
   <b class="pub-num">[9]</b>
   <span class="article-metadata li-cite-author" itemprop="author">
-<span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.linkedin.com/in/yuan-gao-1654471b8/?originalSubdomain=de">Yuan Gao${}^*$</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov${}^*$</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.sstich.ch">Sebastian Stich</a></span>.
+<span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.linkedin.com/in/yuan-gao-1654471b8/?originalSubdomain=de">Yuan Gao*</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov*</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.sstich.ch">Sebastian Stich</a></span>.
   </span>
 <a class="specialeffects" href="/publication/23_econtrol/" itemprop="name">EControl: Fast Distributed Optimization with Compression and Error Control</a>.
-  <br>
+  <p>
     12th International Conference on Learning Representations (ICLR 2025)<br/>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/EControl/econtrol.pdf" rel="noopener" target="_blank">
   PDF
@@ -459,7 +457,7 @@
 <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=dJNwgT8AAAAJ&amp;hl=en">Mher Safaryan</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://people.csail.mit.edu/alistarh/">Dan Alistarh</a></span>.
   </span>
 <a class="specialeffects" href="/publication/23_AsyncSGD/" itemprop="name">AsGrad: A Sharp Unified Analysis of Asynchronous-SGD Algorithms</a>.
-  <br>
+  <p>
     27th International Conference on Artificial Intelligence and Statistics (AISTATS 2024)<br/>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/AsyncSGD/AsyncSGD.pdf" rel="noopener" target="_blank">
   PDF
@@ -526,7 +524,7 @@
 <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.konstmish.com">Konstantin Mishchenko</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io">Eduard Gorbunov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sites.google.com/view/samuelhorvath">Samuel Horváth</a>.</span>
 </span>
 <a class="specialeffects" href="/publication/23_partial/" itemprop="name">Partially Personalized Federated Learning: Breaking the Curse of Data Heterogeneity</a>.
-  <br>
+  <p>
     Transactions on Machine Learning Research (TMLR 2025)<br/>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Partial/partial.pdf" rel="noopener" target="_blank">
   PDF
@@ -594,7 +592,7 @@
 <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=2QtdkysAAAAJ&amp;hl=en">Xun Qian</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://slavomir-hanzely.github.io">Slavomir Hanzely</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=dJNwgT8AAAAJ&amp;hl=en">Mher Safaryan</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://richtarik.org">Peter Richtárik</a>.</span>
 </span>
 <a class="specialeffects" href="/publication/22_3pc/" itemprop="name">Distributed Newton-Type Methods with Communication Compression and Bernoulli Aggregation</a>.
-  <br>
+  <p>
   Transactions on Machine Learning Research (TMLR 2023)<br/>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/3PC/3PC.pdf" rel="noopener" target="_blank">
   PDF
@@ -636,7 +634,7 @@
 </span>
 <a class="specialeffects" href="/publication/21_bl/" itemprop="name">Basis Matters: Better Communication-Efficient Second Order Methods for Federated Learning</a>.
   
-  <br>
+  <p>
   25th International Conference on Artificial Intelligence and Statistics (AISTATS 2022)<br/>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/BL/bl.pdf" rel="noopener" target="_blank">
   PDF
@@ -674,7 +672,7 @@
 </span>
 <a class="specialeffects" href="/publication/21_fednl/" itemprop="name">FedNL: Making Newton-Type Methods Applicable to Federated Learning</a>.
   
-  <br>
+  <p>
   39th International Conference on Machine Learning (ICML 2022)<br/>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/FedNL/FedNL.pdf" rel="noopener" target="_blank">
   PDF
@@ -721,8 +719,9 @@
 </span>
 <a class="specialeffects" href="/publication/21_mn/" itemprop="name">Distributed Second Order Methods with Fast Rates and Compressed Communication</a>.
   
-  <br> 
-  38th International Conference on Machine Learning (ICML 2021)<br/>
+  <p>
+
+38th International Conference on Machine Learning (ICML 2021)<br/>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/NEWTON-LEARN/NEWTON-LEARN.pdf" rel="noopener" target="_blank">
   PDF
 </a>
@@ -759,49 +758,17 @@
 </div>
 </div>
 </div></div></div></div>
-<div class="container">
-  <footer class="site-footer">
-    <p class="powered-by">&copy; 2026 Rustem Islamov</p>
-  </footer>
-</div>
-
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 <script>
   document.querySelectorAll('.pub-list-item [data-toggle="collapse"]').forEach(function(b){
     b.addEventListener('click', function(e){
       e.preventDefault();
-      e.stopPropagation();              // keep Bootstrap's collapse handler from also firing
       var t = b.nextElementSibling;
       while (t && !(t.classList && t.classList.contains('collapse'))) t = t.nextElementSibling;
       if (t) t.classList.toggle('show');
     });
   });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 </body>
 </html>

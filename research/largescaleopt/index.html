@@ -85,6 +85,59 @@
 </style>
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main">
+<script id="cite-popup-self-contained">
+/* Self-contained Cite popup: builds its own window, no dependency on the theme
+   #modal markup, Bootstrap, or even style.css. Registered in the capture phase
+   at the very top of <body> so it runs before any theme handler. */
+(function(){
+  var box=null, preEl=null, curBib='', curName='cite.bib';
+  function build(){
+    if(box) return;
+    box=document.createElement('div');
+    box.id='cite-popup';
+    box.style.cssText='display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(0,0,0,.5);overflow:auto;';
+    var card=document.createElement('div');
+    card.style.cssText="background:#fff;max-width:680px;margin:6vh auto;border-radius:12px;border:1px solid #e5e5e5;box-shadow:0 20px 60px rgba(0,0,0,.25);overflow:hidden;font-family:'IBM Plex Mono',ui-monospace,monospace;";
+    card.innerHTML=
+      '<div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #e5e5e5;">'
+        +'<strong style="font-size:1.25rem;">Cite</strong>'
+        +'<button type="button" data-x style="background:none;border:0;font-size:1.7rem;line-height:1;color:#666;cursor:pointer;">&times;</button></div>'
+      +'<div style="padding:20px;"><pre data-pre style="background:#f6f6f6;border:1px solid #e5e5e5;border-radius:8px;padding:14px;overflow:auto;font-size:.85rem;white-space:pre-wrap;word-break:break-word;margin:0;max-height:50vh;"></pre></div>'
+      +'<div style="display:flex;justify-content:flex-end;gap:10px;padding:14px 20px;border-top:1px solid #e5e5e5;font-family:Inter,sans-serif;">'
+        +'<a href="#" data-copy style="font-size:.9rem;color:#8e4585;background:#fff;border:1px solid #8e4585;border-radius:8px;padding:8px 16px;text-decoration:none;cursor:pointer;">Copy</a>'
+        +'<a href="#" data-dl style="font-size:.9rem;color:#8e4585;background:#fff;border:1px solid #8e4585;border-radius:8px;padding:8px 16px;text-decoration:none;cursor:pointer;">Download</a></div>';
+    box.appendChild(card);
+    (document.body||document.documentElement).appendChild(box);
+    preEl=card.querySelector('[data-pre]');
+    card.querySelector('[data-x]').addEventListener('click',function(e){e.preventDefault();hide();});
+    card.querySelector('[data-copy]').addEventListener('click',function(e){e.preventDefault();
+      if(navigator.clipboard){navigator.clipboard.writeText(curBib);}
+      else{var ta=document.createElement('textarea');ta.value=curBib;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(_){}ta.remove();}});
+    card.querySelector('[data-dl]').addEventListener('click',function(e){e.preventDefault();
+      var b=new Blob([curBib],{type:'application/x-bibtex'}),u=URL.createObjectURL(b),a=document.createElement('a');
+      a.href=u;a.download=curName;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(u);});
+    box.addEventListener('click',function(e){ if(e.target===box) hide(); });
+  }
+  function show(){ build(); box.style.setProperty('display','block','important'); }
+  function hide(){ if(box) box.style.setProperty('display','none','important'); }
+  function open(file){
+    show(); curName=(file||'cite.bib').split('/').pop()||'cite.bib'; curBib='';
+    preEl.textContent='Loading citation\u2026';
+    fetch(file,{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.text();})
+      .then(function(t){curBib=t.trim();preEl.textContent=curBib;})
+      .catch(function(){preEl.textContent='Could not load '+file+'\n(serve the site over http(s) and check the .bib exists).';});
+  }
+  // capture-phase, registered immediately -> runs before any theme handler
+  document.addEventListener('click',function(e){
+    var btn=e.target && e.target.closest ? e.target.closest('.js-cite-modal') : null;
+    if(!btn) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    open(btn.getAttribute('data-filename'));
+  },true);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+})();
+</script>
+
 
 <aside class="search-results" id="search">
   <div class="container">
@@ -132,7 +185,7 @@
 
 <div class="section-white"><div class="topic-hero">
   <div class="container">
-    <h1>Large-Scale Optimization</h1>
+    <h1>Loss Landscape of Neural Networks</h1>
   </div>
 </div></div>
 
@@ -140,9 +193,8 @@
   <div class="section-block">
     <h2>Main Challenges</h2>
     <ul class="challenge-list">
-      <li><strong>Hyperparameter Transfer:</strong> Modern large language models need optimizers that scale efficiently to billions of parameters. At the same time, extensive hyperparameter tuning becomes impractical at such scales due to limited resources. This makes it essential to develop theoretically grounded methods for transferring hyperparameters from smaller models to larger ones.</li>
-      <li><strong>Adaptive Methods:</strong> Optimizers like Adam are widely used in practice, yet their theoretical properties remain only partially understood. Developing a predictive convergence theory for adaptive optimizers is therefore both important and challenging.</li>
-      <li><strong>Hyperparameter Robustness:</strong> Because hyperparameter tuning is costly at large scale, modern algorithms must be robust to their choice. Small perturbations in hyperparameters should not lead to significant performance changes. Therefore, designing optimization methods that are insensitive to hyperparameter selection is crucial for large-scale settings.</li>
+      <li><strong>Edge of Stability:</strong> Neural networks trained with gradient based methods consistently operate at the edge of stability, a regime where spectral chararectiristic of the loss are oscillating around a particular threshold. The classical optimisation theory has no explanation for this behaviour.</li>
+      <li><strong>Loss landscape geometry:</strong> Despite the highly nonconvex and high-dimensional nature of neural network loss landscapes, gradient-based methods perform remarkably well in practice. Developing a theoretical characterization of these landscapes remains an important challenge. Establishing connections between landscape structure and algorithm design is key to achieving efficient training.</li>
     </ul>
   </div>
 
@@ -152,34 +204,26 @@
   <div class="section-block">
     <h2>My Contributions</h2>
     <div class="contrib-item">
-  <div class="card shadow-sm contrib-card">
-    <div class="card-body">
-          <h4 class="exp-card-title">BST Scaling Rule</h4>
-          <p class="exp-card-desc">We study stochastic conditional gradient methods under a fixed token budget [21] and show that an optimal batch size exists. Our analysis yields predictive convergence rates, enabling joint token-aware scaling laws for batch size, sequence length, Frank-Wolfe stepsize, and momentum as the model size or token horizon grows.</p>
-        </div>
-      </div>
-    </div>
-   <div class="contrib-item">
-  <div class="card shadow-sm contrib-card">
-    <div class="card-body">
-          <h4 class="exp-card-title">Robustness to Learning Rate Choice</h4>
-          <p class="exp-card-desc">We study the coupling of the NGN stepsize with Polyak momentum [17] and show that incorporating this combination into base optimizers such as SGD and Adam improves robustness to learning-rate choice. In some cases, increasing the learning rate by up to an order of magnitude beyond its optimal value leads to little or no performance degradation, while preserving peak performance.</p>
+      <div class="card shadow-sm contrib-card">
+        <div class="card-body">
+          <h4 class="exp-card-title">Non-Euclidean Gradient Descent at the Edge of Stability</h4>
+          <p class="exp-card-desc">We show that non-Euclidean gradient descent also operates at the edge of stability, and that the optimizer's geometry (i.e., the choice of norm) determines the sharpness at convergence [20], providing a unified explanation of edge-of-stability behavior across geometries.</p>
         </div>
       </div>
     </div>
     <div class="contrib-item">
-  <div class="card shadow-sm contrib-card">
-    <div class="card-body">
-          <h4 class="exp-card-title">SDE Analysis of Adam-like Optimizers</h4>
-          <p class="exp-card-desc">We study optimization methods such as SGD, SignSGD, and Adam through the lens of stochastic differential equations (SDEs) [12]. These SDEs provide quantitatively accurate models of the algorithms and reveal a nuanced relationship between adaptivity, gradient noise, and curvature. Our analysis of SignSGD highlights a precise contrast with SGD in terms of convergence speed, stationary distribution, and robustness to heavy-tailed noise.</p>
+      <div class="card shadow-sm contrib-card">
+        <div class="card-body">
+          <h4 class="exp-card-title">Theoretical Foundation for Learning-Rate Warmup</h4>
+          <p class="exp-card-desc">We provide a theoretical characterization of neural network loss landscapes based on the relationship between sharpness and loss. We show both theoretically and empirically that this characterization is tight near initialization [18]. Leveraging this insight, we justify the use of learning-rate warmup—a widely used technique—for achieving stable convergence.</p>
         </div>
       </div>
     </div>
     <div class="contrib-item">
-  <div class="card shadow-sm contrib-card">
-    <div class="card-body">
-          <h4 class="exp-card-title">Adam-SGD Gap</h4>
-          <p class="exp-card-desc">Prior work attributes Adam's advantage over SGD to various isolated factors. Rather than pinning the gap on a single cause [23], we show through controlled experiments that data modality, dataset, and model architecture all shape it in non-trivial ways. We further identify a consistent trend: a crossover batch size beyond which the relative advantage shifts from SGD to Adam, captured by a simple theoretical model of the gap.</p>
+      <div class="card shadow-sm contrib-card">
+        <div class="card-body">
+          <h4 class="exp-card-title">Loss Landscape Characterization without Over-Parametrization</h4>
+          <p class="exp-card-desc">We propose a novel class of functions that characterizes the loss landscape of modern deep models without relying on heavy overparameterization and naturally accommodates saddle points [11]. Under this framework, we prove that gradient-based methods enjoy convergence guarantees and validate the approach through both theoretical analysis and empirical studies across a diverse set of architectures.</p>
         </div>
       </div>
     </div>
@@ -189,7 +233,7 @@
   <div class="section-block">
     <h2>Research Impact</h2>
     <div class="impact-box">
-      <p>These results improve training efficiency by reducing the need for costly hyperparameter sweeps and tuning, while increasing robustness. BST scaling and NGN step sizes lower computational overhead and sensitivity to learning rates, and SDE insights explain the strong empirical performance of adaptive methods under realistic, heavy-tailed noise.</p>
+      <p>These results advance the theoretical understanding of neural network optimization by providing principled characterizations of loss landscapes and their interaction with optimization algorithms. Together, they bridge theory and practice by linking landscape structure, optimizer design, and training stability.</p>
     </div>
   </div>
 
@@ -201,83 +245,42 @@
 <div class="pub-year-label">2026</div>
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <b class="pub-num">[23]</b>
+  <b class="pub-num">[20]</b>
   <span itemprop="author" class="article-metadata li-cite-author">
-    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://orientino.github.io/">Chenxiang Zhang</a><sup>*</sup></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a><sup>*</sup></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eneamc.github.io/">Enea Monzio Compagnoni</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.uni.lu/fstm-en/people/jun-pang/">Jun Pang</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="http://orvi.altervista.org/">Antonio Orvieto</a></span>.
+    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://mtcrawshaw.github.io/">Michael Crawshaw</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://jmcohen.github.io/">Jeremy Cohen</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?hl=ru&user=okKw87MAAAAJ&view_op=list_works&sortby=pubdate">Robert Gower</a></span>.
 </span>
     </span>
-  <a class="specialeffects" href="/publication/26_adam_sgd/" itemprop="name">Beyond a Single Explanation of the Adam-SGD Gap</a>.
+  <a class="specialeffects" href="/publication/26_eos/" itemprop="name">Non-Euclidean Gradient Descent Operates at the Edge of Stability</a>.
   <br>
+   43rd International Conference on Machine Learning (<span style="color: darkred;"><b>Oral</b></span>, ICML 2026)<br>
 
 
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/AdamSGD/adam_sgd.pdf" target="_blank" rel="noopener">
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/EOS/eos.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/26_adam_sgd/cite.bib">
-  Cite
-</button>
-
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2606.14259" target="_blank" rel="noopener">
-    arXiv
-  </a>
-
-  
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample23" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Abstract
-  </a>
-  
-<div class="collapse" id="collapseExample23">
-  <div class="card card-body">
-    <font size="2">Prior work has identified several factors that can contribute to the performance gap between Adam and SGD, spanning data aspects, architecture design, and optimization properties. Yet these explanations are often studied in isolation, leaving their relative importance unclear. In this work, we revisit these hypotheses through a controlled empirical study across vision, language, genomics, and graph tasks, spanning modern and classical architectures, and carefully designed training setups. Our results suggest that no single factor consistently explains the Adam--SGD gap. For instance, the Adam advantage can (1) persist under a uniform vocabulary distribution yet nearly disappear under a heavy-tailed one; (2) reverse in favor of SGD in softmax-attention models; and (3) become larger under soft architectural modifications, e.g., when ReLU is replaced by a GeLU nonlinearity. This suggests that the gap arises from nontrivial data and architecture interactions, rather than from a single common factor. Yet, we observe a pattern across our settings: a crossover batch size at which the relative advantage shifts from SGD to Adam as the batch size scales. These empirical results are captured by our theoretical gap model, which predicts this batch-size-dependent crossover. Our perspective helps reconcile several existing hypotheses while offering practical insights across domains. </font>
-</div>
-</div>
-
-</div>
-        </div>
-<div class="pub-topic-item">
-            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <b class="pub-num">[21]</b>
-  <span itemprop="author" class="article-metadata li-cite-author">
-    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://seg.inf.unibe.ch/team/roman-machacek/">Roman Machacek</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://tonysf.github.io/">Antonio Silveti-Falls</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io/index.html">Eduard Gorbunov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.epfl.ch/labs/lions/people/volkan-cevher/">Volkan Cevher</a></span>.
-</span>
-    </span>
-  <a class="specialeffects" href="/publication/26_bst/" itemprop="name">On the Role of Batch Size in Stochastic Conditional Gradient Methods</a>.
-  <br>
-   43rd International Conference on Machine Learning (ICML 2026)<br>
-
-
-    
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/BST/BST.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/26_bst/cite.bib">
+        data-filename="/publication/26_eos/cite.bib">
   Cite
 </button>
     
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.21191" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.05002" target="_blank" rel="noopener">
     arXiv
   </a>
 
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=yTFTLj7MoN" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=piWlEHb4Db" target="_blank" rel="noopener">
     ICML
   </a>
 
-  <a class="btn btn-outline-primary my-1 mr-1" href="/files/posters/BST/bst_poster.pdf" target="_blank" rel="noopener">
-    Poster
-  </a>
-
   
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample21" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample20" role="button" aria-expanded="false" aria-controls="collapseExample">
     Abstract
   </a>
   
-<div class="collapse" id="collapseExample21">
+<div class="collapse" id="collapseExample20">
   <div class="card card-body">
-    <font size="2">We study the role of batch size in stochastic conditional gradient methods under a μ-Kurdyka-Łojasiewicz (μ-KL) condition. Focusing on momentum-based stochastic conditional gradient algorithms (e.g., Scion), we derive a new analysis that explicitly captures the interaction between stepsize, batch size, and stochastic noise. Our study reveals a regime-dependent behavior: increasing the batch size initially improves optimization accuracy but, beyond a critical threshold, the benefits saturate and can eventually degrade performance under a fixed token budget. Notably, the theory predicts the magnitude of the optimal stepsize and aligns well with empirical practices observed in large-scale training. Leveraging these insights, we derive principled guidelines for selecting the batch size and stepsize, and propose an adaptive strategy that increases batch size and sequence length during training while preserving convergence guarantees. Experiments on NanoGPT are consistent with the theoretical predictions and illustrate the emergence of the predicted scaling regimes. Overall, our results provide a theoretical framework for understanding batch size scaling in stochastic conditional gradient methods and offer guidance for designing efficient training schedules in large-scale optimization. </font>
+    <font size="2">The Edge of Stability (EoS) is a phenomenon where the sharpness (largest eigenvalue) of the Hessian converges to $2/\eta$ during training with gradient descent (GD) with a step-size $\eta$. Despite (apparently) violating classical smoothness assumptions, EoS has been widely observed in deep learning, but its theoretical foundations remain incomplete. We provide an interpretation ofEoS through the lens of Directional Smoothness Mishkin et al. [2024]. This interpretation naturally extends to non-Euclidean norms, which we use to define generalized sharpness under an arbitrary norm. Our generalized sharpness measure includes previously studied vanilla GD and preconditioned GD as special cases, as well as methods for which EoS has not been studied, such as $\ell_{\infty}$-descent, Block CD, Spectral GD, and Muon without momentum. Through experiments on neural networks, we show that non-Euclidean GD with our generalized sharpness also exhibits progressive sharpening followed by oscillations around or above the threshold $2/\eta$. Practically, our framework provides a single, geometry-aware spectral measure that works across optimizers.    </font>
 </div>
 </div>
 
@@ -289,93 +292,133 @@
 <div class="pub-year-label">2025</div>
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <b class="pub-num">[17]</b>
+  <b class="pub-num">[18]</b>
   <span itemprop="author" class="article-metadata li-cite-author">
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://github.com/Niccolo-Ajroldi">Niccolò Ajroldi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="http://orvi.altervista.org/">Antonio Orvieto</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://omls.dmi.unibas.ch/en/persons/aurelien-lucchi/">Aurelien Lucchi</a></span>.
-    </span> 
-    <br>
-  <a class="specialeffects" href="/publication/25_ngnm/" itemprop="name">Enhancing Optimizer Stability: Momentum Adaptation of The NGN Step-size</a>.
- <br>
-   39th Annual Conference on Neural Information Processing Systems (NeurIPS 2025)<br>
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sites.google.com/view/foivos-alimisis">Foivos Alimisis</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>,  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>.
+    </span>
+  <a class="specialeffects" href="/publication/25_warmup/" itemprop="name">Why Do We Need Warm-up? A Theoretical Perspective</a>.
+  <br>
+   43rd International Conference on Machine Learning (ICML 2026)<br>
 
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/NGNM/ngnm.pdf" target="_blank" rel="noopener">
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Warmup/warmup.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/25_ngnm/cite.bib">
+        data-filename="/publication/25_warmup/cite.bib">
   Cite
 </button>
     
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2508.15071" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2510.03164" target="_blank" rel="noopener">
     arXiv
   </a>
-
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=9t2OtyQ9mf" target="_blank" rel="noopener">
-    NeurIPS
-  </a>
-
-   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/NGNM/ngnm.pdf" target="_blank" rel="noopener">
-    Poster
+  
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=a6fo32UnpU" target="_blank" rel="noopener">
+    ICML
   </a>
   
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample17" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample18" role="button" aria-expanded="false" aria-controls="collapseExample">
     Abstract
   </a>
   
-<div class="collapse" id="collapseExample17">
+<div class="collapse" id="collapseExample18">
   <div class="card card-body">
-    <font size="2"> Modern optimization algorithms that incorporate momentum and adaptive step-size offer improved performance in numerous challenging deep learning tasks. However, their effectiveness is often highly sensitive to the choice of hyperparameters, especially the step-size. Tuning these parameters is often difficult, resource-intensive, and time-consuming. Therefore, recent efforts have been directed toward enhancing the stability of optimizers across a wide range of hyperparameter choices [Schaipp et al., 2024]. In this paper, we introduce an algorithm that matches the performance of state-of-the-art optimizers while improving stability to the choice of the step-size hyperparameter through a novel adaptation of the NGN step-size method [Orvieto and Xiao, 2024]. Specifically, we propose a momentum-based version (NGN-M) that attains the standard convergence rate of O(1/\sqrt{K}) under less restrictive assumptions, without the need for interpolation condition or assumptions of bounded stochastic gradients or iterates, in contrast to previous approaches. Additionally, we empirically demonstrate that the combination of the NGN step-size with momentum results in enhanced robustness to the choice of the step-size hyperparameter while delivering performance that is comparable to or surpasses other state-of-the-art optimizers.     </font>
+    <font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the $(L_0, L_1)$-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.    </font>
 </div>
 </div>
 
    
 </p>
 
+</div>
+        </div>
+<div class="pub-topic-item">
+            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+  <b class="pub-num">[16]</b>
+  <span itemprop="author" class="article-metadata li-cite-author">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eneamc.github.io/">Enea Monzio Compagnoni</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="http://orvi.altervista.org/">Antonio Orvieto</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io/index.html">Eduard Gorbunov</a></span>.
+    </span>
+  <a class="specialeffects" href="/publication/25_l0l1sde/" itemprop="name">On the Interaction of Noise, Compression Role, and Adaptivity under $(L_0,L_1)$-Smoothness: An SDE-based Approach</a>.
+<br>
+   43rd International Conference on Machine Learning (ICML 2026)<br>
+
+    
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/SDE_L0L1/sde_l0l1.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/25_l0l1sde/cite.bib">
+  Cite
+</button>
+    
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2506.00181" target="_blank" rel="noopener">
+    arXiv
+  </a>
+
+   <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=Pmsc4yytlf" target="_blank" rel="noopener">
+    ICML
+  </a>
+  
+  
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample16" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Abstract
+  </a>
+  
+<div class="collapse" id="collapseExample16">
+  <div class="card card-body">
+    <font size="2"> Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under $(L_0,L_1)$-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that adaptive methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.     </font>
+</div>
+</div>
+
+   
+</p>
 
 </div>
         </div>
 <div class="pub-year-label">2024</div>
 <div class="pub-topic-item">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <b class="pub-num">[12]</b>
+  <b class="pub-num">[11]</b>
   <span itemprop="author" class="article-metadata li-cite-author">
-   <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://omls.dmi.unibas.ch/en/persons/enea-monzio-compagnoni/">Enea Monzio Compagnoni</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://tianlinliu.com/about">Tianlin Liu</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.mn.uio.no/math/english/people/aca/proske/">Frank Norbert Proske</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="http://orvi.altervista.org/">Antonio Orvieto</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>.
+   <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://github.com/Niccolo-Ajroldi">Niccolò Ajroldi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="http://orvi.altervista.org/">Antonio Orvieto</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>.
   </span>
-  <a class="specialeffects" href="/publication/24_sde_adam/" itemprop="name">Adaptive Methods through the Lens of SDEs: Theoretical Insights on the Role of Noise</a>.
- <br>
- 13th International Conference on Learning Representations (ICLR 2025)<br>
+  <a class="specialeffects" href="/publication/24_alphabeta/" itemprop="name">Loss Landscape Characterization of Neural Networks without Over-Parametrization</a>.
+  <br>
+  38th Annual Conference on Neural Information Processing Systems (NeurIPS 2024)<br>
 
     
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/SDE_ADAM/sde_adam.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Alphabeta/alphabeta.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/24_sde_adam/cite.bib">
+        data-filename="/publication/24_alphabeta/cite.bib">
   Cite
 </button>
     
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2411.15958" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2410.12455" target="_blank" rel="noopener">
     arXiv
   </a>
   
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=ww3CLRhF1v" target="_blank" rel="noopener">
-    ICLR
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/52f050499cf82fa8efb588e263f6f3a7-Abstract-Conference.html" target="_blank" rel="noopener">
+    NeurIPS
   </a>
   
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/Adam-SDE/adam_sde_poster.pdf" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/Alpha-beta/alpha-beta-poster.pdf" target="_blank" rel="noopener">
     Poster
   </a>
 
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample12" role="button" aria-expanded="false" aria-controls="collapseExample">
+
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample11" role="button" aria-expanded="false" aria-controls="collapseExample">
     Abstract
   </a>
   
-<div class="collapse" id="collapseExample12">
+<div class="collapse" id="collapseExample11">
   <div class="card card-body">
-    <font size="2"> Despite the vast empirical evidence supporting the efficacy of adaptive optimization methods in deep learning, their theoretical understanding is far from complete. This work introduces novel SDEs for commonly used adaptive optimizers: SignSGD, RMSprop(W), and Adam(W). These SDEs offer a quantitatively accurate description of these optimizers and help illuminate an intricate relationship between adaptivity, gradient noise, and curvature. Our novel analysis of SignSGD highlights a noteworthy and precise contrast to SGD in terms of convergence speed, stationary distribution, and robustness to heavy-tail noise. We extend this analysis to AdamW and RMSpropW, for which we observe that the role of noise is much more complex. Crucially, we support our theoretical analysis with experimental evidence by verifying our insights: this includes numerically integrating our SDEs using Euler-Maruyama discretization on various neural network architectures such as MLPs, CNNs, ResNets, and Transformers. Our SDEs accurately track the behavior of the respective optimizers, especially when compared to previous SDEs derived for Adam and RMSprop. We believe our approach can provide valuable insights into best training practices and novel scaling rules.
-      </font>
+    <font size="2"> Optimization methods play a crucial role in modern machine learning, powering the remarkable empirical achievements of deep learning models. These successes are even more remarkable given the complex non-convex nature of the loss landscape of these models. Yet, ensuring the convergence of optimization methods requires specific structural conditions on the objective function that are rarely satisfied in practice. One prominent example is the widely recognized Polyak-Łojasiewicz (PL) inequality, which has gained considerable attention in recent years. However, validating such assumptions for deep neural networks entails substantial and often impractical levels of over-parametrization. In order to address this limitation, we propose a novel class of functions that can characterize the loss landscape of modern deep models without requiring extensive over-parametrization and can also include saddle points. Crucially, we prove that gradient-based optimizers possess theoretical guarantees of convergence under this assumption. Finally, we validate the soundness of our new function class through both theoretical analysis and empirical experimentation across a diverse range of deep learning models.      </font>
 </div>
 </div>
 
