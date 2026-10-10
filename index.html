@@ -105,16 +105,16 @@
   justify-content: flex-end;
   box-sizing: border-box;
 }
-  .topnav::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    height: 3px;
-    width: var(--progress, 0%);
-    background: #8e4585;
-    transition: width .1s linear;
-  }
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--progress, 0%);
+  height: 3px;
+  background: #8e4585;
+  z-index: 1031;
+  transition: width .1s linear;
+}
   body {
     padding-top: 60px; /* keeps the hero below the fixed nav; match the nav's height */
   }
