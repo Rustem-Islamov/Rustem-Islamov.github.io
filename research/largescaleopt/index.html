@@ -77,6 +77,9 @@
   transform: none !important;
   background: #fff;
 }
+#navbar-main .container {
+  padding-bottom: 0 !important;
+}
 body {
   padding-top: 60px;
 }
@@ -236,9 +239,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="contrib-item">
-  <div class="card shadow-sm contrib-card">
-    <div class="card-body">
+    <div style="margin-bottom:0.3rem;">
+      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
+        <div class="card-body" style="padding:0.6rem 1rem;">
           <h4 class="exp-card-title">Adam-SGD Gap</h4>
           <p class="exp-card-desc">Prior work attributes Adam's advantage over SGD to various isolated factors. Rather than pinning the gap on a single cause [23], we show through controlled experiments that data modality, dataset, and model architecture all shape it in non-trivial ways. We further identify a consistent trend: a crossover batch size beyond which the relative advantage shifts from SGD to Adam, captured by a simple theoretical model of the gap.</p>
         </div>
