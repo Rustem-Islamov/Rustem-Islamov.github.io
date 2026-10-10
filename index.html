@@ -11,30 +11,31 @@
 <link rel="stylesheet" href="/style.css" />
 
 <style>
-#navbar-main.navbar {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 1030 !important;
-  transform: none !important;
-  background: #fff;
-}
-#navbar-main.navbar { padding-bottom: 0; }
-#navbar-main::after {
-  content: "";
-  position: absolute;
+/* sticky top navigation */
+.topnav {
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  height: 3px;
-  background: #8e4585;
-  transform-origin: left;
-  transform: scaleX(calc(var(--progress-num, 0) / 100));
+  z-index: 1030;
+  background: #fff;
+  opacity: 1;
+  margin: 0;
+  padding: 14px max(28px, calc((100% - 1120px) / 2 + 28px));
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px 30px;
+  flex-wrap: wrap;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 500;
 }
-body {
-  padding-top: 60px;
-}
+.topnav a { color: var(--fg); }
+.topnav a:hover { color: var(--primary); text-decoration: none; }
+
+/* scroll progress line, full viewport width, under the nav */
 .scroll-progress {
   position: fixed;
   top: 60px;
@@ -44,6 +45,10 @@ body {
   background: #8e4585;
   z-index: 1031;
   transition: width .1s linear;
+}
+
+body {
+  padding-top: 60px; /* match the nav's height */
 }
 </style>
 </head>
