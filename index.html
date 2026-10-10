@@ -89,6 +89,28 @@
   .news-toggle[aria-expanded="true"] .chevron {
     transform: rotate(180deg);
   }
+
+  /* sticky header with scroll progress line */
+#navbar-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+#navbar-main::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;          /* sits just under the header */
+  height: 3px;
+  width: var(--progress, 0%);
+  background: #8e4585;   /* same plum as the rest of the site */
+  transition: width .1s linear;
+}
+body {
+  padding-top: 64px;     /* keeps content from hiding under the header; adjust to your header height */
+}
 </style>
 </head>
 <body>
@@ -266,6 +288,22 @@
       label.textContent = expanded ? 'See all recent news' : 'Show less';
     });
   })();
+</script>
+<script>
+(function () {
+  var nav = document.getElementById('navbar-main');
+  var root = document.scrollingElement || document.documentElement;
+
+  function update() {
+    var max = root.scrollHeight - root.clientHeight;
+    var pct = max > 0 ? (root.scrollTop / max) * 100 : 0;
+    nav.style.setProperty('--progress', pct + '%');
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
 </script>
 </body>
 </html>
