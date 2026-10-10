@@ -38,7 +38,6 @@
 /* scroll progress line, full viewport width, under the nav */
 .scroll-progress {
   position: fixed;
-  top: 60px;
   left: 0;
   width: var(--progress, 0%);
   height: 3px;
@@ -232,7 +231,7 @@ body {
 <script>
 (function () {
   var bar = document.getElementById('scroll-progress');
-  var nav = document.getElementById('navbar-main');
+  var nav = document.querySelector('.topnav');
   var root = document.scrollingElement || document.documentElement;
 
   function place() {
