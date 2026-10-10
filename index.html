@@ -255,12 +255,14 @@
   (function () {
     var btn = document.getElementById('news-toggle');
     var more = document.getElementById('news-more');
+    var box = btn.closest('.news-box');
     var label = btn.querySelector('.news-toggle-label');
 
     btn.addEventListener('click', function () {
       var expanded = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!expanded));
       more.hidden = expanded;
+      box.classList.toggle('is-expanded', !expanded);
       label.textContent = expanded ? 'See all recent news' : 'Show less';
     });
   })();
