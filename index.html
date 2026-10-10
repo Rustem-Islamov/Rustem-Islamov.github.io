@@ -91,18 +91,20 @@
   }
 
   /* sticky top navigation with scroll progress line */
-  .topnav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1030;
-    background: #fff;
-    margin: 0;
-    padding: 14px 28px;
-    justify-content: flex-end;
-    box-sizing: border-box;
-  }
+ .topnav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1120px;
+  z-index: 1030;
+  background: #fff;
+  margin: 0;
+  padding: 14px 28px;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
   .topnav::after {
     content: "";
     position: absolute;
