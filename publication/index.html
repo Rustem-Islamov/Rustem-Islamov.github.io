@@ -366,6 +366,18 @@
   padding: 8px;
   box-sizing: border-box;
 }
+.pub-list-item .abstract-row {
+  align-items: flex-start;
+}
+.pub-list-item .abstract-row .abstract-figure {
+  align-self: stretch;
+  height: auto;
+}
+.pub-list-item .abstract-row .abstract-text,
+.pub-list-item .abstract-row .abstract-text * {
+  line-height: 1.6 !important;
+  font-size: .92rem;
+}
 @media (max-width: 760px) {
   .abstract-row { flex-direction: column; }
   .abstract-row .abstract-text { flex: none; width: 100%; }
