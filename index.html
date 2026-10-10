@@ -35,8 +35,14 @@
     padding: 0.6rem 0;
     border-bottom: 1px dashed rgba(142, 69, 133, 0.2);
   }
-  .news-box .news-list li:last-child {
+  .news-box .news-more li:last-child {
+  border-bottom: none;
+  }
+  .news-box .news-visible li:last-child {
     border-bottom: none;
+  }
+  .news-box.is-expanded .news-visible li:last-child {
+    border-bottom: 1px dashed rgba(142, 69, 133, 0.2);
   }
   .news-box .news-list[hidden] {
     display: none;
