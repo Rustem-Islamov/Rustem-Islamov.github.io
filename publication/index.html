@@ -324,7 +324,6 @@ body {
 }
 .scroll-progress {
   position: fixed;
-  top: 60px;
   left: 0;
   width: var(--progress, 0%);
   height: 3px;
@@ -3851,12 +3850,18 @@ document.addEventListener('DOMContentLoaded', function () {
 <script>
 (function () {
   var bar = document.getElementById('scroll-progress');
+  var nav = document.getElementById('navbar-main');
   var root = document.scrollingElement || document.documentElement;
+
+  function place() {
+    bar.style.top = nav.getBoundingClientRect().bottom + 'px';
+  }
 
   function update() {
     var max = root.scrollHeight - root.clientHeight;
     var pct = max > 0 ? (root.scrollTop / max) * 100 : 0;
     bar.style.setProperty('--progress', pct + '%');
+    place();
   }
 
   window.addEventListener('scroll', update, { passive: true });
