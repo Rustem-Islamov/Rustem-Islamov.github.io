@@ -201,6 +201,47 @@ html, body{
   display:none !important;
 }
 </style>
+<style>
+/* Abstract box beside figure */
+.abstract-row {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: .5rem;
+}
+.abstract-row .abstract-text {
+  flex: 0 0 60%;
+  margin: 0 !important;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+.abstract-row .abstract-figure {
+  flex: 0 0 38%;
+  max-width: 38%;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+.abstract-row .abstract-figure img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 760px) {
+  .abstract-row { flex-direction: column; }
+  .abstract-row .abstract-text { flex: none; width: 100%; }
+  .abstract-row .abstract-figure { flex: none; max-width: none; width: 100%; height: auto; min-height: 260px; }
+}
+</style>
 
 </head>
 
@@ -469,11 +510,21 @@ html, body{
     Abstract
   </a>
 
-<div class="collapse" id="collapseExample">
+<!-- <div class="collapse" id="collapseExample">
   <div class="card card-body">
     Federated Learning (FL) enables heterogeneous clients to collaboratively train a shared model without centralizing their raw data, offering an inherent level of privacy. However, gradients and model updates can still leak sensitive information, while malicious servers may mount adversarial attacks such as Byzantine manipulation. These vulnerabilities highlight the need to address differential privacy (DP) and Byzantine robustness within a unified framework. Existing approaches, however, often rely on unrealistic assumptions such as bounded gradients, require auxiliary server-side datasets, or fail to provide convergence guarantees. We address these limitations by proposing Byz-Clip21-SGD2M, a new algorithm that integrates robust aggregation with double momentum and carefully designed clipping. We prove high-probability convergence guarantees under standard $L$-smoothness and $\sigma$-sub-Gaussian gradient noise assumptions, thereby relaxing conditions that dominate prior work. Our analysis recovers state-of-the-art convergence rates in the absence of adversaries and improves utility guarantees under Byzantine and DP settings. Empirical evaluations on CNN and MLP models trained on MNIST further validate the effectiveness of our approach.
 </div>
 
+</div> -->
+<div class="collapse" id="collapseExample">
+  <div class="abstract-row">
+    <div class="card card-body abstract-text">
+      Federated Learning (FL) enables heterogeneous clients to collaboratively train a shared model without centralizing their raw data, offering an inherent level of privacy. However, gradients and model updates can still leak sensitive information, while malicious servers may mount adversarial attacks such as Byzantine manipulation. These vulnerabilities highlight the need to address differential privacy (DP) and Byzantine robustness within a unified framework. Existing approaches, however, often rely on unrealistic assumptions such as bounded gradients, require auxiliary server-side datasets, or fail to provide convergence guarantees. We address these limitations by proposing Byz-Clip21-SGD2M, a new algorithm that integrates robust aggregation with double momentum and carefully designed clipping. We prove high-probability convergence guarantees under standard $L$-smoothness and $\sigma$-sub-Gaussian gradient noise assumptions, thereby relaxing conditions that dominate prior work. Our analysis recovers state-of-the-art convergence rates in the absence of adversaries and improves utility guarantees under Byzantine and DP settings. Empirical evaluations on CNN and MLP models trained on MNIST further validate the effectiveness of our approach.
+    </div>
+    <div class="abstract-figure abstract-figure--narrow">
+      <img src="/files/publications/ByzDP/byz_dp.png" alt="Byz-Clip21-SGD2M method overview" />
+    </div>
+  </div>
 </div>
 
 
