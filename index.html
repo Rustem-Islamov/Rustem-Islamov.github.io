@@ -121,6 +121,7 @@
 </style>
 </head>
 <body>
+<div class="scroll-progress" id="scroll-progress"></div>
 <div class="wrap">
 
   <nav class="topnav">
@@ -298,13 +299,13 @@
 </script>
 <script>
 (function () {
-  var nav = document.querySelector('.topnav');
+  var bar = document.getElementById('scroll-progress');
   var root = document.scrollingElement || document.documentElement;
 
   function update() {
     var max = root.scrollHeight - root.clientHeight;
     var pct = max > 0 ? (root.scrollTop / max) * 100 : 0;
-    nav.style.setProperty('--progress', pct + '%');
+    bar.style.setProperty('--progress', pct + '%');
   }
 
   window.addEventListener('scroll', update, { passive: true });
