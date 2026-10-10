@@ -334,7 +334,7 @@
   @media (max-width:760px){ .pub-header{ flex-direction:column; gap:20px; } }
 </style>
 <style>
-/* Abstract box beside figure for paper [24] */
+/* Abstract box beside figure */
 .abstract-row {
   display: flex;
   gap: 16px;
@@ -366,6 +366,8 @@
   padding: 8px;
   box-sizing: border-box;
 }
+
+/* List-page overrides */
 .pub-list-item .abstract-row {
   align-items: flex-start;
 }
@@ -378,22 +380,18 @@
   line-height: 1.6 !important;
   font-size: .92rem;
 }
-.pub-list-item .abstract-row {
-  align-items: flex-start;
+
+/* Narrower figure, used only by paper [23] */
+.pub-list-item .abstract-row .abstract-figure--narrow {
+  flex: 0 0 38%;
+  max-width: 38%;
 }
-.pub-list-item .abstract-row .abstract-figure {
-  align-self: stretch;
-  height: auto;
-}
-.pub-list-item .abstract-row .abstract-text,
-.pub-list-item .abstract-row .abstract-text * {
-  line-height: 1.6 !important;
-  font-size: .92rem;
-}
+
 @media (max-width: 760px) {
   .abstract-row { flex-direction: column; }
   .abstract-row .abstract-text { flex: none; width: 100%; }
   .abstract-row .abstract-figure { width: 100%; height: auto; min-height: 260px; }
+  .pub-list-item .abstract-row .abstract-figure--narrow { flex: none; max-width: none; }
 }
 </style>
 </head>
