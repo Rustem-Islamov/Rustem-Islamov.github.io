@@ -345,6 +345,8 @@
   flex: 0 0 60%;
   margin: 0;
   box-sizing: border-box;
+  align-self: flex-start;
+  line-height: 1.6;
 }
 .abstract-row .abstract-figure {
   flex: 1 1 0;
@@ -367,8 +369,7 @@
 @media (max-width: 760px) {
   .abstract-row { flex-direction: column; }
   .abstract-row .abstract-text { flex: none; width: 100%; }
-  .abstract-row .abstract-figure { width: 100%; height: auto; }
-  .abstract-row .abstract-figure img { height: auto; }
+  .abstract-row .abstract-figure { width: 100%; height: auto; min-height: 260px; }
 }
 </style>
 </head>
