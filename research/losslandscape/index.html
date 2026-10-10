@@ -102,13 +102,14 @@ body {
   margin-top: .5rem;
 }
 .abstract-row .abstract-text {
-  flex: 0 0 60%;
+  flex: 0 0 70%;
   margin: 0 !important;
   box-sizing: border-box;
   line-height: 1.6;
 }
 .abstract-row .abstract-figure {
-  flex: 1 1 0;
+  flex: 0 0 27%;
+  max-width: 27%;
   position: relative;
   min-width: 0;
   min-height: 0;
@@ -146,7 +147,7 @@ body {
 @media (max-width: 760px) {
   .abstract-row { flex-direction: column; }
   .abstract-row .abstract-text { flex: none; width: 100%; }
-  .abstract-row .abstract-figure { width: 100%; height: auto; min-height: 260px; }
+  .abstract-row .abstract-figure { flex: none; max-width: none; width: 100%; height: auto; min-height: 260px; }
   .abstract-row .abstract-figure--narrow { flex: none; max-width: none; }
 }
 </style>
@@ -402,8 +403,13 @@ body {
   </a>
   
 <div class="collapse" id="collapseExample18">
-  <div class="card card-body">
-    <font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the $(L_0, L_1)$-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.    </font>
+  <div class="abstract-row">
+<div class="card card-body abstract-text">
+<font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the $(L_0, L_1)$-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.    </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/Warmup/warmup_diagram.png" alt="Placeholder figure for Why Do We Need Warm-up? A Theoretical Perspective" />
+</div>
 </div>
 </div>
 
@@ -446,8 +452,13 @@ body {
   </a>
   
 <div class="collapse" id="collapseExample16">
-  <div class="card card-body">
-    <font size="2"> Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under $(L_0,L_1)$-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that adaptive methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.     </font>
+  <div class="abstract-row">
+<div class="card card-body abstract-text">
+<font size="2"> Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under $(L_0,L_1)$-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that adaptive methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.     </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/SDE_L0L1/sde_l0l1_diagram.png" alt="Placeholder figure for On the Interaction of Noise, Compression Role, and Adaptivity under $(L_0,L_1)$-Smoothness: An SDE-based Approach" />
+</div>
 </div>
 </div>
 
@@ -496,8 +507,13 @@ body {
   </a>
   
 <div class="collapse" id="collapseExample11">
-  <div class="card card-body">
-    <font size="2"> Optimization methods play a crucial role in modern machine learning, powering the remarkable empirical achievements of deep learning models. These successes are even more remarkable given the complex non-convex nature of the loss landscape of these models. Yet, ensuring the convergence of optimization methods requires specific structural conditions on the objective function that are rarely satisfied in practice. One prominent example is the widely recognized Polyak-Łojasiewicz (PL) inequality, which has gained considerable attention in recent years. However, validating such assumptions for deep neural networks entails substantial and often impractical levels of over-parametrization. In order to address this limitation, we propose a novel class of functions that can characterize the loss landscape of modern deep models without requiring extensive over-parametrization and can also include saddle points. Crucially, we prove that gradient-based optimizers possess theoretical guarantees of convergence under this assumption. Finally, we validate the soundness of our new function class through both theoretical analysis and empirical experimentation across a diverse range of deep learning models.      </font>
+  <div class="abstract-row">
+<div class="card card-body abstract-text">
+<font size="2"> Optimization methods play a crucial role in modern machine learning, powering the remarkable empirical achievements of deep learning models. These successes are even more remarkable given the complex non-convex nature of the loss landscape of these models. Yet, ensuring the convergence of optimization methods requires specific structural conditions on the objective function that are rarely satisfied in practice. One prominent example is the widely recognized Polyak-Łojasiewicz (PL) inequality, which has gained considerable attention in recent years. However, validating such assumptions for deep neural networks entails substantial and often impractical levels of over-parametrization. In order to address this limitation, we propose a novel class of functions that can characterize the loss landscape of modern deep models without requiring extensive over-parametrization and can also include saddle points. Crucially, we prove that gradient-based optimizers possess theoretical guarantees of convergence under this assumption. Finally, we validate the soundness of our new function class through both theoretical analysis and empirical experimentation across a diverse range of deep learning models.      </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/Alphabeta/alphabeta_diagram.png" alt="Placeholder figure for Loss Landscape Characterization of Neural Networks without Over-Parametrization" />
+</div>
 </div>
 </div>
 

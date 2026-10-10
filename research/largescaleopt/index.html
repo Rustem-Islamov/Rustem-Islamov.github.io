@@ -102,13 +102,14 @@ body {
   margin-top: .5rem;
 }
 .abstract-row .abstract-text {
-  flex: 0 0 60%;
+  flex: 0 0 70%;
   margin: 0 !important;
   box-sizing: border-box;
   line-height: 1.6;
 }
 .abstract-row .abstract-figure {
-  flex: 1 1 0;
+  flex: 0 0 27%;
+  max-width: 27%;
   position: relative;
   min-width: 0;
   min-height: 0;
@@ -146,7 +147,7 @@ body {
 @media (max-width: 760px) {
   .abstract-row { flex-direction: column; }
   .abstract-row .abstract-text { flex: none; width: 100%; }
-  .abstract-row .abstract-figure { width: 100%; height: auto; min-height: 260px; }
+  .abstract-row .abstract-figure { flex: none; max-width: none; width: 100%; height: auto; min-height: 260px; }
   .abstract-row .abstract-figure--narrow { flex: none; max-width: none; }
 }
 </style>
@@ -455,8 +456,13 @@ body {
   </a>
   
 <div class="collapse" id="collapseExample17">
-  <div class="card card-body">
-    <font size="2"> Modern optimization algorithms that incorporate momentum and adaptive step-size offer improved performance in numerous challenging deep learning tasks. However, their effectiveness is often highly sensitive to the choice of hyperparameters, especially the step-size. Tuning these parameters is often difficult, resource-intensive, and time-consuming. Therefore, recent efforts have been directed toward enhancing the stability of optimizers across a wide range of hyperparameter choices [Schaipp et al., 2024]. In this paper, we introduce an algorithm that matches the performance of state-of-the-art optimizers while improving stability to the choice of the step-size hyperparameter through a novel adaptation of the NGN step-size method [Orvieto and Xiao, 2024]. Specifically, we propose a momentum-based version (NGN-M) that attains the standard convergence rate of O(1/\sqrt{K}) under less restrictive assumptions, without the need for interpolation condition or assumptions of bounded stochastic gradients or iterates, in contrast to previous approaches. Additionally, we empirically demonstrate that the combination of the NGN step-size with momentum results in enhanced robustness to the choice of the step-size hyperparameter while delivering performance that is comparable to or surpasses other state-of-the-art optimizers.     </font>
+  <div class="abstract-row">
+<div class="card card-body abstract-text">
+<font size="2"> Modern optimization algorithms that incorporate momentum and adaptive step-size offer improved performance in numerous challenging deep learning tasks. However, their effectiveness is often highly sensitive to the choice of hyperparameters, especially the step-size. Tuning these parameters is often difficult, resource-intensive, and time-consuming. Therefore, recent efforts have been directed toward enhancing the stability of optimizers across a wide range of hyperparameter choices [Schaipp et al., 2024]. In this paper, we introduce an algorithm that matches the performance of state-of-the-art optimizers while improving stability to the choice of the step-size hyperparameter through a novel adaptation of the NGN step-size method [Orvieto and Xiao, 2024]. Specifically, we propose a momentum-based version (NGN-M) that attains the standard convergence rate of O(1/\sqrt{K}) under less restrictive assumptions, without the need for interpolation condition or assumptions of bounded stochastic gradients or iterates, in contrast to previous approaches. Additionally, we empirically demonstrate that the combination of the NGN step-size with momentum results in enhanced robustness to the choice of the step-size hyperparameter while delivering performance that is comparable to or surpasses other state-of-the-art optimizers.     </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/NGNM/ngnm_diagram.png" alt="Placeholder figure for Enhancing Optimizer Stability: Momentum Adaptation of The NGN Step-size" />
+</div>
 </div>
 </div>
 
@@ -504,9 +510,14 @@ body {
   </a>
   
 <div class="collapse" id="collapseExample12">
-  <div class="card card-body">
-    <font size="2"> Despite the vast empirical evidence supporting the efficacy of adaptive optimization methods in deep learning, their theoretical understanding is far from complete. This work introduces novel SDEs for commonly used adaptive optimizers: SignSGD, RMSprop(W), and Adam(W). These SDEs offer a quantitatively accurate description of these optimizers and help illuminate an intricate relationship between adaptivity, gradient noise, and curvature. Our novel analysis of SignSGD highlights a noteworthy and precise contrast to SGD in terms of convergence speed, stationary distribution, and robustness to heavy-tail noise. We extend this analysis to AdamW and RMSpropW, for which we observe that the role of noise is much more complex. Crucially, we support our theoretical analysis with experimental evidence by verifying our insights: this includes numerically integrating our SDEs using Euler-Maruyama discretization on various neural network architectures such as MLPs, CNNs, ResNets, and Transformers. Our SDEs accurately track the behavior of the respective optimizers, especially when compared to previous SDEs derived for Adam and RMSprop. We believe our approach can provide valuable insights into best training practices and novel scaling rules.
+  <div class="abstract-row">
+<div class="card card-body abstract-text">
+<font size="2"> Despite the vast empirical evidence supporting the efficacy of adaptive optimization methods in deep learning, their theoretical understanding is far from complete. This work introduces novel SDEs for commonly used adaptive optimizers: SignSGD, RMSprop(W), and Adam(W). These SDEs offer a quantitatively accurate description of these optimizers and help illuminate an intricate relationship between adaptivity, gradient noise, and curvature. Our novel analysis of SignSGD highlights a noteworthy and precise contrast to SGD in terms of convergence speed, stationary distribution, and robustness to heavy-tail noise. We extend this analysis to AdamW and RMSpropW, for which we observe that the role of noise is much more complex. Crucially, we support our theoretical analysis with experimental evidence by verifying our insights: this includes numerically integrating our SDEs using Euler-Maruyama discretization on various neural network architectures such as MLPs, CNNs, ResNets, and Transformers. Our SDEs accurately track the behavior of the respective optimizers, especially when compared to previous SDEs derived for Adam and RMSprop. We believe our approach can provide valuable insights into best training practices and novel scaling rules.
       </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/SDE_ADAM/sde_adam_diagram.png" alt="Placeholder figure for Adaptive Methods through the Lens of SDEs: Theoretical Insights on the Role of Noise" />
+</div>
 </div>
 </div>
 
