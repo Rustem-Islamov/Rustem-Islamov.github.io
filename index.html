@@ -11,99 +11,29 @@
 <link rel="stylesheet" href="/style.css" />
 
 <style>
-  /* Recent news box */
-  .news-box {
-    position: relative;
-    margin: 0 0 2rem;
-    padding: 1.25rem 1.5rem 1rem;
-    border-radius: 16px;
-    border: 1px solid rgba(142, 69, 133, 0.22);
-    background: linear-gradient(145deg, #fbf7fb 0%, #f3ecf6 100%);
-    box-shadow: 0 10px 30px -12px rgba(142, 69, 133, 0.25),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  }
-  .news-box h2 {
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-  }
-  .news-box .news-list {
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
-  }
-  .news-box .news-list li {
-    padding: 0.6rem 0;
-    border-bottom: 1px dashed rgba(142, 69, 133, 0.2);
-  }
-  .news-box .news-more li:last-child {
-    border-bottom: none;
-  }
-  .news-box .news-visible li:last-child {
-    border-bottom: none;
-  }
-  .news-box.is-expanded .news-visible li:last-child {
-    border-bottom: 1px dashed rgba(142, 69, 133, 0.2);
-  }
-  .news-box .news-list[hidden] {
-    display: none;
-  }
-  .news-box .date {
-    display: block;
-    font-family: 'IBM Plex Mono', ui-monospace, monospace;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #8e4585;
-    margin-bottom: 0.15rem;
-  }
-  .news-toggle {
-    margin-top: 0.75rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.45rem 0.95rem;
-    font-family: 'IBM Plex Mono', ui-monospace, monospace;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #8e4585;
-    background: #ffffff;
-    border: 1px solid rgba(142, 69, 133, 0.35);
-    border-radius: 999px;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
-  }
-  .news-toggle:hover {
-    background: #8e4585;
-    color: #ffffff;
-  }
-  .news-toggle:active {
-    transform: scale(0.98);
-  }
-  .news-toggle:focus-visible {
-    outline: 2px solid #8e4585;
-    outline-offset: 2px;
-  }
-  .news-toggle .chevron {
-    display: inline-block;
-    transition: transform 0.25s ease;
-  }
-  .news-toggle[aria-expanded="true"] .chevron {
-    transform: rotate(180deg);
-  }
-
-  /* sticky top navigation with scroll progress line */
- .topnav {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 1120px;
-  z-index: 1030;
+#navbar-main.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1030 !important;
+  transform: none !important;
   background: #fff;
-  margin: 0;
-  padding: 14px 28px;
-  justify-content: flex-end;
-  box-sizing: border-box;
+}
+#navbar-main.navbar { padding-bottom: 0; }
+#navbar-main::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: #8e4585;
+  transform-origin: left;
+  transform: scaleX(calc(var(--progress-num, 0) / 100));
+}
+body {
+  padding-top: 60px;
 }
 .scroll-progress {
   position: fixed;
@@ -115,9 +45,6 @@
   z-index: 1031;
   transition: width .1s linear;
 }
-  body {
-    padding-top: 60px; /* keeps the hero below the fixed nav; match the nav's height */
-  }
 </style>
 </head>
 <body>
