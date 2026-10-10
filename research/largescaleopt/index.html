@@ -77,6 +77,9 @@
   transform: none !important;
   background: #fff;
 }
+#navbar-main .container {
+  padding-bottom: 0 !important;
+}
 body {
   padding-top: 60px;
 }
@@ -88,6 +91,63 @@ body {
   background: #8e4585;
   z-index: 1031;
   transition: width .1s linear;
+}
+</style>
+<style>
+/* Abstract box beside figure */
+.abstract-row {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: .5rem;
+}
+.abstract-row .abstract-text {
+  flex: 0 0 60%;
+  margin: 0 !important;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+.abstract-row .abstract-figure {
+  flex: 1 1 0;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+.abstract-row .abstract-figure img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* List-page overrides */
+.pub-list-item .abstract-row .abstract-text,
+.pub-list-item .abstract-row .abstract-text * {
+  line-height: 1.6 !important;
+  font-size: .92rem;
+}
+
+/* Wider text box and narrower figure, used only by paper [23] */
+.pub-list-item .abstract-row-23 .abstract-text {
+  flex: 0 0 70%;
+}
+.pub-list-item .abstract-row-23 .abstract-figure--narrow {
+  flex: 0 0 27%;
+  max-width: 27%;
+}
+
+@media (max-width: 760px) {
+  .abstract-row { flex-direction: column; }
+  .abstract-row .abstract-text { flex: none; width: 100%; }
+  .abstract-row .abstract-figure { width: 100%; height: auto; min-height: 260px; }
+  .abstract-row .abstract-figure--narrow { flex: none; max-width: none; }
 }
 </style>
 </head>
@@ -236,9 +296,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="contrib-item">
-  <div class="card shadow-sm contrib-card">
-    <div class="card-body">
+    <div style="margin-bottom:0.3rem;">
+      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
+        <div class="card-body" style="padding:0.6rem 1rem;">
           <h4 class="exp-card-title">Adam-SGD Gap</h4>
           <p class="exp-card-desc">Prior work attributes Adam's advantage over SGD to various isolated factors. Rather than pinning the gap on a single cause [23], we show through controlled experiments that data modality, dataset, and model architecture all shape it in non-trivial ways. We further identify a consistent trend: a crossover batch size beyond which the relative advantage shifts from SGD to Adam, captured by a simple theoretical model of the gap.</p>
         </div>
@@ -295,8 +355,11 @@ body {
   </a>
   
 <div class="collapse" id="collapseExample23">
-  <div class="card card-body">
-    <font size="2">Prior work has identified several factors that can contribute to the performance gap between Adam and SGD, spanning data aspects, architecture design, and optimization properties. Yet these explanations are often studied in isolation, leaving their relative importance unclear. In this work, we revisit these hypotheses through a controlled empirical study across vision, language, genomics, and graph tasks, spanning modern and classical architectures, and carefully designed training setups. Our results suggest that no single factor consistently explains the Adam--SGD gap. For instance, the Adam advantage can (1) persist under a uniform vocabulary distribution yet nearly disappear under a heavy-tailed one; (2) reverse in favor of SGD in softmax-attention models; and (3) become larger under soft architectural modifications, e.g., when ReLU is replaced by a GeLU nonlinearity. This suggests that the gap arises from nontrivial data and architecture interactions, rather than from a single common factor. Yet, we observe a pattern across our settings: a crossover batch size at which the relative advantage shifts from SGD to Adam as the batch size scales. These empirical results are captured by our theoretical gap model, which predicts this batch-size-dependent crossover. Our perspective helps reconcile several existing hypotheses while offering practical insights across domains. </font>
+  <div class="abstract-row abstract-row-23">
+<div class="card card-body abstract-text">
+<font size="2">Prior work has identified several factors that can contribute to the performance gap between Adam and SGD, spanning data aspects, architecture design, and optimization properties. Yet these explanations are often studied in isolation, leaving their relative importance unclear. In this work, we revisit these hypotheses through a controlled empirical study across vision, language, genomics, and graph tasks, spanning modern and classical architectures, and carefully designed training setups. Our results suggest that no single factor consistently explains the Adam--SGD gap. For instance, the Adam advantage can (1) persist under a uniform vocabulary distribution yet nearly disappear under a heavy-tailed one; (2) reverse in favor of SGD in softmax-attention models; and (3) become larger under soft architectural modifications, e.g., when ReLU is replaced by a GeLU nonlinearity. This suggests that the gap arises from nontrivial data and architecture interactions, rather than from a single common factor. Yet, we observe a pattern across our settings: a crossover batch size at which the relative advantage shifts from SGD to Adam as the batch size scales. These empirical results are captured by our theoretical gap model, which predicts this batch-size-dependent crossover. Our perspective helps reconcile several existing hypotheses while offering practical insights across domains. </font>
+</div>
+<div class="abstract-figure abstract-figure--narrow"> <img src="/files/publications/AdamSGD/adam_sgd_diagram.png" alt="Diagram of the Adam-SGD gap explanations" /> </div>
 </div>
 </div>
 
@@ -341,8 +404,11 @@ body {
   </a>
   
 <div class="collapse" id="collapseExample21">
-  <div class="card card-body">
-    <font size="2">We study the role of batch size in stochastic conditional gradient methods under a μ-Kurdyka-Łojasiewicz (μ-KL) condition. Focusing on momentum-based stochastic conditional gradient algorithms (e.g., Scion), we derive a new analysis that explicitly captures the interaction between stepsize, batch size, and stochastic noise. Our study reveals a regime-dependent behavior: increasing the batch size initially improves optimization accuracy but, beyond a critical threshold, the benefits saturate and can eventually degrade performance under a fixed token budget. Notably, the theory predicts the magnitude of the optimal stepsize and aligns well with empirical practices observed in large-scale training. Leveraging these insights, we derive principled guidelines for selecting the batch size and stepsize, and propose an adaptive strategy that increases batch size and sequence length during training while preserving convergence guarantees. Experiments on NanoGPT are consistent with the theoretical predictions and illustrate the emergence of the predicted scaling regimes. Overall, our results provide a theoretical framework for understanding batch size scaling in stochastic conditional gradient methods and offer guidance for designing efficient training schedules in large-scale optimization. </font>
+  <div class="abstract-row abstract-row-23">
+<div class="card card-body abstract-text">
+<font size="2">We study the role of batch size in stochastic conditional gradient methods under a μ-Kurdyka-Łojasiewicz (μ-KL) condition. Focusing on momentum-based stochastic conditional gradient algorithms (e.g., Scion), we derive a new analysis that explicitly captures the interaction between stepsize, batch size, and stochastic noise. Our study reveals a regime-dependent behavior: increasing the batch size initially improves optimization accuracy but, beyond a critical threshold, the benefits saturate and can eventually degrade performance under a fixed token budget. Notably, the theory predicts the magnitude of the optimal stepsize and aligns well with empirical practices observed in large-scale training. Leveraging these insights, we derive principled guidelines for selecting the batch size and stepsize, and propose an adaptive strategy that increases batch size and sequence length during training while preserving convergence guarantees. Experiments on NanoGPT are consistent with the theoretical predictions and illustrate the emergence of the predicted scaling regimes. Overall, our results provide a theoretical framework for understanding batch size scaling in stochastic conditional gradient methods and offer guidance for designing efficient training schedules in large-scale optimization. </font>
+</div>
+<div class="abstract-figure abstract-figure--narrow"> <img src="/files/publications/BST/bst_diagram.png" alt="Batch size scaling regimes for stochastic conditional gradient methods" /> </div>
 </div>
 </div>
 
