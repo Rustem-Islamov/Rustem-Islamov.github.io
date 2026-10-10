@@ -36,7 +36,7 @@
     border-bottom: 1px dashed rgba(142, 69, 133, 0.2);
   }
   .news-box .news-more li:last-child {
-  border-bottom: none;
+    border-bottom: none;
   }
   .news-box .news-visible li:last-child {
     border-bottom: none;
@@ -90,39 +90,32 @@
     transform: rotate(180deg);
   }
 
-  /* sticky header with scroll progress line */
-#navbar-main {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1030;
-}
-#navbar-main::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;          /* sits just under the header */
-  height: 3px;
-  width: var(--progress, 0%);
-  background: #8e4585;   /* same plum as the rest of the site */
-  transition: width .1s linear;
-}
-body {
-  padding-top: 16px;     /* keeps content from hiding under the header; adjust to your header height */
-}
-/* force the navbar to stay at the top while scrolling */
-#navbar-main.navbar {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 1030 !important;
-  transform: none !important;
-}
-html, body {
-  overflow-x: hidden;
-}
+  /* sticky top navigation with scroll progress line */
+  .topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    background: #fff;
+    margin: 0;
+    padding: 14px 28px;
+    justify-content: flex-end;
+    box-sizing: border-box;
+  }
+  .topnav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 3px;
+    width: var(--progress, 0%);
+    background: #8e4585;
+    transition: width .1s linear;
+  }
+  body {
+    padding-top: 60px; /* keeps the hero below the fixed nav; match the nav's height */
+  }
 </style>
 </head>
 <body>
