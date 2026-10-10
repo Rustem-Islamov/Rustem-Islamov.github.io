@@ -337,21 +337,21 @@
 /* Abstract box beside figure */
 .abstract-row {
   display: flex;
-  gap: 16px;
   align-items: stretch;
+  gap: 16px;
   margin-top: .5rem;
 }
 .abstract-row .abstract-text {
   flex: 0 0 60%;
-  margin: 0;
+  margin: 0 !important;
   box-sizing: border-box;
-  align-self: stretch;
   line-height: 1.6;
 }
 .abstract-row .abstract-figure {
   flex: 1 1 0;
   position: relative;
   min-width: 0;
+  min-height: 0;
   border: 1px solid #e5e5e5;
   border-radius: 8px;
   background: #fff;
@@ -368,28 +368,13 @@
 }
 
 /* List-page overrides */
-.pub-list-item .abstract-row {
-  align-items: stretch;
-}
-.pub-list-item .abstract-row .abstract-text {
-  align-self: stretch;
-}
-.pub-list-item .abstract-row .abstract-figure {
-  align-self: stretch;
-  height: auto;
-}
 .pub-list-item .abstract-row .abstract-text,
 .pub-list-item .abstract-row .abstract-text * {
   line-height: 1.6 !important;
   font-size: .92rem;
 }
 
-/* Narrower figure, used only by paper [23] */
-.pub-list-item .abstract-row .abstract-figure--narrow {
-  flex: 0 0 38%;
-  max-width: 38%;
-}
-
+/* Wider text box and narrower figure, used only by paper [23] */
 .pub-list-item .abstract-row-23 .abstract-text {
   flex: 0 0 70%;
 }
@@ -402,7 +387,7 @@
   .abstract-row { flex-direction: column; }
   .abstract-row .abstract-text { flex: none; width: 100%; }
   .abstract-row .abstract-figure { width: 100%; height: auto; min-height: 260px; }
-  .pub-list-item .abstract-row .abstract-figure--narrow { flex: none; max-width: none; }
+  .abstract-row .abstract-figure--narrow { flex: none; max-width: none; }
 }
 </style>
 </head>
