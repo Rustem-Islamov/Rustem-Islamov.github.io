@@ -227,6 +227,47 @@ body {
   transition: width .1s linear;
 }
 </style>
+<style>
+/* Abstract box beside figure */
+.abstract-row {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: .5rem;
+}
+.abstract-row .abstract-text {
+  flex: 0 0 70%;
+  margin: 0 !important;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+.abstract-row .abstract-figure {
+  flex: 0 0 27%;
+  max-width: 27%;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+.abstract-row .abstract-figure img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 760px) {
+  .abstract-row { flex-direction: column; }
+  .abstract-row .abstract-text { flex: none; width: 100%; }
+  .abstract-row .abstract-figure { flex: none; max-width: none; width: 100%; height: auto; min-height: 260px; }
+}
+</style>
 </head>
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -497,9 +538,15 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    <font size="2">Federated learning faces severe communication bottlenecks due to the high dimensionality of model updates. Communication compression with contractive compressors (e.g., Top-K) is often preferable in practice but can degrade performance without proper handling. Error feedback (EF) mitigates such issues but has been largely restricted for smooth, unconstrained problems, limiting its real-world applicability where non-smooth objectives and safety constraints are critical. We advance our understanding of EF in the canonical non-smooth convex setting by establishing new lower complexity bounds for first-order algorithms with contractive compression. Next, we propose Safe-EF, a novel algorithm that matches our lower bound (up to a constant) while enforcing safety constraints essential for practical applications. Extending our approach to the stochastic setting, we bridge the gap between theory and practical implementation. Extensive experiments in a reinforcement learning setup, simulating distributed humanoid robot training, validate the effectiveness of Safe-EF in ensuring safety and reducing communication complexity.
-  </font></div>
+  <div class="abstract-row">
+<div class="card card-body abstract-text">
+<font size="2">Federated learning faces severe communication bottlenecks due to the high dimensionality of model updates. Communication compression with contractive compressors (e.g., Top-K) is often preferable in practice but can degrade performance without proper handling. Error feedback (EF) mitigates such issues but has been largely restricted for smooth, unconstrained problems, limiting its real-world applicability where non-smooth objectives and safety constraints are critical. We advance our understanding of EF in the canonical non-smooth convex setting by establishing new lower complexity bounds for first-order algorithms with contractive compression. Next, we propose Safe-EF, a novel algorithm that matches our lower bound (up to a constant) while enforcing safety constraints essential for practical applications. Extending our approach to the stochastic setting, we bridge the gap between theory and practical implementation. Extensive experiments in a reinforcement learning setup, simulating distributed humanoid robot training, validate the effectiveness of Safe-EF in ensuring safety and reducing communication complexity.
+  </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/SafeEF/safe_ef_diagram.png" alt="Placeholder figure for Safe-EF: Error Feedback for Nonsmooth Constrained Optimization" />
+</div>
+</div>
 </div>
 
 </div>

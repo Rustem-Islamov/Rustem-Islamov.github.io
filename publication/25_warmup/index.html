@@ -228,6 +228,47 @@ body {
   transition: width .1s linear;
 }
 </style>
+<style>
+/* Abstract box beside figure */
+.abstract-row {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: .5rem;
+}
+.abstract-row .abstract-text {
+  flex: 0 0 70%;
+  margin: 0 !important;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+.abstract-row .abstract-figure {
+  flex: 0 0 27%;
+  max-width: 27%;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+.abstract-row .abstract-figure img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 760px) {
+  .abstract-row { flex-direction: column; }
+  .abstract-row .abstract-text { flex: none; width: 100%; }
+  .abstract-row .abstract-figure { flex: none; max-width: none; width: 100%; height: auto; min-height: 260px; }
+}
+</style>
 </head>
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -490,9 +531,15 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    <font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the (L0, L1)-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.
-  </font></div>
+  <div class="abstract-row">
+<div class="card card-body abstract-text">
+<font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the (L0, L1)-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.
+  </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/Warmup/warmup_diagram.png" alt="Placeholder figure for Why Do We Need Warm-up? A Theoretical Perspective" />
+</div>
+</div>
 </div>
 
 </div>

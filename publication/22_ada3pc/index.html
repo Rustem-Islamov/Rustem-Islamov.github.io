@@ -228,6 +228,47 @@ body {
   transition: width .1s linear;
 }
 </style>
+<style>
+/* Abstract box beside figure */
+.abstract-row {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: .5rem;
+}
+.abstract-row .abstract-text {
+  flex: 0 0 70%;
+  margin: 0 !important;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+.abstract-row .abstract-figure {
+  flex: 0 0 27%;
+  max-width: 27%;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+.abstract-row .abstract-figure img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 760px) {
+  .abstract-row { flex-direction: column; }
+  .abstract-row .abstract-text { flex: none; width: 100%; }
+  .abstract-row .abstract-figure { flex: none; max-width: none; width: 100%; height: auto; min-height: 260px; }
+}
+</style>
 </head>
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -486,9 +527,14 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    <font size="2">We propose Adaptive Compressed Gradient Descent (AdaCGD) - a novel optimization algorithm for communication-efficient training of supervised machine learning models with adaptive compression level. Our approach is inspired by the recently proposed three point compressor (3PC) framework of Richtarik et al. (2022), which includes error feedback (EF21), lazily aggregated gradient (LAG), and their combination as special cases, and offers the current state-of-the-art rates for these methods under weak assumptions. While the above mechanisms offer a fixed compression level, or adapt between two extremes only, our proposal is to perform a much finer adaptation. In particular, we allow the user to choose any number of arbitrarily chosen contractive compression mechanisms, such as Top-K sparsification with a user-defined selection of sparsification levels K, or quantization with a user-defined selection of quantization levels, or their combination. AdaCGD chooses the appropriate compressor and compression level adaptively during the optimization process. Besides i) proposing a theoretically-grounded multi-adaptive communication compression mechanism, we further ii) extend the 3PC framework to bidirectional compression, i.e., we allow the server to compress as well, and iii) provide sharp convergence bounds in the strongly convex, convex and nonconvex settings. The convex regime results are new even for several key special cases of our general mechanism, including 3PC and EF21. In all regimes, our rates are superior compared to all existing adaptive compression methods.
-</font>  
+  <div class="abstract-row">
+<div class="card card-body abstract-text">
+<font size="2">We propose Adaptive Compressed Gradient Descent (AdaCGD) - a novel optimization algorithm for communication-efficient training of supervised machine learning models with adaptive compression level. Our approach is inspired by the recently proposed three point compressor (3PC) framework of Richtarik et al. (2022), which includes error feedback (EF21), lazily aggregated gradient (LAG), and their combination as special cases, and offers the current state-of-the-art rates for these methods under weak assumptions. While the above mechanisms offer a fixed compression level, or adapt between two extremes only, our proposal is to perform a much finer adaptation. In particular, we allow the user to choose any number of arbitrarily chosen contractive compression mechanisms, such as Top-K sparsification with a user-defined selection of sparsification levels K, or quantization with a user-defined selection of quantization levels, or their combination. AdaCGD chooses the appropriate compressor and compression level adaptively during the optimization process. Besides i) proposing a theoretically-grounded multi-adaptive communication compression mechanism, we further ii) extend the 3PC framework to bidirectional compression, i.e., we allow the server to compress as well, and iii) provide sharp convergence bounds in the strongly convex, convex and nonconvex settings. The convex regime results are new even for several key special cases of our general mechanism, including 3PC and EF21. In all regimes, our rates are superior compared to all existing adaptive compression methods.
+</font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/Ada3PC/ada3pc_diagram.png" alt="Placeholder figure for Adaptive Compression for Communication-Efficient Distributed Training" />
+</div>
 </div>
 </div>
 

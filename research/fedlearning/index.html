@@ -103,13 +103,14 @@ body {
   margin-top: .5rem;
 }
 .abstract-row .abstract-text {
-  flex: 0 0 60%;
+  flex: 0 0 70%;
   margin: 0 !important;
   box-sizing: border-box;
   line-height: 1.6;
 }
 .abstract-row .abstract-figure {
-  flex: 1 1 0;
+  flex: 0 0 27%;
+  max-width: 27%;
   position: relative;
   min-width: 0;
   min-height: 0;
@@ -147,7 +148,7 @@ body {
 @media (max-width: 760px) {
   .abstract-row { flex-direction: column; }
   .abstract-row .abstract-text { flex: none; width: 100%; }
-  .abstract-row .abstract-figure { width: 100%; height: auto; min-height: 260px; }
+  .abstract-row .abstract-figure { flex: none; max-width: none; width: 100%; height: auto; min-height: 260px; }
   .abstract-row .abstract-figure--narrow { flex: none; max-width: none; }
 }
 </style>
@@ -465,8 +466,13 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample15">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2"> Federated learning faces severe communication bottlenecks due to the high dimensionality of model updates. Communication compression with contractive compressors (e.g., Top-K) is often preferable in practice but can degrade performance without proper handling. Error feedback (EF) mitigates such issues but has been largely restricted for smooth, unconstrained problems, limiting its real-world applicability where non-smooth objectives and safety constraints are critical. We advance our understanding of EF in the canonical non-smooth convex setting by establishing new lower complexity bounds for first-order algorithms with contractive compression. Next, we propose Safe-EF, a novel algorithm that matches our lower bound (up to a constant) while enforcing safety constraints essential for practical applications. Extending our approach to the stochastic setting, we bridge the gap between theory and practical implementation. Extensive experiments in a reinforcement learning setup, simulating distributed humanoid robot training, validate the effectiveness of Safe-EF in ensuring safety and reducing communication complexity.      </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/SafeEF/safe_ef_diagram.png" alt="Placeholder figure for Safe-EF: Error Feedback for Nonsmooth Constrained Optimization" />
+</div>
 </div>
 </div>
 </p>
@@ -501,8 +507,13 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample14">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2"> Distributed methods are essential for handling machine learning pipelines comprising large-scale models and datasets. However, their benefits often come at the cost of increased communication overhead between the central server and agents, which can become the main bottleneck, making training costly or even unfeasible in such systems. Compression methods such as quantization and sparsification can alleviate this issue. Still, their robustness to large and heavy-tailed gradient noise, a phenomenon sometimes observed in language modeling, remains poorly understood. This work addresses this gap by analyzing Distributed Compressed SGD (DCSGD) and Distributed SignSGD (DSignSGD) using stochastic differential equations (SDEs). Our results show that DCSGD with unbiased compression is more vulnerable to noise in stochastic gradients, while DSignSGD remains robust, even under large and heavy-tailed noise. Additionally, we propose new scaling rules for hyperparameter tuning to mitigate performance degradation due to compression. These findings are empirically validated across multiple deep learning architectures and datasets, providing practical recommendations for distributed optimization.      </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/SignSGD/signsgd_diagram.png" alt="Placeholder figure for Unbiased and Sign Compression in Distributed Learning: Comparing Noise Resilience via SDEs" />
+</div>
 </div>
 </div>
 </p>
@@ -530,8 +541,13 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample13">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2"> Strong Differential Privacy (DP) and Optimization guarantees are two desirable properties for a method in Federated Learning (FL). However, existing algorithms do not achieve both properties at once: they either have optimal DP guarantees but rely on restrictive assumptions such as bounded gradients/bounded data heterogeneity, or they ensure strong optimization performance but lack DP guarantees. To address this gap in the literature, we propose and analyze a new method called Clip21-SGD2M based on a novel combination of clipping, heavy-ball momentum, and Error Feedback. In particular, for non-convex smooth distributed problems with clients having arbitrarily heterogeneous data, we prove that Clip21-SGD2M has optimal convergence rate and also near optimal (local-)DP neighborhood. Our numerical experiments on non-convex logistic regression and training of neural networks highlight the superiority of Clip21-SGD2M over baselines in terms of the optimization performance for a given DP-budget.      </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/Clip21M/clip21m_diagram.png" alt="Placeholder figure for Double Momentum and Error Feedback for Clipping with Fast Rates and Differential Privacy" />
+</div>
 </div>
 </div>
 </p>
@@ -567,9 +583,14 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample10">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2"> Communication efficiency has garnered significant attention as it is considered the main bottleneck for large-scale decentralized Machine Learning applications in distributed and federated settings. In this regime, clients are restricted to transmitting small amounts of quantized information to their neighbors over a communication graph. Numerous endeavors have been made to address this challenging problem by developing algorithms with compressed communication for decentralized non-convex optimization problems. Despite considerable efforts, the current results suffer from various issues such as non-scalability with the number of clients, requirements for large batches, or bounded gradient assumption. In this paper, we introduce MoTEF, a novel approach that integrates communication compression with Momentum Tracking and Error Feedback. Our analysis demonstrates that MoTEF achieves most of the desired properties, and significantly outperforms existing methods under arbitrary data heterogeneity. We provide numerical experiments to validate our theoretical findings and confirm the practical superiority of MoTEF.
       </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/Motef/motef_diagram.png" alt="Placeholder figure for Towards Faster Decentralized Stochastic Optimization with Communication Compression" />
+</div>
 </div>
 </div>
 </p>
@@ -605,9 +626,14 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample9">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2"> Modern distributed training relies heavily on communication compression to reduce the communication overhead. In this work, we study algorithms employing a popular class of contractive compressors in order to reduce communication overhead. However, the naive implementation often leads to unstable convergence or even exponential divergence due to the compression bias. Error Compensation (EC) is an extremely popular mechanism to mitigate the aforementioned issues during the training of models enhanced by contractive compression operators. Compared to the effectiveness of EC in the data homogeneous regime, the understanding of the practicality and theoretical foundations of EC in the data heterogeneous regime is limited. Existing convergence analyses typically rely on strong assumptions such as bounded gradients, bounded data heterogeneity, or large batch accesses, which are often infeasible in modern machine learning applications. We resolve the majority of current issues by proposing EControl, a novel mechanism that can regulate error compensation by controlling the strength of the feedback signal. We prove fast convergence for EControl in standard strongly convex, general convex, and nonconvex settings without any additional assumptions on the problem or data heterogeneity. We conduct extensive numerical evaluations to illustrate the efficacy of our method and support our theoretical findings.
       </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/EControl/econtrol_diagram.png" alt="Placeholder figure for EControl: Fast Distributed Optimization with Compression and Error Control" />
+</div>
 </div>
 </div>
 </p>
@@ -642,9 +668,14 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample8">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2"> We analyze asynchronous-type algorithms for distributed SGD in the heterogeneous setting, where each worker has its own computation and communication speeds, as well as data distribution. In these algorithms, workers compute possibly stale and stochastic gradients associated with their local data at some iteration back in history and then return those gradients to the server without synchronizing with other workers. We present a unified convergence theory for non-convex smooth functions in the heterogeneous regime. The proposed analysis provides convergence for pure asynchronous SGD and its various modifications. Moreover, our theory explains what affects the convergence rate and what can be done to improve the performance of asynchronous algorithms. In particular, we introduce a novel asynchronous method based on worker shuffling. As a by-product of our analysis, we also demonstrate convergence guarantees for gradient-type algorithms such as SGD with random reshuffling and shuffle-once mini-batch SGD. The derived rates match the best-known results for those algorithms, highlighting the tightness of our approach. Finally, our numerical evaluations support theoretical findings and show the good practical performance of our method.
   </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/AsyncSGD/AsyncSGD_diagram.png" alt="Placeholder figure for AsGrad: A Sharp Unified Analysis of Asynchronous-SGD Algorithms" />
+</div>
 </div>
 </div>
 </p>
@@ -672,9 +703,14 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample7">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2"> Motivated by the increasing popularity and importance of large-scale training under differential privacy (DP) constraints, we study distributed gradient methods with gradient clipping, i.e., clipping applied to the gradients computed from local information at the nodes. While gradient clipping is an essential tool for injecting formal DP guarantees into gradient-based methods [Abadi et al., 2016], it also induces bias which causes serious convergence issues specific to the distributed setting. Inspired by recent progress in the error-feedback literature which is focused on taming the bias/error introduced by communication compression operators such as Top-k [Richtárik et al., 2021], and mathematical similarities between the clipping operator and contractive compression operators, we design Clip21 -- the first provably effective and practically useful error feedback mechanism for distributed methods with gradient clipping. We prove that our method converges at the same ${\tiny \mathcal{O}(1/K)}$ rate as distributed gradient descent in the smooth nonconvex regime, which improves the previous best ${\tiny \mathcal{O}(1/\sqrt{K})}$ rate which was obtained under significantly stronger assumptions. Our method converges significantly faster in practice than competing methods.
   </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/Clip21/clip21_diagram.png" alt="Placeholder figure for Clip21: Error Feedback for Gradient Clipping" />
+</div>
 </div>
 </div>
 </p>
@@ -706,9 +742,14 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample6">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2"> We present a partially personalized formulation of Federated Learning (FL) that strikes a balance between the flexibility of personalization and cooperativeness of global training. In our framework, we split the variables into global parameters, which are shared across all clients, and individual local parameters, which are kept private. We prove that under the right split of parameters, it is possible to find global parameters that allow each client to fit their data perfectly, and refer to the obtained problem as overpersonalized. For instance, the shared global parameters can be used to learn good data representations, whereas the personalized layers are fine-tuned for a specific client. Moreover, we present a simple algorithm for the partially personalized formulation that offers significant benefits to all clients. In particular, it breaks the curse of data heterogeneity in several settings, such as training with local steps, asynchronous training, and Byzantine-robust training.
   </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/Partial/partial_diagram.png" alt="Placeholder figure for Partially Personalized Federated Learning: Breaking the Curse of Data Heterogeneity" />
+</div>
 </div>
 </div>
 </p>
@@ -740,9 +781,14 @@ body {
 <a aria-controls="collapseExample" aria-expanded="false" class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample5" role="button">    Abstract
   </a>
 <div class="collapse" id="collapseExample5">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2"> We propose Adaptive Compressed Gradient Descent (AdaCGD) - a novel optimization algorithm for communication-efficient training of supervised machine learning models with adaptive compression level. Our approach is inspired by the recently proposed three point compressor (3PC) framework of Richtarik et al. (2022), which includes error feedback (EF21), lazily aggregated gradient (LAG), and their combination as special cases, and offers the current state-of-the-art rates for these methods under weak assumptions. While the above mechanisms offer a fixed compression level, or adapt between two extremes only, our proposal is to perform a much finer adaptation. In particular, we allow the user to choose any number of arbitrarily chosen contractive compression mechanisms, such as Top-K sparsification with a user-defined selection of sparsification levels K, or quantization with a user-defined selection of quantization levels, or their combination. AdaCGD chooses the appropriate compressor and compression level adaptively during the optimization process. Besides i) proposing a theoretically-grounded multi-adaptive communication compression mechanism, we further ii) extend the 3PC framework to bidirectional compression, i.e., we allow the server to compress as well, and iii) provide sharp convergence bounds in the strongly convex, convex and nonconvex settings. The convex regime results are new even for several key special cases of our general mechanism, including 3PC and EF21. In all regimes, our rates are superior compared to all existing adaptive compression methods.
   </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/Ada3PC/ada3pc_diagram.png" alt="Placeholder figure for Adaptive Compression for Communication-Efficient Distributed Training" />
+</div>
 </div>
 </div>
 </p>
@@ -780,9 +826,14 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample4">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2">Despite their high computation and communication costs, Newton-type methods remain an appealing option for distributed training due to their robustness against ill-conditioned convex problems. In this work, we study communication compression and aggregation mechanisms for curvature information in order to reduce these costs while preserving theoretically superior local convergence guarantees. We prove that the recently developed class of three point compressors (3PC) of Richtarik et al. [2022] for gradient communication can be generalized to Hessian communication as well. This result opens up a wide variety of communication strategies, such as contractive compression and lazy aggregation, available to our disposal to compress prohibitively costly curvature information. Moreover, we discovered several new 3PC mechanisms, such as adaptive thresholding and Bernoulli aggregation, which require reduced communication and occasional Hessian computations. Furthermore, we extend and analyze our approach to bidirectional communication compression and partial device participation setups to cater to the practical considerations of applications in federated learning. For all our methods, we derive fast condition-number-independent local linear and/or superlinear convergence rates. Finally, with extensive numerical evaluations on convex optimization problems, we illustrate that our designed schemes achieve state-of-the-art communication complexity compared to several key baselines using second-order information.
 </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/3PC/3PC_diagram.png" alt="Placeholder figure for Distributed Newton-Type Methods with Communication Compression and Bernoulli Aggregation" />
+</div>
 </div>
 </div>
 </p>
@@ -819,9 +870,14 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample3">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2">Recent advances in distributed optimization have shown that Newton-type methods with proper communication compression mechanisms can guarantee fast local rates and low communication cost compared to first order methods. We discover that the communication cost of these methods can be further reduced, sometimes dramatically so, with a surprisingly simple trick: Basis Learn (BL). The idea is to transform the usual representation of the local Hessians via a change of basis in the space of matrices and apply compression tools to the new representation. To demonstrate the potential of using custom bases, we design a new Newton-type method (BL1), which reduces communication cost via both BL technique and bidirectional compression mechanism. Furthermore, we present two alternative extensions (BL2 and BL3) to partial participation to accommodate federated learning applications. We prove local linear and superlinear rates independent of the condition number. Finally, we support our claims with numerical experiments by comparing several first and second-order methods.
   </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/BL/bl_diagram.png" alt="Placeholder figure for Basis Matters: Better Communication-Efficient Second Order Methods for Federated Learning" />
+</div>
 </div>
 </div>
 </p>
@@ -866,9 +922,14 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample2">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2">Inspired by recent work of Islamov et al (2021), we propose a family of Federated Newton Learn (FedNL) methods, which we believe is a marked step in the direction of making second-order methods applicable to FL. In contrast to the aforementioned work, FedNL employs a different Hessian learning technique which i) enhances privacy as it does not rely on the training data to be revealed to the coordinating server, ii) makes it applicable beyond generalized linear models, and iii) provably works with general contractive compression operators for compressing the local Hessians, such as Top-K or Rank-R, which are vastly superior in practice. Notably, we do not need to rely on error feedback for our methods to work with contractive compressors. Moreover, we develop FedNL-PP, FedNL-CR and FedNL-LS, which are variants of FedNL that support partial participation, and globalization via cubic regularization and line search, respectively, and FedNL-BC, which is a variant that can further benefit from bidirectional compression of gradients and models, i.e., smart uplink gradient and smart downlink model compression. We prove local convergence rates that are independent of the condition number, the number of training data points, and compression variance. Our communication efficient Hessian learning technique provably learns the Hessian at the optimum. Finally, we perform a variety of numerical experiments that show that our FedNL methods have state-of-the-art communication complexity when compared to key baselines.
 </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/FedNL/FedNL_diagram.png" alt="Placeholder figure for FedNL: Making Newton-Type Methods Applicable to Federated Learning" />
+</div>
 </div>
 </div>
 </p>
@@ -913,9 +974,14 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample1">
-<div class="card card-body">
+<div class="abstract-row">
+<div class="card card-body abstract-text">
 <font size="2">We develop several new communication-efficient second-order methods for distributed optimization. Our first method, NEWTON-STAR, is a variant of Newton’s method from which it inherits its fast local quadratic rate. However, unlike Newton’s method, NEWTON-STAR enjoys the same per iteration communication cost as gradient descent. While this method is impractical as it relies on the use of certain unknown parameters characterizing the Hessian of the objective function at the optimum, it serves as the starting point which enables us design practical variants thereof with strong theoretical guarantees. In particular, we design a stochastic sparsification strategy for learning the unknown parameters in an iterative fashion in a communication efficient manner. Applying this strategy to NEWTON-STAR leads to our next method, NEWTON-LEARN, for which we prove local linear and superlinear rates independent of the condition number. When applicable, this method can have dramatically superior convergence behavior when compared to state-of-the-art methods. Finally, we develop a globalization strategy using cubic regularization which leads to our next method, CUBIC-NEWTON-LEARN, for which we prove global sublinear and linear convergence rates, and a fast superlinear rate. Our results are supported with experimental results on real datasets, and show several orders of magnitude improvement on baseline and state-of-the-art methods in terms of communication complexity.
 </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/NEWTON-LEARN/NEWTON-LEARN_diagram.png" alt="Placeholder figure for Distributed Second Order Methods with Fast Rates and Compressed Communication" />
+</div>
 </div>
 </div>
 </p>

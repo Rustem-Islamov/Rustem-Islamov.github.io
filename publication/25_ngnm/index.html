@@ -229,6 +229,47 @@ body {
   transition: width .1s linear;
 }
 </style>
+<style>
+/* Abstract box beside figure */
+.abstract-row {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: .5rem;
+}
+.abstract-row .abstract-text {
+  flex: 0 0 70%;
+  margin: 0 !important;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+.abstract-row .abstract-figure {
+  flex: 0 0 27%;
+  max-width: 27%;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+.abstract-row .abstract-figure img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 760px) {
+  .abstract-row { flex-direction: column; }
+  .abstract-row .abstract-text { flex: none; width: 100%; }
+  .abstract-row .abstract-figure { flex: none; max-width: none; width: 100%; height: auto; min-height: 260px; }
+}
+</style>
 </head>
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -499,9 +540,15 @@ body {
     Abstract
   </a>
 <div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    <font size="2"> Modern optimization algorithms that incorporate momentum and adaptive step-size offer improved performance in numerous challenging deep learning tasks. However, their effectiveness is often highly sensitive to the choice of hyperparameters, especially the step-size. Tuning these parameters is often difficult, resource-intensive, and time-consuming. Therefore, recent efforts have been directed toward enhancing the stability of optimizers across a wide range of hyperparameter choices [Schaipp et al., 2024]. In this paper, we introduce an algorithm that matches the performance of state-of-the-art optimizers while improving stability to the choice of the step-size hyperparameter through a novel adaptation of the NGN step-size method [Orvieto and Xiao, 2024]. Specifically, we propose a momentum-based version (NGN-M) that attains the standard convergence rate of O(1/\sqrt{K}) under less restrictive assumptions, without the need for interpolation condition or assumptions of bounded stochastic gradients or iterates, in contrast to previous approaches. Additionally, we empirically demonstrate that the combination of the NGN step-size with momentum results in enhanced robustness to the choice of the step-size hyperparameter while delivering performance that is comparable to or surpasses other state-of-the-art optimizers. 
-  </font></div>
+  <div class="abstract-row">
+<div class="card card-body abstract-text">
+<font size="2"> Modern optimization algorithms that incorporate momentum and adaptive step-size offer improved performance in numerous challenging deep learning tasks. However, their effectiveness is often highly sensitive to the choice of hyperparameters, especially the step-size. Tuning these parameters is often difficult, resource-intensive, and time-consuming. Therefore, recent efforts have been directed toward enhancing the stability of optimizers across a wide range of hyperparameter choices [Schaipp et al., 2024]. In this paper, we introduce an algorithm that matches the performance of state-of-the-art optimizers while improving stability to the choice of the step-size hyperparameter through a novel adaptation of the NGN step-size method [Orvieto and Xiao, 2024]. Specifically, we propose a momentum-based version (NGN-M) that attains the standard convergence rate of O(1/\sqrt{K}) under less restrictive assumptions, without the need for interpolation condition or assumptions of bounded stochastic gradients or iterates, in contrast to previous approaches. Additionally, we empirically demonstrate that the combination of the NGN step-size with momentum results in enhanced robustness to the choice of the step-size hyperparameter while delivering performance that is comparable to or surpasses other state-of-the-art optimizers. 
+  </font>
+</div>
+<div class="abstract-figure">
+<img src="/files/publications/NGNM/ngnm_diagram.png" alt="Placeholder figure for Enhancing Optimizer Stability: Momentum Adaptation of The NGN Step-size" />
+</div>
+</div>
 </div>
 
 </div>
