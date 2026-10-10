@@ -345,7 +345,43 @@
   .navbar-nav.mr-auto{ flex-wrap:wrap; }   /* wrap rather than overflow if ever too wide */
   html, body{ overflow-x:hidden; }         /* safety net against horizontal scroll */
 </style>
+/* Abstract box beside figure for paper [24] */
+.abstract-row {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;      /* both children share the same height */
+  margin-top: .5rem;
+}
+.abstract-row .abstract-text {
+  flex: 0 0 60%;             /* reduced width leaves room for the image */
+  margin: 0;
+  box-sizing: border-box;
+}
+.abstract-row .abstract-figure {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+.abstract-row .abstract-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       /* image scales to the box height without distortion */
+  display: block;
+}
+@media (max-width: 760px) {
+  .abstract-row { flex-direction: column; }
+  .abstract-row .abstract-text { flex: none; width: 100%; }
+  .abstract-row .abstract-figure { width: 100%; height: auto; }
+  .abstract-row .abstract-figure img { height: auto; }
+}
 </head>
+
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 <script id="cite-popup-self-contained">
@@ -556,9 +592,38 @@
 
 
 
+<div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
+  <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
+    <b class="pub-num">[24]</b>
+    <span itemprop="author" class="article-metadata li-cite-author">
+      <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://kkpatel.ttic.edu/">Kumar Kshitij Patel${}^*$</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov${}^*$</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sstich.ch/">Sebastian Stich</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io/index.html">Eduard Gorbunov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://lingxiaowang-ai.github.io/">Lingxiao Wang</a></span>.
+    </span>
+    <a class="specialeffects" href="/publication/26_local_sgd" itemprop="name">What's in a Smoothness Constant? Tighter Rates for Local SGD with Bounded Second-order Heterogeneity</a>.
+    <p>
+      40th Annual Conference on Neural Information Processing Systems (NeurIPS 2026)<br>
+    </p>
+    <p>
+      <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Local_SGD/local_sgd.pdf" target="_blank" rel="noopener">PDF</a>
+      <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename="/publication/26_local_sgd/cite.bib">Cite</button>
+      <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2607.14731" target="_blank" rel="noopener">arXiv</a>
+      <a class="btn btn-outline-primary my-1 mr-1" href="https://openreview.net/forum?id=u0RipLyQNB" target="_blank" rel="noopener">NeurIPS</a>
+      <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample24" role="button" aria-expanded="false" aria-controls="collapseExample24">Abstract</a>
+    </p>
 
+    <div class="collapse" id="collapseExample24">
+      <div class="abstract-row">
+        <div class="card card-body abstract-text">
+          <font size="2">Local SGD, also known as Federated Averaging, is a widely used distributed optimization algorithm. Although Local SGD often outperforms alternatives such as Mini-batch SGD in practice, theory still only partially explains when and why local updates help under realistic data heterogeneity. Recent work by Patel et al. shows that a bounded second-order heterogeneity assumption captures the efficiency of Local SGD for strongly convex objectives, and conjectures that the same principle extends to the general convex setting. In this paper, we prove this conjecture by establishing an improved convergence guarantee for Local SGD on general convex objectives under bounded second-order heterogeneity. We also improve the best-known lower bounds for Local SGD in this setting, showing that our upper bounds are nearly tight. Together, these results provide a sharper, more fine-grained convergence theory for Local SGD. As a further application of our techniques, we provide a lower bound for serial SGD with replacement, showing how second-order heterogeneity captures the impact of rare high-curvature clients.</font>
+        </div>
+        <div class="abstract-figure">
+          <img src="/files/publications/Local_SGD/local_sgd_diagram.png" alt="Local SGD diagram: broadcast, parallel local updates on M machines, and averaging" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-
+<!-- 
 <div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
             <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
   <b class="pub-num">[24]</b>
@@ -605,7 +670,7 @@
 </div>
 
 </div>
-        </div>
+        </div> -->
 
 
 <div class="grid-sizer col-lg-12 isotope-item pubtype-0 year-2026">
