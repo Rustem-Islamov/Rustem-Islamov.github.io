@@ -345,7 +345,7 @@
   flex: 0 0 60%;
   margin: 0;
   box-sizing: border-box;
-  align-self: flex-start;
+  align-self: stretch;
   line-height: 1.6;
 }
 .abstract-row .abstract-figure {
@@ -369,7 +369,10 @@
 
 /* List-page overrides */
 .pub-list-item .abstract-row {
-  align-items: flex-start;
+  align-items: stretch;
+}
+.pub-list-item .abstract-row .abstract-text {
+  align-self: stretch;
 }
 .pub-list-item .abstract-row .abstract-figure {
   align-self: stretch;
