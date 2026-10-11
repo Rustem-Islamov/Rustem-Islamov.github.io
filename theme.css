@@ -137,3 +137,12 @@ html[data-theme="dark"] .js-cite-modal.is-copied.btn-outline-primary {
   border-color: #2e7d32 !important;
   color: #fff !important;
 }
+
+/* research pages: contribution cards share the page background */
+.section-block .card.shadow-sm,
+.section-block .card.shadow-sm .card-body,
+html[data-theme="dark"] .section-block .card.shadow-sm,
+html[data-theme="dark"] .section-block .card.shadow-sm .card-body {
+  background: transparent !important;
+  box-shadow: none !important;
+}
