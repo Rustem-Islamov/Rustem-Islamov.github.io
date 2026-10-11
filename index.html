@@ -178,11 +178,27 @@ body {
 }
 .news-toggle .chevron svg { width: 100%; height: 100%; }
 .news-box.is-expanded .news-toggle .chevron { transform: rotate(180deg); }   /* arrow up when expanded */
+
+/* faint optimisation background behind the top of the page (see /bg.js) */
+.bg-stage {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 560px;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+}
+.bg-stage canvas { display: block; width: 100%; height: 100%; }
+.wrap { position: relative; z-index: 1; }
 </style>
 <link rel="stylesheet" href="/theme.css" />
 <script src="/theme.js"></script>
+<script src="/bg.js" defer></script>
 </head>
 <body>
+<div class="bg-stage" aria-hidden="true"><canvas id="bg-canvas"></canvas></div>
 <div class="scroll-progress" id="scroll-progress"></div>
 <div class="wrap">
 
