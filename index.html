@@ -49,6 +49,138 @@
 body {
   padding-top: 60px; /* match the nav's height */
 }
+
+/* Recent news card */
+.news-box {
+  position: relative;
+  margin: 0 0 2rem;
+  padding: 1.4rem 1.6rem 1.2rem;
+  border-radius: 18px;
+  border: 1px solid rgba(142, 69, 133, 0.22);
+  background: linear-gradient(145deg, #fcf8fc 0%, #f1e7f5 100%);
+  box-shadow: 0 14px 34px -14px rgba(142, 69, 133, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  overflow: hidden;
+}
+.news-box::before {                      /* accent bar along the top edge */
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8e4585, #c07bb8 60%, #e2b7dc);
+}
+.news-box h2 {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin: .2rem 0 1rem;
+}
+.news-box h2::before {                   /* small bell icon */
+  content: "";
+  flex: 0 0 auto;
+  width: 1.9rem; height: 1.9rem;
+  border-radius: 10px;
+  background: #8e4585 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9'/%3E%3Cpath d='M13.7 21a2 2 0 0 1-3.4 0'/%3E%3C/svg%3E") center / 62% no-repeat;
+  box-shadow: 0 4px 10px -3px rgba(142, 69, 133, .55);
+}
+.news-box .news-list {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 1.35rem;
+  list-style: none;
+}
+.news-box .news-list::before {           /* timeline rail */
+  content: "";
+  position: absolute;
+  left: .3rem; top: .9rem; bottom: .9rem;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(142,69,133,.55), rgba(142,69,133,.12));
+  border-radius: 2px;
+}
+.news-box .news-list li {
+  position: relative;
+  margin: 0 0 .55rem;
+  padding: .7rem .95rem;
+  background: rgba(255, 255, 255, .62);
+  border: 1px solid rgba(142, 69, 133, .12);
+  border-radius: 12px;
+  transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.news-box .news-list li:hover {
+  background: #fff;
+  box-shadow: 0 8px 20px -10px rgba(142, 69, 133, .45);
+  transform: translateX(2px);
+}
+.news-box .news-list li::before {        /* timeline dot */
+  content: "";
+  position: absolute;
+  left: -1.28rem; top: 1.15rem;
+  width: .62rem; height: .62rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #8e4585;
+  box-sizing: border-box;
+}
+.news-box .news-visible li:first-child::before {
+  background: #8e4585;
+  box-shadow: 0 0 0 4px rgba(142, 69, 133, .18);
+}
+.news-box .news-visible li:first-child .date::after {   /* "NEW" tag on the latest item */
+  content: "NEW";
+  margin-left: .55rem;
+  padding: .08rem .42rem;
+  border-radius: 999px;
+  background: #8e4585;
+  color: #fff;
+  font-size: .62rem;
+  letter-spacing: .06em;
+  vertical-align: .08em;
+}
+.news-box .news-list[hidden] { display: none; }
+.news-box .news-more:not([hidden]) { animation: news-reveal .35s ease both; }
+@keyframes news-reveal {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+.news-box .date {
+  display: block;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: #8e4585;
+  margin-bottom: .2rem;
+}
+.news-toggle {
+  margin-top: .5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .5rem 1.05rem;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: .85rem;
+  font-weight: 600;
+  color: #8e4585;
+  background: #fff;
+  border: 1px solid rgba(142, 69, 133, .38);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+.news-toggle:hover {
+  background: #8e4585;
+  color: #fff;
+  box-shadow: 0 6px 14px -6px rgba(142, 69, 133, .6);
+}
+.news-toggle:active { transform: scale(.98); }
+.news-toggle:focus-visible { outline: 2px solid #8e4585; outline-offset: 2px; }
+.news-toggle .chevron {
+  display: inline-flex;
+  width: .95rem; height: .95rem;
+  transition: transform .25s ease;
+}
+.news-toggle .chevron svg { width: 100%; height: 100%; }
+.news-box.is-expanded .news-toggle .chevron { transform: rotate(180deg); }   /* arrow up when expanded */
 </style>
 </head>
 <body>
@@ -153,7 +285,7 @@ body {
         </ul>
         <button type="button" class="news-toggle" id="news-toggle" aria-expanded="false" aria-controls="news-more">
           <span class="news-toggle-label">See all recent news</span>
-          <span class="chevron" aria-hidden="true">&darr;</span>
+          <span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
         </button>
       </section>
 
