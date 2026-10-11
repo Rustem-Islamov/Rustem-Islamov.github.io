@@ -75,26 +75,22 @@ body {
   gap: .6rem;
   margin: .2rem 0 1rem;
 }
-.news-box h2::before {                   /* small bell icon */
-  content: "";
-  flex: 0 0 auto;
-  width: 1.9rem; height: 1.9rem;
-  border-radius: 10px;
-  background: #8e4585 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9'/%3E%3Cpath d='M13.7 21a2 2 0 0 1-3.4 0'/%3E%3C/svg%3E") center / 62% no-repeat;
-  box-shadow: 0 4px 10px -3px rgba(142, 69, 133, .55);
-}
 .news-box .news-list {
-  position: relative;
   margin: 0;
-  padding: 0 0 0 1.35rem;
+  padding: 0;
   list-style: none;
 }
-.news-box .news-list::before {           /* timeline rail */
+.news-box .news-timeline {
+  position: relative;
+  padding-left: 1.35rem;
+  --rail-x: .375rem;                     /* horizontal centre of the rail */
+}
+.news-box .news-timeline::before {       /* one continuous rail across both lists */
   content: "";
   position: absolute;
-  left: .3rem; top: .9rem; bottom: .9rem;
+  left: calc(var(--rail-x) - 1px); top: 1rem; bottom: 1.1rem;
   width: 2px;
-  background: linear-gradient(to bottom, rgba(142,69,133,.55), rgba(142,69,133,.12));
+  background: linear-gradient(to bottom, rgba(142,69,133,.6), rgba(142,69,133,.12));
   border-radius: 2px;
 }
 .news-box .news-list li {
@@ -109,13 +105,14 @@ body {
 .news-box .news-list li:hover {
   background: #fff;
   box-shadow: 0 8px 20px -10px rgba(142, 69, 133, .45);
-  transform: translateX(2px);
 }
-.news-box .news-list li::before {        /* timeline dot */
+.news-box .news-list li::before {        /* timeline dot, centred on the rail */
   content: "";
   position: absolute;
-  left: -1.28rem; top: 1.15rem;
-  width: .62rem; height: .62rem;
+  left: calc(var(--rail-x) - 1.35rem - 1px);
+  top: 1.15rem;
+  width: .7rem; height: .7rem;
+  transform: translateX(-50%);
   border-radius: 50%;
   background: #fff;
   border: 2px solid #8e4585;
@@ -274,6 +271,7 @@ body {
 
       <section class="news-box" id="posts" aria-labelledby="news-heading">
         <h2 id="news-heading">Recent news</h2>
+        <div class="news-timeline">
         <ul class="news-list news-visible">
           <li><span class="date">September 24, 2026</span>I am happy to share that I have two papers accepted to NeurIPS 2026: one on <a href="publication/26_local_sgd/" target="_blank" rel="noopener">Local SGD</a> and one on <a href="publication/26_adam_sgd/" target="_blank" rel="noopener">Adam-SGD gap</a>.</li>
           <li><span class="date">August 23, 2026</span>I am attending <a href="https://swiss-opt.github.io/" target="_blank" rel="noopener">Swiss Optimization Symposium</a> in Monte Verità. My talk focuses on recent works that use convergence bounds to improve deep learning models training. The slides can be found via the <a href="/files/slides/sos_presentation.pdf" target="_blank" rel="noopener">link</a>.</li>
@@ -283,6 +281,7 @@ body {
           <li><span class="date">June 29, 2026</span>I am attending ICML 2026 in Seoul. I present four papers during poster sessions on 9th and 10th of July. Moreover, I give an oral presentation on 9th of July on <a href="publication/26_eos/" target="_blank" rel="noopener">Non-Euclidean Edge of Stability</a>. Finally, I was also invited to give a lighting talk at <a href="https://pluralis.ai/events/icml-protocol-learning-workshop/" target="_blank" rel="noopener">Protocal Learning workshop</a>.</li>
           <li><span class="date">June 6, 2026</span>I attended SIOPT 2026. I organized a session on recent advances in federated optimization and gave a presentation on <a href="publication/25_safe_ef/" target="_blank" rel="noopener">Safe-EF method</a>.</li>
         </ul>
+        </div>
         <button type="button" class="news-toggle" id="news-toggle" aria-expanded="false" aria-controls="news-more">
           <span class="news-toggle-label">See all recent news</span>
           <span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
