@@ -70,7 +70,7 @@
     var lo = Infinity, hi = -Infinity;
     for (var j = 0; j <= 40; j++) for (var i = 0; i <= 80; i++) { var v = f(i / 80 * W / L, j / 40 * H / L); lo = Math.min(lo, v); hi = Math.max(hi, v); }
     var levels = [];
-    for (var k = 1; k < 20; k++) levels.push(lo + (hi - lo) * Math.pow(k / 20, 1.35));
+    for (var k = 1; k < 9; k++) levels.push(lo + (hi - lo) * Math.pow(k / 9, 1.25));      /* few lines: it is only a hint of terrain */
     contours(c, nx, ny, levels);
   }
 
