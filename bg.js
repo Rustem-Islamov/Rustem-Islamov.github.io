@@ -1,4 +1,4 @@
-/* Home page only: a faint loss-landscape background with three optimizers (SGD, momentum, Adam)
+/* Home page only: a faint loss-landscape background with three optimizers (Muon, SGD with momentum, Adam)
    rolling toward two minima. One minimum sits beside the CV icon, the other beside the photo,
    both in empty space, so the runs end where nothing is written. */
 (function () {
@@ -88,25 +88,47 @@
   }
 
   /* ---- optimizers ---- */
+  /* The three optimizers: Muon (purple), SGD with momentum (blue) and Adam (orange).
+     All of them see a noisy gradient (like a mini-batch), so the paths wobble. */
   var KINDS = {
-    sgd:  { c: ['#8e4585', '#cf94d8'], lr: 0.011,  noise: 0.55 },
-    mom:  { c: ['#2d7fb8', '#6cb4ea'], lr: 0.005,  noise: 0.30 },
-    adam: { c: ['#d77a1f', '#f2a54f'], lr: 0.0065, noise: 0.55 }
+    muon: { c: ['#8e4585', '#cf94d8'], lr: 0.009,  noise: 0.55, beta: 0.95 },
+    mom:  { c: ['#2d7fb8', '#6cb4ea'], lr: 0.005,  noise: 0.30, beta: 0.93 },
+    adam: { c: ['#d77a1f', '#f2a54f'], lr: 0.0065, noise: 0.55, b1: 0.9, b2: 0.999 }
   };
   function color(k) { return KINDS[k].c[dark ? 1 : 0]; }
   function gauss() { var u = 1 - Math.random(), v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283185 * v); }
-  function startRun(kind, X, Y) { return { kind: kind, X: X, Y: Y, mx: 0, my: 0, s2: 0, t: 0, trail: [], done: false, hold: 0, fade: 1, n: 0, near: 0 }; }
-  /* stochastic dynamics: every step uses a noisy gradient (like a mini-batch), so the paths wobble
-     on the way down and keep jittering around the minimum instead of stopping dead */
+  function startRun(kind, X, Y) { return { kind: kind, X: X, Y: Y, mx: 0, my: 0, vx: 0, vy: 0, t: 0, trail: [], done: false, hold: 0, fade: 1, n: 0, near: 0 }; }
+
+  /* Muon orthogonalises the momentum with a few Newton-Schulz iterations (the quintic one used in practice).
+     The position (x, y) is treated as a 1 x 2 matrix W; for a single row the orthogonalised update is simply
+     the direction of the momentum with (roughly) unit length, which is exactly what Muon does to rank-one matrices. */
+  var NS = [3.4445, -4.7750, 2.0315];
+  function newtonSchulz(gx, gy) {
+    var n = Math.sqrt(gx * gx + gy * gy) + 1e-7, x = gx / n, y = gy / n;        /* X = G / ||G||_F */
+    for (var i = 0; i < 5; i++) {
+      var A = x * x + y * y;                                                   /* A = X X^T  (a 1 x 1 matrix) */
+      var c = NS[0] + NS[1] * A + NS[2] * A * A;                               /* X <- a X + (b A + c A^2) X  */
+      x *= c; y *= c;
+    }
+    return [x, y];
+  }
+
   function step(r) {
-    var g = grad(r.X, r.Y), k = KINDS[r.kind], lr = k.lr, dx, dy;
+    var g = grad(r.X, r.Y), k = KINDS[r.kind], dx, dy;
     g[0] += k.noise * gauss(); g[1] += k.noise * gauss();
-    if (r.kind === 'sgd') { dx = -lr * g[0]; dy = -lr * g[1]; }
-    else if (r.kind === 'mom') { r.mx = 0.93 * r.mx - lr * g[0]; r.my = 0.93 * r.my - lr * g[1]; dx = r.mx; dy = r.my; }
-    else {
-      r.t++; r.mx = 0.9 * r.mx + 0.1 * g[0]; r.my = 0.9 * r.my + 0.1 * g[1]; r.s2 = 0.999 * r.s2 + 0.001 * (g[0] * g[0] + g[1] * g[1]);
-      var b1 = 1 - Math.pow(0.9, r.t), b2 = 1 - Math.pow(0.999, r.t), d = Math.sqrt(r.s2 / b2) + 1e-6;
-      dx = -lr * (r.mx / b1) / d; dy = -lr * (r.my / b1) / d;
+    if (r.kind === 'muon') {
+      r.mx = k.beta * r.mx + g[0]; r.my = k.beta * r.my + g[1];                 /* momentum buffer */
+      var o = newtonSchulz(g[0] + k.beta * r.mx, g[1] + k.beta * r.my);         /* Nesterov-style update, orthogonalised */
+      dx = -k.lr * o[0]; dy = -k.lr * o[1];
+    } else if (r.kind === 'mom') {
+      r.mx = k.beta * r.mx - k.lr * g[0]; r.my = k.beta * r.my - k.lr * g[1]; dx = r.mx; dy = r.my;
+    } else {                                                                    /* Adam, per coordinate */
+      r.t++;
+      r.mx = k.b1 * r.mx + (1 - k.b1) * g[0]; r.my = k.b1 * r.my + (1 - k.b1) * g[1];
+      r.vx = k.b2 * r.vx + (1 - k.b2) * g[0] * g[0]; r.vy = k.b2 * r.vy + (1 - k.b2) * g[1] * g[1];
+      var c1 = 1 - Math.pow(k.b1, r.t), c2 = 1 - Math.pow(k.b2, r.t);
+      dx = -k.lr * (r.mx / c1) / (Math.sqrt(r.vx / c2) + 1e-8);
+      dy = -k.lr * (r.my / c1) / (Math.sqrt(r.vy / c2) + 1e-8);
     }
     r.X += dx; r.Y += dy;
     r.trail.push([r.X, r.Y]); if (r.trail.length > 480) r.trail.shift();
@@ -124,7 +146,7 @@
   }
   function reset() {
     var s = newStart();
-    runs = ['sgd', 'mom', 'adam'].map(function (k) { return startRun(k, s[0], s[1]); });
+    runs = ['muon', 'mom', 'adam'].map(function (k) { return startRun(k, s[0], s[1]); });
     if (reduce) { for (var n = 0; n < 6000; n++) runs.forEach(function (r) { if (!r.done) step(r); }); for (n = 0; n < 160; n++) runs.forEach(step); }
   }
 
