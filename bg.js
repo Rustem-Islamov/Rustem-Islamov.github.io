@@ -6,7 +6,9 @@
   if (!cv || !cv.getContext) return;
   var ctx = cv.getContext('2d');
   var STRENGTH = 0.15;
-  var ARRIVE_TICKS = 188;                                     /* an optimizer that has not reached a minimum after about 3 seconds just fades away */
+  var STEP_EVERY = 1;                                         /* one optimizer step per tick (a tick is about 16 ms) */
+  var RUN_TICKS = 188;                                        /* every run lasts 3 seconds, whether or not the optimizers have arrived ... */
+  var FADE_TICKS = 22;                                        /* ... the last third of a second is a fade-out, then a new run starts from a new point */
   var MAX_STEPS = 500;                                        /* every optimizer gets at most this many steps per run (about 8 s) */
   var L = 400;                                                /* length unit of the landscape, in px */
   var W = 0, H = 0, dpr = 1, dark = false, cache = null, runs = [], visible = true;
@@ -181,13 +183,12 @@
       while (acc > 16) {
         acc -= 16;
         runs.forEach(function (r) {
-          step(r);                                               /* one step per tick; keeps jittering once it has arrived */
+          if (r.age % STEP_EVERY === 0) step(r);                  /* keeps jittering once it has arrived */
           r.age++;
-          if (!r.arrived && r.age >= ARRIVE_TICKS) r.fade = Math.max(0, r.fade - 0.02);   /* never got there in time: it just disappears */
-          else if (r.done) { r.hold++; if (r.hold > 150) r.fade = Math.max(0, r.fade - 0.012); }
+          if (r.age > RUN_TICKS - FADE_TICKS) r.fade = Math.max(0, r.fade - 1 / FADE_TICKS);
         });
       }
-      if (runs.every(function (r) { return r.fade <= 0; })) reset();
+      if (runs[0].age >= RUN_TICKS) reset();                      /* time is up: new initialisation, new starting point */
     }
     draw();
   }
