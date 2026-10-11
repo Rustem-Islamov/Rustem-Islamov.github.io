@@ -152,3 +152,26 @@ html[data-theme="dark"] .section-block .card.shadow-sm .card-body {
   content: "\A";
   white-space: pre;
 }
+
+/* one-line footer with contact details (all pages) */
+.home-footer {
+  display: flex !important; flex-wrap: wrap; align-items: center; justify-content: flex-start !important;
+  gap: 6px 0;
+  margin: 64px 0 0 !important; padding: 20px 0 40px !important;
+  border-top: 1px solid var(--rule, #e5e5e5) !important;
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+  font-size: .85rem !important; line-height: 1.6; text-align: left !important;
+  color: var(--muted, #666) !important;
+  background: transparent !important;
+}
+.home-footer > * + *::before { content: "\00b7"; margin: 0 .7em; color: var(--muted, #666); }
+.home-footer a { color: #8e4585 !important; }
+html[data-theme="dark"] .home-footer a { color: #cf94d8 !important; }
+.home-footer a:hover { text-decoration: underline; }
+.home-footer > .float-right { margin-left: auto; float: none !important; }
+.home-footer > .float-right::before { content: none !important; }
+.home-footer > .float-right a { color: var(--muted, #666) !important; }
+@media (max-width: 600px) {                                   /* narrow screens: wrap with spacing instead of dots */
+  .home-footer { gap: 4px 16px; }
+  .home-footer > * + *::before { content: none; }
+}
