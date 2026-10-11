@@ -38,14 +38,14 @@ a.vtag:hover{background:var(--vfg);color:#fff!important}
 .v-iclr{--vbg:rgba(13,148,136,.12);--vfg:#0f766e}
 .v-aistats{--vbg:rgba(146,92,52,.14);--vfg:#7c4a21}
 .v-uai{--vbg:rgba(219,39,119,.11);--vfg:#be185d}
-.v-tmlr{--vbg:rgba(71,85,105,.13);--vfg:#475569}
+.v-tmlr{--vbg:rgba(109,40,217,.1);--vfg:#6d28d9}
 html[data-theme="dark"] .vtag.oral{--vbg:rgba(240,138,138,.15);--vfg:#f08a8a}
 html[data-theme="dark"] .v-neurips{--vbg:rgba(250,204,21,.15);--vfg:#fde047}
 html[data-theme="dark"] .v-icml{--vbg:rgba(96,165,250,.15);--vfg:#93c5fd}
 html[data-theme="dark"] .v-iclr{--vbg:rgba(45,212,191,.14);--vfg:#5eead4}
 html[data-theme="dark"] .v-aistats{--vbg:rgba(205,150,100,.17);--vfg:#e0b48a}
 html[data-theme="dark"] .v-uai{--vbg:rgba(244,114,182,.15);--vfg:#f9a8d4}
-html[data-theme="dark"] .v-tmlr{--vbg:rgba(148,163,184,.16);--vfg:#cbd5e1}
+html[data-theme="dark"] .v-tmlr{--vbg:rgba(167,139,250,.16);--vfg:#c4b5fd}
 html[data-theme="dark"] a.vtag:hover{color:#15131b!important}
 /* the venue tag replaces the full conference name: keep the text in the DOM (the sort script reads it) but do not show it */
 .pub-list-item>p:not(:has(.btn)){display:none!important}
