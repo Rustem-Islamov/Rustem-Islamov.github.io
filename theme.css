@@ -96,8 +96,7 @@ html[data-theme="dark"] .exp-card-title { color: #f4f1f7 !important; }
 html[data-theme="dark"] .exp-card-desc, html[data-theme="dark"] .exp-card-meta { color: #b9b3c4 !important; }
 html[data-theme="dark"] .abstract-text, html[data-theme="dark"] .abstract-text * { color: #e4e0ea !important; }
 html[data-theme="dark"] .abstract-figure { background: #fff; border-color: #34303d; }
-html[data-theme="dark"] .section-grey { background: #1a1722 !important; }
-html[data-theme="dark"] .section-white { background: #15131b !important; }
+html[data-theme="dark"] .section-grey, html[data-theme="dark"] .section-white { background: transparent !important; }
 html[data-theme="dark"] .section-block h2 { color: #f4f1f7; border-bottom-color: #3a3544; }
 html[data-theme="dark"] .challenge-list li, html[data-theme="dark"] .impact-box p { color: #e4e0ea; }
 html[data-theme="dark"] .topic-card { background: #1e1a26; border-color: #34303d; }

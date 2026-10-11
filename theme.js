@@ -100,6 +100,15 @@
     if (document.querySelector('.topnav')) homeSpy(); else markCurrentPage();
   });
 
+  /* keep every open page in sync: tabs, and pages restored from the back/forward cache */
+  function sync() {
+    var t = saved() || (systemDark() ? 'dark' : 'light');
+    if (t !== current()) apply(t);
+    var b = document.querySelector('.theme-toggle'); if (b) paint(b);
+  }
+  window.addEventListener('pageshow', sync);
+  window.addEventListener('storage', function (e) { if (e.key === KEY) sync(); });
+
   /* follow the system setting until the visitor makes a choice */
   if (window.matchMedia) {
     var mq = matchMedia('(prefers-color-scheme: dark)');
