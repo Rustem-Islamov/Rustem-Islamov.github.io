@@ -1,0 +1,14 @@
+/* individual paper pages */
+.pp-tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:.2rem 0 .9rem;font-family:'Inter',system-ui,sans-serif}
+.vnum{order:-1}
+.pp-area,.pp-area:hover{--vbg:transparent;--vfg:var(--primary);border:1px solid rgba(142,69,133,.45)!important}
+a.pp-area:hover{background:var(--primary)!important;color:#fff!important}
+.article-metadata > div{color:var(--muted);font-family:'Inter',system-ui,sans-serif;font-size:.98rem}
+.article-metadata > div a{color:inherit!important}
+.article-metadata > div a:hover{color:var(--primary)!important}
+.article-metadata a.me{color:var(--fg)!important;font-weight:700}
+.pp-venue{font-size:1rem;color:var(--fg)}
+html[data-theme="dark"] .article-metadata a.me{color:#f4f1f7!important}
+html[data-theme="dark"] .pp-area,html[data-theme="dark"] .pp-area:hover{--vfg:#e3b6ea;border-color:rgba(207,148,216,.5)!important}
+html[data-theme="dark"] a.pp-area:hover{background:#cf94d8!important;color:#15131b!important}
+.btn-links .abstract-row{margin-top:1.1rem}
