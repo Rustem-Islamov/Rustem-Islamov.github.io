@@ -13,6 +13,7 @@
   var L = 400;                                                /* length unit of the landscape, in px */
   var W = 0, H = 0, dpr = 1, dark = false, cache = null, runs = [], visible = true;
   var wells = [];                                             /* valleys, in units of L */
+  var zones = null;                                           /* where new runs may start, in px: [x0, x1, y0, y1] per side */
   var bumps = [];                                             /* [x, y, height, width x, width y] */
   var mid = [0, 0];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -55,6 +56,14 @@
     var mx = (left[0] + right[0]) / 2, my = (left[1] + right[1]) / 2;
     bumps = [[mx - 0.1, my - 0.1, 0.55, 0.22, 0.55], [mx + 0.45, my + 0.55, 0.4, 0.4, 0.2], [left[0] - 0.4, left[1] - 0.7, 0.3, 0.35, 0.3]];
     mid = [(left[0] + right[0]) / 2, (left[1] + right[1]) / 2];
+    var hero = document.querySelector('.hero');                /* start inside the text width, around the hero block */
+    if (hero) {
+      var h = box(hero);
+      zones = {
+        left:  [h.x + 10, h.x + 0.22 * h.w, h.y, h.y + h.h + 60],             /* left end of the text -> CV minimum  */
+        right: [h.x + 0.55 * h.w, h.x + 0.8 * h.w, h.y - 10, h.y + 0.5 * h.h] /* upper right of the text -> photo minimum */
+      };
+    } else zones = null;
   }
 
   /* ---- contour lines (marching squares) ---- */
@@ -145,8 +154,12 @@
   var toggle = Math.random() < 0.5;                            /* alternate: one run heads for the CV minimum, the next for the photo minimum */
   function newStart() {
     toggle = !toggle;
-    return toggle ? [(0.03 + Math.random() * 0.14 * W / L), (0.1 + Math.random() * 0.8 * H / L)]                 /* left edge  -> CV minimum   */
-                  : [(0.6 + Math.random() * 0.3) * W / L, (0.02 + Math.random() * 0.12) * H / L];                /* top right -> photo minimum */
+    if (zones) {
+      var z = toggle ? zones.left : zones.right;
+      return [(z[0] + Math.random() * (z[1] - z[0])) / L, (z[2] + Math.random() * (z[3] - z[2])) / L];
+    }
+    return toggle ? [(0.03 + Math.random() * 0.14 * W / L), (0.1 + Math.random() * 0.8 * H / L)]
+                  : [(0.6 + Math.random() * 0.3) * W / L, (0.02 + Math.random() * 0.12) * H / L];
   }
   function reset() {
     var s = newStart();
