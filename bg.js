@@ -6,6 +6,9 @@
   if (!cv || !cv.getContext) return;
   var ctx = cv.getContext('2d');
   var STRENGTH = 0.15;
+  var STEPS_PER_TICK = 4;                                     /* optimizer steps per animation tick (a tick is about 16 ms) */
+  var RUN_TICKS = 188;                                        /* one run lasts about 3 seconds ... */
+  var FADE_AT = 140;                                          /* ... of which the last 48 ticks are spent fading out */
   var MAX_STEPS = 500;                                        /* every optimizer gets at most this many steps per run (about 8 s) */
   var L = 400;                                                /* length unit of the landscape, in px */
   var W = 0, H = 0, dpr = 1, dark = false, cache = null, runs = [], visible = true;
@@ -98,7 +101,7 @@
   };
   function color(k) { return KINDS[k].c[dark ? 1 : 0]; }
   function gauss() { var u = 1 - Math.random(), v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283185 * v); }
-  function startRun(kind, X, Y) { return { kind: kind, X: X, Y: Y, mx: 0, my: 0, vx: 0, vy: 0, t: 0, trail: [], done: false, hold: 0, fade: 1, n: 0, near: 0 }; }
+  function startRun(kind, X, Y) { return { kind: kind, X: X, Y: Y, mx: 0, my: 0, vx: 0, vy: 0, t: 0, trail: [], done: false, age: 0, fade: 1, n: 0, near: 0 }; }
 
   /* Muon orthogonalises the momentum with a few Newton-Schulz iterations (the quintic one used in practice).
      The position (x, y) is treated as a 1 x 2 matrix W; for a single row the orthogonalised update is simply
@@ -180,11 +183,12 @@
       while (acc > 16) {
         acc -= 16;
         runs.forEach(function (r) {
-          step(r);                                            /* keeps jittering around the minimum once it has arrived */
-          if (r.done) { r.hold++; if (r.hold > 150) r.fade = Math.max(0, r.fade - 0.012); }
+          for (var k = 0; k < STEPS_PER_TICK; k++) step(r);       /* keeps jittering around the minimum once it has arrived */
+          r.age++;
+          if (r.age > FADE_AT) r.fade = Math.max(0, r.fade - 1 / (RUN_TICKS - FADE_AT));
         });
       }
-      if (runs.every(function (r) { return r.done && r.fade <= 0; })) reset();
+      if (runs.every(function (r) { return r.fade <= 0; })) reset();
     }
     draw();
   }
@@ -206,5 +210,5 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else window.addEventListener('load', start);
 
   /* hook for tests */
-  window.__bg = { runs: function () { return runs; }, step: step, reset: reset, draw: draw, wells: function () { return wells.map(function (w) { return [w.x * L, w.y * L]; }); } };
+  window.__bg = { runs: function () { return runs; }, age: function () { return runs[0].age; }, step: step, reset: reset, draw: draw, wells: function () { return wells.map(function (w) { return [w.x * L, w.y * L]; }); } };
 })();
