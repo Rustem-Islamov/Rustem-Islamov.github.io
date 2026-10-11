@@ -8,17 +8,25 @@
   var STRENGTH = 0.15;                                        /* overall faintness of the lines */
   var L = 400;                                                /* length unit of the landscape, in px */
   var W = 0, H = 0, dpr = 1, dark = false, cache = null, runs = [], visible = true;
-  var wells = [];                                             /* [x, y, depth, width] in units of L */
+  var wells = [];                                             /* valleys, in units of L */
+  var bumps = [];                                             /* [x, y, height, width x, width y] */
   var mid = [0, 0];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* a valley: elongated, tilted and possibly bent like a banana; its lowest point is at (x, y) */
+  function valley(X, Y, w) {
+    var c = Math.cos(w.ang), s = Math.sin(w.ang), dx = X - w.x, dy = Y - w.y;
+    var u = c * dx + s * dy, v = -s * dx + c * dy - w.bend * u * u;
+    return -w.d * Math.exp(-(u * u / (2 * w.sx * w.sx) + v * v / (2 * w.sy * w.sy)));
+  }
   function f(X, Y) {
-    var s = 0.02 * ((X - mid[0]) * (X - mid[0]) + (Y - mid[1]) * (Y - mid[1]));
-    for (var i = 0; i < wells.length; i++) {
-      var dx = X - wells[i][0], dy = Y - wells[i][1];
-      s -= wells[i][2] * Math.exp(-(dx * dx + dy * dy) / (2 * wells[i][3] * wells[i][3]));
+    var s = 0.02 * ((X - mid[0]) * (X - mid[0]) + (Y - mid[1]) * (Y - mid[1])) + 0.025 * X;      /* gentle bowl, slightly tilted */
+    for (var i = 0; i < wells.length; i++) s += valley(X, Y, wells[i]);
+    for (var j = 0; j < bumps.length; j++) {                                                         /* ridges and hills between the valleys */
+      var b = bumps[j], dx = X - b[0], dy = Y - b[1];
+      s += b[2] * Math.exp(-(dx * dx / (2 * b[3] * b[3]) + dy * dy / (2 * b[4] * b[4])));
     }
-    return s + 0.008 * Math.sin(3 * X + 1) * Math.cos(3 * Y);
+    return s + 0.012 * Math.sin(2.2 * X + 0.8 * Y + 1) * Math.cos(2.6 * Y - 0.5 * X);
   }
   function grad(X, Y) {
     var e = 1e-3;
@@ -36,7 +44,12 @@
     var narrow = W < 700;
     var left = [(a.x + a.w + (narrow ? 40 : 90)) / L, (a.y + a.h / 2 + 6) / L];
     var right = [(p.x - (narrow ? 30 : 70)) / L, (p.y + p.h / 2 - 14) / L];
-    wells = [[left[0], left[1], 1.0, 0.38], [right[0], right[1], 1.1, 0.42]];
+    wells = [
+      { x: left[0],  y: left[1],  d: 1.0, sx: 0.62, sy: 0.24, ang: -0.45, bend: 0.22 },   /* beside the CV icon: a long, tilted, slightly bent valley */
+      { x: right[0], y: right[1], d: 1.1, sx: 0.55, sy: 0.22, ang: 0.62,  bend: -0.5 }    /* beside the photo: a banana-shaped valley */
+    ];
+    var mx = (left[0] + right[0]) / 2, my = (left[1] + right[1]) / 2;
+    bumps = [[mx - 0.1, my - 0.1, 0.55, 0.22, 0.55], [mx + 0.45, my + 0.55, 0.4, 0.4, 0.2], [left[0] - 0.4, left[1] - 0.7, 0.3, 0.35, 0.3]];
     mid = [(left[0] + right[0]) / 2, (left[1] + right[1]) / 2];
   }
 
@@ -163,5 +176,5 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else window.addEventListener('load', start);
 
   /* hook for tests */
-  window.__bg = { runs: function () { return runs; }, step: step, reset: reset, draw: draw, wells: function () { return wells.map(function (w) { return [w[0] * L, w[1] * L]; }); } };
+  window.__bg = { runs: function () { return runs; }, step: step, reset: reset, draw: draw, wells: function () { return wells.map(function (w) { return [w.x * L, w.y * L]; }); } };
 })();
