@@ -227,6 +227,29 @@ html[data-theme="dark"] .area-head h3 a { color: #f4f1f7; }
 html[data-theme="dark"] .area:hover { background: #262031; box-shadow: 0 12px 26px -14px rgba(0, 0, 0, .8); }
 html[data-theme="dark"] .area-ico { background: rgba(207, 148, 216, .15); }
 @media (max-width: 420px) { .area-go { display: none; } }
+
+/* Education timeline (home page) */
+.edu-tl { position: relative; padding-left: 1.4rem; --x: .375rem; margin-top: .4rem; }
+.edu-it { position: relative; margin: 0 0 .85rem; }
+.edu-it::before {                                  /* circle */
+  content: ""; position: absolute; left: calc(var(--x) - 1.4rem - 1px); top: .5rem; width: .7rem; height: .7rem;
+  transform: translateX(-50%); border-radius: 50%; background: var(--bg); border: 2px solid var(--primary); box-sizing: border-box; z-index: 1;
+}
+.edu-it:first-child::before { background: var(--primary); box-shadow: 0 0 0 4px rgba(142, 69, 133, .14); }
+.edu-it::after {                                   /* line from this circle to the next one */
+  content: ""; position: absolute; left: calc(var(--x) - 1.4rem - 1px); top: .85rem; height: calc(100% + .85rem); width: 2px;
+  transform: translateX(-50%); background: rgba(142, 69, 133, .38); border-radius: 2px;
+}
+.edu-it:last-child::after { display: none; }       /* the last circle ends the line */
+.edu-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.edu-deg { font-weight: 700; font-size: .95rem; line-height: 1.35; }
+.edu-when { font-size: .76rem; font-weight: 600; color: var(--primary); white-space: nowrap; }
+.edu-line { font-family: var(--sans); font-size: .84rem; line-height: 1.5; }
+.edu-school { margin-top: .05rem; color: var(--muted); }
+html[data-theme="dark"] .edu-it::before { background: #15131b; }
+html[data-theme="dark"] .edu-it:first-child::before { background: var(--primary); box-shadow: 0 0 0 4px rgba(207, 148, 216, .18); }
+html[data-theme="dark"] .edu-it::after { background: rgba(207, 148, 216, .42); }
+@media (max-width: 520px) { .edu-row { flex-wrap: wrap; gap: 0 12px; } }
 </style>
 <link rel="stylesheet" href="/theme.css" />
 <script src="/theme.js"></script>
@@ -307,25 +330,24 @@ html[data-theme="dark"] .area-ico { background: rgba(207, 148, 216, .15); }
       </div>
 
       <h2 id="education">Education</h2>
-      <div class="edu-item">
-        <div class="deg">PhD in Computer Science</div>
-        <div><a href="https://dmi.unibas.ch/en/" target="_blank" rel="noopener">UniBas, Department of Mathematics and Computer Science</a></div>
-        <div class="muted edu-meta">Oct. 2023 &ndash; Present &middot; Basel, Switzerland</div>
-        <div>Supervisor: <a href="https://dmi.unibas.ch/en/persons/aurelien-lucchi/" target="_blank" rel="noopener">Aurelien Lucchi</a></div>
-      </div>
-      <div class="edu-item">
-        <div class="deg">Master of Science in Data Science</div>
-        <div><a href="https://www.ip-paris.fr/" target="_blank" rel="noopener">IP Paris, Department of Applied Mathematics</a></div>
-        <div class="muted edu-meta">Sept. 2021 &ndash; Aug. 2023 &middot; GPA <a href="/files/transcripts/TranscriptM1_M2.pdf" target="_blank" rel="noopener">17.65/20</a> &middot; Palaiseau, France</div>
-        <div>Thesis: Unified Analysis of Asynchronous Algorithms</div>
-        <div>Thesis Supervisor: <a href="https://scholar.google.com/citations?user=dJNwgT8AAAAJ&amp;hl=en" target="_blank" rel="noopener">Mher Safaryan</a>, <a href="https://people.csail.mit.edu/alistarh/" target="_blank" rel="noopener">Dan Alistarh</a></div>
-      </div>
-      <div class="edu-item">
-        <div class="deg">Bachelor of Science in Applied Mathematics and Physics</div>
-        <div><a href="https://mipt.ru/english/edu/phystechschools/psami" target="_blank" rel="noopener">MIPT, Phystech School of Applied Mathematics and Informatics</a></div>
-        <div class="muted edu-meta">Sept. 2017 &ndash; Jul. 2021 &middot; GPA <a href="/files/transcripts/TranscriptBSc.pdf" target="_blank" rel="noopener">4.95/5 (9.27/10)</a> &middot; Dolgoprudny, Russia</div>
-        <div>Thesis: Distributed Second Order Methods with Fast Rates and Compressed Communication</div>
-        <div>Thesis Supervisor: <a href="https://richtarik.org/" target="_blank" rel="noopener">Peter Richt&aacute;rik</a></div>
+      <div class="edu-tl">
+        <div class="edu-it">
+          <div class="edu-row"><span class="edu-deg">PhD in Computer Science</span><span class="edu-when">2023 &ndash; now</span></div>
+          <div class="edu-line edu-school">University of Basel</div>
+          <div class="edu-line">Supervisor: <a href="https://dmi.unibas.ch/en/persons/aurelien-lucchi/" target="_blank" rel="noopener">Aurelien Lucchi</a></div>
+        </div>
+        <div class="edu-it">
+          <div class="edu-row"><span class="edu-deg">Master of Science in Data Science</span><span class="edu-when">2021 &ndash; 2023</span></div>
+          <div class="edu-line edu-school">Institut Polytechnique de Paris &middot; GPA <a href="/files/transcripts/TranscriptM1_M2.pdf" target="_blank" rel="noopener">17.65/20</a></div>
+          <div class="edu-line">Thesis: Unified Analysis of Asynchronous Algorithms</div>
+          <div class="edu-line">Thesis Supervisors: <a href="https://scholar.google.com/citations?user=dJNwgT8AAAAJ&amp;hl=en" target="_blank" rel="noopener">Mher Safaryan</a>, <a href="https://people.csail.mit.edu/alistarh/" target="_blank" rel="noopener">Dan Alistarh</a></div>
+        </div>
+        <div class="edu-it">
+          <div class="edu-row"><span class="edu-deg">Bachelor of Science in Applied Mathematics and Physics</span><span class="edu-when">2017 &ndash; 2021</span></div>
+          <div class="edu-line edu-school">Moscow Institute of Physics and Technology &middot; GPA <a href="/files/transcripts/TranscriptBSc.pdf" target="_blank" rel="noopener">4.95/5 (9.27/10)</a></div>
+          <div class="edu-line">Thesis: Distributed Second Order Methods with Fast Rates and Compressed Communication</div>
+          <div class="edu-line">Thesis Supervisor: <a href="https://richtarik.org/" target="_blank" rel="noopener">Peter Richt&aacute;rik</a></div>
+        </div>
       </div>
     </div>
 
