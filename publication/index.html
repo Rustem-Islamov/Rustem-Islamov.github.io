@@ -365,7 +365,7 @@ body {
     font-size:1.5rem; margin:1.4rem 0 1rem; padding-bottom:6px;
     border-bottom:2px solid var(--rule);
   }
-  .pub-group > h1 small{ font-size:.55em; font-weight:500; color:var(--muted); margin-left:.6rem; }
+  .pub-group.collapsed .grid-sizer{ display:none !important; }
   #topic-view{ display:none !important; }
   @media (max-width:760px){ .pub-header{ flex-direction:column; gap:20px; } }
 </style>
@@ -4043,14 +4043,16 @@ document.addEventListener('DOMContentLoaded', function () {
   var countEl = document.getElementById('pub-count');
   var resetBtn = document.getElementById('pub-reset');
   var flat = document.getElementById('pub-flat');
+  var collapsedGroups = {};                                   /* remembers closed sections while you search or filter */
 
   /* extra data per paper: number, venue and research topic */
   var TOPICS = [
-    ['Federated Learning', ['21_bl','21_fednl','21_mn','22_3pc','22_ada3pc','23_AsyncSGD','23_clip21','23_econtrol','23_partial','24_motef','24_signsgd','25_clip21m','25_safe_ef','26_byz_dp','26_dpsde','26_local_sgd']],
     ['Large-Scale Optimization', ['24_sde_adam','25_ngnm','26_adam_sgd','26_bst']],
-    ['Loss Landscape of Neural Networks', ['24_alphabeta','25_l0l1sde','25_warmup','26_eos']]
+    ['Loss Landscape of Neural Networks', ['24_alphabeta','25_l0l1sde','25_warmup','26_eos']],
+    ['Federated Learning', ['21_bl','21_fednl','21_mn','22_3pc','22_ada3pc','23_AsyncSGD','23_clip21','23_econtrol','23_partial','24_motef','24_signsgd','25_clip21m','25_safe_ef','26_byz_dp','26_dpsde','26_local_sgd']]
   ];
-  var VENUES = ['NeurIPS','ICML','ICLR','AISTATS','UAI','TMLR','COLT','AAAI'];
+  var VENUES = ['NeurIPS','ICML','ICLR','AISTATS','UAI','TMLR','COLT','AAAI'];   /* also the display order */
+  function venuePos(v){ var i = VENUES.indexOf(v); return i < 0 ? 99 : i; }
   items.forEach(function(it, i){
     var n = it.querySelector('.pub-num'); it._num = n ? parseInt(n.textContent.replace(/\D/g,''),10) || 0 : 0;
     it._order = i;
@@ -4074,7 +4076,7 @@ document.addEventListener('DOMContentLoaded', function () {
       list.slice().sort(function(a,b){ return a._year===b._year ? a._num-b._num : (a._year<b._year?-1:1); }).forEach(function(it){ put(it._year, it); });
     } else if (mode==='venue'){
       list.slice().sort(newest).forEach(function(it){ put(it._venue, it); });
-      order.sort(function(a,b){ return a==='Other'?1 : b==='Other'?-1 : a.localeCompare(b); });
+      order.sort(function(a,b){ return venuePos(a)-venuePos(b); });
     } else if (mode==='topic'){
       list.slice().sort(newest).forEach(function(it){ put(it._topic, it); });
       order.sort(function(a,b){
@@ -4103,10 +4105,13 @@ document.addEventListener('DOMContentLoaded', function () {
     flat.innerHTML = '';
     if (!byYear){
       groupsFor(mode, matched).forEach(function(grp){
-        var box = document.createElement('div'); box.className = 'pub-group';
-        var h = document.createElement('h1'); h.textContent = grp[0];
-        var small = document.createElement('small'); small.textContent = grp[1].length + (grp[1].length===1 ? ' paper' : ' papers');
-        h.appendChild(small); box.appendChild(h);
+        var key = mode + '|' + grp[0];
+        var box = document.createElement('div'); box.className = 'pub-group' + (collapsedGroups[key] ? ' collapsed' : '');
+        var h = document.createElement('h1');
+        var tri = document.createElement('span'); tri.className = 'tri'; tri.textContent = '\u25BC';
+        tri.setAttribute('role', 'button'); tri.setAttribute('aria-label', 'Collapse or expand ' + grp[0]);
+        tri.addEventListener('click', function(){ collapsedGroups[key] = box.classList.toggle('collapsed'); });
+        h.appendChild(tri); h.appendChild(document.createTextNode(grp[0])); box.appendChild(h);
         grp[1].forEach(function(it){ box.appendChild(it); });
         flat.appendChild(box);
       });
