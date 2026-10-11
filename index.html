@@ -250,6 +250,32 @@ html[data-theme="dark"] .edu-it::before { background: #15131b; }
 html[data-theme="dark"] .edu-it:first-child::before { background: var(--primary); box-shadow: 0 0 0 4px rgba(207, 148, 216, .18); }
 html[data-theme="dark"] .edu-it::after { background: rgba(207, 148, 216, .42); }
 @media (max-width: 520px) { .edu-row { flex-wrap: wrap; gap: 0 12px; } }
+
+/* selected publications as cards (home page) */
+.sp-list { display: grid; gap: 10px; margin-top: .9rem; }
+.sp { position: relative; padding: 11px 14px 10px; background: #fff; border: 1px solid var(--rule); border-radius: 14px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease; }
+.sp::before { content: ""; position: absolute; left: 0; top: 11px; bottom: 11px; width: 3px; border-radius: 0 3px 3px 0; background: var(--primary); opacity: .7; }
+.sp:hover { transform: translateY(-2px); border-color: var(--primary); background: #fbf6fb; box-shadow: 0 12px 26px -14px rgba(142, 69, 133, .5); }
+.sp-tags { display: flex; gap: 6px; align-items: center; margin-bottom: .35rem; font-family: var(--sans); }
+.sp-tag { font-size: .72rem; font-weight: 600; padding: 2px 9px; border-radius: 999px; background: rgba(142, 69, 133, .1); color: var(--primary); letter-spacing: .02em; }
+.sp-tag.oral { background: rgba(155, 28, 28, .1); color: #9b1c1c; }
+.sp h3 { margin: 0; font-size: .96rem; line-height: 1.4; }
+.sp h3 a { color: var(--fg); }
+.sp h3 a:hover { color: var(--primary); text-decoration: none; }
+.sp-authors { margin: .25rem 0 .5rem; font-family: var(--sans); font-size: .82rem; line-height: 1.45; color: var(--muted); }
+.sp-authors a { color: inherit; }
+.sp-authors a:hover { color: var(--primary); }
+.sp-authors b { color: var(--fg); font-weight: 600; }
+.sp-links { display: flex; gap: 6px; flex-wrap: wrap; }
+.sp-links a { font-family: var(--sans); font-size: .76rem; font-weight: 500; padding: 2px 11px; border: 1px solid var(--primary); border-radius: 6px; color: var(--primary); }
+.sp-links a:hover { background: var(--primary); color: #fff; text-decoration: none; }
+html[data-theme="dark"] .sp { background: #1e1a26; }
+html[data-theme="dark"] .sp:hover { background: #262031; box-shadow: 0 12px 26px -14px rgba(0, 0, 0, .8); }
+html[data-theme="dark"] .sp-tag { background: rgba(207, 148, 216, .14); }
+html[data-theme="dark"] .sp-tag.oral { background: rgba(240, 138, 138, .14); color: #f08a8a; }
+html[data-theme="dark"] .sp h3 a { color: #f4f1f7; }
+html[data-theme="dark"] .sp-links a:hover { color: #15131b; }
 </style>
 <link rel="stylesheet" href="/theme.css" />
 <script src="/theme.js"></script>
@@ -376,45 +402,35 @@ html[data-theme="dark"] .edu-it::after { background: rgba(207, 148, 216, .42); }
       <h2 id="selected-publications">Selected Publications</h2>
       <p class="selected-pub-intro">My contributions have appeared in leading machine learning venues including NeurIPS, ICML, ICLR, and AISTATS. Here is the list of papers I am most proud of:</p>
 
-      <div class="selected-pub-list">
-        <div class="pub-topic-item">
-          <div class="pub-list-item" itemscope itemtype="http://schema.org/CreativeWork">
-            <b class="pub-num">[21]</b>
-            <span itemprop="author" class="article-metadata li-cite-author">
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/" target="_blank" rel="noopener">R. Islamov</a></span>,
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://seg.inf.unibe.ch/team/roman-machacek/" target="_blank" rel="noopener">R. Machacek</a></span>,
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&amp;hl=en" target="_blank" rel="noopener">A. Lucchi</a></span>,
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://tonysf.github.io/" target="_blank" rel="noopener">A. Silveti-Falls</a></span>,
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io/index.html" target="_blank" rel="noopener">E. Gorbunov</a></span>,
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.epfl.ch/labs/lions/people/volkan-cevher/" target="_blank" rel="noopener">V. Cevher</a></span>.
-            </span>
-            <a class="specialeffects" href="/publication/26_bst/" itemprop="name">On the Role of Batch Size in Stochastic Conditional Gradient Methods</a>, (ICML 2026).
+      <div class="selected-pub-list sp-list">
+        <div class="sp">
+          <div class="sp-tags"><span class="sp-tag">ICML 2026</span></div>
+          <h3><a href="/publication/26_bst/">On the Role of Batch Size in Stochastic Conditional Gradient Methods</a></h3>
+          <p class="sp-authors"><a href="https://rustem-islamov.github.io/" target="_blank" rel="noopener"><b>R. Islamov</b></a>, <a href="https://seg.inf.unibe.ch/team/roman-machacek/" target="_blank" rel="noopener">R. Machacek</a>, <a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&amp;hl=en" target="_blank" rel="noopener">A. Lucchi</a>, <a href="https://tonysf.github.io/" target="_blank" rel="noopener">A. Silveti-Falls</a>, <a href="https://eduardgorbunov.github.io/index.html" target="_blank" rel="noopener">E. Gorbunov</a>, <a href="https://www.epfl.ch/labs/lions/people/volkan-cevher/" target="_blank" rel="noopener">V. Cevher</a></p>
+          <div class="sp-links">
+            <a href="/files/publications/BST/BST.pdf" target="_blank" rel="noopener">PDF</a>
+            <a href="https://arxiv.org/abs/2603.21191" target="_blank" rel="noopener">arXiv</a>
+            <a href="/publication/26_bst/cite.bib" class="js-cite-modal" data-filename="/publication/26_bst/cite.bib" title="Copy BibTeX to clipboard">Cite</a>
           </div>
         </div>
-
-        <div class="pub-topic-item">
-          <div class="pub-list-item" itemscope itemtype="http://schema.org/CreativeWork">
-            <b class="pub-num">[20]</b>
-            <span itemprop="author" class="article-metadata li-cite-author">
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/" target="_blank" rel="noopener">R. Islamov</a></span>,
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://mtcrawshaw.github.io/" target="_blank" rel="noopener">M. Crawshaw</a></span>,
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://jmcohen.github.io/" target="_blank" rel="noopener">J. Cohen</a></span>,
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?hl=ru&amp;user=okKw87MAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener">R. Gower</a></span>.
-            </span>
-            <a class="specialeffects" href="/publication/26_eos/" itemprop="name">Non-Euclidean Gradient Descent Operates at the Edge of Stability</a>, (<span style="color: darkred;"><b>Oral</b></span>, ICML 2026)
+        <div class="sp">
+          <div class="sp-tags"><span class="sp-tag">ICML 2026</span><span class="sp-tag oral">Oral</span></div>
+          <h3><a href="/publication/26_eos/">Non-Euclidean Gradient Descent Operates at the Edge of Stability</a></h3>
+          <p class="sp-authors"><a href="https://rustem-islamov.github.io/" target="_blank" rel="noopener"><b>R. Islamov</b></a>, <a href="https://mtcrawshaw.github.io/" target="_blank" rel="noopener">M. Crawshaw</a>, <a href="https://jmcohen.github.io/" target="_blank" rel="noopener">J. Cohen</a>, <a href="https://scholar.google.com/citations?hl=ru&amp;user=okKw87MAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener">R. Gower</a></p>
+          <div class="sp-links">
+            <a href="/files/publications/EOS/eos.pdf" target="_blank" rel="noopener">PDF</a>
+            <a href="https://arxiv.org/abs/2603.05002" target="_blank" rel="noopener">arXiv</a>
+            <a href="/publication/26_eos/cite.bib" class="js-cite-modal" data-filename="/publication/26_eos/cite.bib" title="Copy BibTeX to clipboard">Cite</a>
           </div>
         </div>
-
-        <div class="pub-topic-item">
-          <div class="pub-list-item" itemscope itemtype="http://schema.org/CreativeWork">
-            <b class="pub-num">[14]</b>
-            <span itemprop="author" class="article-metadata li-cite-author">
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eneamc.github.io/" target="_blank" rel="noopener">E. M. Compagnoni</a></span>,
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/" target="_blank" rel="noopener">R. Islamov</a></span>,
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.mn.uio.no/math/english/people/aca/proske/" target="_blank" rel="noopener">F. N. Proske</a></span>,
-              <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&amp;hl=en" target="_blank" rel="noopener">A. Lucchi</a></span>.
-            </span>
-            <a class="specialeffects" href="/publication/24_signsgd/" itemprop="name">Unbiased and Sign Compression in Distributed Learning: Comparing Noise Resilience via SDEs</a>, (<span style="color: darkred;"><b>Oral</b></span>, AISTATS 2025).
+        <div class="sp">
+          <div class="sp-tags"><span class="sp-tag">AISTATS 2025</span><span class="sp-tag oral">Oral</span></div>
+          <h3><a href="/publication/24_signsgd/">Unbiased and Sign Compression in Distributed Learning: Comparing Noise Resilience via SDEs</a></h3>
+          <p class="sp-authors"><a href="https://eneamc.github.io/" target="_blank" rel="noopener">E. M. Compagnoni</a>, <a href="https://rustem-islamov.github.io/" target="_blank" rel="noopener"><b>R. Islamov</b></a>, <a href="https://www.mn.uio.no/math/english/people/aca/proske/" target="_blank" rel="noopener">F. N. Proske</a>, <a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&amp;hl=en" target="_blank" rel="noopener">A. Lucchi</a></p>
+          <div class="sp-links">
+            <a href="/files/publications/SignSGD/signsgd.pdf" target="_blank" rel="noopener">PDF</a>
+            <a href="https://arxiv.org/abs/2502.17009" target="_blank" rel="noopener">arXiv</a>
+            <a href="/publication/24_signsgd/cite.bib" class="js-cite-modal" data-filename="/publication/24_signsgd/cite.bib" title="Copy BibTeX to clipboard">Cite</a>
           </div>
         </div>
       </div>
