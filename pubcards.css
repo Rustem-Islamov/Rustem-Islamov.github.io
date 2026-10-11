@@ -47,3 +47,11 @@ html[data-theme="dark"] .v-aistats{--vbg:rgba(205,150,100,.17);--vfg:#e0b48a}
 html[data-theme="dark"] .v-uai{--vbg:rgba(244,114,182,.15);--vfg:#f9a8d4}
 html[data-theme="dark"] .v-tmlr{--vbg:rgba(148,163,184,.16);--vfg:#cbd5e1}
 html[data-theme="dark"] a.vtag:hover{color:#15131b!important}
+/* the venue tag replaces the full conference name: keep the text in the DOM (the sort script reads it) but do not show it */
+.pub-list-item>p:not(:has(.btn)){display:none!important}
+.pub-list-item>p:has(.btn){font-size:0!important;line-height:0;display:block!important;margin-top:.5rem!important}
+.pub-list-item>p:has(.btn) .btn{margin:0 6px 4px 0!important;display:inline-block;vertical-align:top}
+.pub-list-item>p:has(.btn) .btn{line-height:1.5}
+/* highlight my name in the author list */
+.pub-list-item .li-cite-author a.me{color:var(--fg)!important;font-weight:700}
+html[data-theme="dark"] .pub-list-item .li-cite-author a.me{color:#f4f1f7!important}
