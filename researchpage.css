@@ -39,3 +39,4 @@ html[data-theme="dark"] .back-pill{color:#e3b6ea;border-color:rgba(207,148,216,.
 .ct-tl:hover .ct:first-child:not(:hover)::before{background:var(--bg,#fff);box-shadow:none}
 .ct:hover::before{background:var(--primary);box-shadow:0 0 0 4px rgba(142,69,133,.14)}
 html[data-theme="dark"] .ct-tl:hover .ct:first-child:not(:hover)::before{background:#15131b}
+html[data-theme="dark"] .ct:hover::before{background:var(--primary);box-shadow:0 0 0 4px rgba(207,148,216,.18)}
