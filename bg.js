@@ -6,7 +6,7 @@
   if (!cv || !cv.getContext) return;
   var ctx = cv.getContext('2d');
   var STRENGTH = 0.15;
-  var STEP_EVERY = 2;                                         /* one optimizer step every 2 ticks (a tick is about 16 ms): half the earlier speed */
+  var STEP_EVERY = 1;                                         /* one optimizer step per tick (a tick is about 16 ms) */
   var RUN_TICKS = 188;                                        /* every run lasts 3 seconds, whether or not the optimizers have arrived ... */
   var FADE_TICKS = 22;                                        /* ... the last third of a second is a fade-out, then a new run starts from a new point */
   var MAX_STEPS = 500;                                        /* every optimizer gets at most this many steps per run (about 8 s) */
