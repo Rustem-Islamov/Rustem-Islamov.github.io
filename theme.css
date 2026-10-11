@@ -128,3 +128,12 @@ html[data-theme="dark"] .universal-wrapper, html[data-theme="dark"] .article-wid
 html[data-theme="dark"] #pub-stats-box { background: #1e1a26 !important; border-color: rgba(207, 148, 216, .55) !important; color: #ece9f0 !important; }
 html[data-theme="dark"] #pub-stats-box span { color: #ece9f0 !important; }
 html[data-theme="dark"] #pub-stats-box strong { color: #cf94d8 !important; }
+
+/* Cite button: confirmation state after copying */
+.js-cite-modal.is-copied.is-copied,
+html[data-theme="dark"] .pub-list-item .js-cite-modal.is-copied,
+html[data-theme="dark"] .js-cite-modal.is-copied.btn-outline-primary {
+  background: #2e7d32 !important;
+  border-color: #2e7d32 !important;
+  color: #fff !important;
+}

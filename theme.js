@@ -75,6 +75,53 @@
     if (document.querySelector('.topnav')) markHome(); else markCurrentPage();
   });
 
+  /* ---------- Cite buttons: copy the BibTeX straight to the clipboard ---------- */
+  function flash(btn) {
+    if (!btn.__citeLabel) btn.__citeLabel = btn.innerHTML;
+    btn.style.minWidth = btn.offsetWidth + 'px';              /* keep the button from jumping */
+    btn.classList.add('is-copied');
+    btn.textContent = 'Copied \u2713';
+    clearTimeout(btn.__citeTimer);
+    btn.__citeTimer = setTimeout(function () {
+      btn.classList.remove('is-copied');
+      btn.innerHTML = btn.__citeLabel; btn.style.minWidth = '';
+    }, 1800);
+  }
+  function legacyCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
+    document.body.appendChild(ta); ta.select();
+    var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+    ta.remove(); return ok;
+  }
+  function openPopup(btn) {                                    /* fallback: the page's own Cite window */
+    btn.__citeFallback = true; btn.click(); btn.__citeFallback = false;
+  }
+  function copyBib(btn) {
+    var file = btn.getAttribute('data-filename');
+    var text = fetch(file, { cache: 'no-cache' })
+      .then(function (r) { if (!r.ok) throw new Error('bib'); return r.text(); })
+      .then(function (t) { return t.trim(); });
+    var viaItem = window.ClipboardItem && navigator.clipboard && navigator.clipboard.write
+      ? navigator.clipboard.write([new ClipboardItem({ 'text/plain': text.then(function (t) { return new Blob([t], { type: 'text/plain' }); }) })])
+      : Promise.reject();
+    viaItem.catch(function () {                                /* e.g. Firefox: write after the download finishes */
+      return text.then(function (t) {
+        return (navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(t) : Promise.reject())
+          .catch(function () { if (!legacyCopy(t)) throw new Error('copy'); });
+      });
+    }).then(function () { flash(btn); }, function () { openPopup(btn); });
+  }
+  document.addEventListener('click', function (e) {            /* capture phase: runs before the page's own handlers */
+    var btn = e.target && e.target.closest ? e.target.closest('.js-cite-modal') : null;
+    if (!btn || btn.__citeFallback || !btn.getAttribute('data-filename')) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    copyBib(btn);
+  }, true);
+  document.addEventListener('DOMContentLoaded', function () {
+    Array.prototype.forEach.call(document.querySelectorAll('.js-cite-modal'), function (b) { b.title = 'Copy BibTeX to clipboard'; });
+  });
+
   /* keep every open page in sync: tabs, and pages restored from the back/forward cache */
   function sync() {
     var t = saved() || (systemDark() ? 'dark' : 'light');
