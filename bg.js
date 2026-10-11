@@ -5,7 +5,8 @@
   var cv = document.getElementById('bg-canvas');
   if (!cv || !cv.getContext) return;
   var ctx = cv.getContext('2d');
-  var STRENGTH = 0.15;                                        /* overall faintness of the lines */
+  var STRENGTH = 0.15;
+  var MAX_STEPS = 500;                                        /* every optimizer gets at most this many steps per run (about 8 s) */
   var L = 400;                                                /* length unit of the landscape, in px */
   var W = 0, H = 0, dpr = 1, dark = false, cache = null, runs = [], visible = true;
   var wells = [];                                             /* valleys, in units of L */
@@ -135,8 +136,8 @@
     r.n++;
     var near = false;                                          /* settled = has stayed close to a minimum for a while */
     for (var i = 0; i < wells.length; i++) if (Math.hypot(r.X - wells[i].x, r.Y - wells[i].y) < 0.09) near = true;
-    r.near = near ? r.near + 1 : 0;
-    if (r.near > 70 || r.n > 6000) r.done = true;
+    if (near) r.near++;                                        /* total steps spent near a minimum (jitter may leave it briefly) */
+    if (r.near >= 60 || r.n >= MAX_STEPS) r.done = true;           /* arrived, or out of steps */
   }
   var toggle = Math.random() < 0.5;                            /* alternate: one run heads for the CV minimum, the next for the photo minimum */
   function newStart() {
