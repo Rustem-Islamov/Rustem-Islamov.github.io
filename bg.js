@@ -89,14 +89,18 @@
 
   /* ---- optimizers ---- */
   var KINDS = {
-    sgd:  { c: ['#8e4585', '#cf94d8'], lr: 0.011 },
-    mom:  { c: ['#2d7fb8', '#6cb4ea'], lr: 0.005 },
-    adam: { c: ['#d77a1f', '#f2a54f'], lr: 0.0065 }
+    sgd:  { c: ['#8e4585', '#cf94d8'], lr: 0.011,  noise: 0.55 },
+    mom:  { c: ['#2d7fb8', '#6cb4ea'], lr: 0.005,  noise: 0.30 },
+    adam: { c: ['#d77a1f', '#f2a54f'], lr: 0.0065, noise: 0.55 }
   };
   function color(k) { return KINDS[k].c[dark ? 1 : 0]; }
-  function startRun(kind, X, Y) { return { kind: kind, X: X, Y: Y, mx: 0, my: 0, s2: 0, t: 0, trail: [], done: false, hold: 0, fade: 1, lag: 0 }; }
+  function gauss() { var u = 1 - Math.random(), v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283185 * v); }
+  function startRun(kind, X, Y) { return { kind: kind, X: X, Y: Y, mx: 0, my: 0, s2: 0, t: 0, trail: [], done: false, hold: 0, fade: 1, n: 0, near: 0 }; }
+  /* stochastic dynamics: every step uses a noisy gradient (like a mini-batch), so the paths wobble
+     on the way down and keep jittering around the minimum instead of stopping dead */
   function step(r) {
-    var g = grad(r.X, r.Y), lr = KINDS[r.kind].lr, dx, dy;
+    var g = grad(r.X, r.Y), k = KINDS[r.kind], lr = k.lr, dx, dy;
+    g[0] += k.noise * gauss(); g[1] += k.noise * gauss();
     if (r.kind === 'sgd') { dx = -lr * g[0]; dy = -lr * g[1]; }
     else if (r.kind === 'mom') { r.mx = 0.93 * r.mx - lr * g[0]; r.my = 0.93 * r.my - lr * g[1]; dx = r.mx; dy = r.my; }
     else {
@@ -106,8 +110,11 @@
     }
     r.X += dx; r.Y += dy;
     r.trail.push([r.X, r.Y]); if (r.trail.length > 480) r.trail.shift();
-    r.n = (r.n || 0) + 1;
-    if (Math.abs(dx) + Math.abs(dy) < 2e-5 || r.n > 6000) r.done = true;
+    r.n++;
+    var near = false;                                          /* settled = has stayed close to a minimum for a while */
+    for (var i = 0; i < wells.length; i++) if (Math.hypot(r.X - wells[i].x, r.Y - wells[i].y) < 0.09) near = true;
+    r.near = near ? r.near + 1 : 0;
+    if (r.near > 70 || r.n > 6000) r.done = true;
   }
   var toggle = Math.random() < 0.5;                            /* alternate: one run heads for the CV minimum, the next for the photo minimum */
   function newStart() {
@@ -118,7 +125,7 @@
   function reset() {
     var s = newStart();
     runs = ['sgd', 'mom', 'adam'].map(function (k) { return startRun(k, s[0], s[1]); });
-    if (reduce) { for (var n = 0; n < 6000; n++) runs.forEach(function (r) { if (!r.done) step(r); }); }
+    if (reduce) { for (var n = 0; n < 6000; n++) runs.forEach(function (r) { if (!r.done) step(r); }); for (n = 0; n < 160; n++) runs.forEach(step); }
   }
 
   /* ---- drawing ---- */
@@ -150,8 +157,8 @@
       while (acc > 16) {
         acc -= 16;
         runs.forEach(function (r) {
-          if (!r.done) { for (var k = 0; k < 2; k++) step(r); }
-          else { r.hold++; if (r.hold > 110) r.fade = Math.max(0, r.fade - 0.012); }
+          step(r);                                            /* keeps jittering around the minimum once it has arrived */
+          if (r.done) { r.hold++; if (r.hold > 150) r.fade = Math.max(0, r.fade - 0.012); }
         });
       }
       if (runs.every(function (r) { return r.done && r.fade <= 0; })) reset();
