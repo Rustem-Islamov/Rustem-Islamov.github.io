@@ -1,4 +1,4 @@
-/* Shared by every page: dark-mode toggle + "where am I" highlighting in the header.
+/* Shared by every page: dark-mode toggle + current-page highlighting in the header.
    Loaded synchronously in <head> so the saved theme is applied before first paint. */
 (function () {
   var root = document.documentElement;
@@ -57,47 +57,22 @@
     var want = null;
     if (path.indexOf('/publication/') === 0) want = '/publication/';
     else if (path.indexOf('/research/') === 0) want = '/research/';
-    else if (path.indexOf('/post/') === 0) want = '/#posts';
     if (!want) return;
     links().forEach(function (l) {
       var h = l.getAttribute('href');
-      if (h === want || (want === '/#posts' && h === '/#posts')) setActive(l);
+      if (h && h.replace(/\/$/, '') === want.replace(/\/$/, '')) setActive(l);
     });
   }
 
-  /* home page: highlight Home / Education / Posts while scrolling */
-  function homeSpy() {
-    var byHash = {};
-    links().forEach(function (l) { var h = l.getAttribute('href'); if (h && h.charAt(0) === '#') byHash[h] = l; });
-    var about = document.getElementById('about');
-    var edu = document.getElementById('education');
-    var news = document.getElementById('posts');
-    var pinned = null, pinnedAt = null;      /* pinnedAt = scroll position where the click landed */
-
-    function update() {
-      var y = window.pageYOffset;
-      if (pinned && (pinnedAt === null || Math.abs(y - pinnedAt) < 160)) { setActive(byHash[pinned]); return; }
-      pinned = null;
-      var line = window.innerHeight * 0.5, a = '#about';
-      if (edu && edu.getBoundingClientRect().top <= line) a = '#education';
-      setActive(byHash[a]);
-    }
-    links().forEach(function (l) {
-      l.addEventListener('click', function () {
-        var h = l.getAttribute('href');
-        if (!h || !byHash[h]) return;
-        pinned = h; pinnedAt = null; setActive(l);       /* keep it highlighted while the page scrolls there */
-        setTimeout(function () { pinnedAt = window.pageYOffset; }, 900);
-      });
-    });
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
-    update();
+  /* home page: the header only has page links now, so Home is the current one */
+  function markHome() {
+    var home = document.querySelector('.topnav a[href="#about"]');
+    if (home) setActive(home);
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     addToggle();
-    if (document.querySelector('.topnav')) homeSpy(); else markCurrentPage();
+    if (document.querySelector('.topnav')) markHome(); else markCurrentPage();
   });
 
   /* keep every open page in sync: tabs, and pages restored from the back/forward cache */
