@@ -4059,7 +4059,7 @@ document.addEventListener('DOMContentLoaded', function () {
     it._home = it.parentNode;
     var vp = it.querySelector('p'), venue = '';              /* venue line, incl. the (Oral, ...) span, without the buttons */
     if (vp) Array.prototype.forEach.call(vp.childNodes, function(n){ if (n.nodeType===3 || (n.nodeType===1 && n.tagName==='SPAN')) venue += n.textContent; });
-    it._venue = 'Other';
+    it._venue = 'Preprints';
     for (var k=0;k<VENUES.length;k++){ if (venue.indexOf(VENUES[k])>-1){ it._venue = VENUES[k]; break; } }
     var a = it.querySelector('a.specialeffects'); var m = a && a.getAttribute('href').match(/publication\/([^\/"]+)/);
     var slug = m ? m[1] : '';
