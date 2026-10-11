@@ -431,7 +431,22 @@ body {
 <link rel="stylesheet" href="/theme.css" />
 <script src="/theme.js"></script>
 <link rel="stylesheet" href="/pubcards.css">
-</head>
+<style>
+#pub-stats-box{display:none!important}
+.pub-summary{position:relative;display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:1rem 0 0;padding:14px 18px 14px 22px;background:#fff;border:1px solid var(--rule);border-radius:14px}
+.pub-summary::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:0 3px 3px 0;background:var(--primary);opacity:.7}
+.ps-total{display:flex;align-items:baseline;gap:8px;padding-right:16px;border-right:1px solid var(--rule)}
+.ps-total b{font-size:2.1rem;line-height:1;color:var(--primary)}
+.ps-total span{font-family:'Inter',system-ui,sans-serif;font-size:.85rem;color:var(--muted)}
+.ps-pills{display:flex;flex-wrap:wrap;gap:8px}
+.vpill{cursor:pointer;font:inherit;font-family:'Inter',system-ui,sans-serif;font-size:.8rem!important;font-weight:600;padding:3px 11px!important;border:1px solid transparent;transition:transform .15s,box-shadow .15s,border-color .15s}
+.vpill b{font-weight:700;margin-left:4px;opacity:.85}
+.vpill:hover{transform:translateY(-1px);box-shadow:0 6px 14px -8px rgba(0,0,0,.35)}
+.vpill.active{border-color:var(--vfg);box-shadow:0 0 0 2px var(--vbg)}
+html[data-theme="dark"] .pub-summary{background:#1e1a26}
+html[data-theme="dark"] .ps-total b{color:#cf94d8}
+@media(max-width:560px){.ps-total{border-right:0;padding-right:0}}
+</style></head>
 
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -602,15 +617,18 @@ body {
 <div class="universal-wrapper pub-header">
   <div class="pub-head-left">
     <h1 class="pub-page-title">Publications</h1>
-    <div id="pub-stats-box">
-        <span class="stat-total">Total publications:&nbsp;</span>
-        <span><strong>4</strong> NeurIPS</span>
-        <span><strong>7</strong> ICML</span>
-        <span><strong>4</strong> ICLR</span>
-        <span><strong>3</strong> AISTATS</span>
-        <span><strong>1</strong> UAI</span>
-        <span><strong>3</strong> TMLR</span>
+    <div id="pub-summary" class="pub-summary">
+      <div class="ps-total"><b>24</b><span>papers</span></div>
+      <div class="ps-pills" role="group" aria-label="Sort papers by venue">
+        <button type="button" class="vtag vpill v-neurips" data-venue="NeurIPS">NeurIPS <b>4</b></button>
+        <button type="button" class="vtag vpill v-icml" data-venue="ICML">ICML <b>7</b></button>
+        <button type="button" class="vtag vpill v-iclr" data-venue="ICLR">ICLR <b>4</b></button>
+        <button type="button" class="vtag vpill v-aistats" data-venue="AISTATS">AISTATS <b>3</b></button>
+        <button type="button" class="vtag vpill v-uai" data-venue="UAI">UAI <b>1</b></button>
+        <button type="button" class="vtag vpill v-tmlr" data-venue="TMLR">TMLR <b>3</b></button>
+        <button type="button" class="vtag vpill preprint" data-venue="Preprints">Preprint <b>2</b></button>
       </div>
+    </div>
   </div>
   <div class="pub-head-right">
     <div class="pub-filter">
@@ -4148,6 +4166,25 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
   update();
+})();
+</script>
+<script>
+(function(){
+  var ssel=document.getElementById('pub-sort'), pills=document.querySelectorAll('.vpill');
+  function mark(v){pills.forEach(function(p){p.classList.toggle('active',p.dataset.venue===v);});}
+  pills.forEach(function(p){
+    p.addEventListener('click',function(){
+      var v=p.dataset.venue;
+      if(ssel.value!=='venue'){ssel.value='venue';ssel.dispatchEvent(new Event('change'));}
+      mark(v);
+      var target=null;
+      document.querySelectorAll('#pub-flat .pub-group > h1').forEach(function(h){
+        if(h.textContent.replace('\u25BC','').trim()===v) target=h;
+      });
+      if(target){var y=target.getBoundingClientRect().top+window.pageYOffset-80; window.scrollTo({top:y,behavior:'smooth'});}
+    });
+  });
+  ssel.addEventListener('change',function(){ if(ssel.value!=='venue') mark(''); });
 })();
 </script>
 </body>
