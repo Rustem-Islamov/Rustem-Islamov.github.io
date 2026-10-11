@@ -430,7 +430,57 @@ body {
 <link rel="stylesheet" href="/header.css" />
 <link rel="stylesheet" href="/theme.css" />
 <script src="/theme.js"></script>
-</head>
+<style>
+/* paper cards like the home page */
+.pub-list-item{position:relative;display:flex!important;flex-direction:column;align-items:flex-start;font-size:0;margin:0 0 10px!important;padding:11px 14px 10px 16px;background:#fff;border:1px solid var(--rule);border-radius:14px;transition:transform .2s,box-shadow .2s,border-color .2s,background .2s}
+.pub-list-item::before{content:"";position:absolute;left:0;top:11px;bottom:11px;width:3px;border-radius:0 3px 3px 0;background:var(--primary);opacity:.7}
+.pub-list-item:hover{transform:translateY(-2px);border-color:var(--primary);background:#fbf6fb;box-shadow:0 12px 26px -14px rgba(142,69,133,.5)}
+.pub-list-item>*{font-size:.82rem}
+.pub-list-item .pub-num{order:0;font-family:'Inter',system-ui,sans-serif;font-size:.72rem;font-weight:600;padding:2px 9px;border-radius:999px;background:rgba(142,69,133,.1);color:var(--primary)!important;margin-bottom:.35rem}
+.pub-list-item a.specialeffects{order:1;font-size:.96rem;line-height:1.4;font-weight:700;display:block}
+.pub-list-item a.specialeffects::before{display:none!important}
+.pub-list-item .li-cite-author{order:2;display:block;font-family:'Inter',system-ui,sans-serif;font-size:.82rem;line-height:1.45;color:var(--muted);margin:.25rem 0 .1rem}
+.pub-list-item .li-cite-author a{color:inherit}
+.pub-list-item .li-cite-author a:hover{color:var(--primary)}
+.pub-list-item>p:nth-of-type(1){order:3;margin:0!important;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;color:var(--muted)}
+.pub-list-item>p:nth-of-type(2){order:4;margin:.4rem 0 0!important;display:flex;flex-wrap:wrap;gap:6px}
+.pub-list-item .collapse,.pub-list-item .collapsing{order:5;width:100%}
+.pub-list-item>p .btn{margin:0!important;padding:2px 11px!important;font-family:'Inter',system-ui,sans-serif;font-size:.76rem!important;font-weight:500;line-height:1.5;border:1px solid var(--primary);border-radius:6px!important;color:var(--primary);background:transparent}
+.pub-list-item>p .btn:hover{background:var(--primary);color:#fff}
+html[data-theme="dark"] .pub-list-item{background:#1e1a26}
+html[data-theme="dark"] .pub-list-item:hover{background:#262031;box-shadow:0 12px 26px -14px rgba(0,0,0,.8)}
+html[data-theme="dark"] .pub-list-item .pub-num{background:rgba(207,148,216,.14)}
+.pub-list-item>p{margin:0!important}.pub-list-item>p:has(.btn){margin-top:.45rem!important}
+
+.pub-list-item .pub-num{display:none!important}
+.pub-list-item>p:has(.btn){order:4!important}
+.pub-list-item>p:not(:has(.btn)){order:3!important}
+.vnum{order:-1;font-size:.72rem;font-weight:600;padding:1px 9px;border-radius:999px;border:1px solid var(--rule);color:var(--muted);background:transparent;font-family:'IBM Plex Mono',ui-monospace,monospace}
+.vtag.preprint{--vbg:rgba(100,116,139,.12);--vfg:#475569;border:1px solid rgba(100,116,139,.55)}
+html[data-theme="dark"] .vtag.preprint{--vbg:rgba(148,163,184,.14);--vfg:#cbd5e1}
+.pub-list-item{padding-right:16px}
+.pub-list-item>p:has(.btn){margin-top:0!important}
+.pub-list-item>p .btn{margin-top:.5rem!important}
+.pub-list-item>p:not(:has(.btn)):has(+p){margin-bottom:0!important}
+.vrow{order:0;width:100%;display:flex;gap:6px;align-items:center;margin-bottom:.4rem;font-family:'Inter',system-ui,sans-serif}
+.vtag,.vtag:hover{font-size:.72rem;font-weight:600;padding:2px 9px;border-radius:999px;letter-spacing:.02em;text-decoration:none;border:1px solid transparent;background:var(--vbg);color:var(--vfg)!important;transition:background .15s,color .15s,border-color .15s}
+a.vtag:hover{background:var(--vfg);color:#fff!important}
+.vtag.oral{--vbg:rgba(155,28,28,.1);--vfg:#9b1c1c}
+.v-neurips{--vbg:rgba(234,179,8,.2);--vfg:#854d0e}
+.v-icml{--vbg:rgba(37,99,235,.11);--vfg:#1d4ed8}
+.v-iclr{--vbg:rgba(13,148,136,.12);--vfg:#0f766e}
+.v-aistats{--vbg:rgba(146,92,52,.14);--vfg:#7c4a21}
+.v-uai{--vbg:rgba(219,39,119,.11);--vfg:#be185d}
+.v-tmlr{--vbg:rgba(71,85,105,.13);--vfg:#475569}
+html[data-theme="dark"] .vtag.oral{--vbg:rgba(240,138,138,.15);--vfg:#f08a8a}
+html[data-theme="dark"] .v-neurips{--vbg:rgba(250,204,21,.15);--vfg:#fde047}
+html[data-theme="dark"] .v-icml{--vbg:rgba(96,165,250,.15);--vfg:#93c5fd}
+html[data-theme="dark"] .v-iclr{--vbg:rgba(45,212,191,.14);--vfg:#5eead4}
+html[data-theme="dark"] .v-aistats{--vbg:rgba(205,150,100,.17);--vfg:#e0b48a}
+html[data-theme="dark"] .v-uai{--vbg:rgba(244,114,182,.15);--vfg:#f9a8d4}
+html[data-theme="dark"] .v-tmlr{--vbg:rgba(148,163,184,.16);--vfg:#cbd5e1}
+html[data-theme="dark"] a.vtag:hover{color:#15131b!important}
+</style></head>
 
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -4002,6 +4052,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+</script>
+<script>
+(function(){
+  var V={NeurIPS:1,ICML:1,ICLR:1,AISTATS:1,TMLR:1,UAI:1};
+  document.querySelectorAll('.year-section .pub-list-item').forEach(function(it){
+    var btn=null;
+    it.querySelectorAll('p .btn').forEach(function(b){var t=b.textContent.trim();if(V[t]&&!btn)btn=b;});
+    var p=it.querySelector('p'), txt=p?p.textContent:'';
+    var ym=txt.match(/(20\d\d)/g), year=ym?ym[ym.length-1]:'';
+    var row=document.createElement('div'); row.className='vrow';
+    if(btn){
+      var name=btn.textContent.trim();
+      var a=document.createElement('a'); a.className='vtag v-'+name.toLowerCase(); a.href=btn.href; a.target='_blank'; a.rel='noopener';
+      a.title='Open on the venue page'; a.textContent=name+(year?' '+year:'');
+      row.appendChild(a); btn.style.display='none';
+    }
+    if(!btn){var pp=document.createElement('span');pp.className='vtag preprint';pp.textContent='Preprint';row.appendChild(pp);}
+    if(/Oral/.test(txt)){var o=document.createElement('span');o.className='vtag oral';o.textContent='Oral';row.appendChild(o);}
+    var nm=it.querySelector('.pub-num'); if(nm){var n=document.createElement('span');n.className='vnum';n.textContent='#'+nm.textContent.replace(/\D/g,'');row.appendChild(n);}
+    if(row.children.length) it.insertBefore(row,it.firstChild);
+  });
+})();
 </script>
 <script>
 (function(){
