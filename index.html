@@ -85,14 +85,21 @@ body {
   padding-left: 1.35rem;
   --rail-x: .375rem;                     /* horizontal centre of the rail */
 }
-.news-box .news-timeline::before {       /* one continuous rail across both lists */
+.news-box .news-list li::after {         /* rail segment: from this dot down to the next dot */
   content: "";
   position: absolute;
-  left: calc(var(--rail-x) - 1px); top: 1rem; bottom: 1.1rem;
+  left: calc(var(--rail-x) - 1.35rem - 1px);
+  top: 1.5rem;
+  height: calc(100% + .55rem);
   width: 2px;
-  background: linear-gradient(to bottom, rgba(142,69,133,.6), rgba(142,69,133,.12));
+  transform: translateX(-50%);
+  background: rgba(142, 69, 133, .38);
   border-radius: 2px;
+  z-index: 0;
 }
+.news-box .news-list li::before { z-index: 1; }
+.news-box .news-more li:last-child::after,                                   /* the last dot ends the line */
+.news-box:not(.is-expanded) .news-visible li:last-child::after { display: none; }
 .news-box .news-list li {
   position: relative;
   margin: 0 0 .55rem;
