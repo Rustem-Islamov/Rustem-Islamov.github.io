@@ -353,6 +353,19 @@ body {
     background-repeat:no-repeat; background-position:right 14px center;
   }
   .pub-no-results{ font-family:var(--sans); color:var(--muted); padding:1rem 0; display:none; }
+  .pub-count{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; min-height:1.6em;
+    font-family:var(--sans); font-size:.9rem; color:var(--muted); }
+  .pub-count #pub-count strong{ color:var(--fg); font-weight:600; }
+  .pub-count button{ border:0; background:none; padding:0; font:inherit; color:var(--primary); cursor:pointer; text-decoration:underline; }
+  .pub-count button[hidden]{ display:none; }
+  /* groups used by the venue / topic / oldest-first orders (same look as the year headers) */
+  .pub-group{ padding-bottom:.5rem; margin-bottom:1rem; }
+  .pub-group > h1{
+    font-family:var(--mono); font-weight:700; color:var(--fg);
+    font-size:1.5rem; margin:1.4rem 0 1rem; padding-bottom:6px;
+    border-bottom:2px solid var(--rule);
+  }
+  .pub-group > h1 small{ font-size:.55em; font-weight:500; color:var(--muted); margin-left:.6rem; }
   #topic-view{ display:none !important; }
   @media (max-width:760px){ .pub-header{ flex-direction:column; gap:20px; } }
 </style>
@@ -609,10 +622,18 @@ body {
         <option value="Journal">Journal</option>
         <option value="Misc">Misc</option>
       </select>
+      <select id="pub-sort" aria-label="Sort papers">
+        <option value="year-desc">Sort: newest first</option>
+        <option value="year-asc">Sort: oldest first</option>
+        <option value="venue">Sort: by venue</option>
+        <option value="topic">Sort: by topic</option>
+      </select>
+      <div class="pub-count" role="status" aria-live="polite"><span id="pub-count"></span><button type="button" id="pub-reset" hidden>Reset filters</button></div>
     </div>
   </div>
 </div>
 <div class="universal-wrapper pt-3 pub-no-results" id="pub-no-results">No papers match your filters.</div>
+<div id="pub-flat" class="universal-wrapper pt-3"></div>
 <div class="universal-wrapper pt-3 year-section">
   <h1 itemprop="name"><span class="tri">▼</span>Prepared in 2026</h1>
 
@@ -4018,23 +4039,88 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var search = document.getElementById('pub-search');
   var tsel = document.getElementById('pub-type-filter');
+  var ssel = document.getElementById('pub-sort');
+  var countEl = document.getElementById('pub-count');
+  var resetBtn = document.getElementById('pub-reset');
+  var flat = document.getElementById('pub-flat');
+
+  /* extra data per paper: number, venue and research topic */
+  var TOPICS = [
+    ['Federated Learning', ['21_bl','21_fednl','21_mn','22_3pc','22_ada3pc','23_AsyncSGD','23_clip21','23_econtrol','23_partial','24_motef','24_signsgd','25_clip21m','25_safe_ef','26_byz_dp','26_dpsde','26_local_sgd']],
+    ['Large-Scale Optimization', ['24_sde_adam','25_ngnm','26_adam_sgd','26_bst']],
+    ['Loss Landscape of Neural Networks', ['24_alphabeta','25_l0l1sde','25_warmup','26_eos']]
+  ];
+  var VENUES = ['NeurIPS','ICML','ICLR','AISTATS','UAI','TMLR','COLT','AAAI'];
+  items.forEach(function(it, i){
+    var n = it.querySelector('.pub-num'); it._num = n ? parseInt(n.textContent.replace(/\D/g,''),10) || 0 : 0;
+    it._order = i;
+    it._home = it.parentNode;
+    var vp = it.querySelector('p'), venue = '';              /* venue line, incl. the (Oral, ...) span, without the buttons */
+    if (vp) Array.prototype.forEach.call(vp.childNodes, function(n){ if (n.nodeType===3 || (n.nodeType===1 && n.tagName==='SPAN')) venue += n.textContent; });
+    it._venue = 'Other';
+    for (var k=0;k<VENUES.length;k++){ if (venue.indexOf(VENUES[k])>-1){ it._venue = VENUES[k]; break; } }
+    var a = it.querySelector('a.specialeffects'); var m = a && a.getAttribute('href').match(/publication\/([^\/"]+)/);
+    var slug = m ? m[1] : '';
+    it._topic = 'Other';
+    TOPICS.forEach(function(t){ if (t[1].indexOf(slug)>-1) it._topic = t[0]; });
+  });
+  function newest(a,b){ return b._num - a._num; }
+
+  /* groups for every sort order: [heading, items] */
+  function groupsFor(mode, list){
+    var g = {}, order = [];
+    function put(key, it){ if(!g[key]){ g[key]=[]; order.push(key); } g[key].push(it); }
+    if (mode==='year-asc'){
+      list.slice().sort(function(a,b){ return a._year===b._year ? a._num-b._num : (a._year<b._year?-1:1); }).forEach(function(it){ put(it._year, it); });
+    } else if (mode==='venue'){
+      list.slice().sort(newest).forEach(function(it){ put(it._venue, it); });
+      order.sort(function(a,b){ return a==='Other'?1 : b==='Other'?-1 : a.localeCompare(b); });
+    } else if (mode==='topic'){
+      list.slice().sort(newest).forEach(function(it){ put(it._topic, it); });
+      order.sort(function(a,b){
+        function pos(t){ for(var i=0;i<TOPICS.length;i++) if(TOPICS[i][0]===t) return i; return 99; }
+        return pos(a)-pos(b);
+      });
+    }
+    return order.map(function(k){ return [k, g[k]]; });
+  }
 
   function apply(){
-    var q=(search.value||'').trim().toLowerCase(), fy=ysel.value, ft=tsel.value, visYears={}, shown=0;
+    var q=(search.value||'').trim().toLowerCase(), fy=ysel.value, ft=tsel.value, mode=ssel.value;
+    var visYears={}, shown=0, matched=[];
+    /* put every paper back in its year section first, in the original order */
+    items.forEach(function(it){ it._home.appendChild(it); });
     items.forEach(function(it){
       var ok = (!q || it._search.indexOf(q)>-1) && (!fy || it._year===fy) && (!ft || it._type===ft);
       it.style.display = ok ? '' : 'none';
-      if(ok){ visYears[it._year]=true; shown++; }
+      if(ok){ visYears[it._year]=true; shown++; matched.push(it); }
     });
+    var byYear = (mode==='year-desc');
     document.querySelectorAll('.year-section').forEach(function(sec){
       var h=sec.querySelector('h1'); var m=h?h.textContent.match(/(\d{4})/):null; var y=m?m[1]:'';
-      sec.style.display = (!y || visYears[y]) ? '' : 'none';
+      sec.style.display = byYear && (!y || visYears[y]) ? '' : 'none';
     });
+    flat.innerHTML = '';
+    if (!byYear){
+      groupsFor(mode, matched).forEach(function(grp){
+        var box = document.createElement('div'); box.className = 'pub-group';
+        var h = document.createElement('h1'); h.textContent = grp[0];
+        var small = document.createElement('small'); small.textContent = grp[1].length + (grp[1].length===1 ? ' paper' : ' papers');
+        h.appendChild(small); box.appendChild(h);
+        grp[1].forEach(function(it){ box.appendChild(it); });
+        flat.appendChild(box);
+      });
+    }
     var nr=document.getElementById('pub-no-results'); if(nr) nr.style.display = shown? 'none':'block';
+    countEl.innerHTML = 'Showing <strong>'+shown+'</strong> of <strong>'+items.length+'</strong> papers';
+    resetBtn.hidden = !(q || fy || ft);
   }
   search.addEventListener('input', apply);
   ysel.addEventListener('change', apply);
   tsel.addEventListener('change', apply);
+  ssel.addEventListener('change', apply);
+  resetBtn.addEventListener('click', function(){ search.value=''; ysel.value=''; tsel.value=''; apply(); search.focus(); });
+  apply();
 })();
 </script>
 
