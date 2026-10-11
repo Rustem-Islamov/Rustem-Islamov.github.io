@@ -152,6 +152,7 @@ body {
 <link rel="stylesheet" href="/theme.css" />
 <script src="/theme.js"></script>
 <link rel="stylesheet" href="/pubcards.css">
+<link rel="stylesheet" href="/researchpage.css">
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main">
 <div class="scroll-progress" id="scroll-progress"></div>
@@ -248,22 +249,19 @@ body {
   </div>
 </nav>
 
-<div class="container" style="padding-top:1rem;"><a href="/research/" class="btn btn-outline-secondary btn-sm">← Back to Research</a></div>
+<div class="container" style="padding-top:1rem;"><a href="/research/" class="back-pill">← Back to Research</a></div>
 
 <div class="section-white"><div class="topic-hero">
   <div class="container">
     <h1>Large-Scale Optimization</h1>
+    <div class="topic-tags" style="margin-top:.6rem"><span class="topic-tag">LLMs</span><span class="topic-tag">Robustness</span><span class="topic-tag">Hyperparameter transfer</span></div>
   </div>
 </div></div>
 
 <div class="section-white"><div class="container">
   <div class="section-block">
     <h2>Main Challenges</h2>
-    <ul class="challenge-list">
-      <li><strong>Hyperparameter Transfer:</strong> Modern large language models need optimizers that scale efficiently to billions of parameters. At the same time, extensive hyperparameter tuning becomes impractical at such scales due to limited resources. This makes it essential to develop theoretically grounded methods for transferring hyperparameters from smaller models to larger ones.</li>
-      <li><strong>Adaptive Methods:</strong> Optimizers like Adam are widely used in practice, yet their theoretical properties remain only partially understood. Developing a predictive convergence theory for adaptive optimizers is therefore both important and challenging.</li>
-      <li><strong>Hyperparameter Robustness:</strong> Because hyperparameter tuning is costly at large scale, modern algorithms must be robust to their choice. Small perturbations in hyperparameters should not lead to significant performance changes. Therefore, designing optimization methods that are insensitive to hyperparameter selection is crucial for large-scale settings.</li>
-    </ul>
+    <div class="chal-grid"><div class="chal"><span class="chal-n">1</span><b>Hyperparameter Transfer</b><ul><li>Modern large language models need optimizers that scale efficiently to billions of parameters.</li><li>Extensive hyperparameter tuning becomes impractical at such scales due to limited resources.</li><li>We need theoretically grounded methods for transferring hyperparameters from smaller models to larger ones.</li></ul></div><div class="chal"><span class="chal-n">2</span><b>Adaptive Methods</b><ul><li>Optimizers like Adam are widely used in practice, yet their theoretical properties remain only partially understood.</li><li>Developing a predictive convergence theory for adaptive optimizers is both important and challenging.</li></ul></div><div class="chal"><span class="chal-n">3</span><b>Hyperparameter Robustness</b><ul><li>Hyperparameter tuning is costly at large scale, so algorithms must be robust to their choice.</li><li>Small perturbations in hyperparameters should not lead to significant performance changes.</li><li>Methods that are insensitive to hyperparameter selection are crucial for large-scale settings.</li></ul></div></div>
   </div>
 
 </div></div>
@@ -271,38 +269,10 @@ body {
 <div class="section-grey"><div class="container">
   <div class="section-block">
     <h2>My Contributions</h2>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">BST Scaling Rule</h4>
-          <p class="exp-card-desc">We study stochastic conditional gradient methods under a fixed token budget [21] and show that an optimal batch size exists. Our analysis yields predictive convergence rates, enabling joint token-aware scaling laws for batch size, sequence length, Frank-Wolfe stepsize, and momentum as the model size or token horizon grows.</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">Robustness to Learning Rate Choice</h4>
-          <p class="exp-card-desc">We study the coupling of the NGN stepsize with Polyak momentum [17] and show that incorporating this combination into base optimizers such as SGD and Adam improves robustness to learning-rate choice. In some cases, increasing the learning rate by up to an order of magnitude beyond its optimal value leads to little or no performance degradation, while preserving peak performance.</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">SDE Analysis of Adam-like Optimizers</h4>
-          <p class="exp-card-desc">We study optimization methods such as SGD, SignSGD, and Adam through the lens of stochastic differential equations (SDEs) [12]. These SDEs provide quantitatively accurate models of the algorithms and reveal a nuanced relationship between adaptivity, gradient noise, and curvature. Our analysis of SignSGD highlights a precise contrast with SGD in terms of convergence speed, stationary distribution, and robustness to heavy-tailed noise.</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">Adam-SGD Gap</h4>
-          <p class="exp-card-desc">Prior work attributes Adam's advantage over SGD to various isolated factors. Rather than pinning the gap on a single cause [23], we show through controlled experiments that data modality, dataset, and model architecture all shape it in non-trivial ways. We further identify a consistent trend: a crossover batch size beyond which the relative advantage shifts from SGD to Adam, captured by a simple theoretical model of the gap.</p>
-        </div>
-      </div>
-    </div>
+    <div class="ct-tl"><div class="ct"><h4>BST Scaling Rule</h4><p>We study stochastic conditional gradient methods under a fixed token budget [21] and show that an optimal batch size exists. Our analysis yields predictive convergence rates, enabling joint token-aware scaling laws for batch size, sequence length, Frank-Wolfe stepsize, and momentum as the model size or token horizon grows.</p></div>
+    <div class="ct"><h4>Robustness to Learning Rate Choice</h4><p>We study the coupling of the NGN stepsize with Polyak momentum [17] and show that incorporating this combination into base optimizers such as SGD and Adam improves robustness to learning-rate choice. In some cases, increasing the learning rate by up to an order of magnitude beyond its optimal value leads to little or no performance degradation, while preserving peak performance.</p></div>
+    <div class="ct"><h4>SDE Analysis of Adam-like Optimizers</h4><p>We study optimization methods such as SGD, SignSGD, and Adam through the lens of stochastic differential equations (SDEs) [12]. These SDEs provide quantitatively accurate models of the algorithms and reveal a nuanced relationship between adaptivity, gradient noise, and curvature. Our analysis of SignSGD highlights a precise contrast with SGD in terms of convergence speed, stationary distribution, and robustness to heavy-tailed noise.</p></div>
+    <div class="ct"><h4>Adam-SGD Gap</h4><p>Prior work attributes Adam's advantage over SGD to various isolated factors. Rather than pinning the gap on a single cause [23], we show through controlled experiments that data modality, dataset, and model architecture all shape it in non-trivial ways. We further identify a consistent trend: a crossover batch size beyond which the relative advantage shifts from SGD to Adam, captured by a simple theoretical model of the gap.</p></div></div>
 </div></div>
 
 <div class="section-white"><div class="container">
