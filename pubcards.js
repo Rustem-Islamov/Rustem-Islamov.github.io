@@ -5,6 +5,7 @@
   function run(){
   document.querySelectorAll('.pub-list-item').forEach(function(it){
     if(it.querySelector('.vrow')) return;
+    it.querySelectorAll('.li-cite-author a').forEach(function(a){if(/Rustem\s+Islamov/.test(a.textContent)) a.classList.add('me');});
     var btn=null;
     it.querySelectorAll('p .btn').forEach(function(b){var t=b.textContent.trim();if(V[t]&&!btn)btn=b;});
     var p=it.querySelector('p'), txt=p?p.textContent:'';
