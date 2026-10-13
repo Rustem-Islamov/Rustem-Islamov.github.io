@@ -22,8 +22,8 @@
   .topic-hero h1 { font-size: 2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0; }
     .section-block { margin-bottom: 0; padding: 2rem 0; }
   .section-block h2 { font-size: 1.25rem; font-weight: 700; color: #444; border-left: none; padding-left: 0; margin-bottom: 0.8rem; border-bottom: 2px solid #ccc; padding-bottom: 6px; width: 100%; }
-  .section-grey { background: #f8f9fa; }
-  .section-white { background: #fff; }
+  .section-grey { background: transparent; }
+  .section-white { background: transparent; }
   /* Education-style cards */
   .contrib-card { border: none; background: none; border-radius: 0; padding: 0; margin-bottom: 0; }
   .venue-badge { display: none; }
@@ -149,6 +149,10 @@ body {
 }
 </style>
 <link rel="stylesheet" href="/header.css" />
+<link rel="stylesheet" href="/theme.css" />
+<script src="/theme.js"></script>
+<link rel="stylesheet" href="/pubcards.css">
+<link rel="stylesheet" href="/researchpage.css">
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main">
 <div class="scroll-progress" id="scroll-progress"></div>
@@ -234,11 +238,8 @@ body {
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a class="nav-link" href="/#about"><span>Home</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="/#education"><span>Education</span></a></li>
         <li class="nav-item"><a class="nav-link" href="/publication/"><span>Publications</span></a></li>
         <li class="nav-item"><a class="nav-link" href="/research/"><span>Research</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="/#posts"><span>Posts</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="/#contact"><span>Contact</span></a></li>
         <li class="nav-item"><a class="nav-link" href="/files/cv.pdf"><span>CV</span></a></li>
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -248,21 +249,19 @@ body {
   </div>
 </nav>
 
-<div class="container" style="padding-top:1rem;"><a href="/research/" class="btn btn-outline-secondary btn-sm">← Back to Research</a></div>
+<div class="container" style="padding-top:1rem;"><a href="/research/" class="back-pill">← Back to Research</a></div>
 
 <div class="section-white"><div class="topic-hero">
   <div class="container">
     <h1>Loss Landscape of Neural Networks</h1>
+    <div class="topic-tags" style="margin-top:.6rem"><span class="topic-tag">Sharpness</span><span class="topic-tag">Edge of Stability</span><span class="topic-tag">Landscape Characterization</span></div>
   </div>
 </div></div>
 
 <div class="section-white"><div class="container">
   <div class="section-block">
     <h2>Main Challenges</h2>
-    <ul class="challenge-list">
-      <li><strong>Edge of Stability:</strong> Neural networks trained with gradient based methods consistently operate at the edge of stability, a regime where spectral chararectiristic of the loss are oscillating around a particular threshold. The classical optimisation theory has no explanation for this behaviour.</li>
-      <li><strong>Loss landscape geometry:</strong> Despite the highly nonconvex and high-dimensional nature of neural network loss landscapes, gradient-based methods perform remarkably well in practice. Developing a theoretical characterization of these landscapes remains an important challenge. Establishing connections between landscape structure and algorithm design is key to achieving efficient training.</li>
-    </ul>
+    <div class="chal-grid"><div class="chal"><span class="chal-n">1</span><b>Edge of Stability</b><ul><li>Neural networks trained with gradient-based methods consistently operate at the edge of stability.</li><li>In this regime, the spectral characteristics of the loss oscillate around a particular threshold.</li><li>Classical optimisation theory has no explanation for this behaviour.</li></ul></div><div class="chal"><span class="chal-n">2</span><b>Loss landscape geometry</b><ul><li>Neural network loss landscapes are highly nonconvex and high-dimensional, yet gradient-based methods perform remarkably well in practice.</li><li>Developing a theoretical characterization of these landscapes remains an important challenge.</li><li>Connecting landscape structure to algorithm design is key to efficient training.</li></ul></div></div>
   </div>
 
 </div></div>
@@ -270,30 +269,9 @@ body {
 <div class="section-grey"><div class="container">
   <div class="section-block">
     <h2>My Contributions</h2>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">Non-Euclidean Gradient Descent at the Edge of Stability</h4>
-          <p class="exp-card-desc">We show that non-Euclidean gradient descent also operates at the edge of stability, and that the optimizer's geometry (i.e., the choice of norm) determines the sharpness at convergence [20], providing a unified explanation of edge-of-stability behavior across geometries.</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">Theoretical Foundation for Learning-Rate Warmup</h4>
-          <p class="exp-card-desc">We provide a theoretical characterization of neural network loss landscapes based on the relationship between sharpness and loss. We show both theoretically and empirically that this characterization is tight near initialization [18]. Leveraging this insight, we justify the use of learning-rate warmup—a widely used technique—for achieving stable convergence.</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">Loss Landscape Characterization without Over-Parametrization</h4>
-          <p class="exp-card-desc">We propose a novel class of functions that characterizes the loss landscape of modern deep models without relying on heavy overparameterization and naturally accommodates saddle points [11]. Under this framework, we prove that gradient-based methods enjoy convergence guarantees and validate the approach through both theoretical analysis and empirical studies across a diverse set of architectures.</p>
-        </div>
-      </div>
-    </div>
+    <div class="ct-tl"><div class="ct"><h4>Non-Euclidean Gradient Descent at the Edge of Stability</h4><p>We show that non-Euclidean gradient descent also operates at the edge of stability, and that the optimizer's geometry (i.e., the choice of norm) determines the sharpness at convergence [20], providing a unified explanation of edge-of-stability behavior across geometries.</p></div>
+    <div class="ct"><h4>Theoretical Foundation for Learning-Rate Warmup</h4><p>We provide a theoretical characterization of neural network loss landscapes based on the relationship between sharpness and loss. We show both theoretically and empirically that this characterization is tight near initialization [18]. Leveraging this insight, we justify the use of learning-rate warmup—a widely used technique—for achieving stable convergence.</p></div>
+    <div class="ct"><h4>Loss Landscape Characterization without Over-Parametrization</h4><p>We propose a novel class of functions that characterizes the loss landscape of modern deep models without relying on heavy overparameterization and naturally accommodates saddle points [11]. Under this framework, we prove that gradient-based methods enjoy convergence guarantees and validate the approach through both theoretical analysis and empirical studies across a diverse set of architectures.</p></div></div>
 </div></div>
 
 <div class="section-white"><div class="container">
@@ -332,7 +310,7 @@ body {
   Cite
 </button>
     
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.05002" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2603.05002" target="_blank" rel="noopener">
     arXiv
   </a>
 
@@ -452,7 +430,7 @@ body {
 <div class="collapse" id="collapseExample16">
   <div class="abstract-row">
 <div class="card card-body abstract-text">
-<font size="2"> Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under $(L_0,L_1)$-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that adaptive methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.     </font>
+<font size="2"> Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under $(L_0,L_1)$-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that <em>adaptive</em> methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.     </font>
 </div>
 <div class="abstract-figure">
 <img src="/files/publications/SDE_L0L1/sde_l0l1_diagram.png" alt="Placeholder figure for On the Interaction of Noise, Compression Role, and Adaptivity under $(L_0,L_1)$-Smoothness: An SDE-based Approach" />
@@ -525,21 +503,19 @@ body {
 
 </div>
 
+<script src="/pubcards.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 <div class="container">
-  <footer class="site-footer">
-    <p class="powered-by">
-      &copy; 2026 Rustem Islamov &middot;
-      Powered by the <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-      <span class="float-right" aria-hidden="true">
-        <a href="#" id="back_to_top"><span class="button_icon"><i class="fas fa-chevron-up fa-2x"></i></span></a>
-      </span>
-    </p>
+  <footer class="site-footer home-footer">
+    <span>&copy; 2026 Rustem Islamov</span>
+    <a href="mailto:rustem.islamov@unibas.ch">rustem.islamov@unibas.ch</a>
+    <a href="https://scholar.google.com/citations?user=dNiHy50AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    <a href="https://github.com/Rustem-Islamov" target="_blank" rel="noopener">GitHub</a>
+    <span class="float-right" aria-hidden="true"> <a href="#" id="back_to_top"><span class="button_icon"><i class="fas fa-chevron-up fa-2x"></i></span></a> </span>
   </footer>
 </div>
 <div id="modal" class="modal fade" role="dialog">

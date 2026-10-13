@@ -66,7 +66,33 @@ body {
 }
 </style>
 <link rel="stylesheet" href="/header.css" />
-</head>
+<link rel="stylesheet" href="/theme.css" />
+<script src="/theme.js"></script>
+<style>
+.research-intro{max-width:none;padding:1.3rem 0 .4rem;line-height:1.65}
+.approach{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:1rem}
+.ap{position:relative;padding:12px 14px 10px 16px;background:#fff;border:1px solid var(--rule);border-radius:14px}
+.ap::before{content:"";position:absolute;left:0;top:11px;bottom:11px;width:3px;border-radius:0 3px 3px 0;background:var(--primary);opacity:.7}
+.ap-n{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:rgba(142,69,133,.12);color:var(--primary);font-size:.75rem;font-weight:700;margin-right:8px}
+.ap b{font-size:.98rem}
+.ap p{margin:.4rem 0 0;font-family:'Inter',system-ui,sans-serif;font-size:.84rem;line-height:1.45;color:var(--muted)}
+.areas-h{font-size:1.9rem;margin:1.8rem 0 1rem}
+.topic-cards-row{margin-top:0;margin-bottom:2.5rem}
+.topic-card{display:flex;flex-direction:column}
+.topic-card-body{display:flex;flex-direction:column;flex:1;font-size:1rem}
+.topic-card-body h3{margin-bottom:.6rem}
+.topic-foot{margin-top:auto;padding-top:.9rem;display:flex;align-items:center;justify-content:flex-end;gap:8px}
+.topic-count{font-family:'Inter',system-ui,sans-serif;font-size:.78rem;color:var(--muted)}
+.topic-go{display:inline-flex;gap:.35rem;padding:.2rem .7rem;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.78rem;font-weight:600;color:#8e4585;background:#fff;border:1px solid rgba(142,69,133,.38);border-radius:999px;transition:background .2s,color .2s}
+.topic-arrow{display:inline-block;transition:transform .2s}
+.topic-card:hover .topic-go{background:#8e4585;color:#fff}
+.topic-card:hover .topic-arrow{transform:translateX(4px)}
+html[data-theme="dark"] .ap{background:#1e1a26}
+html[data-theme="dark"] .ap-n{background:rgba(207,148,216,.15)}
+html[data-theme="dark"] .topic-go{background:transparent;color:#e3b6ea;border-color:rgba(207,148,216,.45)}
+html[data-theme="dark"] .topic-card:hover .topic-go{background:#cf94d8;color:#15131b}
+@media(max-width:800px){.approach{grid-template-columns:1fr}}
+</style></head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main">
 <div class="scroll-progress" id="scroll-progress"></div>
 
@@ -98,11 +124,8 @@ body {
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a class="nav-link" href="/#about"><span>Home</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="/#education"><span>Education</span></a></li>
         <li class="nav-item"><a class="nav-link" href="/publication/"><span>Publications</span></a></li>
         <li class="nav-item"><a class="nav-link" href="/research/"><span>Research</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="/#posts"><span>Posts</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="/#contact"><span>Contact</span></a></li>
         <li class="nav-item"><a class="nav-link" href="/files/cv.pdf"><span>CV</span></a></li>
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -123,18 +146,14 @@ body {
 
 <div class="container">
   <div class="research-intro">
-    My research explores the overlap between practical machine-learning methods and their
-    underlying theory - a space where recent progress in training deep networks still depends
-    largely on <span class="highlight">heuristics</span> and
-    <span class="highlight">has little theoretical backing</span>.
-    In my research, I aim to narrow the <strong>gap between theory and practice</strong> by
-    <ul style="margin-top:0.5rem; margin-bottom:0; padding-left:1.5rem;">
-      <li>developing practical theory that explains why specific phenomena arise and why certain heuristics succeed during deep-learning training,</li>
-      <li>advancing existing algorithms by theoretically inspired modifications, and</li>
-      <li>creating new methods with both strong convergence guarantees and practical performance.</li>
-    </ul>
+    My research explores the overlap between practical machine-learning methods and their underlying theory, a space where recent progress in training deep networks still depends largely on <span class="highlight">heuristics</span> and <span class="highlight">has little theoretical backing</span>. I aim to narrow the <strong>gap between theory and practice</strong> by:
+    <div class="approach">
+      <div class="ap"><span class="ap-n">1</span><b>Explain</b><p>developing practical theory that explains why specific phenomena arise and why certain heuristics succeed during deep-learning training</p></div>
+      <div class="ap"><span class="ap-n">2</span><b>Improve</b><p>advancing existing algorithms from first principles</p></div>
+      <div class="ap"><span class="ap-n">3</span><b>Create</b><p>creating new scalable and efficient methods with both theoretical analysis and practical performance</p></div>
+    </div>
   </div>
-
+  <h2 class="areas-h">Research Areas</h2>
   <div class="topic-cards-row" style="font-size:0;">
 
 
@@ -148,6 +167,7 @@ body {
         <span class="topic-tag">Robustness</span>
         <span class="topic-tag">Hyperparameter transfer</span>
       </div>
+      <div class="topic-foot"><span class="topic-go">See more details <span class="topic-arrow">&rarr;</span></span></div>
     </div>
   </div>
 </a>
@@ -162,6 +182,7 @@ body {
         <span class="topic-tag">Privacy</span>
         <span class="topic-tag">Local Methods</span>
       </div>
+      <div class="topic-foot"><span class="topic-go">See more details <span class="topic-arrow">&rarr;</span></span></div>
     </div>
   </div>
 </a>
@@ -176,6 +197,7 @@ body {
         <span class="topic-tag">Edge of Stability</span>
         <span class="topic-tag">Landscape Characterization</span>
       </div>
+      <div class="topic-foot"><span class="topic-go">See more details <span class="topic-arrow">&rarr;</span></span></div>
     </div>
   </div>
 </a>
@@ -194,7 +216,12 @@ body {
 <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 
 <div class="container">
-  <footer>&copy; 2026 Rustem Islamov</footer>
+  <footer class="site-footer home-footer">
+    <span>&copy; 2026 Rustem Islamov</span>
+    <a href="mailto:rustem.islamov@unibas.ch">rustem.islamov@unibas.ch</a>
+    <a href="https://scholar.google.com/citations?user=dNiHy50AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    <a href="https://github.com/Rustem-Islamov" target="_blank" rel="noopener">GitHub</a>
+  </footer>
 </div>
 
 <div id="modal" class="modal fade" role="dialog">

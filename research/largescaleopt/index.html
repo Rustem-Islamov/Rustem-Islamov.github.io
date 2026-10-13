@@ -22,8 +22,8 @@
   .topic-hero h1 { font-size: 2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0; }
     .section-block { margin-bottom: 0; padding: 2rem 0; }
   .section-block h2 { font-size: 1.25rem; font-weight: 700; color: #444; border-left: none; padding-left: 0; margin-bottom: 0.8rem; border-bottom: 2px solid #ccc; padding-bottom: 6px; width: 100%; }
-  .section-grey { background: #f8f9fa; }
-  .section-white { background: #fff; }
+  .section-grey { background: transparent; }
+  .section-white { background: transparent; }
   /* Education-style cards */
   .contrib-card { border: none; background: none; border-radius: 0; padding: 0; margin-bottom: 0; }
   .venue-badge { display: none; }
@@ -149,6 +149,10 @@ body {
 }
 </style>
 <link rel="stylesheet" href="/header.css" />
+<link rel="stylesheet" href="/theme.css" />
+<script src="/theme.js"></script>
+<link rel="stylesheet" href="/pubcards.css">
+<link rel="stylesheet" href="/researchpage.css">
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main">
 <div class="scroll-progress" id="scroll-progress"></div>
@@ -234,11 +238,8 @@ body {
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a class="nav-link" href="/#about"><span>Home</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="/#education"><span>Education</span></a></li>
         <li class="nav-item"><a class="nav-link" href="/publication/"><span>Publications</span></a></li>
         <li class="nav-item"><a class="nav-link" href="/research/"><span>Research</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="/#posts"><span>Posts</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="/#contact"><span>Contact</span></a></li>
         <li class="nav-item"><a class="nav-link" href="/files/cv.pdf"><span>CV</span></a></li>
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -248,22 +249,19 @@ body {
   </div>
 </nav>
 
-<div class="container" style="padding-top:1rem;"><a href="/research/" class="btn btn-outline-secondary btn-sm">← Back to Research</a></div>
+<div class="container" style="padding-top:1rem;"><a href="/research/" class="back-pill">← Back to Research</a></div>
 
 <div class="section-white"><div class="topic-hero">
   <div class="container">
     <h1>Large-Scale Optimization</h1>
+    <div class="topic-tags" style="margin-top:.6rem"><span class="topic-tag">LLMs</span><span class="topic-tag">Robustness</span><span class="topic-tag">Hyperparameter transfer</span></div>
   </div>
 </div></div>
 
 <div class="section-white"><div class="container">
   <div class="section-block">
     <h2>Main Challenges</h2>
-    <ul class="challenge-list">
-      <li><strong>Hyperparameter Transfer:</strong> Modern large language models need optimizers that scale efficiently to billions of parameters. At the same time, extensive hyperparameter tuning becomes impractical at such scales due to limited resources. This makes it essential to develop theoretically grounded methods for transferring hyperparameters from smaller models to larger ones.</li>
-      <li><strong>Adaptive Methods:</strong> Optimizers like Adam are widely used in practice, yet their theoretical properties remain only partially understood. Developing a predictive convergence theory for adaptive optimizers is therefore both important and challenging.</li>
-      <li><strong>Hyperparameter Robustness:</strong> Because hyperparameter tuning is costly at large scale, modern algorithms must be robust to their choice. Small perturbations in hyperparameters should not lead to significant performance changes. Therefore, designing optimization methods that are insensitive to hyperparameter selection is crucial for large-scale settings.</li>
-    </ul>
+    <div class="chal-grid"><div class="chal"><span class="chal-n">1</span><b>Hyperparameter Transfer</b><ul><li>Modern large language models need optimizers that scale efficiently to billions of parameters.</li><li>Extensive hyperparameter tuning becomes impractical at such scales due to limited resources.</li><li>We need theoretically grounded methods for transferring hyperparameters from smaller models to larger ones.</li></ul></div><div class="chal"><span class="chal-n">2</span><b>Adaptive Methods</b><ul><li>Optimizers like Adam are widely used in practice, yet their theoretical properties remain only partially understood.</li><li>Developing a predictive convergence theory for adaptive optimizers is both important and challenging.</li></ul></div><div class="chal"><span class="chal-n">3</span><b>Hyperparameter Robustness</b><ul><li>Hyperparameter tuning is costly at large scale, so algorithms must be robust to their choice.</li><li>Small perturbations in hyperparameters should not lead to significant performance changes.</li><li>Methods that are insensitive to hyperparameter selection are crucial for large-scale settings.</li></ul></div></div>
   </div>
 
 </div></div>
@@ -271,38 +269,10 @@ body {
 <div class="section-grey"><div class="container">
   <div class="section-block">
     <h2>My Contributions</h2>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">BST Scaling Rule</h4>
-          <p class="exp-card-desc">We study stochastic conditional gradient methods under a fixed token budget [21] and show that an optimal batch size exists. Our analysis yields predictive convergence rates, enabling joint token-aware scaling laws for batch size, sequence length, Frank-Wolfe stepsize, and momentum as the model size or token horizon grows.</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">Robustness to Learning Rate Choice</h4>
-          <p class="exp-card-desc">We study the coupling of the NGN stepsize with Polyak momentum [17] and show that incorporating this combination into base optimizers such as SGD and Adam improves robustness to learning-rate choice. In some cases, increasing the learning rate by up to an order of magnitude beyond its optimal value leads to little or no performance degradation, while preserving peak performance.</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">SDE Analysis of Adam-like Optimizers</h4>
-          <p class="exp-card-desc">We study optimization methods such as SGD, SignSGD, and Adam through the lens of stochastic differential equations (SDEs) [12]. These SDEs provide quantitatively accurate models of the algorithms and reveal a nuanced relationship between adaptivity, gradient noise, and curvature. Our analysis of SignSGD highlights a precise contrast with SGD in terms of convergence speed, stationary distribution, and robustness to heavy-tailed noise.</p>
-        </div>
-      </div>
-    </div>
-    <div style="margin-bottom:0.3rem;">
-      <div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-        <div class="card-body" style="padding:0.6rem 1rem;">
-          <h4 class="exp-card-title">Adam-SGD Gap</h4>
-          <p class="exp-card-desc">Prior work attributes Adam's advantage over SGD to various isolated factors. Rather than pinning the gap on a single cause [23], we show through controlled experiments that data modality, dataset, and model architecture all shape it in non-trivial ways. We further identify a consistent trend: a crossover batch size beyond which the relative advantage shifts from SGD to Adam, captured by a simple theoretical model of the gap.</p>
-        </div>
-      </div>
-    </div>
+    <div class="ct-tl"><div class="ct"><h4>BST Scaling Rule</h4><p>We study stochastic conditional gradient methods under a fixed token budget [21] and show that an optimal batch size exists. Our analysis yields predictive convergence rates, enabling joint token-aware scaling laws for batch size, sequence length, Frank-Wolfe stepsize, and momentum as the model size or token horizon grows.</p></div>
+    <div class="ct"><h4>Robustness to Learning Rate Choice</h4><p>We study the coupling of the NGN stepsize with Polyak momentum [17] and show that incorporating this combination into base optimizers such as SGD and Adam improves robustness to learning-rate choice. In some cases, increasing the learning rate by up to an order of magnitude beyond its optimal value leads to little or no performance degradation, while preserving peak performance.</p></div>
+    <div class="ct"><h4>SDE Analysis of Adam-like Optimizers</h4><p>We study optimization methods such as SGD, SignSGD, and Adam through the lens of stochastic differential equations (SDEs) [12]. These SDEs provide quantitatively accurate models of the algorithms and reveal a nuanced relationship between adaptivity, gradient noise, and curvature. Our analysis of SignSGD highlights a precise contrast with SGD in terms of convergence speed, stationary distribution, and robustness to heavy-tailed noise.</p></div>
+    <div class="ct"><h4>Adam-SGD Gap</h4><p>Prior work attributes Adam's advantage over SGD to various isolated factors. Rather than pinning the gap on a single cause [23], we show through controlled experiments that data modality, dataset, and model architecture all shape it in non-trivial ways. We further identify a consistent trend: a crossover batch size beyond which the relative advantage shifts from SGD to Adam, captured by a simple theoretical model of the gap.</p></div></div>
 </div></div>
 
 <div class="section-white"><div class="container">
@@ -326,7 +296,7 @@ body {
     <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://orientino.github.io/">Chenxiang Zhang</a><sup>*</sup></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov</a><sup>*</sup></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eneamc.github.io/">Enea Monzio Compagnoni</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.uni.lu/fstm-en/people/jun-pang/">Jun Pang</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="http://orvi.altervista.org/">Antonio Orvieto</a></span>.
 </span>
     </span>
-  <a class="specialeffects" href="/publication/26_adam_sgd/" itemprop="name">Beyond a Single Explanation of the Adam-SGD Gap</a>.
+  <a class="specialeffects" href="/publication/26_adam_sgd/" itemprop="name">Revisiting the Adam-SGD Gap Beyond Single Factors</a>.
   <p>
     40th Annual Conference on Neural Information Processing Systems (NeurIPS 2026)<br>
 
@@ -389,7 +359,7 @@ body {
   Cite
 </button>
     
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.21191" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2603.21191" target="_blank" rel="noopener">
     arXiv
   </a>
 
@@ -398,14 +368,18 @@ body {
   </a>
 
   
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample21" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/BST/bst_poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample21" role="button" aria-expanded="false" aria-controls="collapseExample">
     Abstract
   </a>
   
 <div class="collapse" id="collapseExample21">
   <div class="abstract-row abstract-row-23">
 <div class="card card-body abstract-text">
-<font size="2">We study the role of batch size in stochastic conditional gradient methods under a μ-Kurdyka-Łojasiewicz (μ-KL) condition. Focusing on momentum-based stochastic conditional gradient algorithms (e.g., Scion), we derive a new analysis that explicitly captures the interaction between stepsize, batch size, and stochastic noise. Our study reveals a regime-dependent behavior: increasing the batch size initially improves optimization accuracy but, beyond a critical threshold, the benefits saturate and can eventually degrade performance under a fixed token budget. Notably, the theory predicts the magnitude of the optimal stepsize and aligns well with empirical practices observed in large-scale training. Leveraging these insights, we derive principled guidelines for selecting the batch size and stepsize, and propose an adaptive strategy that increases batch size and sequence length during training while preserving convergence guarantees. Experiments on NanoGPT are consistent with the theoretical predictions and illustrate the emergence of the predicted scaling regimes. Overall, our results provide a theoretical framework for understanding batch size scaling in stochastic conditional gradient methods and offer guidance for designing efficient training schedules in large-scale optimization. </font>
+<font size="2">We study the role of batch size in stochastic conditional gradient methods under a $\mu$-Kurdyka-Łojasiewicz ($\mu$-KL) condition. Focusing on momentum-based stochastic conditional gradient algorithms (e.g., Scion), we derive a new analysis that explicitly captures the interaction between stepsize, batch size, and stochastic noise. Our study reveals a regime-dependent behavior: increasing the batch size initially improves optimization accuracy but, beyond a critical threshold, the benefits saturate and can eventually degrade performance under a fixed token budget. Notably, the theory predicts the magnitude of the optimal stepsize and aligns well with empirical practices observed in large-scale training. Leveraging these insights, we derive principled guidelines for selecting the batch size and stepsize, and propose an adaptive strategy that increases batch size and sequence length during training while preserving convergence guarantees. Experiments on NanoGPT are consistent with the theoretical predictions and illustrate the emergence of the predicted scaling regimes. Overall, our results provide a theoretical framework for understanding batch size scaling in stochastic conditional gradient methods and offer guidance for designing efficient training schedules in large-scale optimization. </font>
 </div>
 <div class="abstract-figure abstract-figure--narrow"> <img src="/files/publications/BST/bst_diagram.png" alt="Batch size scaling regimes for stochastic conditional gradient methods" /> </div>
 </div>
@@ -529,21 +503,19 @@ body {
 
 </div>
 
+<script src="/pubcards.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 <div class="container">
-  <footer class="site-footer">
-    <p class="powered-by">
-      &copy; 2026 Rustem Islamov &middot;
-      Powered by the <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-      <span class="float-right" aria-hidden="true">
-        <a href="#" id="back_to_top"><span class="button_icon"><i class="fas fa-chevron-up fa-2x"></i></span></a>
-      </span>
-    </p>
+  <footer class="site-footer home-footer">
+    <span>&copy; 2026 Rustem Islamov</span>
+    <a href="mailto:rustem.islamov@unibas.ch">rustem.islamov@unibas.ch</a>
+    <a href="https://scholar.google.com/citations?user=dNiHy50AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    <a href="https://github.com/Rustem-Islamov" target="_blank" rel="noopener">GitHub</a>
+    <span class="float-right" aria-hidden="true"> <a href="#" id="back_to_top"><span class="button_icon"><i class="fas fa-chevron-up fa-2x"></i></span></a> </span>
   </footer>
 </div>
 <div id="modal" class="modal fade" role="dialog">

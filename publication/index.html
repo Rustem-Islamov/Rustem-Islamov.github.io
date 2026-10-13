@@ -353,6 +353,19 @@ body {
     background-repeat:no-repeat; background-position:right 14px center;
   }
   .pub-no-results{ font-family:var(--sans); color:var(--muted); padding:1rem 0; display:none; }
+  .pub-count{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; min-height:1.6em;
+    font-family:var(--sans); font-size:.9rem; color:var(--muted); }
+  .pub-count #pub-count strong{ color:var(--fg); font-weight:600; }
+  .pub-count button{ border:0; background:none; padding:0; font:inherit; color:var(--primary); cursor:pointer; text-decoration:underline; }
+  .pub-count button[hidden]{ display:none; }
+  /* groups used by the venue / topic / oldest-first orders (same look as the year headers) */
+  .pub-group{ padding-bottom:.5rem; margin-bottom:1rem; }
+  .pub-group > h1{
+    font-family:var(--mono); font-weight:700; color:var(--fg);
+    font-size:1.5rem; margin:1.4rem 0 1rem; padding-bottom:6px;
+    border-bottom:2px solid var(--rule);
+  }
+  .pub-group.collapsed .grid-sizer{ display:none !important; }
   #topic-view{ display:none !important; }
   @media (max-width:760px){ .pub-header{ flex-direction:column; gap:20px; } }
 </style>
@@ -415,7 +428,30 @@ body {
 }
 </style>
 <link rel="stylesheet" href="/header.css" />
-</head>
+<link rel="stylesheet" href="/theme.css" />
+<script src="/theme.js"></script>
+<link rel="stylesheet" href="/pubcards.css">
+<style>
+#pub-stats-box{display:none!important}
+.pub-summary{position:relative;display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:1rem 0 0;padding:14px 18px 14px 22px;background:#fff;border:1px solid var(--rule);border-radius:14px}
+.pub-summary::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:0 3px 3px 0;background:var(--primary);opacity:.7}
+.ps-total{display:flex;align-items:baseline;gap:8px;padding-right:16px;border-right:1px solid var(--rule)}
+.ps-total b{font-size:2.1rem;line-height:1;color:var(--primary)}
+.ps-total span{font-family:'Inter',system-ui,sans-serif;font-size:.85rem;color:var(--muted)}
+.ps-pills{display:flex;flex-wrap:wrap;gap:8px}
+.vpill{cursor:pointer;font:inherit;font-family:'Inter',system-ui,sans-serif;font-size:.8rem!important;font-weight:600;padding:3px 11px!important;border:1px solid transparent;transition:transform .15s,box-shadow .15s,border-color .15s}
+.vpill b{font-weight:700;margin-left:4px;opacity:.85}
+.vpill:hover{transform:translateY(-1px);box-shadow:0 6px 14px -8px rgba(0,0,0,.35)}
+.vpill.active{border-color:var(--vfg);box-shadow:0 0 0 2px var(--vbg)}
+html[data-theme="dark"] .pub-summary{background:#1e1a26}
+html[data-theme="dark"] .ps-total b{color:#cf94d8}
+@media(max-width:560px){.ps-total{border-right:0;padding-right:0}}
+</style><style>
+#pub-reset{text-decoration:none!important;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;font-weight:600;color:#8e4585;background:#fff;border:1px solid rgba(142,69,133,.38);border-radius:999px;padding:.2rem .8rem;margin-left:.6rem;cursor:pointer;transition:background .2s,color .2s}
+#pub-reset:hover{background:#8e4585;color:#fff}
+html[data-theme="dark"] #pub-reset{background:transparent;color:#e3b6ea;border-color:rgba(207,148,216,.45)}
+html[data-theme="dark"] #pub-reset:hover{background:#cf94d8;color:#15131b}
+</style></head>
 
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -533,9 +569,6 @@ body {
         <a class="nav-link" href="/#about" data-target="#about"><span>Home</span></a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="/#education"><span>Education</span></a>
-      </li>
 
       <li class="nav-item">
         <a class="nav-link" href="/publication/"><span>Publications</span></a>
@@ -545,13 +578,7 @@ body {
         <a class="nav-link" href="/research/"><span>Research</span></a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="/#posts"><span>Posts</span></a>
-      </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="/#contact" data-target="#contact"><span>Contact</span></a>
-      </li>
 
       <li class="nav-item">
         <a class="nav-link" href="/files/cv.pdf"><span>CV</span></a>
@@ -595,15 +622,18 @@ body {
 <div class="universal-wrapper pub-header">
   <div class="pub-head-left">
     <h1 class="pub-page-title">Publications</h1>
-    <div id="pub-stats-box">
-        <span class="stat-total">Total publications:&nbsp;</span>
-        <span><strong>4</strong> NeurIPS</span>
-        <span><strong>7</strong> ICML</span>
-        <span><strong>4</strong> ICLR</span>
-        <span><strong>3</strong> AISTATS</span>
-        <span><strong>1</strong> UAI</span>
-        <span><strong>3</strong> TMLR</span>
+    <div id="pub-summary" class="pub-summary">
+      <div class="ps-total"><b>24</b><span>papers</span></div>
+      <div class="ps-pills" role="group" aria-label="Sort papers by venue">
+        <button type="button" class="vtag vpill v-neurips" data-venue="NeurIPS">NeurIPS <b>4</b></button>
+        <button type="button" class="vtag vpill v-icml" data-venue="ICML">ICML <b>7</b></button>
+        <button type="button" class="vtag vpill v-iclr" data-venue="ICLR">ICLR <b>4</b></button>
+        <button type="button" class="vtag vpill v-aistats" data-venue="AISTATS">AISTATS <b>3</b></button>
+        <button type="button" class="vtag vpill v-uai" data-venue="UAI">UAI <b>1</b></button>
+        <button type="button" class="vtag vpill v-tmlr" data-venue="TMLR">TMLR <b>3</b></button>
+        <button type="button" class="vtag vpill preprint" data-venue="Preprints">Preprint <b>2</b></button>
       </div>
+    </div>
   </div>
   <div class="pub-head-right">
     <div class="pub-filter">
@@ -616,10 +646,18 @@ body {
         <option value="Journal">Journal</option>
         <option value="Misc">Misc</option>
       </select>
+      <select id="pub-sort" aria-label="Sort papers">
+        <option value="year-desc">Sort: newest first</option>
+        <option value="year-asc">Sort: oldest first</option>
+        <option value="venue">Sort: by venue</option>
+        <option value="topic">Sort: by topic</option>
+      </select>
+      <div class="pub-count" role="status" aria-live="polite"><span id="pub-count"></span><button type="button" id="pub-reset" hidden>Reset filters</button></div>
     </div>
   </div>
 </div>
 <div class="universal-wrapper pt-3 pub-no-results" id="pub-no-results">No papers match your filters.</div>
+<div id="pub-flat" class="universal-wrapper pt-3"></div>
 <div class="universal-wrapper pt-3 year-section">
   <h1 itemprop="name"><span class="tri">▼</span>Prepared in 2026</h1>
 
@@ -716,7 +754,7 @@ body {
     <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://orientino.github.io/">Chenxiang Zhang${}^*$</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov${}^*$</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eneamc.github.io/">Enea Monzio Compagnoni</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://www.uni.lu/fstm-en/people/jun-pang/">Jun Pang</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="http://orvi.altervista.org/">Antonio Orvieto</a></span>.
 </span>
     </span>
-  <a class="specialeffects" href="/publication/26_adam_sgd/" itemprop="name">Revisiting the Adam–SGD Gap Beyond Single Factors</a>.
+  <a class="specialeffects" href="/publication/26_adam_sgd/" itemprop="name">Revisiting the Adam-SGD Gap Beyond Single Factors</a>.
 <p>
 40th Annual Conference on Neural Information Processing Systems (NeurIPS 2026)<br>
 
@@ -794,7 +832,7 @@ body {
     UAI
   </a>
 
-<a class="btn btn-outline-primary my-1 mr-1" href="/files/files/posters/ByzDP/poster_byz.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="/files/posters/ByzDP/poster_byz.pdf" target="_blank" rel="noopener">
   Poster
 </a>
 
@@ -1024,14 +1062,14 @@ body {
 
 <!-- <div class="collapse" id="collapseExample19">
   <div class="card card-body">
-    <font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of ${\small \mathcal{O}(1/\varepsilon^2)}$ with speed independent of ${\small \varepsilon}$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an ${\small \mathcal{O}(1/\varepsilon)}$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with ${\small \varepsilon}$, while that of DP-SignSGD is essentially ${\small \varepsilon}$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
+    <font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of $\mathcal{O}(1/\varepsilon^2)$ with speed independent of $\varepsilon$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an $\mathcal{O}(1/\varepsilon)$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with $\varepsilon$, while that of DP-SignSGD is essentially $\varepsilon$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
 </div>
 </div> -->
 
 <div class="collapse" id="collapseExample19">
   <div class="abstract-row abstract-row-23">
     <div class="card card-body abstract-text">
-      <font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of ${\small \mathcal{O}(1/\varepsilon^2)}$ with speed independent of ${\small \varepsilon}$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an ${\small \mathcal{O}(1/\varepsilon)}$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with ${\small \varepsilon}$, while that of DP-SignSGD is essentially ${\small \varepsilon}$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
+      <font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of $\mathcal{O}(1/\varepsilon^2)$ with speed independent of $\varepsilon$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an $\mathcal{O}(1/\varepsilon)$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with $\varepsilon$, while that of DP-SignSGD is essentially $\varepsilon$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
     </div>
     <div class="abstract-figure abstract-figure--narrow">
       <img src="/files/publications/DPSDE/dpsde_diagram.png" alt="Batch size scaling regimes for stochastic conditional gradient methods" />
@@ -1112,7 +1150,7 @@ body {
 <div class="collapse" id="collapseExample18">
   <div class="abstract-row">
 <div class="card card-body abstract-text">
-<font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the (L0, L1)-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.    </font>
+<font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the $(L_0, L_1)$-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.    </font>
 </div>
 <div class="abstract-figure">
 <img src="/files/publications/Warmup/warmup_diagram.png" alt="Placeholder figure for Why Do We Need Warm-up? A Theoretical Perspective" />
@@ -1242,7 +1280,7 @@ body {
 <div class="collapse" id="collapseExample16">
   <div class="abstract-row">
 <div class="card card-body abstract-text">
-<font size="2"> Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under $(L_0,L_1)$-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that \textit{adaptive} methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.     </font>
+<font size="2"> Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under $(L_0,L_1)$-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that <em>adaptive</em> methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.     </font>
 </div>
 <div class="abstract-figure">
 <img src="/files/publications/SDE_L0L1/sde_l0l1_diagram.png" alt="Placeholder figure for On the Interaction of Noise, Compression Role, and Adaptivity under $(L_0,L_1)$-Smoothness: An SDE-based Approach" />
@@ -2526,6 +2564,15 @@ body {
     
     
     
+<div class="container">
+  <footer class="site-footer home-footer">
+    <span>&copy; 2026 Rustem Islamov</span>
+    <a href="mailto:rustem.islamov@unibas.ch">rustem.islamov@unibas.ch</a>
+    <a href="https://scholar.google.com/citations?user=dNiHy50AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    <a href="https://github.com/Rustem-Islamov" target="_blank" rel="noopener">GitHub</a>
+    <span class="float-right" aria-hidden="true"> <a href="#" id="back_to_top"> <span class="button_icon"> <i class="fas fa-chevron-up fa-2x"></i> </span> </a> </span>
+  </footer>
+</div>
 <div id="topic-view" class="universal-wrapper pt-3">
 <div class="topic-section">
 <h1 itemprop="name"><span class="tri">▼</span>Large-scale Optimization</h1>
@@ -3182,7 +3229,7 @@ body {
 <div class="collapse" id="collapseExample18">
   <div class="abstract-row">
 <div class="card card-body abstract-text">
-<font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the (L0, L1)-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.    </font>
+<font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the $(L_0, L_1)$-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.    </font>
 </div>
 <div class="abstract-figure">
 <img src="/files/publications/Warmup/warmup_diagram.png" alt="Placeholder figure for Why Do We Need Warm-up? A Theoretical Perspective" />
@@ -3231,7 +3278,7 @@ body {
 <div class="collapse" id="collapseExample16">
   <div class="abstract-row">
 <div class="card card-body abstract-text">
-<font size="2"> Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under (L0,L1)-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that \textit{adaptive} methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.     </font>
+<font size="2"> Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under (L0,L1)-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that <em>adaptive</em> methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.     </font>
 </div>
 <div class="abstract-figure">
 <img src="/files/publications/SDE_L0L1/sde_l0l1_diagram.png" alt="Placeholder figure for On the Interaction of Noise, Compression Role, and Adaptivity under $(L_0,L_1)$-Smoothness: An SDE-based Approach" />
@@ -3351,7 +3398,7 @@ body {
 <div class="collapse" id="collapseExample19">
   <div class="abstract-row">
 <div class="card card-body abstract-text">
-<font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of ${\small \mathcal{O}(1/\varepsilon^2)}$ with speed independent of ${\small \varepsilon}$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an ${\small \mathcal{O}(1/\varepsilon)}$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with ${\small \varepsilon}$, while that of DP-SignSGD is essentially ${\small \varepsilon}$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
+<font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of $\mathcal{O}(1/\varepsilon^2)$ with speed independent of $\varepsilon$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an $\mathcal{O}(1/\varepsilon)$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with $\varepsilon$, while that of DP-SignSGD is essentially $\varepsilon$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
 </div>
 <div class="abstract-figure">
 <img src="/files/publications/DPSDE/dpsde_diagram.png" alt="Placeholder figure for Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective" />
@@ -3401,7 +3448,7 @@ body {
 <div class="collapse" id="collapseExample19">
   <div class="abstract-row">
 <div class="card card-body abstract-text">
-<font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of ${\small \mathcal{O}(1/\varepsilon^2)}$ with speed independent of ${\small \varepsilon}$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an ${\small \mathcal{O}(1/\varepsilon)}$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with ${\small \varepsilon}$, while that of DP-SignSGD is essentially ${\small \varepsilon}$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
+<font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of $\mathcal{O}(1/\varepsilon^2)$ with speed independent of $\varepsilon$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an $\mathcal{O}(1/\varepsilon)$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with $\varepsilon$, while that of DP-SignSGD is essentially $\varepsilon$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
 </div>
 <div class="abstract-figure">
 <img src="/files/publications/DPSDE/dpsde_diagram.png" alt="Placeholder figure for Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective" />
@@ -3890,25 +3937,7 @@ body {
 
 
   
-  <div class="container">
-    <footer class="site-footer">
   
-
-  <p class="powered-by">
-    &copy; 2026 Rustem Islamov&middot; 
-    
-    <span class="float-right" aria-hidden="true">
-      <a href="#" id="back_to_top">
-        <span class="button_icon">
-          <i class="fas fa-chevron-up fa-2x"></i>
-        </span>
-      </a>
-    </span>
-    
-  </p>
-</footer>
-
-  </div>
   
 
   
@@ -3998,6 +4027,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+<script src="/pubcards.js"></script>
 <script>
 (function(){
   var items = Array.prototype.slice.call(document.querySelectorAll('.year-section .grid-sizer'));
@@ -4025,23 +4055,93 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var search = document.getElementById('pub-search');
   var tsel = document.getElementById('pub-type-filter');
+  var ssel = document.getElementById('pub-sort');
+  var countEl = document.getElementById('pub-count');
+  var resetBtn = document.getElementById('pub-reset');
+  var flat = document.getElementById('pub-flat');
+  var collapsedGroups = {};                                   /* remembers closed sections while you search or filter */
+
+  /* extra data per paper: number, venue and research topic */
+  var TOPICS = [
+    ['Large-Scale Optimization', ['24_sde_adam','25_ngnm','26_adam_sgd','26_bst']],
+    ['Loss Landscape of Neural Networks', ['24_alphabeta','25_l0l1sde','25_warmup','26_eos']],
+    ['Federated Learning', ['21_bl','21_fednl','21_mn','22_3pc','22_ada3pc','23_AsyncSGD','23_clip21','23_econtrol','23_partial','24_motef','24_signsgd','25_clip21m','25_safe_ef','26_byz_dp','26_dpsde','26_local_sgd']]
+  ];
+  var VENUES = ['NeurIPS','ICML','ICLR','AISTATS','UAI','TMLR','COLT','AAAI'];   /* also the display order */
+  function venuePos(v){ var i = VENUES.indexOf(v); return i < 0 ? 99 : i; }
+  items.forEach(function(it, i){
+    var n = it.querySelector('.pub-num'); it._num = n ? parseInt(n.textContent.replace(/\D/g,''),10) || 0 : 0;
+    it._order = i;
+    it._home = it.parentNode;
+    var vp = it.querySelector('p'), venue = '';              /* venue line, incl. the (Oral, ...) span, without the buttons */
+    if (vp) Array.prototype.forEach.call(vp.childNodes, function(n){ if (n.nodeType===3 || (n.nodeType===1 && n.tagName==='SPAN')) venue += n.textContent; });
+    it._venue = 'Preprints';
+    for (var k=0;k<VENUES.length;k++){ if (venue.indexOf(VENUES[k])>-1){ it._venue = VENUES[k]; break; } }
+    var a = it.querySelector('a.specialeffects'); var m = a && a.getAttribute('href').match(/publication\/([^\/"]+)/);
+    var slug = m ? m[1] : '';
+    it._topic = 'Other';
+    TOPICS.forEach(function(t){ if (t[1].indexOf(slug)>-1) it._topic = t[0]; });
+  });
+  function newest(a,b){ return b._num - a._num; }
+
+  /* groups for every sort order: [heading, items] */
+  function groupsFor(mode, list){
+    var g = {}, order = [];
+    function put(key, it){ if(!g[key]){ g[key]=[]; order.push(key); } g[key].push(it); }
+    if (mode==='year-asc'){
+      list.slice().sort(function(a,b){ return a._year===b._year ? a._num-b._num : (a._year<b._year?-1:1); }).forEach(function(it){ put(it._year, it); });
+    } else if (mode==='venue'){
+      list.slice().sort(newest).forEach(function(it){ put(it._venue, it); });
+      order.sort(function(a,b){ return venuePos(a)-venuePos(b); });
+    } else if (mode==='topic'){
+      list.slice().sort(newest).forEach(function(it){ put(it._topic, it); });
+      order.sort(function(a,b){
+        function pos(t){ for(var i=0;i<TOPICS.length;i++) if(TOPICS[i][0]===t) return i; return 99; }
+        return pos(a)-pos(b);
+      });
+    }
+    return order.map(function(k){ return [k, g[k]]; });
+  }
 
   function apply(){
-    var q=(search.value||'').trim().toLowerCase(), fy=ysel.value, ft=tsel.value, visYears={}, shown=0;
+    var q=(search.value||'').trim().toLowerCase(), fy=ysel.value, ft=tsel.value, mode=ssel.value;
+    var visYears={}, shown=0, matched=[];
+    /* put every paper back in its year section first, in the original order */
+    items.forEach(function(it){ it._home.appendChild(it); });
     items.forEach(function(it){
       var ok = (!q || it._search.indexOf(q)>-1) && (!fy || it._year===fy) && (!ft || it._type===ft);
       it.style.display = ok ? '' : 'none';
-      if(ok){ visYears[it._year]=true; shown++; }
+      if(ok){ visYears[it._year]=true; shown++; matched.push(it); }
     });
+    var byYear = (mode==='year-desc');
     document.querySelectorAll('.year-section').forEach(function(sec){
       var h=sec.querySelector('h1'); var m=h?h.textContent.match(/(\d{4})/):null; var y=m?m[1]:'';
-      sec.style.display = (!y || visYears[y]) ? '' : 'none';
+      sec.style.display = byYear && (!y || visYears[y]) ? '' : 'none';
     });
+    flat.innerHTML = '';
+    if (!byYear){
+      groupsFor(mode, matched).forEach(function(grp){
+        var key = mode + '|' + grp[0];
+        var box = document.createElement('div'); box.className = 'pub-group' + (collapsedGroups[key] ? ' collapsed' : '');
+        var h = document.createElement('h1');
+        var tri = document.createElement('span'); tri.className = 'tri'; tri.textContent = '\u25BC';
+        tri.setAttribute('role', 'button'); tri.setAttribute('aria-label', 'Collapse or expand ' + grp[0]);
+        tri.addEventListener('click', function(){ collapsedGroups[key] = box.classList.toggle('collapsed'); });
+        h.appendChild(tri); h.appendChild(document.createTextNode(grp[0])); box.appendChild(h);
+        grp[1].forEach(function(it){ box.appendChild(it); });
+        flat.appendChild(box);
+      });
+    }
     var nr=document.getElementById('pub-no-results'); if(nr) nr.style.display = shown? 'none':'block';
+    countEl.innerHTML = 'Showing <strong>'+shown+'</strong> of <strong>'+items.length+'</strong> papers';
+    resetBtn.hidden = !(q || fy || ft);
   }
   search.addEventListener('input', apply);
   ysel.addEventListener('change', apply);
   tsel.addEventListener('change', apply);
+  ssel.addEventListener('change', apply);
+  resetBtn.addEventListener('click', function(){ search.value=''; ysel.value=''; tsel.value=''; apply(); search.focus(); });
+  apply();
 })();
 </script>
 
@@ -4071,6 +4171,42 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
   update();
+})();
+</script>
+<script>
+(function(){
+  var ssel=document.getElementById('pub-sort'), pills=document.querySelectorAll('.vpill');
+  function mark(v){pills.forEach(function(p){p.classList.toggle('active',p.dataset.venue===v);});}
+  pills.forEach(function(p){
+    p.addEventListener('click',function(){
+      var v=p.dataset.venue;
+      if(ssel.value!=='venue'){ssel.value='venue';ssel.dispatchEvent(new Event('change'));}
+      mark(v);
+      var target=null;
+      document.querySelectorAll('#pub-flat .pub-group > h1').forEach(function(h){
+        if(h.textContent.replace('\u25BC','').trim()===v) target=h;
+      });
+      if(target){var y=target.getBoundingClientRect().top+window.pageYOffset-80; window.scrollTo({top:y,behavior:'smooth'});}
+    });
+  });
+  ssel.addEventListener('change',function(){ if(ssel.value!=='venue') mark(''); });
+})();
+</script>
+<script>
+(function(){
+  var ssel=document.getElementById('pub-sort'), rb=document.getElementById('pub-reset');
+  var ids=['pub-search','pub-year-filter','pub-type-filter','pub-sort'];
+  function refresh(){
+    var on=document.getElementById('pub-search').value.trim()||document.getElementById('pub-year-filter').value||document.getElementById('pub-type-filter').value||ssel.value!=='year-desc';
+    rb.hidden=!on;
+  }
+  ids.forEach(function(id){var e=document.getElementById(id);e.addEventListener('input',refresh);e.addEventListener('change',refresh);});
+  rb.addEventListener('click',function(){
+    ssel.value='year-desc'; ssel.dispatchEvent(new Event('change'));
+    document.querySelectorAll('.vpill').forEach(function(p){p.classList.remove('active');});
+    refresh(); window.scrollTo({top:0,behavior:'smooth'});
+  });
+  refresh();
 })();
 </script>
 </body>

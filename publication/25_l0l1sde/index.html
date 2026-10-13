@@ -268,6 +268,10 @@ body {
 }
 </style>
 <link rel="stylesheet" href="/header.css" />
+<link rel="stylesheet" href="/theme.css" />
+<script src="/theme.js"></script>
+<link rel="stylesheet" href="/pubcards.css">
+<link rel="stylesheet" href="/pubpage.css">
 </head>
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -329,9 +333,6 @@ body {
           <a class="nav-link " href="/#about"><span>Home</span></a>
         </li>
 
-	<li class="nav-item">
-          <a class="nav-link " href="/#education"><span>Education</span></a>
-        </li>
 
         <li class="nav-item">
           <a class="nav-link " href="/publication"><span>Publications</span></a>
@@ -341,15 +342,9 @@ body {
           <a class="nav-link " href="/research"><span>Research</span></a>
         </li>
 
-	<li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Posts</span></a>
-        </li>
 
         
 
-        <li class="nav-item">
-          <a class="nav-link " href="/#contact"><span>Contact</span></a>
-        </li>
 
         <li class="nav-item">
           <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
@@ -400,7 +395,7 @@ body {
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">On the Interaction of Noise, Compression Role, and Adaptivity under ($L_0, L_1$)-Smoothness: An SDE-based Approach</h1>
+  <h1 itemprop="name">On the Interaction of Noise, Compression Role, and Adaptivity under $(L_0,L_1)$-Smoothness: An SDE-based Approach</h1>
 
   
 
@@ -507,7 +502,7 @@ body {
 
 
 <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/25_l0l1_sdef/cite.bib">
+        data-filename="/publication/25_l0l1sde/cite.bib">
   Cite
 </button>
 
@@ -531,7 +526,7 @@ body {
 <div class="collapse" id="collapseExample">
   <div class="abstract-row">
 <div class="card card-body abstract-text">
-<font size="2">Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under (L0,L1)-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that \textit{adaptive} methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.
+<font size="2">Using stochastic differential equation (SDE) approximations, we study the dynamics of Distributed SGD, Distributed Compressed SGD, and Distributed SignSGD under $(L_0,L_1)$-smoothness and flexible noise assumptions. Our analysis provides insights -- which we validate through simulation -- into the intricate interactions between batch noise, stochastic gradient compression, and adaptivity in this modern theoretical setup. For instance, we show that <em>adaptive</em> methods such as Distributed SignSGD can successfully converge under standard assumptions on the learning rate scheduler, even under heavy-tailed noise. On the contrary, Distributed (Compressed) SGD with pre-scheduled decaying learning rate fails to achieve convergence, unless such a schedule also accounts for an inverse dependency on the gradient norm -- de facto falling back into an adaptive method.
   </font>
 </div>
 <div class="abstract-figure">
@@ -709,23 +704,13 @@ body {
 
   
   <div class="container">
-    <footer class="site-footer">
-  
-
-  <p class="powered-by">
-    &copy; 2026 Rustem Islamov
-
-    
-    <span class="float-right" aria-hidden="true">
-      <a href="#" id="back_to_top">
-        <span class="button_icon">
-          <i class="fas fa-chevron-up fa-2x"></i>
-        </span>
-      </a>
-    </span>
-    
-  </p>
-</footer>
+    <footer class="site-footer home-footer">
+    <span>&copy; 2026 Rustem Islamov</span>
+    <a href="mailto:rustem.islamov@unibas.ch">rustem.islamov@unibas.ch</a>
+    <a href="https://scholar.google.com/citations?user=dNiHy50AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    <a href="https://github.com/Rustem-Islamov" target="_blank" rel="noopener">GitHub</a>
+    <span class="float-right" aria-hidden="true"> <a href="#" id="back_to_top"> <span class="button_icon"> <i class="fas fa-chevron-up fa-2x"></i> </span> </a> </span>
+  </footer>
 
   </div>
   
@@ -798,5 +783,6 @@ body {
   update();
 })();
 </script>
+<script src="/pubpage.js"></script>
 </body>
 </html>

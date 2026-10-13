@@ -23,8 +23,8 @@
   .topic-hero h1 { font-size: 2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0; }
     .section-block { margin-bottom: 0; padding: 2rem 0; }
   .section-block h2 { font-size: 1.25rem; font-weight: 700; color: #444; border-left: none; padding-left: 0; margin-bottom: 0.8rem; border-bottom: 2px solid #ccc; padding-bottom: 6px; width: 100%; }
-  .section-grey { background: #f8f9fa; }
-  .section-white { background: #fff; }
+  .section-grey { background: transparent; }
+  .section-white { background: transparent; }
   /* Education-style cards */
   .contrib-card { border: none; background: none; border-radius: 0; padding: 0; margin-bottom: 0; }
   .venue-badge { display: none; }
@@ -150,6 +150,10 @@ body {
 }
 </style>
 <link rel="stylesheet" href="/header.css" />
+<link rel="stylesheet" href="/theme.css" />
+<script src="/theme.js"></script>
+<link rel="stylesheet" href="/pubcards.css">
+<link rel="stylesheet" href="/researchpage.css">
 </head>
 <body data-offset="70" data-spy="scroll" data-target="#navbar-main" id="top">
 <div class="scroll-progress" id="scroll-progress"></div>
@@ -233,11 +237,8 @@ body {
 <div class="collapse navbar-collapse" id="navbar">
 <ul class="navbar-nav mr-auto">
 <li class="nav-item"><a class="nav-link" href="/#about"><span>Home</span></a></li>
-<li class="nav-item"><a class="nav-link" href="/#education"><span>Education</span></a></li>
 <li class="nav-item"><a class="nav-link" href="/publication/"><span>Publications</span></a></li>
 <li class="nav-item"><a class="nav-link" href="/research/"><span>Research</span></a></li>
-<li class="nav-item"><a class="nav-link" href="/#posts"><span>Posts</span></a></li>
-<li class="nav-item"><a class="nav-link" href="/#contact"><span>Contact</span></a></li>
 <li class="nav-item"><a class="nav-link" href="/files/cv.pdf"><span>CV</span></a></li>
 </ul>
 <ul class="navbar-nav ml-auto">
@@ -246,65 +247,27 @@ body {
 </div>
 </div>
 </nav>
-<div class="container" style="padding-top:1rem;"><a class="btn btn-outline-secondary btn-sm" href="/research/">← Back to Research</a></div>
+<div class="container" style="padding-top:1rem;"><a href="/research/" class="back-pill">← Back to Research</a></div>
 <div class="section-white"><div class="topic-hero">
 <div class="container">
 <h1>Federated Learning</h1>
+    <div class="topic-tags" style="margin-top:.6rem"><span class="topic-tag">Communication Efficiency</span><span class="topic-tag">Privacy</span><span class="topic-tag">Local Methods</span></div>
 </div>
 </div></div>
 <div class="section-white"><div class="container">
 <div class="section-block">
 <h2>Main Challenges</h2>
-<ul class="challenge-list">
-<li><strong>Communication cost:</strong> In federated settings, clients communicate with a central server over limited-bandwidth links; transmission of dense vectors is infeasible at large scale.</li>
-<li><strong>Data heterogeneity:</strong> Client datasets are non-IID, causing client drift in local methods, which degrades the overall performance.</li>
-<li><strong>Privacy guarantees:</strong> To protect user data, privacy-preserving algorithms clip update magnitudes and add noise. This DP noise degrades model performance, making the privacy-utility tradeoff a key practical concern.</li>
-</ul>
+<div class="chal-grid"><div class="chal"><span class="chal-n">1</span><b>Communication cost</b><ul><li>Clients communicate with a central server over limited-bandwidth links.</li><li>Transmitting dense vectors is infeasible at large scale.</li></ul></div><div class="chal"><span class="chal-n">2</span><b>Data heterogeneity</b><ul><li>Client datasets are non-IID.</li><li>This causes client drift in local methods, which degrades the overall performance.</li></ul></div><div class="chal"><span class="chal-n">3</span><b>Privacy guarantees</b><ul><li>To protect user data, privacy-preserving algorithms clip update magnitudes and add noise.</li><li>This DP noise degrades model performance, making the privacy-utility tradeoff a key practical concern.</li></ul></div></div>
 </div>
 </div></div>
 <div class="section-grey"><div class="container">
 <div class="section-block">
 <h2>My Contributions</h2>
-<div style="margin-bottom:0.3rem;">
-<div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-<div class="card-body" style="padding:0.6rem 1rem;">
-<h4 class="exp-card-title">Analysis of Differential Private Algorithms</h4>
-<p class="exp-card-desc">Standard analyses of DP-SGD rely on the unrealistic bounded-gradient assumption. We propose an algorithm with high-probability convergence guarantees that avoids this restriction while achieving an optimal privacy-utility tradeoff [13]. Complementary SDE analyses [19] show that adaptive methods such as DP-SignSGD and DP-Adam perform better under strong privacy constraints and are less sensitive to learning-rate tuning.</p>
-</div>
-</div>
-</div>
-<div style="margin-bottom:0.3rem;">
-<div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-<div class="card-body" style="padding:0.6rem 1rem;">
-<h4 class="exp-card-title">Non-smooth Distributed Optimization with Compression</h4>
-<p class="exp-card-desc">Works on distributed RL remains limited, and such problems are inherently nonsmooth due to operations like maximization. In [15], we develop an algorithm with provable convergence for nonsmooth convex objectives that simultaneously handles both the objective and constraints. The method significantly outperforms several baselines in distributed training of humanoid agents.</p>
-</div>
-</div>
-</div>
-<div style="margin-bottom:0.3rem;">
-<div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-<div class="card-body" style="padding:0.6rem 1rem;">
-<h4 class="exp-card-title">Gradient Methods with Biased Compression and Convergence Guarantees</h4>
-<p class="exp-card-desc">Compression is a practical approach to reducing communication overhead. Biased compressors (e.g., Top-K) are particularly effective in practice, but introduce bias that can degrade performance. We design provably convergent algorithms for smooth nonconvex, convex, and strongly convex objectives that achieve optimal asymptotic complexity while reducing communication in both centralized [9] and decentralized [10] settings. In [5], we further develop adaptive biased compressors that adjust compression strength during training.</p>
-</div>
-</div>
-</div>
-<div style="margin-bottom:0.3rem;">
-<div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-<div class="card-body" style="padding:0.6rem 1rem;">
-<h4 class="exp-card-title">Methods with Provable Improvements from Local Updates</h4>
-<p class="exp-card-desc">Standard convergence guarantees for local methods do not capture the benefits of local updates, despite their strong empirical performance. In [6], we identified a class of functions for which local methods provably achieve faster convergence. Another possible explanation for the benefits of local methods is second-order heterogeneity, which captures the average curvature of local functions and leads to improved convergence of Local SGD over vanilla mini-batch SGD [24].</p>
-</div>
-</div>
-</div>
-<div style="margin-bottom:0.3rem;">
-<div class="card shadow-sm" style="border-left:4px solid #555 !important;">
-<div class="card-body" style="padding:0.6rem 1rem;">
-<h4 class="exp-card-title">Second-order Algorithms for Federated Learning with Compression</h4>
-<p class="exp-card-desc">Transmitting full Hessians in federated settings is impractical. We address this bottleneck by designing second-order methods that employ Hessian and gradient compression to reduce communication overhead [1-4]. Crucially, these methods retain the hallmark properties of Newton's method, achieving local superlinear convergence independent of the condition number.</p>
-</div>
-</div>
-</div>
+<div class="ct-tl"><div class="ct"><h4>Analysis of Differential Private Algorithms</h4><p>Standard analyses of DP-SGD rely on the unrealistic bounded-gradient assumption. We propose an algorithm with high-probability convergence guarantees that avoids this restriction while achieving an optimal privacy-utility tradeoff [13]. Complementary SDE analyses [19] show that adaptive methods such as DP-SignSGD and DP-Adam perform better under strong privacy constraints and are less sensitive to learning-rate tuning.</p></div>
+<div class="ct"><h4>Non-smooth Distributed Optimization with Compression</h4><p>Works on distributed RL remains limited, and such problems are inherently nonsmooth due to operations like maximization. In [15], we develop an algorithm with provable convergence for nonsmooth convex objectives that simultaneously handles both the objective and constraints. The method significantly outperforms several baselines in distributed training of humanoid agents.</p></div>
+<div class="ct"><h4>Gradient Methods with Biased Compression and Convergence Guarantees</h4><p>Compression is a practical approach to reducing communication overhead. Biased compressors (e.g., Top-K) are particularly effective in practice, but introduce bias that can degrade performance. We design provably convergent algorithms for smooth nonconvex, convex, and strongly convex objectives that achieve optimal asymptotic complexity while reducing communication in both centralized [9] and decentralized [10] settings. In [5], we further develop adaptive biased compressors that adjust compression strength during training.</p></div>
+<div class="ct"><h4>Methods with Provable Improvements from Local Updates</h4><p>Standard convergence guarantees for local methods do not capture the benefits of local updates, despite their strong empirical performance. In [6], we identified a class of functions for which local methods provably achieve faster convergence. Another possible explanation for the benefits of local methods is second-order heterogeneity, which captures the average curvature of local functions and leads to improved convergence of Local SGD over vanilla mini-batch SGD [24].</p></div>
+<div class="ct"><h4>Second-order Algorithms for Federated Learning with Compression</h4><p>Transmitting full Hessians in federated settings is impractical. We address this bottleneck by designing second-order methods that employ Hessian and gradient compression to reduce communication overhead [1-4]. Crucially, these methods retain the hallmark properties of Newton's method, achieving local superlinear convergence independent of the condition number.</p></div></div>
 </div></div>
 <div class="section-white"><div class="container">
 <div class="section-block">
@@ -325,15 +288,21 @@ body {
 <div class="pub-list-item" itemscope="" itemtype="http://schema.org/CreativeWork">
   <b class="pub-num">[24]</b>
   <span class="article-metadata li-cite-author" itemprop="author">
-<span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://kkpatel.ttic.edu/">Kumar Kshitij Patel${}^*$</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov${}^*$</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sstich.ch/">Sebastian U. Stich</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&amp;hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io/index.html">Eduard Gorbunov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://lingxiaowang-ai.github.io/">Lingxiao Wang</a></span>.
+<span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://kkpatel.ttic.edu/">Kumar Kshitij Patel${}^*$</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://rustem-islamov.github.io/">Rustem Islamov${}^*$</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://sstich.ch/">Sebastian Stich</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&amp;hl=en">Aurelien Lucchi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://eduardgorbunov.github.io/index.html">Eduard Gorbunov</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="https://lingxiaowang-ai.github.io/">Lingxiao Wang</a></span>.
 </span>
 <a class="specialeffects" href="/publication/26_local_sgd/" itemprop="name">What's in a Smoothness Constant? Tighter Rates for Local SGD with Bounded Second-order Heterogeneity</a>.
   <p>
     The 40th Annual Conference on Neural Information Processing Systems (NeurIPS 2026)<br/>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2607.14731" rel="noopener" target="_blank">
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/Local_SGD/local_sgd.pdf" rel="noopener" target="_blank">
   PDF
 </a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2607.14731" rel="noopener" target="_blank">
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/26_local_sgd/cite.bib">
+  Cite
+</button>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2607.14731" rel="noopener" target="_blank">
     arXiv
   </a>
   <a class="btn btn-outline-primary my-1 mr-1" href="https://openreview.net/forum?id=u0RipLyQNB" target="_blank" rel="noopener">
@@ -365,10 +334,16 @@ body {
 <a class="specialeffects" href="/publication/26_byz_dp/" itemprop="name">Byzantine-Robust and Differentially Private Federated Optimization under Weaker Assumptions</a>.
   <p>
     42nd Conference on Uncertainty in Artificial Intelligence (UAI 2026)<br/>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.23472" rel="noopener" target="_blank">
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/ByzDP/byz_dp.pdf" rel="noopener" target="_blank">
   PDF
 </a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2603.23472" rel="noopener" target="_blank">
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/26_byz_dp/cite.bib">
+  Cite
+</button>
+
+  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2603.23472" rel="noopener" target="_blank">
     arXiv
   </a>
 
@@ -376,7 +351,7 @@ body {
     UAI
   </a>
 
-<a class="btn btn-outline-primary my-1 mr-1" href="/files/files/posters/ByzDP/poster_byz.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="/files/posters/ByzDP/poster_byz.pdf" target="_blank" rel="noopener">
   Poster
 </a>
 <a aria-controls="collapseExample" aria-expanded="false" class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample22" role="button">
@@ -411,13 +386,13 @@ body {
 <button class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename="/publication/26_dpsde/cite.bib" type="button">
   Cite
 </button>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.03226" rel="noopener" target="_blank">
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2603.03226" rel="noopener" target="_blank">
     arXiv
   </a>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=hSpA4DAoMk" rel="noopener" target="_blank">
     ICLR
   </a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/Adam-SDE/adam_sde_poster.pdf" rel="noopener" target="_blank">
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/posters/DP-SDE/dp_sde_poster.pdf" rel="noopener" target="_blank">
     Poster
   </a>
 <a aria-controls="collapseExample" aria-expanded="false" class="btn btn-outline-primary my-1 mr-1 btn-sm" data-toggle="collapse" href="#collapseExample19" role="button">
@@ -426,7 +401,7 @@ body {
 <div class="collapse" id="collapseExample19">
 <div class="abstract-row abstract-row-23">
 <div class="card card-body abstract-text">
-<font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of ${\small \mathcal{O}(1/\varepsilon^2)}$ with speed independent of ${\small \varepsilon}$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an ${\small \mathcal{O}(1/\varepsilon)}$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with ${\small \varepsilon}$, while that of DP-SignSGD is essentially ${\small \varepsilon}$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
+<font size="2">Differential Privacy (DP) is becoming central to large-scale training as privacy regulations tighten. We revisit how DP noise interacts with adaptivity in optimization through the lens of stochastic differential equations, providing the first SDE-based analysis of private optimizers. Focusing on DP-SGD and DP-SignSGD under per-example clipping, we show a sharp contrast under fixed hyperparameters: DP-SGD converges at a Privacy-Utility Trade-Off of $\mathcal{O}(1/\varepsilon^2)$ with speed independent of $\varepsilon$, while DP-SignSGD converges at a speed linear in $\varepsilon$ with an $\mathcal{O}(1/\varepsilon)$ trade-off, dominating in high-privacy or large batch noise regimes. By contrast, under optimal learning rates, both methods achieve comparable theoretical asymptotic performance; however, the optimal learning rate of DP-SGD scales linearly with $\varepsilon$, while that of DP-SignSGD is essentially $\varepsilon$-independent. This makes adaptive methods far more practical, as their hyperparameters transfer across privacy levels with little or no re-tuning. Empirical results confirm our theory across training and test metrics, and empirically extend from DP-SignSGD to DP-Adam.    </font>
 </div>
 <div class="abstract-figure abstract-figure--narrow"> <img src="/files/publications/DPSDE/dpsde_diagram.png" alt="Batch size scaling regimes for stochastic conditional gradient methods" /> </div>
 </div>
@@ -604,11 +579,11 @@ body {
   </span>
 <a class="specialeffects" href="/publication/23_econtrol/" itemprop="name">EControl: Fast Distributed Optimization with Compression and Error Control</a>.
   <p>
-    12th International Conference on Learning Representations (ICLR 2025)<br/>
+    12th International Conference on Learning Representations (ICLR 2024)<br/>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/publications/EControl/econtrol.pdf" rel="noopener" target="_blank">
   PDF
 </a>
-<button class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename="/publication/23_clip21/cite.bib" type="button">
+<button class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename="/publication/23_econtrol/cite.bib" type="button">
   Cite
 </button>
 <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2311.05645" rel="noopener" target="_blank">
@@ -996,8 +971,17 @@ body {
     });
   });
 </script>
+<script src="/pubcards.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
+<div class="container">
+  <footer class="site-footer home-footer">
+    <span>&copy; 2026 Rustem Islamov</span>
+    <a href="mailto:rustem.islamov@unibas.ch">rustem.islamov@unibas.ch</a>
+    <a href="https://scholar.google.com/citations?user=dNiHy50AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    <a href="https://github.com/Rustem-Islamov" target="_blank" rel="noopener">GitHub</a>
+  </footer>
+</div>
 <script>
 (function () {
   var bar = document.getElementById('scroll-progress');

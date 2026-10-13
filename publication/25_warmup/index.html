@@ -267,6 +267,10 @@ body {
 }
 </style>
 <link rel="stylesheet" href="/header.css" />
+<link rel="stylesheet" href="/theme.css" />
+<script src="/theme.js"></script>
+<link rel="stylesheet" href="/pubcards.css">
+<link rel="stylesheet" href="/pubpage.css">
 </head>
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -328,9 +332,6 @@ body {
           <a class="nav-link " href="/#about"><span>Home</span></a>
         </li>
 
-	<li class="nav-item">
-          <a class="nav-link " href="/#education"><span>Education</span></a>
-        </li>
 
         <li class="nav-item">
           <a class="nav-link " href="/publication"><span>Publications</span></a>
@@ -340,15 +341,9 @@ body {
           <a class="nav-link " href="/research"><span>Research</span></a>
         </li>
 
-	<li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Posts</span></a>
-        </li>
 
         
 
-        <li class="nav-item">
-          <a class="nav-link " href="/#contact"><span>Contact</span></a>
-        </li>
 
         <li class="nav-item">
           <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
@@ -525,13 +520,16 @@ body {
   </a>
   
 
- <a class="btn btn-outline-primary my-1 mr-1" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+ <a class="btn btn-outline-primary my-1 mr-1" href="/files/posters/H0H1/h0h1_poster.pdf" target="_blank" rel="noopener">
+    Poster
+  </a>
+  <a class="btn btn-outline-primary my-1 mr-1" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     Abstract
   </a>
 <div class="collapse" id="collapseExample">
   <div class="abstract-row">
 <div class="card card-body abstract-text">
-<font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the (L0, L1)-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.
+<font size="2">Learning rate warm-up - increasing the learning rate at the beginning of training – has become a ubiquitous heuristic in modern deep learning, yet its theoretical foundations remain poorly understood. In this work, we provide a principled explanation for why warm-up improves training. We rely on a generalization of the $(L_0, L_1)$-smoothness condition, which bounds local curvature as a linear function of the loss sub-optimality and exhibits desirable closure properties. We demonstrate both theoretically and empirically that this condition holds for common neural architectures trained with mean-squared error and cross-entropy losses. Under this assumption, we prove that Gradient Descent with a warm-up schedule achieves faster convergence than with a fixed step-size, establishing upper and lower complexity bounds. Finally, we validate our theoretical insights through experiments on language and vision models, confirming the practical benefits of warm-up schedules.
   </font>
 </div>
 <div class="abstract-figure">
@@ -709,23 +707,13 @@ body {
 
   
   <div class="container">
-    <footer class="site-footer">
-  
-
-  <p class="powered-by">
-    &copy; 2026 Rustem Islamov
-
-    
-    <span class="float-right" aria-hidden="true">
-      <a href="#" id="back_to_top">
-        <span class="button_icon">
-          <i class="fas fa-chevron-up fa-2x"></i>
-        </span>
-      </a>
-    </span>
-    
-  </p>
-</footer>
+    <footer class="site-footer home-footer">
+    <span>&copy; 2026 Rustem Islamov</span>
+    <a href="mailto:rustem.islamov@unibas.ch">rustem.islamov@unibas.ch</a>
+    <a href="https://scholar.google.com/citations?user=dNiHy50AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    <a href="https://github.com/Rustem-Islamov" target="_blank" rel="noopener">GitHub</a>
+    <span class="float-right" aria-hidden="true"> <a href="#" id="back_to_top"> <span class="button_icon"> <i class="fas fa-chevron-up fa-2x"></i> </span> </a> </span>
+  </footer>
 
   </div>
   
@@ -798,5 +786,6 @@ body {
   update();
 })();
 </script>
+<script src="/pubpage.js"></script>
 </body>
 </html>
