@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rustem Islamov — bowl-glow design mock-up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b1d3a; --ink-2:#1d2f4f; --accent:#5b7cf0; --dot:#2fe0d0; --panel:#0e1f3d; --panel-line:rgba(255,255,255,.12);
+  --gut:clamp(20px,5.7vw,82px); --ease:cubic-bezier(.22,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff}
+body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.atmo{position:fixed;inset:0;z-index:0;pointer-events:none;background:#fff}
+.atmo canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+main{position:relative;z-index:1}
+
+/* ---------- navbar ---------- */
+.nav{position:fixed;z-index:50;top:20px;left:var(--gut);right:var(--gut);height:60px;border-radius:999px;background:#fff;display:flex;align-items:center;padding:0 10px 0 22px;
+  box-shadow:0 1px 0 rgba(11,29,58,.04),0 10px 30px -18px rgba(11,29,58,.25);opacity:0;transform:translateY(-8px);animation:navin .9s var(--ease) .15s forwards}
+@keyframes navin{to{opacity:1;transform:none}}
+.brand{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:500;letter-spacing:-.02em}
+.brand svg{width:22px;height:22px}
+.links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:31px;font-size:14px;font-weight:500;letter-spacing:-.005em;opacity:.92}
+.links a{transition:opacity .2s}.links a:hover{opacity:.55}
+.right{margin-left:auto;display:flex;align-items:center}
+.login{font-size:14px;font-weight:500;padding:0 14px;transition:padding .35s var(--ease)}
+.nav.on .login{padding-right:0}
+.navcta{width:42px;height:42px;overflow:hidden;border-radius:999px;margin-left:-42px;transform:scale(0);transform-origin:100% 50%;
+  transition:transform .35s var(--ease),width .65s var(--ease) .22s,margin .35s var(--ease)}
+.nav.on .navcta{width:142px;margin-left:16px;transform:scale(1)}
+.navcta .btn{width:142px}
+.navcta .lbl{opacity:0;transition:opacity .4s ease .45s}
+.nav.on .navcta .lbl{opacity:1}
+
+/* ---------- button ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;height:42px;padding:0 46px 0 18px;border-radius:999px;background:var(--ink);color:#fff;font-size:13.5px;font-weight:500;letter-spacing:-.01em;white-space:nowrap}
+.btn .dot{position:absolute;right:16px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--dot);box-shadow:0 0 10px rgba(47,224,208,.7);display:grid;place-items:center;
+  transition:width .45s var(--ease),height .45s var(--ease),margin .45s var(--ease),right .45s var(--ease),box-shadow .45s}
+.btn .dot svg{width:12px;height:12px;opacity:0;transform:translateX(-4px);transition:opacity .3s ease .05s,transform .4s var(--ease) .05s}
+.btn:hover .dot{width:32px;height:32px;margin-top:-16px;right:5px;box-shadow:none}
+.btn:hover .dot svg{opacity:1;transform:none}
+.btn.lg{height:62px;padding:0 62px 0 28px;font-size:17px}
+.btn.lg .dot{width:14px;height:14px;margin-top:-7px;right:24px}
+.btn.lg .dot svg{width:16px;height:16px}
+.btn.lg:hover .dot{width:48px;height:48px;margin-top:-24px;right:7px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:100vh;min-height:640px}
+.hero>*{position:absolute}
+#h1{left:var(--gut);top:21.5vh;font-weight:400;font-size:clamp(34px,4.65vw,70px);line-height:1.03;letter-spacing:-.035em;white-space:nowrap;color:var(--ink)}
+.hl{color:#5b7cf0}
+.trust{left:var(--gut);top:58vh;font-size:clamp(15px,1.28vw,19px);letter-spacing:-.015em;color:var(--ink-2)}
+.hero .cta{left:var(--gut);bottom:7.5vh}
+.fade-up{opacity:0;transform:translateY(14px)}
+body.ready .fade-up{animation:fu .9s var(--ease) forwards;animation-delay:var(--d,0s)}
+@keyframes fu{to{opacity:1;transform:none}}
+.logos{right:0;width:50%;top:55vh;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr)}
+.logos .c{position:relative;display:flex;align-items:center;justify-content:center;color:#3e4d68;font-size:13px;font-weight:600;letter-spacing:.06em;gap:7px}
+.logos .c::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(rgba(11,29,58,.08),rgba(11,29,58,.05))}
+.logos .c:nth-child(n+5)::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(11,29,58,.06)}
+.logos svg{height:20px;width:auto}
+.serif{font-family:Georgia,serif;font-style:italic;font-weight:700;font-size:15px;letter-spacing:.02em}
+.box{border:2px solid currentColor;border-radius:4px;padding:2px 7px;font-size:16px;font-weight:800;letter-spacing:-.02em}
+.wide{font-size:11px;font-weight:500;letter-spacing:.3em}
+
+/* ---------- statement ---------- */
+.statement{position:relative;height:306vh;margin-top:-31vh;pointer-events:none}
+.pin{position:sticky;top:0;height:100vh}
+#stmt{position:absolute;top:41.5vh;left:0;right:0;text-align:center;font-weight:400;font-size:clamp(20px,2.8vw,42px);line-height:1.16;letter-spacing:-.03em;color:var(--ink);white-space:nowrap;will-change:transform}
+
+/* ---------- dark split ---------- */
+.split{position:relative;z-index:2;background:var(--panel);color:#fff;min-height:100vh;display:grid;grid-template-columns:58.3% 41.7%}
+.split .l{position:relative;padding-left:var(--gut)}
+.split .l::before{content:"";position:absolute;left:var(--gut);top:0;bottom:0;width:1px;background:var(--panel-line)}
+#h2{font-weight:400;font-size:clamp(32px,3.15vw,48px);line-height:1.08;letter-spacing:-.03em;padding:21vh 0 0 6.2vw;color:#fff}
+#row{margin-top:6.4vh;border-top:1px solid var(--panel-line);display:grid;grid-template-columns:1fr 1.05fr;gap:24px;padding:3vh 6vw 0 6.2vw;opacity:0;transform:translateY(14px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+#row.in{opacity:1;transform:none}
+#row h3{font-weight:400;font-size:clamp(17px,1.4vw,21px)}
+#row p{font-size:clamp(13px,1.1vw,16px);line-height:1.38;color:rgba(255,255,255,.5);max-width:20em}
+#row p b{color:#fff;font-weight:500}
+.split .r{position:relative;overflow:hidden}
+#ship{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 60%;will-change:transform}
+
+/* ---------- rest of the page (same system, white) ---------- */
+.rest{position:relative;z-index:3;background:#fff}
+.sec{padding:clamp(70px,9vw,140px) var(--gut) 0}
+.sec h2{font-weight:400;font-size:clamp(32px,3.6vw,56px);line-height:1.05;letter-spacing:-.035em;margin-bottom:clamp(28px,3.5vw,52px)}
+.sec h2 .hl{color:#5b7cf0}
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(11,29,58,.1)}
+.area{position:relative;padding:28px 28px 34px 0;border-right:1px solid rgba(11,29,58,.08);display:flex;flex-direction:column;gap:16px;min-height:260px}
+.area+.area{padding-left:28px}.area:last-child{border-right:0}
+.area .n{font-size:13px;color:rgba(11,29,58,.4);letter-spacing:.04em}
+.area h3{font-weight:400;font-size:clamp(22px,2.1vw,32px);line-height:1.08;letter-spacing:-.03em}
+.area ul{list-style:none;color:rgba(11,29,58,.62);font-size:15px;line-height:1.5;display:grid;gap:3px}
+.area .btn{margin-top:auto;align-self:flex-start}
+.two{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(30px,6vw,110px)}
+.tl{border-top:1px solid rgba(11,29,58,.1)}
+.tl .e{display:grid;grid-template-columns:7.5em 1fr;gap:18px;padding:22px 0;border-bottom:1px solid rgba(11,29,58,.08)}
+.tl .yr{color:var(--accent);font-weight:500;letter-spacing:-.01em}
+.tl h4{font-weight:500;font-size:18px;letter-spacing:-.02em;line-height:1.25}
+.tl .s{color:rgba(11,29,58,.55);font-size:14.5px;line-height:1.5;margin-top:4px}
+.tl a{border-bottom:1px solid rgba(91,124,240,.5)}
+.news .it{display:grid;grid-template-columns:9em 1fr;gap:18px;padding:20px 0;border-bottom:1px solid rgba(11,29,58,.08);font-size:15.5px;line-height:1.45;letter-spacing:-.01em}
+.news .it:first-child{border-top:1px solid rgba(11,29,58,.1)}
+.news .d{color:rgba(11,29,58,.45)}
+.news a{border-bottom:1px solid rgba(91,124,240,.5)}
+.pubs{border-top:1px solid rgba(11,29,58,.1)}
+.pub{display:grid;grid-template-columns:11em 1fr auto;gap:24px;padding:30px 0;border-bottom:1px solid rgba(11,29,58,.08);align-items:start}
+.tag{display:inline-block;padding:3px 11px;border-radius:999px;background:rgba(143,213,241,.4);font-size:12.5px;font-weight:500;letter-spacing:-.005em;margin-right:6px}
+.tag.o{background:rgba(255,107,91,.18)}
+.pub h3{font-weight:400;font-size:clamp(20px,2vw,30px);line-height:1.12;letter-spacing:-.03em;max-width:30ch}
+.pub .au{margin-top:10px;color:rgba(11,29,58,.5);font-size:14.5px}.pub .au b{color:var(--ink);font-weight:600}
+.pub .lk{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.pub .lk a{padding:3px 13px;border:1px solid rgba(11,29,58,.2);border-radius:999px;font-size:13px;transition:background .3s,color .3s}
+.pub .lk a:hover{background:var(--ink);color:#fff}
+footer.f{margin-top:clamp(70px,9vw,140px);background:var(--panel);color:#fff;padding:clamp(60px,8vw,120px) var(--gut) 28px;position:relative;overflow:hidden}
+footer.f .big{font-weight:400;font-size:clamp(40px,8vw,128px);line-height:.95;letter-spacing:-.045em;display:block}
+footer.f .big span{color:#8fe6f4}
+footer.f .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:clamp(40px,6vw,90px);padding-top:18px;border-top:1px solid var(--panel-line);color:rgba(255,255,255,.55);font-size:14px}
+
+/* ---------- responsive ---------- */
+@media (max-width:820px){
+  .links{display:none}
+  .nav{height:54px;top:12px}
+  .navcta{}.nav.on .navcta{margin-left:8px}.login{padding:0 6px}
+  #h1{top:17vh;font-size:7.4vw;white-space:normal}
+  .trust{top:44vh}
+  .logos{width:100%;top:50vh;bottom:18vh}.logos .c span{display:none}.logos .c{font-size:11px}
+  .hero .cta{bottom:6vh}
+  #stmt{white-space:normal;font-size:23px;max-width:15em;margin:0 auto;padding:0 20px}
+  #stmt br{display:none}
+  .split{grid-template-columns:1fr;grid-template-rows:auto 70vh}
+  #h2{padding:16vh 0 0 6vw}
+  #row{grid-template-columns:1fr;padding:3vh 6vw 6vh}
+  .areas{grid-template-columns:1fr}.area,.area+.area{padding:22px 0;border-right:0;border-bottom:1px solid rgba(11,29,58,.08);min-height:0}
+  .two{grid-template-columns:1fr}.pub{grid-template-columns:1fr;gap:10px}.news .it,.tl .e{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){.fade-up,.nav{opacity:1;transform:none;animation:none}}
+</style>
+</head>
+<body>
+<div class="atmo"><canvas id="bg" width="96" height="60"></canvas></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#">
+    <svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="#5b7cf0"/><path d="M5 10.2c2.3-1.6 4.7-1.6 7 0s4.7 1.6 7 0M5 14.2c2.3-1.6 4.7-1.6 7 0s4.7 1.6 7 0" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+    Rustem Islamov
+  </a>
+  <nav class="links"><a href="#about">About</a><a href="#research">Research</a><a href="#education">Education</a><a href="#news">News</a><a href="#pubs">Publications</a></nav>
+  <div class="right">
+    <a class="login" href="#">CV</a>
+    <div class="navcta"><a class="btn" href="mailto:rustem.islamov@unibas.ch"><span class="lbl">Get in touch</span><span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke="#0b1d3a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span></a></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="hero">
+    <h1 id="h1">Hi, I’m <span class="hl">Rustem</span>, a researcher in<br>optimization for machine learning</h1>
+    <p class="trust fade-up" style="--d:1.15s">Published at NeurIPS, ICML, ICLR and AISTATS</p>
+    <a class="btn lg cta fade-up" style="--d:1.3s" href="#pubs">See my work<span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke="#0b1d3a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span></a>
+    <div class="logos">
+      <div class="c fade-up" style="--d:1.25s"><svg viewBox="0 0 22 20"><path d="M2 7c3-3 6-3 9 0s6 3 9 0M2 14c3-3 6-3 9 0s6 3 9 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>NEURIPS</span></div>
+      <div class="c fade-up" style="--d:1.32s"><span class="serif">ICML</span></div>
+      <div class="c fade-up" style="--d:1.39s"><svg viewBox="0 0 18 20"><rect x="1" y="10" width="4" height="10" fill="currentColor"/><rect x="7" y="5" width="4" height="15" fill="currentColor"/><rect x="13" y="8" width="4" height="12" fill="currentColor"/></svg><span>ICLR</span></div>
+      <div class="c fade-up" style="--d:1.46s"><svg viewBox="0 0 20 18"><path d="M10 2 18 16H2z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span class="wide">AISTATS</span></div>
+      <div class="c fade-up" style="--d:1.42s"><span class="box">UAI</span></div>
+      <div class="c fade-up" style="--d:1.49s"><svg viewBox="0 0 18 20"><path d="M3 2v16M15 2v16M3 10h12" stroke="currentColor" stroke-width="3" fill="none"/></svg><span>TMLR</span></div>
+      <div class="c fade-up" style="--d:1.56s"><svg viewBox="0 0 22 20"><circle cx="11" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="11" cy="10" r="2.2" fill="currentColor"/></svg><span style="font-size:15px;font-weight:500;letter-spacing:0">unibas</span></div>
+      <div class="c fade-up" style="--d:1.63s"><svg viewBox="0 0 22 20"><path d="M1 18 8 6l4 6 3-4 6 10z" fill="currentColor"/></svg><span class="wide" style="font-size:11px">IP PARIS</span></div>
+    </div>
+  </section>
+
+  <section class="statement" id="statement"><div class="pin"><p id="stmt">I study how deep learning optimizers work and<br> how to make them more efficient and scalable,<br> from first principles, at the intersection<br> of the theory and practice of optimization</p></div></section>
+
+  <section class="split" id="split">
+    <div class="l">
+      <h2 id="h2">Optimization that holds up<br>in theory and in practice</h2>
+      <div id="row"><h3>Research areas</h3><p><b>Large-scale optimization. Loss landscape. Federated learning.</b> From scaling laws and adaptive optimizers to the edge of stability and communication-efficient training.</p></div>
+    </div>
+    <div class="r"><img id="ship" src="/authors/admin/avatar.jpg" alt="Rustem Islamov"></div>
+  </section>
+
+  <div class="rest">
+    <section class="sec" id="about">
+      <div class="two">
+        <h2>I am a final-year PhD student at the <span class="hl">University of Basel</span>, advised by Aurelien Lucchi.</h2>
+        <div style="font-size:17px;line-height:1.55;letter-spacing:-.01em;color:rgba(11,29,58,.7);display:grid;gap:14px;align-content:start;padding-top:10px">
+          <p>I work at the intersection of the theory and practice of optimization for machine learning. My research focuses on improving our understanding of deep learning optimizers and training techniques, and on making them more efficient and scalable from first principles.</p>
+          <p>Outside of research, I play tennis and enjoy watching football and judo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="research">
+      <h2>Research <span class="hl">areas</span></h2>
+      <div class="areas">
+        <div class="area"><div class="n">01</div><h3>Large-Scale Optimization</h3><ul><li>Scaling Laws from First Principles</li><li>Adaptive Optimizers</li><li>Robustness to Hyperparameter Selection</li></ul><a class="btn" href="/research/largescaleopt/">See more details<span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke="#0b1d3a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span></a></div>
+        <div class="area"><div class="n">02</div><h3>Loss Landscape</h3><ul><li>Loss Landscape Characterization</li><li>Edge of Stability</li></ul><a class="btn" href="/research/losslandscape/">See more details<span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke="#0b1d3a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span></a></div>
+        <div class="area"><div class="n">03</div><h3>Federated Learning</h3><ul><li>Communication Compression and Error Feedback</li><li>Local Methods</li></ul><a class="btn" href="/research/fedlearning/">See more details<span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke="#0b1d3a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span></a></div>
+      </div>
+    </section>
+
+    <section class="sec" id="education">
+      <div class="two">
+        <div>
+          <h2>Education</h2>
+          <div class="tl">
+            <div class="e"><div class="yr">2023 – now</div><div><h4>PhD in Computer Science</h4><div class="s">University of Basel<br>Supervisor: <a href="#">Aurelien Lucchi</a></div></div></div>
+            <div class="e"><div class="yr">2021 – 2023</div><div><h4>Master of Science in Data Science</h4><div class="s">Institut Polytechnique de Paris · GPA 17.65/20<br>Thesis: Unified Analysis of Asynchronous Algorithms<br>Thesis Supervisors: <a href="#">Mher Safaryan</a>, <a href="#">Dan Alistarh</a></div></div></div>
+            <div class="e"><div class="yr">2017 – 2021</div><div><h4>Bachelor of Science in Applied Mathematics and Physics</h4><div class="s">Moscow Institute of Physics and Technology · GPA 4.95/5 (9.27/10)<br>Thesis: Distributed Second Order Methods with Fast Rates and Compressed Communication<br>Thesis Supervisor: <a href="#">Peter Richtárik</a></div></div></div>
+          </div>
+        </div>
+        <div class="news" id="news">
+          <h2>Recent news</h2>
+          <div class="it"><span class="d">Sep 24, 2026</span><span>I am happy to share that I have two papers accepted to NeurIPS 2026: one on <a href="#">Local SGD</a> and one on <a href="#">Adam-SGD gap</a>.</span></div>
+          <div class="it"><span class="d">Aug 23, 2026</span><span>I am attending <a href="#">Swiss Optimization Symposium</a> in Monte Verità. My talk focuses on recent works that use convergence bounds to improve deep learning models training.</span></div>
+          <div class="it"><span class="d">Aug 21, 2026</span><span>I attended <a href="#">UAI 2026</a> in Amsterdam. I presented my work on Byzantine-robust and differentially private optimization.</span></div>
+          <div style="padding-top:22px"><a class="btn" href="#">See all recent news<span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke="#0b1d3a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="pubs">
+      <h2>Selected <span class="hl">publications</span></h2>
+      <div class="pubs">
+        <div class="pub"><div><span class="tag">ICML 2026</span></div><div><h3>On the Role of Batch Size in Stochastic Conditional Gradient Methods</h3><div class="au"><b>R. Islamov</b>, R. Machacek, A. Lucchi, A. Silveti-Falls, E. Gorbunov, V. Cevher</div><div class="lk"><a href="#">PDF</a><a href="#">arXiv</a><a href="#">Cite</a></div></div><span></span></div>
+        <div class="pub"><div><span class="tag">ICML 2026</span><span class="tag o">Oral</span></div><div><h3>Non-Euclidean Gradient Descent Operates at the Edge of Stability</h3><div class="au"><b>R. Islamov</b>, M. Crawshaw, J. Cohen, R. Gower</div><div class="lk"><a href="#">PDF</a><a href="#">arXiv</a><a href="#">Cite</a></div></div><span></span></div>
+        <div class="pub"><div><span class="tag">AISTATS 2025</span><span class="tag o">Oral</span></div><div><h3>Unbiased and Sign Compression in Distributed Learning: Comparing Noise Resilience via SDEs</h3><div class="au">E. M. Compagnoni, <b>R. Islamov</b>, F. N. Proske, A. Lucchi</div><div class="lk"><a href="#">PDF</a><a href="#">arXiv</a><a href="#">Cite</a></div></div><span></span></div>
+      </div>
+      <div style="padding-top:28px"><a class="btn" href="/publication/">View full list of publications<span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke="#0b1d3a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span></a></div>
+    </section>
+
+    <footer class="f">
+      <a class="big" href="mailto:rustem.islamov@unibas.ch">Let’s talk about<br><span>optimization.</span></a>
+      <div class="row"><span>© 2026 Rustem Islamov</span><a href="mailto:rustem.islamov@unibas.ch">rustem.islamov@unibas.ch</a><a href="#">Google Scholar</a><a href="#">GitHub</a></div>
+    </footer>
+  </div>
+</main>
+
+<script>
+(function(){
+  var clamp=function(v,a,b){a=a===undefined?0:a;b=b===undefined?1:b;return Math.min(b,Math.max(a,v))};
+  var sstep=function(x){x=clamp(x);return x*x*(3-2*x)};
+  var lerp=function(a,b,t){return a+(b-a)*t};
+  function hex(h){h=h.replace('#','');return [parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)]}
+  function mix(a,b,t){return [lerp(a[0],b[0],t),lerp(a[1],b[1],t),lerp(a[2],b[2],t)]}
+
+  /* ---------- letter split / paint ---------- */
+  function split(el){
+    var chars=[];
+    function walk(node,hl){
+      Array.prototype.slice.call(node.childNodes).forEach(function(n){
+        if(n.nodeType===3){
+          var frag=document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function(part){
+            if(!part) return;
+            if(/^\s+$/.test(part)){frag.appendChild(document.createTextNode(part));return}
+            var w=document.createElement('span');w.style.cssText='display:inline-block;white-space:nowrap';
+            part.split('').forEach(function(ch){var s=document.createElement('span');s.textContent=ch;s.style.display='inline-block';w.appendChild(s);chars.push({el:s,hl:hl})});
+            frag.appendChild(w);
+          });
+          node.replaceChild(frag,n);
+        }else if(n.nodeType===1 && n.tagName!=='BR'){ walk(n,hl||n.classList.contains('hl')); }
+      });
+    }
+    walk(el,false);
+    return chars;
+  }
+  function paint(chars,p,spread,final,accent,ghost,white){
+    var n=chars.length,F=hex(final),A=hex(accent),G=hex(ghost),HL=hex('#5b7cf0');
+    chars.forEach(function(c,i){
+      var t=clamp((p*(1+spread)-i/n)/spread),op,col,bl;
+      if(t<.35){op=t/.35;col=G;bl=8-6.5*(t/.35)}
+      else if(t<.7){op=1;col=mix(G,A,(t-.35)/.35);bl=1.5*(1-(t-.35)/.35)}
+      else{op=1;col=mix(A,c.hl?HL:F,(t-.7)/.3);bl=0}
+      c.el.style.color='rgba('+(col[0]|0)+','+(col[1]|0)+','+(col[2]|0)+','+op.toFixed(3)+')';
+      c.el.style.filter=bl>0.02?'blur('+bl.toFixed(2)+'px)':'none';
+    });
+  }
+  var h1=split(document.getElementById('h1')), st=split(document.getElementById('stmt')), h2=split(document.getElementById('h2'));
+  paint(h1,0,.35,'#0b1d3a','#3f7cff','#ffffff'); paint(st,0,.16,'#0b1d3a','#3f7cff','#ffffff'); paint(h2,0,.35,'#ffffff','#8fe6f4','#5c6f92');
+
+  /* ---------- bowl canvas ---------- */
+  var cv=document.getElementById('bg'),cx=cv.getContext('2d'),W=96,H=60,img=cx.createImageData(W,H);
+  var KQ=[0,.03,.08,.18,.40,.66,.87,1.15,1.43,1.8];
+  var KT=[.30,.45,.65,.80,.95,1.05,1.05,1.10,1.30,2.40];
+  var KH=[.34,.38,.38,.38,.38,.46,.66,.90,1.60,3.00];
+  var KS=[.22,.26,.22,.22,.19,.16,.13,.10,.10,.10];
+  function interp(K,V,q){ if(q<=K[0])return V[0]; for(var i=1;i<K.length;i++){ if(q<=K[i]) return lerp(V[i-1],V[i],(q-K[i-1])/(K[i]-K[i-1])); } return V[V.length-1]; }
+  var cur={tip:-.3,half:.3,soft:.1},intro=true,introT0=null;
+  var CORE=hex('#8fd5f1'),RIM=hex('#d2daff'),WHITE=[255,255,255],RND=.25;
+  function targets(){var q=scrollY/innerHeight;return {tip:interp(KQ,KT,q),half:interp(KQ,KH,q),soft:interp(KQ,KS,q)}}
+  function draw(t){
+    var asp=innerWidth/innerHeight,tip=cur.tip+Math.sin(t*.00033+1.3)*.02,half=cur.half+Math.sin(t*.0005)*.015,soft=cur.soft;
+    var pts=[],N=48;
+    for(var k=0;k<N;k++){var yy=-.3+(tip+.3)*k/(N-1);pts.push([half*asp*Math.pow(Math.max(0,1-yy/tip),.72),yy])}
+    for(var j=0;j<H;j++){
+      var py=(j+.5)/H;
+      for(var i=0;i<W;i++){
+        var px=Math.abs((i+.5)/W-.5)*asp,best=1e9;
+        for(var k2=0;k2<N-1;k2++){
+          var ax=pts[k2][0],ay=pts[k2][1],bx=pts[k2+1][0],by=pts[k2+1][1],dx=bx-ax,dy=by-ay,L=dx*dx+dy*dy;
+          var u=L?clamp(((px-ax)*dx+(py-ay)*dy)/L):0,qx=ax+u*dx-px,qy=ay+u*dy-py,d=qx*qx+qy*qy; if(d<best)best=d;
+        }
+        var dist=Math.sqrt(best);
+        var inside=py<tip&&px<half*asp*Math.pow(1-py/tip,.72);
+        var sd=(inside?-dist:dist)-RND;
+        var g=1-sstep((sd+soft)/(2*soft)),c;
+        if(g<.38) c=mix(WHITE,RIM,sstep(g/.38)); else c=mix(RIM,CORE,sstep((g-.38)/.62));
+        var o=(j*W+i)*4;img.data[o]=c[0];img.data[o+1]=c[1];img.data[o+2]=c[2];img.data[o+3]=255;
+      }
+    }
+    cx.putImageData(img,0,0);
+  }
+  function frame(t){
+    if(intro){
+      if(introT0===null) introT0=t;
+      var el=(t-introT0)/1000-.25,tg=targets();
+      if(el>0){var e=sstep(el/1.05);cur.tip=lerp(-.3,tg.tip,e);cur.half=lerp(.3,tg.half,e);cur.soft=lerp(.1,tg.soft,e);if(el>=1.05)intro=false}
+    }else{
+      var tg2=targets();cur.tip+=(tg2.tip-cur.tip)*.12;cur.half+=(tg2.half-cur.half)*.12;cur.soft+=(tg2.soft-cur.soft)*.12;
+    }
+    draw(t);requestAnimationFrame(frame);
+  }
+
+  /* ---------- scroll ---------- */
+  var nav=document.getElementById('nav'),stmt=document.getElementById('stmt'),split_=document.getElementById('split'),row=document.getElementById('row'),ship=document.getElementById('ship');
+  function onScroll(){
+    var vh=innerHeight,q=scrollY/vh;
+    var s=clamp((q-.69)/.74);stmt.style.transform='translateY('+(.205*(1-s)*(1-s)*vh).toFixed(1)+'px)';
+    var p=clamp((q-.56)/2.03);paint(st,p,.16,'#0b1d3a','#3f7cff','#ffffff');
+    nav.classList.toggle('on',p>.4);
+    var top=split_.getBoundingClientRect().top/vh;
+    var p2=clamp((.8-top)/.65);paint(h2,p2,.35,'#ffffff','#8fe6f4','#5c6f92');
+    row.classList.toggle('in',p2>.92);
+    ship.style.transform='scale('+(1.08-.08*clamp(1-top)).toFixed(4)+')';
+  }
+  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+
+  /* ---------- start ---------- */
+  var t0=null;
+  function heroReveal(t){ if(t0===null)t0=t; var p=clamp((t-t0)/1250); paint(h1,sstep(p)*0+p,.35,'#0b1d3a','#3f7cff','#ffffff'); if(p<1)requestAnimationFrame(heroReveal); }
+  requestAnimationFrame(function(t){document.body.classList.add('ready');requestAnimationFrame(frame);requestAnimationFrame(heroReveal);onScroll()});
+})();
+</script>
+</body>
+</html>

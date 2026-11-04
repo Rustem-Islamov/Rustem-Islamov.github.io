@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rustem Islamov — Awwwards-style mock-up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14213D; --cream:#F4EDE0; --coral:#FF6B5B;
+  --bg:#F4EDE0; --bg2:#EBE2D0; --ink:#14213D; --ink2:rgba(20,33,61,.68); --ink3:rgba(20,33,61,.42); --line:rgba(20,33,61,.14);
+  --accent:#FF6B5B; --on-accent:#14213D; --link:#14213D;
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif; --sans:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --ease:cubic-bezier(.16,1,.3,1); --ease2:cubic-bezier(.76,0,.24,1);
+  --pad:clamp(20px,4vw,64px);
+}
+html[data-theme="dark"]{
+  --bg:#14213D; --bg2:#101B33; --ink:#F4EDE0; --ink2:rgba(244,237,224,.72); --ink3:rgba(244,237,224,.42); --line:rgba(244,237,224,.16);
+  --link:#FF6B5B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:clamp(16px,1.1vw,18px);line-height:1.55;letter-spacing:-.01em;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .5s var(--ease),color .5s var(--ease)}
+a{color:inherit;text-decoration:none}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+::selection{background:var(--accent);color:var(--on-accent)}
+
+/* ---------- header ---------- */
+.bar{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad);mix-blend-mode:normal}
+.bar .logo{font-family:var(--serif);font-size:1.5rem;letter-spacing:-.01em}
+.bar nav{display:flex;gap:clamp(14px,2.4vw,34px);align-items:center}
+.bar nav a{position:relative;padding:4px 0}
+.bar nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.bar nav a:hover::after{transform:scaleX(1)}
+.toggle{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:background .3s,border-color .3s}
+.toggle:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.toggle svg{width:16px;height:16px}
+.progress{position:fixed;left:0;top:0;height:3px;width:var(--p,0%);background:var(--accent);z-index:60}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;padding:120px var(--pad) 40px;display:grid;grid-template-rows:1fr auto;overflow:hidden}
+.contours{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.contours path{fill:none;stroke:var(--line);stroke-width:1.2;stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 4s var(--ease) forwards}
+.contours path:nth-child(2){animation-delay:.2s}.contours path:nth-child(3){animation-delay:.4s}.contours path:nth-child(4){animation-delay:.6s}.contours path:nth-child(5){animation-delay:.8s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero-top{position:relative;display:flex;justify-content:space-between;gap:24px;align-items:flex-start}
+.status{display:inline-flex;gap:10px;align-items:center;color:var(--ink2)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 2.2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{position:relative;font-family:var(--serif);font-weight:400;font-size:clamp(4.2rem,15.5vw,17rem);line-height:.86;letter-spacing:-.04em;align-self:center;margin:2vh 0}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line span{display:inline-block;transform:translateY(105%);animation:rise 1.3s var(--ease) forwards}
+.hero h1 .line:nth-child(2) span{animation-delay:.12s;font-style:italic;color:var(--accent)}
+@keyframes rise{to{transform:none}}
+.hero-bottom{position:relative;display:grid;grid-template-columns:1.2fr 1fr auto;gap:32px;align-items:end}
+.hero-bottom p{max-width:34ch;color:var(--ink2)}
+.hero-bottom .links{display:flex;flex-wrap:wrap;gap:10px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:.55rem 1.1rem;border:1px solid var(--line);border-radius:999px;font-size:.88rem;transition:background .4s var(--ease),color .4s,border-color .4s,transform .4s var(--ease)}
+.pill:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent);transform:translateY(-2px)}
+.portrait{width:clamp(110px,12vw,190px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:2px solid var(--accent);justify-self:end}
+.portrait img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.02)}
+
+/* ---------- marquee ---------- */
+.marquee{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0;background:var(--bg2)}
+.marquee .track{display:inline-flex;gap:3rem;animation:slide 32s linear infinite;font-family:var(--serif);font-size:clamp(1.6rem,3.2vw,3rem);letter-spacing:-.02em}
+.marquee .track span{display:inline-flex;align-items:center;gap:3rem}
+.marquee .track span::after{content:"✺";color:var(--accent);font-size:.7em}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+section{padding:clamp(70px,11vw,170px) var(--pad) 0}
+.head{display:grid;grid-template-columns:minmax(80px,14vw) 1fr;gap:24px;align-items:baseline;padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:clamp(28px,4vw,56px)}
+.head .num{color:var(--accent)}
+.head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,7vw,7rem);line-height:.95;letter-spacing:-.03em}
+.head h2 em{font-style:italic;color:var(--ink3)}
+
+.about{display:grid;grid-template-columns:minmax(80px,14vw) 1fr;gap:24px}
+.about .body{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(24px,5vw,90px)}
+.about p.big{font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,3.1rem);line-height:1.12;letter-spacing:-.02em}
+.about p.big a{border-bottom:2px solid var(--accent)}
+.about p.big a:hover{background:var(--accent);color:var(--on-accent)}
+.about .side{color:var(--ink2);display:grid;gap:18px;align-content:start}
+
+/* research rows */
+.rows{border-top:1px solid var(--line)}
+.row{position:relative;display:grid;grid-template-columns:minmax(80px,14vw) 1.2fr 1fr 64px;gap:24px;align-items:center;padding:clamp(22px,3vw,40px) 0;border-bottom:1px solid var(--line);overflow:hidden;isolation:isolate}
+.row::before{content:"";position:absolute;inset:0;background:var(--accent);transform:translateY(101%);transition:transform .7s var(--ease2);z-index:-1}
+.row:hover::before{transform:none}
+.row:hover{color:var(--on-accent)}
+.row .n{font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;color:var(--ink3);transition:color .4s}
+.row:hover .n,.row:hover .sub{color:var(--on-accent)}
+.row h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,4.4vw,4.4rem);line-height:1;letter-spacing:-.03em;transition:transform .7s var(--ease)}
+.row:hover h3{transform:translateX(14px)}
+.row ul{list-style:none;display:grid;gap:4px}
+.row li{color:var(--ink2);font-size:.95rem;transition:color .4s}
+.row:hover li{color:var(--on-accent)}
+.row .arrow{width:56px;height:56px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;transition:transform .6s var(--ease),background .4s}
+.row:hover .arrow{transform:rotate(-45deg);background:var(--on-accent);color:var(--accent)}
+.row .arrow svg{width:20px;height:20px}
+
+/* news */
+.news{display:grid;gap:0}
+.item{display:grid;grid-template-columns:minmax(80px,14vw) 12ch 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);transition:padding-left .6s var(--ease),background .4s}
+.item:hover{padding-left:18px;background:linear-gradient(90deg,rgba(255,107,91,.14),transparent)}
+.item .d{color:var(--ink3)}
+.item .t{font-size:clamp(1.05rem,1.5vw,1.35rem);line-height:1.4;letter-spacing:-.015em;max-width:70ch}
+.item .t a{border-bottom:1px solid var(--accent)}
+.more{display:flex;justify-content:flex-start;padding:28px 0 0 calc(minmax(80px,14vw))}
+
+/* education */
+.edu{display:grid;gap:0}
+.edu .e{display:grid;grid-template-columns:minmax(80px,14vw) 1fr 1.2fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line);align-items:start}
+.edu .yr{font-family:var(--serif);font-size:clamp(1.8rem,3.4vw,3.2rem);letter-spacing:-.03em;color:var(--accent);line-height:1}
+.edu h4{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,2.3vw,2.2rem);letter-spacing:-.02em;line-height:1.1}
+.edu .where{color:var(--ink3);margin-top:6px}
+.edu .det{color:var(--ink2);display:grid;gap:4px;font-size:.95rem}
+.edu .det a{border-bottom:1px solid var(--accent)}
+
+/* publications */
+.pubs{display:grid}
+.pub{display:grid;grid-template-columns:minmax(80px,14vw) 1fr auto;gap:24px;padding:clamp(22px,3vw,38px) 0;border-bottom:1px solid var(--line);align-items:start;transition:background .4s}
+.pub .tags{display:flex;flex-wrap:wrap;gap:8px;align-content:start}
+.tag{padding:.2rem .7rem;border-radius:999px;border:1px solid var(--line);font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.tag.v{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.pub h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3vw,2.8rem);line-height:1.04;letter-spacing:-.025em;max-width:26ch;transition:color .3s}
+.pub:hover h3{color:var(--accent)}
+.pub .au{margin-top:12px;color:var(--ink3);font-size:.9rem}
+.pub .au b{color:var(--ink);font-weight:600}
+.pub .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.pub .btns a{padding:.25rem .8rem;border:1px solid var(--line);border-radius:999px;font-size:.8rem;transition:.3s}
+.pub .btns a:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+
+/* footer */
+footer{padding:clamp(80px,12vw,180px) var(--pad) 28px;margin-top:clamp(70px,10vw,150px);background:var(--navy);color:var(--cream);position:relative;overflow:hidden}
+footer .cta{font-family:var(--serif);font-size:clamp(3rem,12.5vw,14rem);line-height:.88;letter-spacing:-.04em;display:block}
+footer .cta em{color:var(--coral);font-style:italic}
+footer .cta:hover em{text-decoration:underline;text-decoration-thickness:.04em;text-underline-offset:.08em}
+footer .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:clamp(40px,7vw,100px);padding-top:20px;border-top:1px solid rgba(244,237,224,.18);color:rgba(244,237,224,.6)}
+footer .foot a:hover{color:var(--coral)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
+.rv.in{opacity:1;transform:none}
+
+/* custom cursor */
+.cur{position:fixed;left:0;top:0;width:14px;height:14px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:100;mix-blend-mode:normal;transform:translate(-50%,-50%);transition:width .3s var(--ease),height .3s var(--ease);opacity:0}
+.cur.big{width:56px;height:56px;opacity:.9}
+@media (hover:none){.cur{display:none}}
+
+@media (max-width:900px){
+  .hero-bottom{grid-template-columns:1fr;gap:20px}.portrait{justify-self:start}
+  .about,.head{grid-template-columns:1fr}.about .body{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr auto}.row .n{display:none}.row ul{grid-column:1/-1;order:3}
+  .item{grid-template-columns:1fr;gap:6px}.edu .e{grid-template-columns:1fr;gap:8px}.pub{grid-template-columns:1fr;gap:12px}
+  .bar nav a:not(.keep){display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}.hero h1 .line span{transform:none}.contours path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="cur" id="cur"></div>
+
+<header class="bar">
+  <a class="logo" href="#top">R. Islamov</a>
+  <nav class="mono">
+    <a class="keep" href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#news">News</a>
+    <a href="#publications">Publications</a>
+    <a href="#">CV</a>
+    <button class="toggle" id="toggle" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<div class="hero">
+  <svg class="contours" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M-50 640 C 250 520, 420 760, 760 610 S 1250 380, 1650 520"/>
+    <path d="M-50 570 C 260 450, 430 690, 760 540 S 1250 310, 1650 450"/>
+    <path d="M-50 500 C 270 380, 440 620, 760 470 S 1250 240, 1650 380"/>
+    <path d="M-50 430 C 280 310, 450 550, 760 400 S 1250 170, 1650 310"/>
+    <path d="M-50 360 C 290 240, 460 480, 760 330 S 1250 100, 1650 240"/>
+  </svg>
+  <div class="hero-top">
+    <span class="status mono"><i></i> Looking for autumn/winter internship positions</span>
+    <span class="mono" style="color:var(--ink3)">PhD · University of Basel</span>
+  </div>
+  <h1><span class="line"><span>Rustem</span></span><span class="line"><span>Islamov</span></span></h1>
+  <div class="hero-bottom">
+    <p>Optimization for machine learning, from first principles: understanding deep learning optimizers and making them efficient and scalable.</p>
+    <div class="links">
+      <a class="pill" href="mailto:rustem.islamov@unibas.ch">Email</a>
+      <a class="pill" href="https://github.com/Rustem-Islamov">GitHub</a>
+      <a class="pill" href="https://scholar.google.com/citations?user=dNiHy50AAAAJ&hl=en">Google Scholar</a>
+      <a class="pill" href="#">CV</a>
+    </div>
+    <div class="portrait"><img src="/authors/admin/avatar.jpg" alt="Rustem Islamov"></div>
+  </div>
+</div>
+
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>NeurIPS</span><span>ICML</span><span>ICLR</span><span>AISTATS</span><span>UAI</span><span>TMLR</span>
+  <span>NeurIPS</span><span>ICML</span><span>ICLR</span><span>AISTATS</span><span>UAI</span><span>TMLR</span>
+</div></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about">
+    <div class="mono num rv" style="color:var(--accent)">01 — About</div>
+    <div class="body">
+      <p class="big rv">I am a final-year PhD student at the <a href="https://www.unibas.ch/en.html">University of Basel</a>, advised by <a href="https://dmi.unibas.ch/en/persons/aurelien-lucchi/">Aurelien Lucchi</a>. I work at the intersection of the theory and practice of optimization for machine learning.</p>
+      <div class="side rv" style="--i:2">
+        <p>My research focuses on improving our understanding of deep learning optimizers and training techniques, and on making them more efficient and scalable from first principles.</p>
+        <p>Outside of research, I play tennis and enjoy watching football and judo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="head rv"><div class="mono num">02</div><h2>Research <em>areas</em></h2></div>
+  <div class="rows">
+    <a class="row rv" href="/research/largescaleopt/">
+      <div class="n">/01</div><h3>Large-Scale Optimization</h3>
+      <ul><li>Scaling Laws from First Principles</li><li>Adaptive Optimizers</li><li>Robustness to Hyperparameter Selection</li></ul>
+      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    </a>
+    <a class="row rv" style="--i:1" href="/research/losslandscape/">
+      <div class="n">/02</div><h3>Loss Landscape</h3>
+      <ul><li>Loss Landscape Characterization</li><li>Edge of Stability</li></ul>
+      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    </a>
+    <a class="row rv" style="--i:2" href="/research/fedlearning/">
+      <div class="n">/03</div><h3>Federated Learning</h3>
+      <ul><li>Communication Compression and Error Feedback</li><li>Local Methods</li></ul>
+      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    </a>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="head rv"><div class="mono num">03</div><h2>Recent <em>news</em></h2></div>
+  <div class="news">
+    <div class="item rv"><span></span><span class="d mono">Sep 24, 2026</span><p class="t">I am happy to share that I have two papers accepted to NeurIPS 2026: one on <a href="/publication/26_local_sgd/">Local SGD</a> and one on <a href="/publication/26_adam_sgd/">Adam-SGD gap</a>.</p></div>
+    <div class="item rv" style="--i:1"><span></span><span class="d mono">Aug 23, 2026</span><p class="t">I am attending <a href="https://swiss-opt.github.io/">Swiss Optimization Symposium</a> in Monte Verità. My talk focuses on recent works that use convergence bounds to improve deep learning models training.</p></div>
+    <div class="item rv" style="--i:2"><span></span><span class="d mono">Aug 21, 2026</span><p class="t">I attended <a href="https://www.auai.org/uai2026/">UAI 2026</a> in Amsterdam. I presented my work on Byzantine-robust and differentially private optimization.</p></div>
+  </div>
+  <div style="padding-top:28px"><a class="pill" href="#">See all recent news →</a></div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="head rv"><div class="mono num">04</div><h2>Academic <em>path</em></h2></div>
+  <div class="edu">
+    <div class="e rv"><div class="yr">2023 —</div><div><h4>PhD in Computer Science</h4><div class="where">University of Basel</div></div><div class="det"><span>Supervisor: <a href="https://dmi.unibas.ch/en/persons/aurelien-lucchi/">Aurelien Lucchi</a></span></div></div>
+    <div class="e rv" style="--i:1"><div class="yr">2021 — 2023</div><div><h4>Master of Science in Data Science</h4><div class="where">Institut Polytechnique de Paris · GPA 17.65/20</div></div><div class="det"><span>Thesis: Unified Analysis of Asynchronous Algorithms</span><span>Thesis Supervisors: Mher Safaryan, Dan Alistarh</span></div></div>
+    <div class="e rv" style="--i:2"><div class="yr">2017 — 2021</div><div><h4>Bachelor of Science in Applied Mathematics and Physics</h4><div class="where">Moscow Institute of Physics and Technology · GPA 4.95/5 (9.27/10)</div></div><div class="det"><span>Thesis: Distributed Second Order Methods with Fast Rates and Compressed Communication</span><span>Thesis Supervisor: Peter Richtárik</span></div></div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="head rv"><div class="mono num">05</div><h2>Selected <em>publications</em></h2></div>
+  <p class="rv" style="color:var(--ink2);max-width:60ch;margin:-20px 0 36px calc(14vw + 24px)">My contributions have appeared in leading machine learning venues including NeurIPS, ICML, ICLR, and AISTATS. Here is the list of papers I am most proud of:</p>
+  <div class="pubs">
+    <article class="pub rv"><div class="tags"><span class="tag v">ICML 2026</span></div>
+      <div><h3><a href="/publication/26_bst/">On the Role of Batch Size in Stochastic Conditional Gradient Methods</a></h3><div class="au"><b>R. Islamov</b>, R. Machacek, A. Lucchi, A. Silveti-Falls, E. Gorbunov, V. Cevher</div>
+      <div class="btns"><a href="#">PDF</a><a href="#">arXiv</a><a href="#">Cite</a></div></div><span></span></article>
+    <article class="pub rv" style="--i:1"><div class="tags"><span class="tag v">ICML 2026</span><span class="tag">Oral</span></div>
+      <div><h3><a href="/publication/26_eos/">Non-Euclidean Gradient Descent Operates at the Edge of Stability</a></h3><div class="au"><b>R. Islamov</b>, M. Crawshaw, J. Cohen, R. Gower</div>
+      <div class="btns"><a href="#">PDF</a><a href="#">arXiv</a><a href="#">Cite</a></div></div><span></span></article>
+    <article class="pub rv" style="--i:2"><div class="tags"><span class="tag v">AISTATS 2025</span><span class="tag">Oral</span></div>
+      <div><h3><a href="/publication/24_signsgd/">Unbiased and Sign Compression in Distributed Learning: Comparing Noise Resilience via SDEs</a></h3><div class="au">E. M. Compagnoni, <b>R. Islamov</b>, F. N. Proske, A. Lucchi</div>
+      <div class="btns"><a href="#">PDF</a><a href="#">arXiv</a><a href="#">Cite</a></div></div><span></span></article>
+  </div>
+  <div style="padding-top:28px"><a class="pill" href="/publication/">View full list of publications →</a></div>
+</section>
+</main>
+
+<footer>
+  <a class="cta" href="mailto:rustem.islamov@unibas.ch">Let’s talk<em>.</em></a>
+  <div class="foot mono"><span>© 2026 Rustem Islamov</span><a href="mailto:rustem.islamov@unibas.ch">rustem.islamov@unibas.ch</a><a href="#">Google Scholar</a><a href="#">GitHub</a></div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  try{var t=localStorage.getItem('theme-aw'); if(t) root.dataset.theme=t;}catch(e){}
+  document.getElementById('toggle').addEventListener('click',function(){
+    var n=root.dataset.theme==='dark'?'light':'dark'; root.dataset.theme=n; try{localStorage.setItem('theme-aw',n)}catch(e){}
+  });
+  /* scroll progress */
+  var pr=document.getElementById('progress');
+  addEventListener('scroll',function(){var h=document.documentElement;pr.style.setProperty('--p',(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%')},{passive:true});
+  /* reveal once */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  /* cursor (desktop only), grows over links */
+  var cur=document.getElementById('cur');
+  if(matchMedia('(hover:hover)').matches){
+    addEventListener('mousemove',function(e){cur.style.opacity=1;cur.style.transform='translate('+e.clientX+'px,'+e.clientY+'px) translate(-50%,-50%)'});
+    document.querySelectorAll('a,button').forEach(function(a){a.addEventListener('mouseenter',function(){cur.classList.add('big')});a.addEventListener('mouseleave',function(){cur.classList.remove('big')})});
+  }
+})();
+</script>
+</body>
+</html>
