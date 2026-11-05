@@ -392,86 +392,12 @@ html:root:root .home-footer a{color:var(--acc2)!important}
 html:root:root .rv2{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.22,.7,.2,1),transform .8s cubic-bezier(.22,.7,.2,1);transition-delay:var(--d,0s)}
 html:root:root .rv2.in{opacity:1;transform:none}
 @keyframes pp{50%{opacity:.3}}@keyframes node{50%{box-shadow:0 0 0 9px rgba(255,107,91,.05),0 0 20px var(--coral)}}@media (prefers-reduced-motion:reduce){.rv2{opacity:1;transform:none;transition:none}}</style><style>
-/* ===== Round 3: calmer, editorial cards; amber accent instead of green; no bullet ===== */
-:root{--amber:#FFB454;--date:#8FA3C8;--date-bg:transparent;--date-bd:transparent}
-html[data-theme="dark"]{--amber:#FFB454;--date:#8FA3C8;--hair:rgba(234,240,255,.12);--card:rgba(255,255,255,.028);--card-h:rgba(255,255,255,.055)}
-html:not([data-theme="dark"]){--amber:#B45A00;--date:#5C6B8C;--hair:rgba(11,22,54,.14);--card:rgba(255,255,255,.6);--card-h:rgba(255,255,255,.95)}
-/* tagline: amber text, no bullet */
-html:root:root .hero-tagline{color:var(--amber)!important;font-weight:500!important}
+/* kept from the later requests: amber tagline without bullet, coral Oral tag, no green anywhere */
+html[data-theme="dark"]{--amber:#FFB454;--date:#5AE6FF;--date-bg:rgba(90,230,255,.08);--date-bd:rgba(90,230,255,.3)}
+html:not([data-theme="dark"]){--amber:#B45A00;--date:#0C7C99;--date-bg:rgba(12,124,153,.07);--date-bd:rgba(12,124,153,.3)}
+html:root:root .hero-tagline{color:var(--amber)!important}
 html:root:root .hero-tagline::before{display:none!important}
-/* cards: flat, squarer, no gradient edge / blur / glow / accent bar / lift */
-html:root:root .area,html:root:root .sp,html:root:root .edu-card,html:root:root .news-box .news-list li{
-  background:var(--card)!important;border:1px solid var(--hair)!important;border-radius:10px!important;backdrop-filter:none!important;box-shadow:none!important;transform:none!important;
-  transition:background .2s,border-color .2s!important}
-html:root:root .area:hover,html:root:root .sp:hover,html:root:root .edu-card:hover,html:root:root .news-box .news-list li:hover{
-  background:var(--card-h)!important;border-color:rgba(255,107,91,.7)!important;box-shadow:none!important;transform:none!important}
-html:root:root .area::before,html:root:root .sp::before{display:none!important}
-html:root:root .area,html:root:root .sp{padding:18px 20px!important}
-html:root:root .edu-card,html:root:root .news-box .news-list li{padding:14px 20px!important}
-/* research areas: plain list with hairlines instead of chips and gradient icon */
-html:root:root .area-ico{background:none!important;box-shadow:none!important;width:auto;height:auto;color:var(--coral)!important;border-radius:0}
-html:root:root .area-ico svg{width:20px;height:20px}
-html:root:root .area ul{display:block;margin:.8rem 0 0!important}
-html:root:root .area li{display:block;padding:7px 0!important;border:0!important;border-top:1px solid var(--hair)!important;border-radius:0!important;background:none!important;font-size:.88rem!important;color:var(--muted)!important}
-html:root:root .area:hover li{color:var(--fg)!important;border-top-color:var(--hair)!important}
-/* dates and years: plain mono text, no pill */
-html:root:root .news-box .date,html:root:root .edu-when{padding:0!important;border:0!important;background:none!important;border-radius:0!important;color:var(--date)!important;font-size:.76rem!important;letter-spacing:.02em!important}
-html:root:root .news-box .date{margin-bottom:.35rem!important}
-/* timeline: simple dots, no glow / pulse */
-html:root:root .news-box .news-list li::before,html:root:root .edu-it::before{box-shadow:none!important;animation:none!important}
-html:root:root .news-box .news-visible li:first-child::before,html:root:root .edu-it:first-child::before{box-shadow:none!important;animation:none!important}
-html:root:root .news-box .news-list li:hover::before,html:root:root .edu-it:hover::before{box-shadow:none!important}
-html:root:root .news-box .news-list li::after,html:root:root .edu-it::after{background:var(--hair)!important}
-/* tags: small square mono labels; Oral in coral */
-html:root:root .sp-tag{border-radius:4px!important;background:none!important;border:1px solid var(--hair)!important;color:var(--muted)!important;padding:1px 8px!important}
-html:root:root .sp-tag.oral{background:var(--coral)!important;border-color:var(--coral)!important;color:#0a1226!important;font-weight:600}
-/* buttons: rectangular-ish, flat */
-html:root:root .area-go,html:root:root .news-toggle,html:root:root .selected-pub-more,html:root:root .sp-links a{border-radius:7px!important;backdrop-filter:none!important;background:none!important;border:1px solid var(--hair)!important;box-shadow:none!important}
-html:root:root .area:hover .area-go,html:root:root .news-toggle:hover,html:root:root .selected-pub-more:hover,html:root:root .sp-links a:hover{background:var(--coral)!important;border-color:var(--coral)!important;color:#0a1226!important;box-shadow:none!important}
-html:root:root .sp h3{font-size:1.12rem!important}
-</style><style>
-/* ===== Round 4: "lab sheet" cards: corner marks, dotted grid paper, dashed header rules ===== */
-@property --cs{syntax:'<length>';inherits:true;initial-value:12px}
-html[data-theme="dark"]{--dot:rgba(234,240,255,.075);--dash:rgba(234,240,255,.2);--fill:rgba(12,22,46,.72);--fill-h:rgba(16,28,58,.9)}
-html:not([data-theme="dark"]){--dot:rgba(11,22,54,.09);--dash:rgba(11,22,54,.22);--fill:rgba(255,255,255,.72);--fill-h:rgba(255,255,255,.96)}
-html:root:root .area,html:root:root .sp,html:root:root .edu-card,html:root:root .news-box .news-list li{
-  --cs:12px;--cc:var(--coral);border-radius:2px!important;border:1px solid var(--hair)!important;
-  background:
-   linear-gradient(var(--cc),var(--cc)) top left/var(--cs) 2px no-repeat,linear-gradient(var(--cc),var(--cc)) top left/2px var(--cs) no-repeat,
-   linear-gradient(var(--cc),var(--cc)) top right/var(--cs) 2px no-repeat,linear-gradient(var(--cc),var(--cc)) top right/2px var(--cs) no-repeat,
-   linear-gradient(var(--cc),var(--cc)) bottom left/var(--cs) 2px no-repeat,linear-gradient(var(--cc),var(--cc)) bottom left/2px var(--cs) no-repeat,
-   linear-gradient(var(--cc),var(--cc)) bottom right/var(--cs) 2px no-repeat,linear-gradient(var(--cc),var(--cc)) bottom right/2px var(--cs) no-repeat,
-   radial-gradient(var(--dot) 1px,transparent 1.3px) 0 0/14px 14px,
-   var(--fill)!important;
-  background-origin:border-box!important;
-  transition:--cs .35s cubic-bezier(.22,.7,.2,1),border-color .25s!important}
-html:root:root .area:hover,html:root:root .sp:hover,html:root:root .edu-card:hover,html:root:root .news-box .news-list li:hover{
-  --cs:26px;border-color:rgba(255,107,91,.45)!important;
-  background:
-   linear-gradient(var(--cc),var(--cc)) top left/var(--cs) 2px no-repeat,linear-gradient(var(--cc),var(--cc)) top left/2px var(--cs) no-repeat,
-   linear-gradient(var(--cc),var(--cc)) top right/var(--cs) 2px no-repeat,linear-gradient(var(--cc),var(--cc)) top right/2px var(--cs) no-repeat,
-   linear-gradient(var(--cc),var(--cc)) bottom left/var(--cs) 2px no-repeat,linear-gradient(var(--cc),var(--cc)) bottom left/2px var(--cs) no-repeat,
-   linear-gradient(var(--cc),var(--cc)) bottom right/var(--cs) 2px no-repeat,linear-gradient(var(--cc),var(--cc)) bottom right/2px var(--cs) no-repeat,
-   radial-gradient(rgba(255,107,91,.28) 1px,transparent 1.3px) 0 0/14px 14px,
-   var(--fill-h)!important;background-origin:border-box!important}
-/* dashed header rule inside every card */
-html:root:root .news-box .date{display:block!important;width:auto!important;padding:0 0 .55rem!important;margin:0 0 .65rem!important;border:0!important;border-bottom:1px dashed var(--dash)!important;text-transform:uppercase;letter-spacing:.1em!important;font-size:.7rem!important}
-html:root:root .sp-tags{padding-bottom:.65rem;margin-bottom:.8rem!important;border-bottom:1px dashed var(--dash)}
-html:root:root .area-head{padding-bottom:.75rem;border-bottom:1px dashed var(--dash)}
-html:root:root .area li{border-top:0!important;border-bottom:1px dashed var(--hair)!important;padding:6px 0!important}
-html:root:root .area li:last-child{border-bottom:0!important}
-html:root:root .area ul{margin:.55rem 0 0!important}
-html:root:root .edu-row{padding-bottom:.55rem;margin-bottom:.55rem;border-bottom:1px dashed var(--dash)}
-html:root:root .edu-when{text-transform:uppercase;letter-spacing:.1em!important;font-size:.7rem!important}
-html:root:root .sp-tag{text-transform:uppercase;letter-spacing:.1em;font-size:.66rem!important;border-radius:2px!important}
-html:root:root .sp-tag.oral{border-radius:2px!important}
-/* square pills to match */
-html:root:root .area-go,html:root:root .news-toggle,html:root:root .selected-pub-more,html:root:root .sp-links a{border-radius:2px!important;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem!important}
-html:root:root .sp-links a{padding:4px 12px!important;text-transform:none!important;letter-spacing:0!important;font-size:.76rem!important}
-html:root:root .area-go{padding:4px 11px!important}
-html:root:root .area:hover .area-go,html:root:root .sp-links a:hover{box-shadow:3px 3px 0 var(--fg)!important}
-html:root:root .news-toggle:hover,html:root:root .selected-pub-more:hover{box-shadow:3px 3px 0 var(--fg)!important}
-html:root:root .area-ico{color:var(--coral)!important}
+html:root:root .sp-tag.oral{background:var(--coral)!important;border-color:var(--coral)!important;color:#0a1226!important}
 </style></head>
 <body>
 <div class="bg-stage" aria-hidden="true"><canvas id="bg-canvas"></canvas></div>
