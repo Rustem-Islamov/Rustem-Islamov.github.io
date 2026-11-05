@@ -175,3 +175,6 @@ html[data-theme="dark"] .home-footer a { color: #cf94d8 !important; }
   .home-footer { gap: 4px 16px; }
   .home-footer > * + *::before { content: none; }
 }
+
+/* progress bar sits at the very top of the viewport, above the (small) header */
+.scroll-progress { top: 0 !important; z-index: 2000 !important; }
