@@ -335,7 +335,8 @@ html:root:root .topnav a::after{display:none!important}
 html:root:root .theme-toggle{border-color:var(--rule)!important;color:var(--fg)!important;width:32px!important;height:32px!important;margin-left:4px}
 html:root:root .theme-toggle:hover{background:var(--coral)!important;color:#0a1226!important}
 html:root:root .scroll-progress{background:linear-gradient(90deg,#FF6B5B,#5AE6FF)!important}
-html:root:root .hero h1{font-weight:600!important;font-size:clamp(52px,9vw,140px)!important;line-height:.92!important;letter-spacing:-.05em!important;color:var(--title)!important}
+html:root:root .hero-text{flex:1 1 0;min-width:0;container-type:inline-size}
+html:root:root .hero h1{font-weight:600!important;font-size:min(14.6cqw,140px)!important;white-space:nowrap!important;line-height:.92!important;letter-spacing:-.05em!important;color:var(--title)!important}
 html:root:root .hero-tagline{font-family:var(--mono)!important;font-size:clamp(12px,1.1vw,15px)!important;color:var(--date)!important;letter-spacing:0!important;display:flex;align-items:center;gap:10px;font-weight:500!important}
 html:root:root .hero-tagline::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--coral);box-shadow:0 0 14px var(--coral);animation:pp 2s infinite;flex:none}
 html:root:root .hero-icons a{width:44px;height:44px;border:1px solid var(--rule);border-radius:50%;background:var(--chip);backdrop-filter:blur(8px);color:var(--fg)!important;justify-content:center;align-items:center;font-size:20px!important;transition:.25s}
