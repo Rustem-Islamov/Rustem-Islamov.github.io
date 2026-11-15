@@ -400,9 +400,7 @@ html:root:root .hero-tagline{color:var(--coral)!important;font-size:clamp(15px,1
 html:root:root .hero-tagline::before{display:none!important}
 html:root:root .sp-tag.oral{background:var(--coral)!important;border-color:var(--coral)!important;color:#0a1226!important}
 </style><style id="home-cards">
-/* ===== Home cards: research areas with illustration, news as a training run, education as git log, publications with illustrations ===== */
-:root{--solid:#fff;--mesh:rgba(11,22,54,.34);--term:#fff;--termbar:#eef1f8}
-html[data-theme="dark"]{--solid:#111b35;--mesh:rgba(234,240,255,.3);--term:#0c142b;--termbar:#131d39}
+/* research area cards: illustration left, tags, small button bottom-right */
 /* --- research areas --- */
 .areas{display:grid;gap:14px}
 .ra{position:relative;display:grid;grid-template-columns:1fr 3fr;min-height:136px;border-radius:22px;border:1px solid var(--rule);background:var(--glass);overflow:hidden;backdrop-filter:blur(16px);transition:transform .4s cubic-bezier(.22,.7,.2,1),border-color .3s,box-shadow .4s}
@@ -421,64 +419,16 @@ html[data-theme="dark"]{--solid:#111b35;--mesh:rgba(234,240,255,.3);--term:#0c14
 .ra-arrow{color:var(--coral);display:inline-block;transition:transform .35s cubic-bezier(.22,.7,.2,1)}
 .ra:hover .ra-go{border-color:var(--coral)}
 .ra:hover .ra-arrow{transform:translateX(3px)}
-/* --- recent news as a training run --- */
-html:root:root:root .news-box .news-timeline{position:relative;padding-left:78px}
-.news-curve{position:absolute;left:0;top:0;width:78px;overflow:visible;pointer-events:none}
-.news-curve .line{fill:none;stroke:url(#news-grad);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.news-curve .ghost{fill:none;stroke:var(--rule);stroke-width:1;stroke-dasharray:3 5}
-.news-curve circle.nd{fill:var(--bg);stroke:var(--coral);stroke-width:2;transition:.3s}
-.news-curve circle.halo{fill:var(--coral);opacity:0;transition:.3s}
-.news-curve circle.on{fill:var(--coral)}
-.news-curve circle.halo.on{opacity:.25}
-html:root:root:root .news-box .news-list li::before,html:root:root:root .news-box .news-list li::after{display:none!important}
-html:root:root:root .news-box .news-list li{background:none!important;border:0!important;backdrop-filter:none;box-shadow:none!important;border-radius:16px!important;padding:14px 18px 16px!important;margin:0 0 12px!important;transform:none;transition:background .3s,transform .35s cubic-bezier(.22,.7,.2,1)!important}
-html:root:root:root .news-box .news-list li:hover{background:var(--glass)!important;transform:translateX(6px)!important}
-html:root:root:root .news-box .date{display:block;width:auto;padding:0;border:0;background:none;border-radius:0;margin-bottom:4px;font-size:.76rem!important;color:var(--acc2)!important}
-html:root:root:root .news-toggle{margin-left:96px}
-/* --- education as a git log --- */
-.term{border-radius:18px;border:1px solid var(--rule);background:var(--term);overflow:hidden;box-shadow:0 30px 60px -40px rgba(0,0,0,.6)}
-.term .bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:var(--termbar);border-bottom:1px solid var(--rule)}
-.term .bar i{width:10px;height:10px;border-radius:50%}
-.term .bar i:nth-child(1){background:#ff6b5b}.term .bar i:nth-child(2){background:#ffb454}.term .bar i:nth-child(3){background:#5ae6a0}
-.term .bar span{margin-left:8px;font:500 11.5px var(--mono);color:var(--muted)}
-.term .log{padding:14px 18px 8px}
-.cm{position:relative;display:grid;grid-template-columns:28px 1fr;gap:0 10px;padding:6px 0 16px;transition:transform .3s cubic-bezier(.22,.7,.2,1)}
-.cm:hover{transform:translateX(4px)}
-.cm .g{position:relative}
-.cm .g::before{content:"";position:absolute;left:11px;top:0;bottom:-16px;width:2px;background:linear-gradient(var(--coral),var(--acc2));opacity:.55}
-.cm:first-child .g::before{top:12px}.cm:last-child .g::before{bottom:auto;height:14px}
-.cm .g b{position:absolute;left:5px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--term);border:2px solid var(--coral);transition:.3s}
-.cm:first-child .g b{background:var(--coral);box-shadow:0 0 0 4px rgba(255,107,91,.2)}
-.cm:hover .g b{background:var(--coral);box-shadow:0 0 0 5px rgba(255,107,91,.25)}
-.cm .m1{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font:500 12px var(--mono)}
-.cm .hash{color:#a26a00}html[data-theme="dark"] .cm .hash{color:#e6b450}
-.cm .ref{padding:0 8px;border-radius:5px;background:rgba(255,107,91,.16);color:var(--coral);font-size:11px}
-.cm .ref.c{background:rgba(90,230,255,.14);color:var(--acc2)}
-.cm h4{margin:3px 0 4px;font:600 16px 'Inter Tight',sans-serif;letter-spacing:-.02em;color:var(--title)}
-.cm .b{font:12.5px/1.65 var(--mono);color:var(--muted)}
-.cm .b a{color:var(--fg)!important;font-weight:500;border-bottom:1px solid rgba(255,107,91,.45)}
-/* --- publications with generated illustrations --- */
-html:root:root:root .sp{display:grid;grid-template-columns:212px 1fr;padding:0!important;min-height:188px;overflow:hidden;border:1px solid var(--rule)!important;border-radius:22px!important;background:var(--glass)!important;box-shadow:none!important;backdrop-filter:blur(16px);transition:transform .4s cubic-bezier(.22,.7,.2,1),border-color .3s,box-shadow .4s!important}
-html:root:root:root .sp:hover{transform:translateY(-4px)!important;border-color:rgba(255,107,91,.55)!important;box-shadow:0 28px 50px -30px var(--shadow)!important;background:var(--glass)!important}
-html:root:root:root .sp::before{display:none!important}
-.sp-fig{position:relative;clip-path:polygon(0 0,100% 0,90% 100%,0 100%);overflow:hidden;background:linear-gradient(160deg,rgba(255,107,91,.12),rgba(90,230,255,.1)),var(--solid);border-right:1px solid var(--rule)}
-.sp-fig svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .9s cubic-bezier(.22,.7,.2,1)}
-.sp:hover .sp-fig svg{transform:scale(1.06)}
-.sp-body{padding:16px 18px 14px 4px;display:flex;flex-direction:column;gap:7px;min-width:0}
-.sp-body .sp-links{margin-top:auto}
-@media(max-width:620px){html:root:root:root .sp{grid-template-columns:1fr}.sp-fig{height:150px;clip-path:none;border-right:0;border-bottom:1px solid var(--rule)}.sp-body{padding:14px 16px}.ra{grid-template-columns:1fr}.ra-viz{height:96px;border-right:0;border-bottom:1px solid var(--rule)}.ra-go{position:static;align-self:flex-start}.cm .b{word-break:break-word}}
 /* header pill: same size as on the other pages (65px tall, 30px between items) */
 html:root:root:root .topnav{min-height:65px;padding:0 8px!important;gap:30px!important;align-items:center;box-sizing:border-box}
 html:root:root:root .topnav a:not(.theme-toggle){padding:4px 14px!important;line-height:1.6;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif!important;font-weight:500!important}
 html:root:root:root .topnav a.is-active{font-weight:600!important}
 html:root:root:root .topnav .theme-toggle{margin-left:0!important}
 </style>
-<!--home-cards-end-->
 </head>
 <body>
 <div class="bg-stage" aria-hidden="true"><canvas id="bg-canvas"></canvas></div>
 <div class="scroll-progress" id="scroll-progress"></div>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="news-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6B5B"/><stop offset="1" stop-color="#5AE6FF"/></linearGradient></defs></svg>
 <div class="wrap">
 
   <nav class="topnav">
@@ -541,13 +491,24 @@ html:root:root:root .topnav .theme-toggle{margin-left:0!important}
       </div>
 
       <h2 id="education">Education</h2>
-      <div class="term">
-        <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>~/education &mdash; git log --graph</span></div>
-        <div class="log">
-          <div class="cm"><div class="g"><b></b></div><div><div class="m1"><span class="hash" aria-hidden="true">a3f9c2e</span><span class="ref">HEAD</span><span class="ref c">2023 &ndash; now</span></div><h4>PhD in Computer Science</h4><div class="b">University of Basel<br>Supervisor: <a href="https://dmi.unibas.ch/en/persons/aurelien-lucchi/" target="_blank" rel="noopener">Aurelien Lucchi</a></div></div></div>
-          <div class="cm"><div class="g"><b></b></div><div><div class="m1"><span class="hash" aria-hidden="true">7be41d0</span><span class="ref c">2021 &ndash; 2023</span></div><h4>Master of Science in Data Science</h4><div class="b">Institut Polytechnique de Paris &middot; GPA <a href="/files/transcripts/TranscriptM1_M2.pdf" target="_blank" rel="noopener">17.65/20</a><br>Thesis: Unified Analysis of Asynchronous Algorithms<br>Thesis Supervisors: <a href="https://scholar.google.com/citations?user=dJNwgT8AAAAJ&amp;hl=en" target="_blank" rel="noopener">Mher Safaryan</a>, <a href="https://people.csail.mit.edu/alistarh/" target="_blank" rel="noopener">Dan Alistarh</a></div></div></div>
-          <div class="cm"><div class="g"><b></b></div><div><div class="m1"><span class="hash" aria-hidden="true">1c08f95</span><span class="ref c">2017 &ndash; 2021</span></div><h4>Bachelor of Science in Applied Mathematics and Physics</h4><div class="b">Moscow Institute of Physics and Technology &middot; GPA <a href="/files/transcripts/TranscriptBSc.pdf" target="_blank" rel="noopener">4.95/5 (9.27/10)</a><br>Thesis: Distributed Second Order Methods with Fast Rates and Compressed Communication<br>Thesis Supervisor: <a href="https://richtarik.org/" target="_blank" rel="noopener">Peter Richt&aacute;rik</a></div></div></div>
-        </div>
+      <div class="edu-tl">
+        <div class="edu-it">
+          <div class="edu-card"><div class="edu-row"><span class="edu-deg">PhD in Computer Science</span><span class="edu-when">2023 &ndash; now</span></div>
+          <div class="edu-line edu-school">University of Basel</div>
+          <div class="edu-line">Supervisor: <a href="https://dmi.unibas.ch/en/persons/aurelien-lucchi/" target="_blank" rel="noopener">Aurelien Lucchi</a></div>
+        </div></div>
+        <div class="edu-it">
+          <div class="edu-card"><div class="edu-row"><span class="edu-deg">Master of Science in Data Science</span><span class="edu-when">2021 &ndash; 2023</span></div>
+          <div class="edu-line edu-school">Institut Polytechnique de Paris &middot; GPA <a href="/files/transcripts/TranscriptM1_M2.pdf" target="_blank" rel="noopener">17.65/20</a></div>
+          <div class="edu-line">Thesis: Unified Analysis of Asynchronous Algorithms</div>
+          <div class="edu-line">Thesis Supervisors: <a href="https://scholar.google.com/citations?user=dJNwgT8AAAAJ&amp;hl=en" target="_blank" rel="noopener">Mher Safaryan</a>, <a href="https://people.csail.mit.edu/alistarh/" target="_blank" rel="noopener">Dan Alistarh</a></div>
+        </div></div>
+        <div class="edu-it">
+          <div class="edu-card"><div class="edu-row"><span class="edu-deg">Bachelor of Science in Applied Mathematics and Physics</span><span class="edu-when">2017 &ndash; 2021</span></div>
+          <div class="edu-line edu-school">Moscow Institute of Physics and Technology &middot; GPA <a href="/files/transcripts/TranscriptBSc.pdf" target="_blank" rel="noopener">4.95/5 (9.27/10)</a></div>
+          <div class="edu-line">Thesis: Distributed Second Order Methods with Fast Rates and Compressed Communication</div>
+          <div class="edu-line">Thesis Supervisor: <a href="https://richtarik.org/" target="_blank" rel="noopener">Peter Richt&aacute;rik</a></div>
+        </div></div>
       </div>
     </div>
 
@@ -557,7 +518,6 @@ html:root:root:root .topnav .theme-toggle{margin-left:0!important}
       <section class="news-box" id="posts" aria-labelledby="news-heading">
         <h2 id="news-heading">Recent news</h2>
         <div class="news-timeline">
-        <svg class="news-curve" aria-hidden="true"></svg>
         <ul class="news-list news-visible">
           <li><span class="date">October 26, 2026</span>I am on my way to Tubingen where I am giving a talk at the ELLIS University Tübingen. My talk will be based on my recent work on hyperparameter scaling laws from convergence bounds. The slides can be found <a href="/files/slides/tubingen_presentation.pdf" target="_blank" rel="noopener">here</a>.</li>
           <li><span class="date">October 22, 2026</span>I gave a talk to Mistral pre-training team during the optimization seminar. My talk was based on my recent work on hyperparameter scaling laws for AdamW and Muon optimizers derived from convergence bounds. The slides can be found <a href="/files/slides/mistral_presentation.pdf" target="_blank" rel="noopener">here</a>.</li>
@@ -582,8 +542,6 @@ html:root:root:root .topnav .theme-toggle{margin-left:0!important}
 
       <div class="selected-pub-list sp-list">
         <div class="sp">
-          <div class="sp-fig" data-fig="bst" aria-hidden="true"></div>
-          <div class="sp-body">
           <div class="sp-tags"><span class="sp-tag">ICML 2026</span></div>
           <h3><a href="/publication/26_bst/">On the Role of Batch Size in Stochastic Conditional Gradient Methods</a></h3>
           <p class="sp-authors"><a href="https://rustem-islamov.github.io/" target="_blank" rel="noopener"><b>R. Islamov</b></a>, <a href="https://seg.inf.unibe.ch/team/roman-machacek/" target="_blank" rel="noopener">R. Machacek</a>, <a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&amp;hl=en" target="_blank" rel="noopener">A. Lucchi</a>, <a href="https://tonysf.github.io/" target="_blank" rel="noopener">A. Silveti-Falls</a>, <a href="https://eduardgorbunov.github.io/index.html" target="_blank" rel="noopener">E. Gorbunov</a>, <a href="https://www.epfl.ch/labs/lions/people/volkan-cevher/" target="_blank" rel="noopener">V. Cevher</a></p>
@@ -591,11 +549,9 @@ html:root:root:root .topnav .theme-toggle{margin-left:0!important}
             <a href="/files/publications/BST/BST.pdf" target="_blank" rel="noopener">PDF</a>
             <a href="https://arxiv.org/abs/2603.21191" target="_blank" rel="noopener">arXiv</a>
             <a href="/publication/26_bst/cite.bib" class="js-cite-modal" data-filename="/publication/26_bst/cite.bib" title="Copy BibTeX to clipboard">Cite</a>
-          </div></div>
+          </div>
         </div>
         <div class="sp">
-          <div class="sp-fig" data-fig="eos" aria-hidden="true"></div>
-          <div class="sp-body">
           <div class="sp-tags"><span class="sp-tag">ICML 2026</span><span class="sp-tag oral">Oral</span></div>
           <h3><a href="/publication/26_eos/">Non-Euclidean Gradient Descent Operates at the Edge of Stability</a></h3>
           <p class="sp-authors"><a href="https://rustem-islamov.github.io/" target="_blank" rel="noopener"><b>R. Islamov</b></a>, <a href="https://mtcrawshaw.github.io/" target="_blank" rel="noopener">M. Crawshaw</a>, <a href="https://jmcohen.github.io/" target="_blank" rel="noopener">J. Cohen</a>, <a href="https://scholar.google.com/citations?hl=ru&amp;user=okKw87MAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener">R. Gower</a></p>
@@ -603,11 +559,9 @@ html:root:root:root .topnav .theme-toggle{margin-left:0!important}
             <a href="/files/publications/EOS/eos.pdf" target="_blank" rel="noopener">PDF</a>
             <a href="https://arxiv.org/abs/2603.05002" target="_blank" rel="noopener">arXiv</a>
             <a href="/publication/26_eos/cite.bib" class="js-cite-modal" data-filename="/publication/26_eos/cite.bib" title="Copy BibTeX to clipboard">Cite</a>
-          </div></div>
+          </div>
         </div>
         <div class="sp">
-          <div class="sp-fig" data-fig="sde" aria-hidden="true"></div>
-          <div class="sp-body">
           <div class="sp-tags"><span class="sp-tag">AISTATS 2025</span><span class="sp-tag oral">Oral</span></div>
           <h3><a href="/publication/24_signsgd/">Unbiased and Sign Compression in Distributed Learning: Comparing Noise Resilience via SDEs</a></h3>
           <p class="sp-authors"><a href="https://eneamc.github.io/" target="_blank" rel="noopener">E. M. Compagnoni</a>, <a href="https://rustem-islamov.github.io/" target="_blank" rel="noopener"><b>R. Islamov</b></a>, <a href="https://www.mn.uio.no/math/english/people/aca/proske/" target="_blank" rel="noopener">F. N. Proske</a>, <a href="https://scholar.google.com/citations?user=V1ONSgIAAAAJ&amp;hl=en" target="_blank" rel="noopener">A. Lucchi</a></p>
@@ -615,7 +569,7 @@ html:root:root:root .topnav .theme-toggle{margin-left:0!important}
             <a href="/files/publications/SignSGD/signsgd.pdf" target="_blank" rel="noopener">PDF</a>
             <a href="https://arxiv.org/abs/2502.17009" target="_blank" rel="noopener">arXiv</a>
             <a href="/publication/24_signsgd/cite.bib" class="js-cite-modal" data-filename="/publication/24_signsgd/cite.bib" title="Copy BibTeX to clipboard">Cite</a>
-          </div></div>
+          </div>
         </div>
       </div>
 
@@ -673,87 +627,12 @@ html:root:root:root .topnav .theme-toggle{margin-left:0!important}
 </script>
 <script>
 (function(){
-  var sel='.ra,.sp,.news-box .news-list li';
+  var sel='.ra,.sp,.edu-card,.news-box .news-list li';
   document.addEventListener('pointermove',function(e){var c=e.target.closest&&e.target.closest(sel);if(!c)return;var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');},{passive:true});
   if(!matchMedia('(prefers-reduced-motion:reduce)').matches && 'IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
-    document.querySelectorAll('.ra,.sp,.cm,.news-visible li').forEach(function(el,i){el.classList.add('rv2');el.style.setProperty('--d',(i%4*.08)+'s');io.observe(el)});
+    document.querySelectorAll('.ra,.sp,.edu-it,.news-visible li').forEach(function(el,i){el.classList.add('rv2');el.style.setProperty('--d',(i%4*.08)+'s');io.observe(el)});
   }
 })();
-</script><script>
-
-/* publication illustrations (generated, theme aware) */
-(function(){
- function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
- var M='font-family="JetBrains Mono,monospace"',X0=30,W=140;
- function pth(pts){return pts.map(function(p,k){return(k?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)}).join('')}
- function frame(){var o='<defs><clipPath id="cp"><rect x="26" y="20" width="152" height="120"/></clipPath></defs>',i;
-  for(i=1;i<5;i++)o+='<path d="M26 '+(28+i*22)+'H176" stroke="var(--rule)" stroke-dasharray="2 5"/>';
-  o+='<path d="M26 22V138H178" fill="none" stroke="var(--mesh)" stroke-width="1.3" stroke-linecap="round"/>';return o}
- function wrap(o){return '<svg viewBox="0 0 200 172" preserveAspectRatio="xMidYMid slice">'+o+'</svg>'}
- function eos(){var o=frame(),R=rng(7),L=[.9,.62,.38],C=['#FF6B5B','var(--fg)','#5AE6FF'],ops=[1,.55,1],i,t,k;
-  for(k=0;k<3;k++){var pts=[];for(i=0;i<=80;i++){t=i/80;var base=L[k]*(1-Math.exp(-6.5*t)),osc=t>.32?L[k]*.035*Math.sin(60*t+k)*Math.exp(-1.2*(t-.32))+(R()-.5)*.022*L[k]:0;pts.push([X0+t*W,138-(base+osc)*104])}
-   o+='<path d="M'+X0+' '+(138-L[k]*104)+'H'+(X0+W)+'" stroke="'+C[k]+'" stroke-dasharray="4 4" opacity=".5"/><path d="'+pth(pts)+'" fill="none" stroke="'+C[k]+'" stroke-width="'+(k==1?1.6:2.2)+'" stroke-linecap="round" stroke-linejoin="round" opacity="'+ops[k]+'"/>'}
-  o+='<text x="'+(X0+W)+'" y="'+(138-L[0]*104-6)+'" text-anchor="end" '+M+' font-size="10" fill="#FF6B5B">2/&eta;</text>';
-  o+='<text x="28" y="16" '+M+' font-size="8.5" fill="var(--muted)">sharpness</text><text x="'+(X0+W)+'" y="150" text-anchor="end" '+M+' font-size="8.5" fill="var(--muted)">iterations</text>';
-  o+='<g fill="none" stroke="var(--fg)" stroke-width="1.3" opacity=".8" transform="translate(30 160)"><circle cx="5" cy="0" r="5.5"/><rect x="20" y="-5.5" width="11" height="11" rx="1.5"/><path d="M45 -6.5L51.5 0L45 6.5L38.5 0Z"/></g><text x="92" y="163" '+M+' font-size="8" fill="var(--muted)">any norm</text>';
-  return wrap(o)}
- function bst(){var o=frame(),Ts=[1,2,4,8],cols=['var(--muted)','#5AE6FF','#FFB09F','#FF6B5B'],mins=[],k,i;
-  function loss(x,T){var l=Math.log(T)/Math.log(2),m=.1+.2*l;return .34-.035*l+.46*Math.exp(-3.6*x)+.02*Math.exp(4*(x-m))}
-  function Y(v){return 138-(v-.2)*128}
-  o+='<rect x="26" y="22" width="48" height="116" fill="#5AE6FF" opacity=".07"/><rect x="132" y="22" width="46" height="116" fill="#FF6B5B" opacity=".08"/>';
-  o+='<text x="29" y="32" '+M+' font-size="8" fill="#5AE6FF">noise</text><text x="176" y="32" text-anchor="end" '+M+' font-size="8" fill="#FF6B5B">few steps</text>';
-  o+='<g clip-path="url(#cp)">';
-  for(k=0;k<4;k++){var pts=[],best=[0,9];for(i=0;i<=80;i++){var x=i/80,y=loss(x,Ts[k]);pts.push([X0+x*W,Y(y)]);if(y<best[1])best=[x,y]}
-   mins.push([X0+best[0]*W,Y(best[1])]);
-   o+='<path d="'+pth(pts)+'" fill="none" stroke="'+cols[k]+'" stroke-width="'+(k==3?2.4:1.7)+'" stroke-linecap="round" opacity="'+(k==0?.8:1)+'"/>'}
-  o+='</g><path d="'+pth(mins)+'" fill="none" stroke="var(--fg)" stroke-width="1.3" stroke-dasharray="3 4" opacity=".7"/>';
-  mins.forEach(function(p,k){o+='<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="'+(k==3?4.6:3.2)+'" fill="'+(k==3?'#FF6B5B':'var(--solid)')+'" stroke="'+cols[k]+'" stroke-width="1.6"/>'});
-  var e=mins[3];o+='<circle cx="'+e[0].toFixed(1)+'" cy="'+e[1].toFixed(1)+'" r="10" fill="#FF6B5B" opacity=".25"/>';
-  o+='<text x="'+(e[0]-9).toFixed(1)+'" y="'+(e[1]+19).toFixed(1)+'" text-anchor="end" '+M+' font-size="9" fill="var(--fg)">B&prop;T<tspan font-size="6.5" dy="-4">2/3</tspan></text>';
-  o+='<text x="28" y="16" '+M+' font-size="8.5" fill="var(--muted)">loss</text><text x="30" y="150" '+M+' font-size="8.5" fill="var(--muted)">batch size &rarr;</text><text x="28" y="163" '+M+' font-size="8" fill="var(--muted)">token budget T = 1, 2, 4, 8</text>';
-  return wrap(o)}
- function sde(){var o=frame(),R=rng(11),k,i,x;
-  function mean(x,a){return .1+.9*Math.exp(-a*x)}
-  function Y(v){return 138-v*104}
-  function band(a,w,col,op){var u=[],l=[];for(i=0;i<=40;i++){x=i/40;u.push([X0+x*W,Y(mean(x,a)+w*(1-.4*x))]);l.push([X0+x*W,Y(mean(x,a)-w*(1-.4*x))])}return '<path d="'+pth(u)+pth(l.reverse()).replace('M','L')+'Z" fill="'+col+'" opacity="'+op+'"/>'}
-  o+=band(4,.1,'#FF6B5B',.1)+band(4.8,.05,'#5AE6FF',.12);
-  for(k=0;k<6;k++){var p1=[];for(i=0;i<=70;i++){x=i/70;var n=(R()+R()+R()-1.5)*.17*(1-.45*x),sp=R()>.965?(R()*.32)*(R()>.5?1:-1):0;p1.push([X0+x*W,Y(Math.max(.02,mean(x,4)+n+sp))])}
-   o+='<path d="'+pth(p1)+'" fill="none" stroke="#FF6B5B" stroke-width=".9" opacity=".5" stroke-linejoin="round"/>'}
-  for(k=0;k<6;k++){var p2=[];for(i=0;i<=70;i++){x=i/70;var n2=Math.max(-.06,Math.min(.06,(R()+R()-1)*.09))*(1-.3*x);p2.push([X0+x*W,Y(Math.max(.02,mean(x,4.8)+n2))])}
-   o+='<path d="'+pth(p2)+'" fill="none" stroke="#5AE6FF" stroke-width=".9" opacity=".6" stroke-linejoin="round"/>'}
-  var m1=[],m2=[];for(i=0;i<=60;i++){x=i/60;m1.push([X0+x*W,Y(mean(x,4))]);m2.push([X0+x*W,Y(mean(x,4.8))])}
-  o+='<path d="'+pth(m1)+'" fill="none" stroke="var(--fg)" stroke-width="3.6" stroke-linecap="round" opacity=".16"/><path d="'+pth(m1)+'" fill="none" stroke="#FF6B5B" stroke-width="2.2" stroke-linecap="round"/>';
-  o+='<path d="'+pth(m2)+'" fill="none" stroke="var(--fg)" stroke-width="3.6" stroke-linecap="round" opacity=".16"/><path d="'+pth(m2)+'" fill="none" stroke="#5AE6FF" stroke-width="2.2" stroke-linecap="round"/>';
-  o+='<text x="28" y="16" '+M+' font-size="8.5" fill="var(--muted)">loss</text><text x="'+(X0+W)+'" y="150" text-anchor="end" '+M+' font-size="8.5" fill="var(--muted)">time</text>';
-  o+='<g '+M+' font-size="9"><circle cx="34" cy="161" r="3" fill="#FF6B5B"/><text x="41" y="164" fill="var(--fg)">SGD</text><circle cx="78" cy="161" r="3" fill="#5AE6FF"/><text x="85" y="164" fill="var(--fg)">SignSGD</text></g>';
-  return wrap(o)}
-var F={eos:eos,bst:bst,sde:sde};document.querySelectorAll('.sp-fig').forEach(function(f){var k=F[f.getAttribute('data-fig')];if(k)f.innerHTML=k()});
-})();
-
-/* recent news as a training run: noisy descent curve, one node per visible item */
-(function(){
- var tl=document.querySelector('.news-box .news-timeline'),svg=tl&&tl.querySelector('.news-curve');if(!svg)return;
- function build(){
-  var items=[].slice.call(tl.querySelectorAll('.news-list li')).filter(function(li){return li.offsetParent!==null});
-  var H=tl.offsetHeight,W=78,cxm=34,tr=tl.getBoundingClientRect(),i,y;
-  if(!H||!items.length)return;
-  function X(y){var t=y/H;return cxm+22*Math.exp(-2.6*t)*Math.sin(y/22)-6*t}
-  var pts=[];for(y=0;y<=H-14;y+=3)pts.push([X(y),y]);
-  var d=pts.map(function(p,k){return(k?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)}).join('');
-  svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.setAttribute('height',H);
-  var o='<path class="ghost" d="M'+cxm+' 0V'+(H-14)+'"/><path class="line" d="'+d+'"/>';
-  var ys=items.map(function(li){return Math.round(li.getBoundingClientRect().top-tr.top+26)});
-  ys.forEach(function(yy,k){var xx=X(yy).toFixed(1);o+='<circle class="halo'+(k===0?' on':'')+'" data-k="'+k+'" cx="'+xx+'" cy="'+yy+'" r="11"/><circle class="nd'+(k===0?' on':'')+'" data-k="'+k+'" cx="'+xx+'" cy="'+yy+'" r="5.5"/>'});
-  o+='<circle cx="'+X(H-14).toFixed(1)+'" cy="'+(H-14)+'" r="3.5" fill="#5AE6FF"/>';svg.innerHTML=o;
-  items.forEach(function(li,k){
-   li.onmouseenter=function(){svg.querySelectorAll('.on').forEach(function(c){c.classList.remove('on')});svg.querySelectorAll('[data-k="'+k+'"]').forEach(function(c){c.classList.add('on')})};
-  });
- }
- document.fonts.ready.then(build);window.addEventListener('resize',build);
- if('ResizeObserver' in window)new ResizeObserver(build).observe(tl);
- var btn=document.getElementById('news-toggle');if(btn)btn.addEventListener('click',function(){setTimeout(build,60);setTimeout(build,420)});
-})();
-</script>
-</body>
+</script></body>
 </html>
