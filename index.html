@@ -423,9 +423,11 @@ html:root:root .sp-tag.oral{background:var(--coral)!important;border-color:var(-
 html:root:root:root .ra{border:1px solid transparent;background:linear-gradient(var(--glass),var(--glass)) padding-box,linear-gradient(135deg,rgba(255,107,91,.5),var(--edge-mid) 38%,rgba(90,230,255,.4)) border-box;transition:transform .35s cubic-bezier(.22,.7,.2,1),box-shadow .3s}
 html:root:root:root .ra:hover{transform:translateY(-4px);background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(255,107,91,.2),transparent 60%) padding-box,linear-gradient(var(--glass-h),var(--glass-h)) padding-box,linear-gradient(135deg,rgba(255,107,91,.95),var(--edge-mid) 40%,rgba(90,230,255,.85)) border-box;box-shadow:0 26px 60px -26px var(--shadow),0 0 0 1px rgba(255,107,91,.15)}
 /* "See more details" highlighted in orange */
-html:root:root:root .ra-go{background:var(--coral);border-color:var(--coral);color:#0a1226;font-weight:600}
-html:root:root:root .ra-arrow{color:#0a1226}
-html:root:root:root .ra:hover .ra-go{background:#ff8576;border-color:#ff8576;box-shadow:0 10px 24px -10px var(--shadow)}
+html:root:root:root .ra-go{z-index:2;background:var(--chip);border-color:var(--rule);color:var(--fg)!important;font-weight:500;text-decoration:none;transition:background .25s,border-color .25s,color .25s,box-shadow .25s}
+html:root:root:root .ra-arrow{color:var(--coral);transition:transform .35s cubic-bezier(.22,.7,.2,1),color .25s}
+html:root:root:root .ra:hover .ra-go{border-color:var(--rule)}
+html:root:root:root .ra-go:hover{background:var(--coral);border-color:var(--coral);color:#0a1226!important;font-weight:600;box-shadow:0 10px 24px -10px var(--shadow)}
+html:root:root:root .ra-go:hover .ra-arrow{color:#0a1226;transform:translateX(3px)}
 /* header pill: same size as on the other pages (65px tall, 30px between items) */
 html:root:root:root .topnav{min-height:65px;padding:0 8px!important;gap:30px!important;align-items:center;box-sizing:border-box}
 html:root:root:root .topnav a:not(.theme-toggle){padding:4px 14px!important;line-height:1.6;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif!important;font-weight:500!important}
@@ -476,7 +478,7 @@ html:root:root:root .topnav .theme-toggle{margin-left:0!important}
           <div class="ra-body">
             <h3><a href="/research/largescaleopt/">Large-Scale Optimization</a></h3>
             <ul class="ra-tags"><li>Scaling Laws</li><li>Robustness</li></ul>
-            <span class="ra-go">See more details <span class="ra-arrow">&rarr;</span></span>
+            <a class="ra-go" href="/research/largescaleopt/" tabindex="-1" aria-hidden="true">See more details <span class="ra-arrow">&rarr;</span></a>
           </div>
         </div>
         <div class="ra">
@@ -484,7 +486,7 @@ html:root:root:root .topnav .theme-toggle{margin-left:0!important}
           <div class="ra-body">
             <h3><a href="/research/losslandscape/">Loss Landscape of Neural Networks</a></h3>
             <ul class="ra-tags"><li>Loss Landscape Characterization</li><li>Edge of Stability</li></ul>
-            <span class="ra-go">See more details <span class="ra-arrow">&rarr;</span></span>
+            <a class="ra-go" href="/research/losslandscape/" tabindex="-1" aria-hidden="true">See more details <span class="ra-arrow">&rarr;</span></a>
           </div>
         </div>
         <div class="ra">
@@ -492,7 +494,7 @@ html:root:root:root .topnav .theme-toggle{margin-left:0!important}
           <div class="ra-body">
             <h3><a href="/research/fedlearning/">Federated Learning</a></h3>
             <ul class="ra-tags"><li>Communication Efficiency</li><li>Local Methods</li></ul>
-            <span class="ra-go">See more details <span class="ra-arrow">&rarr;</span></span>
+            <a class="ra-go" href="/research/fedlearning/" tabindex="-1" aria-hidden="true">See more details <span class="ra-arrow">&rarr;</span></a>
           </div>
         </div>
       </div>
