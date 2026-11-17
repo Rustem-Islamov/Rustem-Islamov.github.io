@@ -1,0 +1,6 @@
+/* one shape for every tag, chip and small button: the rounded rectangle of the PDF / arXiv / Cite buttons */
+html:root:root:root:root .sp-tag,html:root:root:root:root .vtag,html:root:root:root:root .vnum,html:root:root:root:root .vpill,html:root:root:root:root .pp-area,
+html:root:root:root:root .ra-tags li,html:root:root:root:root .area li,html:root:root:root:root .topic-tag,
+html:root:root:root:root .ra-go,html:root:root:root:root .area-go,html:root:root:root:root .topic-go,html:root:root:root:root .selected-pub-more,html:root:root:root:root .news-toggle,
+html:root:root:root:root .news-box .date,html:root:root:root:root .edu-when,html:root:root:root:root .back-pill,
+html:root:root:root:root .sp-links a,html:root:root:root:root .pub-list-item>p .btn,html:root:root:root:root .btn-links .btn{border-radius:8px!important}
