@@ -595,6 +595,19 @@ html:root:root .pub-list-item>p .btn:hover{background:var(--coral)!important;bor
 html:root:root .vnum{font-family:'JetBrains Mono',monospace!important;color:var(--muted)!important;border-color:var(--rule)!important;border-radius:999px;background:none}
 html:root:root .vtag{font-family:'JetBrains Mono',monospace!important;letter-spacing:.02em}
 html:root:root .vtag.oral{background:var(--coral)!important;color:#0a1226!important;border-color:var(--coral)!important}
+
+/* paper cards: gradient frame style (styles only) */
+html:root:root:root .pub-list-item{border:2px solid transparent!important;border-radius:24px!important;
+  background:linear-gradient(var(--glass),var(--glass)) padding-box,linear-gradient(135deg,rgba(255,107,91,.55),var(--edge-mid) 45%,rgba(90,230,255,.5)) border-box!important}
+html:root:root:root .pub-list-item::before{display:none!important}
+html:root:root:root .pub-list-item:hover{transform:translateY(-4px) rotate(-.3deg)!important;
+  background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(255,107,91,.18),transparent 60%) padding-box,linear-gradient(var(--glass-h),var(--glass-h)) padding-box,linear-gradient(135deg,#FF6B5B,#5AE6FF) border-box!important;
+  box-shadow:0 0 0 5px rgba(255,107,91,.1),0 26px 50px -28px var(--shadow)!important}
+html:root:root:root .pub-list-item a.specialeffects{background:linear-gradient(90deg,#FF6B5B,#5AE6FF) 0 100%/0% 2px no-repeat;padding-bottom:2px;transition:background-size .5s cubic-bezier(.22,.7,.2,1),color .2s}
+html:root:root:root .pub-list-item:hover a.specialeffects{background-size:100% 2px}
+html:root:root:root .pub-list-item a.specialeffects:hover{color:var(--title)!important}
+html:root:root:root .pub-list-item .vtag,html:root:root:root .pub-list-item .vnum{border-radius:6px!important;text-transform:uppercase;letter-spacing:.08em}
+html:root:root:root .pub-list-item>p .btn{border-radius:8px!important}
 html:root:root .collapse .card-body,html:root:root .abstract-text{background:var(--chip)!important;border:1px solid var(--rule)!important;border-radius:14px!important;color:var(--fg)!important}
 html:root:root .abstract-figure{border:1px solid var(--rule)!important;border-radius:14px!important;background:#fff!important}
 html:root:root .pub-no-results{color:var(--muted)}
