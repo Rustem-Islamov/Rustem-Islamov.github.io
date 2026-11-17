@@ -10,4 +10,4 @@ html:root:root:root .pub-list-item:hover a.specialeffects{background-size:100% 2
 html:root:root:root .pub-list-item a.specialeffects:hover{color:var(--title)!important}
 html:root:root:root .pub-list-item .vtag,html:root:root:root .pub-list-item .vnum{border-radius:6px!important;text-transform:uppercase;letter-spacing:.08em}
 html:root:root:root .pub-list-item>p .btn{border-radius:8px!important}
-html:root:root:root .ap-n,html:root:root:root .chal-n{border-radius:8px!important}
+html:root:root:root .ap-n,html:root:root:root .chal-n{display:none!important}
